@@ -35,7 +35,7 @@ node_modules/
 .electron-gyp/
 out/
 
-# Generated runtime data (keep small fixtures under samples/)
+# Generated runtime data
 logs/
 captures/
 recordings/
