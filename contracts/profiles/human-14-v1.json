@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "profile_id": "human-14-v1",
+  "coordinate_system": "right-handed-x-forward-y-left-z-up",
+  "root_joint_id": "pelvis",
+  "root_node_id": 1,
+  "root_position_m": [0.0, 0.0, 0.0],
+  "expected_nodes": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+  "segments": [
+    {
+      "segment_id": "virtual_chest",
+      "start_joint_id": "pelvis",
+      "end_joint_id": "chest",
+      "node_id": 1,
+      "length_m": 0.48,
+      "direction_local": [0.0, 0.0, 1.0],
+      "virtual": true,
+      "orientation_source": "pelvis"
+    },
+    {
+      "segment_id": "head",
+      "start_joint_id": "chest",
+      "end_joint_id": "head",
+      "node_id": 2,
+      "length_m": 0.24,
+      "direction_local": [0.0, 0.0, 1.0],
+      "virtual": false
+    },
+    {
+      "segment_id": "left_shoulder",
+      "start_joint_id": "chest",
+      "end_joint_id": "left_shoulder",
+      "node_id": 1,
+      "length_m": 0.2,
+      "direction_local": [0.0, 1.0, 0.0],
+      "virtual": true,
+      "orientation_source": "pelvis"
+    },
+    {
+      "segment_id": "left_upper_arm",
+      "start_joint_id": "left_shoulder",
+      "end_joint_id": "left_elbow",
+      "node_id": 3,
+      "length_m": 0.3,
+      "direction_local": [0.0, 1.0, 0.0],
+      "virtual": false
+    },
+    {
+      "segment_id": "left_forearm",
+      "start_joint_id": "left_elbow",
+      "end_joint_id": "left_wrist",
+      "node_id": 5,
+      "length_m": 0.26,
+      "direction_local": [0.0, 1.0, 0.0],
+      "virtual": false
+    },
+    {
+      "segment_id": "left_hand",
+      "start_joint_id": "left_wrist",
+      "end_joint_id": "left_hand",
+      "node_id": 7,
+      "length_m": 0.18,
+      "direction_local": [0.0, 1.0, 0.0],
+      "virtual": false
+    },
+    {
+      "segment_id": "right_shoulder",
+      "start_joint_id": "chest",
+      "end_joint_id": "right_shoulder",
+      "node_id": 1,
+      "length_m": 0.2,
+      "direction_local": [0.0, -1.0, 0.0],
+      "virtual": true,
+      "orientation_source": "pelvis"
+    },
+    {
+      "segment_id": "right_upper_arm",
+      "start_joint_id": "right_shoulder",
+      "end_joint_id": "right_elbow",
+      "node_id": 4,
+      "length_m": 0.3,
+      "direction_local": [0.0, -1.0, 0.0],
+      "virtual": false
+    },
+    {
+      "segment_id": "right_forearm",
+      "start_joint_id": "right_elbow",
+      "end_joint_id": "right_wrist",
+      "node_id": 6,
+      "length_m": 0.26,
+      "direction_local": [0.0, -1.0, 0.0],
+      "virtual": false
+    },
+    {
+      "segment_id": "right_hand",
+      "start_joint_id": "right_wrist",
+      "end_joint_id": "right_hand",
+      "node_id": 8,
+      "length_m": 0.18,
+      "direction_local": [0.0, -1.0, 0.0],
+      "virtual": false
+    },
+    {
+      "segment_id": "left_hip",
+      "start_joint_id": "pelvis",
+      "end_joint_id": "left_hip",
+      "node_id": 1,
+      "length_m": 0.1,
+      "direction_local": [0.0, 1.0, 0.0],
+      "virtual": true,
+      "orientation_source": "pelvis"
+    },
+    {
+      "segment_id": "left_thigh",
+      "start_joint_id": "left_hip",
+      "end_joint_id": "left_knee",
+      "node_id": 9,
+      "length_m": 0.42,
+      "direction_local": [0.0, 0.0, -1.0],
+      "virtual": false
+    },
+    {
+      "segment_id": "left_shank",
+      "start_joint_id": "left_knee",
+      "end_joint_id": "left_ankle",
+      "node_id": 11,
+      "length_m": 0.43,
+      "direction_local": [0.0, 0.0, -1.0],
+      "virtual": false
+    },
+    {
+      "segment_id": "left_foot",
+      "start_joint_id": "left_ankle",
+      "end_joint_id": "left_toe",
+      "node_id": 13,
+      "length_m": 0.25,
+      "direction_local": [1.0, 0.0, 0.0],
+      "virtual": false
+    },
+    {
+      "segment_id": "right_hip",
+      "start_joint_id": "pelvis",
+      "end_joint_id": "right_hip",
+      "node_id": 1,
+      "length_m": 0.1,
+      "direction_local": [0.0, -1.0, 0.0],
+      "virtual": true,
+      "orientation_source": "pelvis"
+    },
+    {
+      "segment_id": "right_thigh",
+      "start_joint_id": "right_hip",
+      "end_joint_id": "right_knee",
+      "node_id": 10,
+      "length_m": 0.42,
+      "direction_local": [0.0, 0.0, -1.0],
+      "virtual": false
+    },
+    {
+      "segment_id": "right_shank",
+      "start_joint_id": "right_knee",
+      "end_joint_id": "right_ankle",
+      "node_id": 12,
+      "length_m": 0.43,
+      "direction_local": [0.0, 0.0, -1.0],
+      "virtual": false
+    },
+    {
+      "segment_id": "right_foot",
+      "start_joint_id": "right_ankle",
+      "end_joint_id": "right_toe",
+      "node_id": 14,
+      "length_m": 0.25,
+      "direction_local": [1.0, 0.0, 0.0],
+      "virtual": false
+    }
+  ]
+}

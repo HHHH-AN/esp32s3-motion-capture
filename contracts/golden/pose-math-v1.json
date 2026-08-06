@@ -1,0 +1,10 @@
+{
+  "tolerance": 0.000001,
+  "cases": [
+    {"name": "identity", "axis": [1.0, 0.0, 0.0], "angle_degrees": 0.0, "quaternion_wxyz": [1.0, 0.0, 0.0, 0.0]},
+    {"name": "x-positive-90", "axis": [1.0, 0.0, 0.0], "angle_degrees": 90.0, "quaternion_wxyz": [0.7071067811865476, 0.7071067811865475, 0.0, 0.0]},
+    {"name": "y-positive-90", "axis": [0.0, 1.0, 0.0], "angle_degrees": 90.0, "quaternion_wxyz": [0.7071067811865476, 0.0, 0.7071067811865475, 0.0]},
+    {"name": "z-positive-90", "axis": [0.0, 0.0, 1.0], "angle_degrees": 90.0, "quaternion_wxyz": [0.7071067811865476, 0.0, 0.0, 0.7071067811865475]}
+  ]
+}
+
