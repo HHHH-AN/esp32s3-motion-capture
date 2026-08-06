@@ -1,0 +1,58 @@
+# Secrets and local credentials
+.env
+.env.*
+!.env.example
+secrets/
+credentials/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# ESP-IDF / CMake / PlatformIO
+build/
+cmake-build-*/
+managed_components/
+sdkconfig
+sdkconfig.old
+.pio/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+dist/
+
+# Node / desktop application tooling
+node_modules/
+.electron-gyp/
+out/
+
+# Generated runtime data (keep small fixtures under samples/)
+logs/
+captures/
+recordings/
+data/raw/
+data/recordings/
+*.log
+
+# IDE and operating system files
+.idea/
+.vs/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*~
