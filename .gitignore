@@ -16,6 +16,7 @@ managed_components/
 sdkconfig
 sdkconfig.old
 .pio/
+.platformio/
 
 # Python
 .venv/
@@ -29,19 +30,31 @@ __pycache__/
 htmlcov/
 *.egg-info/
 dist/
+.hypothesis/
 
 # Node / desktop application tooling
 node_modules/
 .electron-gyp/
 out/
+coverage/
+*.tsbuildinfo
 
 # Generated runtime data
 logs/
 captures/
+output/
+.playwright-cli/
 recordings/
+calibrations/
 data/raw/
 data/recordings/
 *.log
+*.bin.tmp
+
+# Local configuration and generated exports
+config/local.*
+*.local.json
+exports/
 
 # IDE and operating system files
 .idea/

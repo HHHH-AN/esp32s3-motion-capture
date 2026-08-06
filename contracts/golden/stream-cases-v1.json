@@ -1,0 +1,29 @@
+{
+  "valid_frame_hex": "064d4301011803012a010107cb04fb711f01010101010106e803f6ff1404e2fffa0a83fff401c40988130303572e00",
+  "cases": [
+    {
+      "name": "single-frame-in-chunks",
+      "chunks_hex": ["064d43010118", "03012a010107cb04fb711f01", "010101010106e803f6ff1404e2fffa0a83fff401c40988130303572e00"],
+      "expected_valid_frames": 1
+    },
+    {
+      "name": "noise-before-frame",
+      "chunks_hex": ["ff7e00", "064d4301011803012a010107cb04fb711f01010101010106e803f6ff1404e2fffa0a83fff401c40988130303572e00"],
+      "expected_valid_frames": 1,
+      "expected_errors": 1
+    },
+    {
+      "name": "bad-crc-then-valid",
+      "chunks_hex": ["064d4301011803012a010107cb04fb711f01010101010106e803f6ff1404e2fffa0a83fff401c40988130303572f00", "064d4301011803012a010107cb04fb711f01010101010106e803f6ff1404e2fffa0a83fff401c40988130303572e00"],
+      "expected_valid_frames": 1,
+      "expected_errors": 1
+    },
+    {
+      "name": "truncated-frame",
+      "chunks_hex": ["064d4301011803012a0101", "00"],
+      "expected_valid_frames": 0,
+      "expected_errors": 1
+    }
+  ]
+}
+
