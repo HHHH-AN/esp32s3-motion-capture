@@ -4,6 +4,8 @@
 !.env.example
 secrets/
 credentials/
+imu/**/include/wifi_config.h
+.wifi-staging/
 *.pem
 *.key
 *.p12
