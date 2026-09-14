@@ -65,6 +65,7 @@ Copy-Item include/wifi_config.example.h include/wifi_config.h
 - 三个 `web/app.js` 均通过 `node --check`。
 - 三套 FastAPI 均通过首页、静态 JavaScript、14 节点状态接口和 WebSocket 首帧检查。
 - 新增 `.github/workflows/imu.yml`，分别验证三套上位机与固件，Wi-Fi 构建使用示例配置。
-- 固件编译验证进行中；本机原有 PlatformIO 环境缺少 `idna` 且平台依赖安装失败，正在使用隔离环境验证。
+- [GitHub Actions 验证](https://github.com/Hao5200000/esp32s3-motion-capture/actions/runs/34841726595)：USB、BLE、Wi-Fi 三套固件全部编译成功，三套上位机测试亦全部通过（源代码提交 `f5e5ab2`）。
+- 本机原有 PlatformIO 环境缺少 `idna` 且平台依赖安装失败；隔离环境下载较慢，固件结论采用上述干净 Ubuntu CI 的实际构建结果。
 - 导入文件保留上游行尾空白和末尾空行，`git diff --check` 会报告这些已有格式问题；未为格式整理改写源文件。
 - 本次未烧录、未连接硬件，未进行 USB/BLE/Wi-Fi 真实通信或全身动作验收。原始资料中的实测叙述不作为本次硬件验收证据。
