@@ -1,8 +1,10 @@
-> **运行位置**：本文命令在代码仓库的 `源代码/BLE/` 中执行，说明文件所在文件夹不是程序目录。
+# 源代码/WIFI 使用说明
 
-# BLE 版：硬件连接与烧录
+<a id="part-1"></a>
 
-先按[无线连接步骤](BLE_README.md)配置和运行。本页主要介绍三种版本共用的传感器接线与烧录方法。
+## Wi-Fi 版：硬件连接与烧录
+
+先按本页的[无线连接步骤](README.md#part-2)配置和运行。本页主要介绍三种版本共用的传感器接线与烧录方法。
 
 本工程基于 **ESP32-S3-MINI-1** 模块，通过 **SPI** 读取 **ICM-42688-P** 六轴惯性传感器（加速度计 + 陀螺仪），通过 **I²C** 读取 **LIS2MDLTR** 三轴磁力计，并将数据通过 USB 串口输出到电脑显示。
 
@@ -79,10 +81,10 @@ AccX(g),AccY(g),AccZ(g),GyrX(dps),GyrY(dps),GyrZ(dps),ICM温度(C),MagX(mG),MagY
 在工程根目录（`platformio.ini` 所在目录）执行：
 
 ```bash
-# 编译
+## 编译
 pio run
 
-# 烧录（COM7 为示例端口，请按实际修改）
+## 烧录（COM7 为示例端口，请按实际修改）
 pio run -t upload --upload-port COM7
 ```
 
@@ -139,3 +141,102 @@ pio run -t upload --upload-port COM7
 - 若更换为 **8 MB Flash** 的 `-N8` 模块：删除 `platformio.ini` 中的 `board_build.flash_size = 4MB`、`board_upload.flash_size = 4MB` 和 `board_build.partitions = default.csv` 三行（恢复为板级默认 8 MB 配置）。
 - ICM-42688 初始化时会自动执行**陀螺仪零偏校准**（约 1~2 秒，期间请保持板子静止）。
 - LIS2MDL 配置为连续测量模式 100 Hz，启用了偏移消除与数据块更新（BDU）。
+
+
+---
+
+<a id="part-2"></a>
+
+## ESP32-S3 IMU Wi-Fi TCP 通信版
+
+本项目让 ESP32-S3 和电脑连接同一个路由器。ESP32-S3 使用 DHCP 获取局域网地址，并在 TCP 端口 9000 发送约 20 Hz、11列、换行结尾的 CSV。USB串口输出同时保留。
+
+## 1. 配置路由器
+
+先在本版本目录安装电脑端依赖并复制配置模板（已有配置时不要覆盖）：
+
+```powershell
+python -m pip install -r requirements.txt
+Copy-Item include/wifi_config.example.h include/wifi_config.h
+```
+
+然后编辑 `include/wifi_config.h`：
+
+```cpp
+#define WIFI_SSID "路由器名称"
+#define WIFI_PASSWORD "路由器密码"
+#define WIFI_TCP_PORT 9000
+```
+
+ESP32-S3仅支持 2.4 GHz Wi-Fi，请确保该名称对应2.4 GHz网络。配置文件已加入 `.gitignore`，不要把真实密码提交到仓库。
+
+## 2. 编译与烧录
+
+```powershell
+cd "E:\AAA动作捕捉系统\2.代码\源代码\WIFI"
+python -m platformio run
+python -m platformio run -t upload --upload-port COM21
+```
+
+## 3. 获取 ESP32 地址
+
+```powershell
+python -m platformio device monitor -p COM21 -b 115200
+```
+
+找到以下输出并记下 IP：
+
+```text
+[WiFi] Connected
+[WiFi] IP: 192.168.1.120
+[TCP] Listening on port 9000
+```
+
+关闭串口监视器后启动上位机：
+
+```powershell
+python run_dashboard.py
+```
+
+打开 <http://127.0.0.1:8000>，选择 `Wi-Fi`，输入串口日志中的 IP 和端口 `9000`，然后连接。
+
+## 4. 当前限制
+
+当前 CSV 没有帧序号和设备时间戳，而且 TCP 会自动重传网络数据。因此页面显示的是应用层帧率、到达间隔估算丢包和连接稳定性，不能表示真实无线丢包率或精确端到端延迟。精确测试需要后续 UDP 协议加入序号和设备时间戳。
+
+
+---
+
+<a id="part-3"></a>
+
+## 上位机使用：查看、记录与导出
+
+## 启动
+
+```powershell
+python -m pip install -r requirements.txt
+python run_dashboard.py
+```
+
+浏览器打开 <http://127.0.0.1:8000>，按[连接步骤](README.md#part-2)选择通信方式并连接设备。使用 USB 时，请先关闭占用串口的监视器。
+
+## 当前数据映射
+
+- 当前 11 列 CSV 数据映射到“右腕”。
+- 其余 13 个节点显示为静止模拟状态。
+- 每次记录在 `recordings/imu-日期-时间/` 生成三个 UTF-8 BOM CSV：
+  - `imu-data.csv`：14 节点姿态与传感器数据；
+  - `body-trajectory.csv`：骨盆中心短时趋势估算；
+  - `node-trajectory.csv`：所选节点的骨骼约束相对轨迹。
+- CSV 中文表头可由 Excel 直接打开。人体整体轨迹不是绝对定位结果。
+- 接收质量采用最近 2 秒窗口计算速率；当前无包序号，因此丢包率为基于 20 Hz 到达间隔的估算值。
+- 网页顶部“预览记录”可查看会话元数据和 CSV 前 100 行；“导出记录”会将三个 CSV 打包为 ZIP 下载。正在写入的会话需停止记录后才能导出。
+
+## 测试
+
+```powershell
+python -m unittest discover -s tests -v
+node --check web/app.js
+```
+
+协议变化时，优先新增或替换 `dashboard/protocol.py` 中的适配器，不改变页面使用的标准节点消息。

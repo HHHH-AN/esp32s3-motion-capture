@@ -1,6 +1,10 @@
+# 旧版/pose/frontend 使用说明
+
+<a id="part-1"></a>
+
 > **旧版参考资料**：适用于旧版 `旧版/IMU-tracker/`、`旧版/pose/` 和 `旧版/contracts/`，不代表当前 `源代码/` 的配置或验收状态。
 
-# Pose Web Frontend
+## Pose Web Frontend
 
 React、TypeScript 与 Three.js 编写的动作捕捉可视化端。浏览器不直接连接 BLE，也不运行姿态融合；它只消费 Python Bridge 发出的版本化 WebSocket JSON。
 

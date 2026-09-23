@@ -1,6 +1,10 @@
-> **运行位置**：本文命令在代码仓库的 `源代码/imu/` 中执行，说明文件所在文件夹不是程序目录。
+# 源代码/BLE 使用说明
 
-# USB 版：硬件连接与烧录
+<a id="part-1"></a>
+
+## BLE 版：硬件连接与烧录
+
+先按本页的[无线连接步骤](README.md#part-2)配置和运行。本页主要介绍三种版本共用的传感器接线与烧录方法。
 
 本工程基于 **ESP32-S3-MINI-1** 模块，通过 **SPI** 读取 **ICM-42688-P** 六轴惯性传感器（加速度计 + 陀螺仪），通过 **I²C** 读取 **LIS2MDLTR** 三轴磁力计，并将数据通过 USB 串口输出到电脑显示。
 
@@ -77,10 +81,10 @@ AccX(g),AccY(g),AccZ(g),GyrX(dps),GyrY(dps),GyrZ(dps),ICM温度(C),MagX(mG),MagY
 在工程根目录（`platformio.ini` 所在目录）执行：
 
 ```bash
-# 编译
+## 编译
 pio run
 
-# 烧录（COM7 为示例端口，请按实际修改）
+## 烧录（COM7 为示例端口，请按实际修改）
 pio run -t upload --upload-port COM7
 ```
 
@@ -137,3 +141,74 @@ pio run -t upload --upload-port COM7
 - 若更换为 **8 MB Flash** 的 `-N8` 模块：删除 `platformio.ini` 中的 `board_build.flash_size = 4MB`、`board_upload.flash_size = 4MB` 和 `board_build.partitions = default.csv` 三行（恢复为板级默认 8 MB 配置）。
 - ICM-42688 初始化时会自动执行**陀螺仪零偏校准**（约 1~2 秒，期间请保持板子静止）。
 - LIS2MDL 配置为连续测量模式 100 Hz，启用了偏移消除与数据块更新（BDU）。
+
+
+---
+
+<a id="part-2"></a>
+
+## ESP32-S3 IMU BLE 通信实验版
+
+本目录是独立的 BLE 通信版本，原 USB 串口工程保持不变。传感器仍以约 20 Hz 生成原来的 11 列 CSV；同一帧保留 USB 串口调试输出，并通过 BLE GATT Notify 发送。
+
+## 安装与运行
+
+```powershell
+python -m pip install -r requirements.txt
+pio run
+pio run -t upload --upload-port COM21
+python run_dashboard.py
+```
+
+浏览器打开 <http://127.0.0.1:8000>，通信方式选择 `BLE`，点击“扫描设备”，选择 `IMU-MOTION-01` 后连接。
+
+## BLE 参数
+
+- 设备名：`IMU-MOTION-01`
+- Service UUID：`7d2a0001-6c8a-4f6b-9c65-4f4d55494d55`
+- Notify UUID：`7d2a0002-6c8a-4f6b-9c65-4f4d55494d55`
+- 数据格式：原 11 列 CSV，以换行符结束
+- 接收端：Windows Python 后端，依赖 Bleak
+
+网页可在 `USB串口` 与 `BLE` 之间切换，同一时间只连接一种通信方式。两种方式共用 CSV 解析、姿态融合、记录与质量统计，便于比较帧率、估算丢包率、无效帧和稳定性。
+
+## 当前限制
+
+第一版未加入帧序号和设备时间戳，因此丢包率仍为到达间隔估算值，不能表示严格的真实丢包率或端到端延迟。需要精确比较时，应在下一版协议加入设备侧帧序号和单调时钟时间戳。
+
+
+---
+
+<a id="part-3"></a>
+
+## 上位机使用：查看、记录与导出
+
+## 启动
+
+```powershell
+python -m pip install -r requirements.txt
+python run_dashboard.py
+```
+
+浏览器打开 <http://127.0.0.1:8000>，按[连接步骤](README.md#part-2)选择通信方式并连接设备。使用 USB 时，请先关闭占用串口的监视器。
+
+## 当前数据映射
+
+- 当前 11 列 CSV 数据映射到“右腕”。
+- 其余 13 个节点显示为静止模拟状态。
+- 每次记录在 `recordings/imu-日期-时间/` 生成三个 UTF-8 BOM CSV：
+  - `imu-data.csv`：14 节点姿态与传感器数据；
+  - `body-trajectory.csv`：骨盆中心短时趋势估算；
+  - `node-trajectory.csv`：所选节点的骨骼约束相对轨迹。
+- CSV 中文表头可由 Excel 直接打开。人体整体轨迹不是绝对定位结果。
+- 接收质量采用最近 2 秒窗口计算速率；当前无包序号，因此丢包率为基于 20 Hz 到达间隔的估算值。
+- 网页顶部“预览记录”可查看会话元数据和 CSV 前 100 行；“导出记录”会将三个 CSV 打包为 ZIP 下载。正在写入的会话需停止记录后才能导出。
+
+## 测试
+
+```powershell
+python -m unittest discover -s tests -v
+node --check web/app.js
+```
+
+协议变化时，优先新增或替换 `dashboard/protocol.py` 中的适配器，不改变页面使用的标准节点消息。

@@ -1,8 +1,8 @@
-> **运行位置**：本文命令在代码仓库的 `源代码/WIFI/` 中执行，说明文件所在文件夹不是程序目录。
+# 源代码/imu 使用说明
 
-# Wi-Fi 版：硬件连接与烧录
+<a id="part-1"></a>
 
-先按[无线连接步骤](WIFI_README.md)配置和运行。本页主要介绍三种版本共用的传感器接线与烧录方法。
+## USB 版：硬件连接与烧录
 
 本工程基于 **ESP32-S3-MINI-1** 模块，通过 **SPI** 读取 **ICM-42688-P** 六轴惯性传感器（加速度计 + 陀螺仪），通过 **I²C** 读取 **LIS2MDLTR** 三轴磁力计，并将数据通过 USB 串口输出到电脑显示。
 
@@ -79,10 +79,10 @@ AccX(g),AccY(g),AccZ(g),GyrX(dps),GyrY(dps),GyrZ(dps),ICM温度(C),MagX(mG),MagY
 在工程根目录（`platformio.ini` 所在目录）执行：
 
 ```bash
-# 编译
+## 编译
 pio run
 
-# 烧录（COM7 为示例端口，请按实际修改）
+## 烧录（COM7 为示例端口，请按实际修改）
 pio run -t upload --upload-port COM7
 ```
 
@@ -139,3 +139,42 @@ pio run -t upload --upload-port COM7
 - 若更换为 **8 MB Flash** 的 `-N8` 模块：删除 `platformio.ini` 中的 `board_build.flash_size = 4MB`、`board_upload.flash_size = 4MB` 和 `board_build.partitions = default.csv` 三行（恢复为板级默认 8 MB 配置）。
 - ICM-42688 初始化时会自动执行**陀螺仪零偏校准**（约 1~2 秒，期间请保持板子静止）。
 - LIS2MDL 配置为连续测量模式 100 Hz，启用了偏移消除与数据块更新（BDU）。
+
+
+---
+
+<a id="part-2"></a>
+
+## 上位机使用：查看、记录与导出
+
+## 启动
+
+```powershell
+python -m pip install -r requirements.txt
+python run_dashboard.py
+```
+
+浏览器打开 <http://127.0.0.1:8000>，点击“连接串口”。默认连接 `COM21`、`115200 baud`。
+
+如果串口号变化，可在页面连接前修改后端默认值，或在后续版本增加端口选择器。Windows 同一串口只能由一个程序打开；使用网页前请关闭 PlatformIO Serial Monitor。
+
+## 当前数据映射
+
+- 当前 11 列 CSV 数据映射到“右腕”。
+- 其余 13 个节点显示为静止模拟状态。
+- 每次记录在 `recordings/imu-日期-时间/` 生成三个 UTF-8 BOM CSV：
+  - `imu-data.csv`：14 节点姿态与传感器数据；
+  - `body-trajectory.csv`：骨盆中心短时趋势估算；
+  - `node-trajectory.csv`：所选节点的骨骼约束相对轨迹。
+- CSV 中文表头可由 Excel 直接打开。人体整体轨迹不是绝对定位结果。
+- 接收质量采用最近 2 秒窗口计算速率；当前无包序号，因此丢包率为基于 20 Hz 到达间隔的估算值。
+- 网页顶部“预览记录”可查看会话元数据和 CSV 前 100 行；“导出记录”会将三个 CSV 打包为 ZIP 下载。正在写入的会话需停止记录后才能导出。
+
+## 测试
+
+```powershell
+python -m unittest discover -s tests -v
+node --check web/app.js
+```
+
+协议变化时，优先新增或替换 `dashboard/protocol.py` 中的适配器，不改变页面使用的标准节点消息。

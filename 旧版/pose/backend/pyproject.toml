@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "mocap-pose"
 version = "0.1.0"
 description = "PC-side acquisition, fusion, synchronization and skeleton pipeline for the ESP32-S3 motion-capture system."
-readme = {text = "Legacy motion-capture backend. See the repository documentation under 说明/旧版/pose/backend.", content-type = "text/plain"}
+readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
   "bleak==1.1.1",

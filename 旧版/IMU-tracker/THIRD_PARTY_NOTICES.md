@@ -1,4 +1,8 @@
-# Third-party notices
+# 旧版/IMU-tracker/THIRD_PARTY_NOTICES.md 使用说明
+
+<a id="part-1"></a>
+
+## Third-party notices
 
 - Espressif Arduino Core for ESP32 is supplied by the pinned PlatformIO platform
   `espressif32@6.10.0` (Arduino-ESP32 2.0.17); consult its packages for licenses.

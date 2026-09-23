@@ -1,6 +1,10 @@
+# 旧版/pose/backend 使用说明
+
+<a id="part-1"></a>
+
 > **旧版参考资料**：适用于旧版 `旧版/IMU-tracker/`、`旧版/pose/` 和 `旧版/contracts/`，不代表当前 `源代码/` 的配置或验收状态。
 
-# Motion-capture backend
+## Motion-capture backend
 
 This Python service owns transport decoding, raw recording/replay, sensor calibration,
 orientation fusion, multi-node synchronization, skeleton kinematics and the WebSocket API.
