@@ -4,7 +4,7 @@
 !.env.example
 secrets/
 credentials/
-imu/**/include/wifi_config.h
+源代码/**/include/wifi_config.h
 .wifi-staging/
 *.pem
 *.key
@@ -71,3 +71,7 @@ Thumbs.db
 Desktop.ini
 *.swp
 *~
+
+# Local Git database and Codex scratch files
+/配置/.git/
+/.codex/

@@ -1,0 +1,2008 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>动作捕捉项目文档</title><style>*{box-sizing:border-box}body{margin:0;background:#f4f6f8;color:#243244;font:16px/1.8 "Microsoft YaHei",sans-serif}nav{position:fixed;width:300px;height:100vh;overflow:auto;background:#fff;padding:24px;border-right:1px solid #ddd}nav a{display:block;padding:10px;color:#23587c;text-decoration:none}small{display:block;font-size:11px;color:#64748b;overflow-wrap:anywhere}main{margin-left:300px;padding:35px;max-width:1350px}article{background:white;padding:36px;margin-bottom:32px;border-radius:12px;scroll-margin-top:20px}h1{font-size:28px}h2{font-size:22px;margin-top:30px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #dbe2e8;padding:10px;text-align:left}th{background:#edf3f7}pre{background:#edf2f6;padding:16px;overflow:auto}code{font-family:Consolas,monospace}blockquote{border-left:4px solid #db9a38;background:#fff8e8;margin:16px 0;padding:10px 18px}a{color:#126aa0}img{max-width:100%}@media(max-width:800px){nav{position:static;width:auto;height:260px}main{margin:0;padding:12px}article{padding:18px}}@media print{nav{display:none}main{margin:0;padding:0}article{break-before:page}}</style><nav><h2>项目文档</h2><p>离线阅读 · 2026-09-23</p><a href="#doc0">动作捕捉项目：从这里开始<small>说明/README.md</small></a><a href="#doc1">当前 IMU 开发基线<small>说明/源代码/README.md</small></a><a href="#doc2">更新记录<small>说明/CHANGELOG.md</small></a><a href="#doc3">协作说明<small>说明/CONTRIBUTING.md</small></a><a href="#doc4">旧版功能完成情况<small>说明/IMPLEMENTATION_STATUS.md</small></a><a href="#doc5">发布检查表<small>说明/RELEASE_CHECKLIST.md</small></a><a href="#doc6">IMU-tracker firmware<small>说明/旧版/IMU-tracker/README.md</small></a><a href="#doc7">Third-party notices<small>说明/旧版/IMU-tracker/THIRD_PARTY_NOTICES.md</small></a><a href="#doc8">Board bring-up checklist<small>说明/旧版/IMU-tracker/docs/BRINGUP_CHECKLIST.md</small></a><a href="#doc9">Troubleshooting<small>说明/旧版/IMU-tracker/docs/TROUBLESHOOTING.md</small></a><a href="#doc10">契约变更记录<small>说明/旧版/contracts/CHANGELOG.md</small></a><a href="#doc11">公共契约<small>说明/旧版/contracts/README.md</small></a><a href="#doc12">BLE Profile v1<small>说明/旧版/contracts/ble-profile-v1.md</small></a><a href="#doc13">Coordinate Contract v1<small>说明/旧版/contracts/coordinates-v1.md</small></a><a href="#doc14">Hardware Contract v1<small>说明/旧版/contracts/hardware-v1.md</small></a><a href="#doc15">Node Layout v1<small>说明/旧版/contracts/node-layout-v1.md</small></a><a href="#doc16">Motion Capture Wire Protocol v1<small>说明/旧版/contracts/wire-protocol-v1.md</small></a><a href="#doc17">pose<small>说明/旧版/pose/README.md</small></a><a href="#doc18">Motion-capture backend<small>说明/旧版/pose/backend/README.md</small></a><a href="#doc19">Pose Web Frontend<small>说明/旧版/pose/frontend/README.md</small></a><a href="#doc20">ESP32-S3 IMU BLE 通信实验版<small>说明/源代码/BLE/BLE_README.md</small></a><a href="#doc21">上位机使用：查看、记录与导出<small>说明/源代码/BLE/DASHBOARD.md</small></a><a href="#doc22">BLE 版：硬件连接与烧录<small>说明/源代码/BLE/README.md</small></a><a href="#doc23">上位机使用：查看、记录与导出<small>说明/源代码/WIFI/DASHBOARD.md</small></a><a href="#doc24">Wi-Fi 版：硬件连接与烧录<small>说明/源代码/WIFI/README.md</small></a><a href="#doc25">ESP32-S3 IMU Wi-Fi TCP 通信版<small>说明/源代码/WIFI/WIFI_README.md</small></a><a href="#doc26">上位机使用：查看、记录与导出<small>说明/源代码/imu/DASHBOARD.md</small></a><a href="#doc27">USB 版：硬件连接与烧录<small>说明/源代码/imu/README.md</small></a></nav><main><article id="doc0"><h1 id="doc0-_1">动作捕捉项目：从这里开始</h1>
+<p>当前使用 <code>源代码/</code> 里的代码，有 USB、蓝牙、Wi-Fi 三个独立版本。<strong>目前接入一个真实节点（右腕），另外 13 个节点是模拟显示，还不是完整的全身动作捕捉。</strong></p>
+<p>想直接阅读排版好的说明，请双击打开 <a href="%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3.html">项目文档.html</a>。它可离线阅读，左侧目录能切换各份说明。</p>
+<h2 id="doc0-_2">我应该打开哪个文件夹？</h2>
+<table>
+<thead>
+<tr>
+<th>你的目的</th>
+<th>进入目录</th>
+<th>操作说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>用 USB 连接板子与电脑</td>
+<td><code>源代码/imu/</code></td>
+<td><a href="#doc27">USB 版说明</a></td>
+</tr>
+<tr>
+<td>通过蓝牙无线连接</td>
+<td><code>源代码/BLE/</code></td>
+<td><a href="#doc20">蓝牙连接步骤</a></td>
+</tr>
+<tr>
+<td>板子与电脑通过路由器连接</td>
+<td><code>源代码/WIFI/</code></td>
+<td><a href="#doc25">Wi-Fi 连接步骤</a></td>
+</tr>
+<tr>
+<td>看新版相对旧版改了什么</td>
+<td><code>源代码/</code></td>
+<td><a href="#doc1">版本对比和验证记录</a></td>
+</tr>
+<tr>
+<td>看数据、记录与导出方法</td>
+<td>对应版本目录</td>
+<td><a href="#doc26">USB 界面说明</a>、<a href="#doc21">BLE 界面说明</a>、<a href="#doc23">Wi-Fi 界面说明</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="doc0-_3">第一次运行</h2>
+<p>先安装 Python 3.11 或更新版本，以及 PlatformIO（可使用 VS Code 扩展）。在上表选中的版本文件夹打开终端，再执行：</p>
+<pre><code class="language-powershell">python -m pip install -r requirements.txt
+python run_dashboard.py
+</code></pre>
+<p>浏览器打开 <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>。一次只启动一个版本，避免默认端口被占用。板子首次使用或切换通信版本时，还需要按对应说明编译和烧录固件。</p>
+<p>USB 基础版的默认串口是 COM21；如果你的串口不同，修改该版本 <code>dashboard/service.py</code> 中的 <code>port</code> 默认值。烧录、串口监视器和上位机不要同时占用同一个串口。</p>
+<h2 id="doc0-_4">如何理解画面和数据？</h2>
+<ul>
+<li>页面出现 14 个节点，不代表连接了 14 块实物板。</li>
+<li>数据约每秒 20 帧；当前格式没有设备时间戳、帧序号和节点编号。</li>
+<li>丢包率是按数据到达间隔估算的，轨迹也不是绝对空间定位结果。</li>
+<li>编译和软件测试通过，不代表已完成实板、无线连接或全身动作验收。</li>
+</ul>
+<h2 id="doc0-_5">其余资料放在哪里？</h2>
+<table>
+<thead>
+<tr>
+<th>目录或文件</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>旧版/IMU-tracker/</code>、<code>旧版/pose/</code>、<code>旧版/contracts/</code></td>
+<td>旧版固件、电脑端和接口参考；不要混用到当前版本</td>
+</tr>
+<tr>
+<td><a href="#doc2">更新记录</a></td>
+<td>查看版本变化</td>
+</tr>
+<tr>
+<td><a href="#doc3">协作说明</a></td>
+<td>团队分工、提交与审核规则</td>
+</tr>
+<tr>
+<td><a href="#doc4">旧版完成情况</a></td>
+<td>查看旧版实现与未验收事项</td>
+</tr>
+<tr>
+<td><a href="#doc5">旧版发布检查表</a></td>
+<td>旧版验收参考</td>
+</tr>
+<tr>
+<td><code>配置/.ai/</code></td>
+<td>给 AI 使用的设计和执行计划</td>
+</tr>
+<tr>
+<td>项目根目录 <code>.codex/</code></td>
+<td>Codex 中间文件和检查报告</td>
+</tr>
+</tbody>
+</table>
+<h2 id="doc0-2026-09-23">整理后的目录（2026-09-23）</h2>
+<pre><code class="language-text">2.代码/
+├── 配置/      AI 工作资料与配置说明
+├── 说明/      使用说明、协作规则、更新记录、HTML 阅读版
+├── 源代码/    当前 USB（imu）、BLE、WIFI 三套工程
+└── 旧版/      IMU-tracker、pose、contracts
+</code></pre>
+<p>本文命令中的运行目录指「2.代码」下面的源代码目录。根目录另外保留 Git/GitHub 所需的工具入口。Codex 工作文件放在项目根目录 <code>.codex/</code>。</p></article><article id="doc1"><h1 id="doc1-imu">当前 IMU 开发基线</h1>
+<p>2026-09-14 从项目根目录 <code>源代码/</code> 导入，以用户提供的代码为准。三个版本独立运行。2026-09-21 整理了文档，未修改功能代码。</p>
+<table>
+<thead>
+<tr>
+<th>目录</th>
+<th>固件输出</th>
+<th>电脑端连接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#doc27"><code>源代码/</code></a></td>
+<td>USB 串口</td>
+<td>USB 串口</td>
+</tr>
+<tr>
+<td><a href="#doc20"><code>BLE/</code></a></td>
+<td>USB + BLE GATT Notify</td>
+<td>USB 或 BLE</td>
+</tr>
+<tr>
+<td><a href="#doc25"><code>WIFI/</code></a></td>
+<td>USB + Wi-Fi TCP，默认端口 9000</td>
+<td>USB 或 Wi-Fi</td>
+</tr>
+</tbody>
+</table>
+<h2 id="doc1-_1">相对旧版的变化</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>旧版 <code>旧版/IMU-tracker/</code> + <code>旧版/pose/</code></th>
+<th>当前导入版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IMU GPIO</td>
+<td>INT/CS/MOSI/SCK/MISO = 8/9/10/11/12</td>
+<td>9/10/11/12/13，与 9 月 14 日导出的原理图一致</td>
+</tr>
+<tr>
+<td>磁力计 GPIO</td>
+<td>SDA/SCL = 35/36</td>
+<td>SDA/SCL/DRDY = 34/33/47；DRDY 定义为可选</td>
+</tr>
+<tr>
+<td>电源逻辑</td>
+<td>AXP2101 只读探测</td>
+<td>无 AXP2101 驱动；新版原理图使用 BQ24074 + TPS63802</td>
+</tr>
+<tr>
+<td>固件结构</td>
+<td>模块化驱动、节点/网关环境</td>
+<td>每个版本独立 <code>src/main.cpp</code>，ICM42688 库 + LIS2MDL 寄存器访问</td>
+</tr>
+<tr>
+<td>数据链路</td>
+<td>100 Hz，ESP-NOW 汇聚，COBS/CRC 二进制协议</td>
+<td>约 20 Hz，11 列换行 CSV，单设备直连</td>
+</tr>
+<tr>
+<td>姿态解算</td>
+<td>Mahony、多节点时钟模型和重排</td>
+<td>互补融合，使用主机到达时间</td>
+</tr>
+<tr>
+<td>可视化</td>
+<td>React / TypeScript / Three.js</td>
+<td>FastAPI + 静态 HTML/CSS/JavaScript</td>
+</tr>
+<tr>
+<td>节点状态</td>
+<td>14 节点架构及 Mock 骨架</td>
+<td>右腕 1 个真实输入，其余 13 个静止模拟节点</td>
+</tr>
+<tr>
+<td>记录</td>
+<td>旧版原始流与派生数据</td>
+<td>中文表头 CSV、记录预览、三个 CSV 的 ZIP 导出</td>
+</tr>
+</tbody>
+</table>
+<p>当前 CSV 不包含节点 ID、设备时间戳或帧序号，不能接入旧版二进制解码器，也不能据此宣称完成 14 节点同步。页面丢包率是到达间隔估算值，轨迹是骨骼约束相对位置或短时趋势，非绝对定位。</p>
+<h2 id="doc1-_2">运行</h2>
+<p>使用 Python 3.11 或更新版本及 PlatformIO。在选定的版本目录中执行：</p>
+<pre><code class="language-powershell">python -m pip install -r requirements.txt
+python run_dashboard.py
+</code></pre>
+<p>打开 <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>。三个版本共用默认服务端口，一次启动一个版本。
+USB 基础版默认串口为 COM21；BLE、Wi-Fi 版使用各自页面的连接控件。</p>
+<p>固件编译：</p>
+<pre><code class="language-powershell">pio run
+</code></pre>
+<p>Wi-Fi 版编译前，在 <code>WIFI/</code> 目录执行：</p>
+<pre><code class="language-powershell">Copy-Item include/wifi_config.example.h include/wifi_config.h
+</code></pre>
+<p>随后在本地配置路由器名称和密码。<code>wifi_config.h</code> 已忽略，不提交真实凭据。
+运行时请进入本仓库 <code>源代码/WIFI/</code>；连接说明已更新为本机项目路径。</p>
+<h2 id="doc1-_3">导入范围与资料差异</h2>
+<ul>
+<li>导入 78 个源文件、依赖配置、测试、说明、网表和界面截图，并逐文件核对 SHA-256。</li>
+<li>未导入个人录制、Python 缓存、IDE 配置、<code>.wifi-staging</code> 和本地 Wi-Fi 凭据。</li>
+<li>保留旧版目录供追溯；根 README 已将开发入口切换到本目录。</li>
+<li>三份上游 README 的“磁力计 CS 悬空”说明来自旧原理图；9 月 14 日导出的原理图已将 CS 接到 VDD_3V3。实际 PCB 连通性仍需实测。</li>
+<li>附带的网表日期为 2026-08-26；最新硬件 PDF 位于项目根目录 <code>1.硬件与数据手册/4.动捕项目硬件原理/</code>。</li>
+</ul>
+<h2 id="doc1-2026-09-14">2026-09-14 导入时的验证记录</h2>
+<ul>
+<li>Python 3.12 独立环境：USB 9 项、BLE 13 项、Wi-Fi 14 项单元测试，合计 36 项全部通过。</li>
+<li>三个 <code>web/app.js</code> 均通过 <code>node --check</code>。</li>
+<li>三套 FastAPI 均通过首页、静态 JavaScript、14 节点状态接口和 WebSocket 首帧检查。</li>
+<li>新增 <code>.github/workflows/imu.yml</code>，分别验证三套上位机与固件，Wi-Fi 构建使用示例配置。</li>
+<li><a href="https://github.com/Hao5200000/esp32s3-motion-capture/actions/runs/34841726595">GitHub Actions 验证</a>：USB、BLE、Wi-Fi 三套固件全部编译成功，三套上位机测试亦全部通过（源代码提交 <code>f5e5ab2</code>）。</li>
+<li>本机原有 PlatformIO 环境缺少 <code>idna</code> 且平台依赖安装失败；隔离环境下载较慢，固件结论采用上述干净 Ubuntu CI 的实际构建结果。</li>
+<li>导入文件保留上游行尾空白和末尾空行，<code>git diff --check</code> 会报告这些已有格式问题；未为格式整理改写源文件。</li>
+<li>本次未烧录、未连接硬件，未进行 USB/BLE/Wi-Fi 真实通信或全身动作验收。原始资料中的实测叙述不作为本次硬件验收证据。</li>
+</ul></article><article id="doc2"><h1 id="doc2-_1">更新记录</h1>
+<h2 id="doc2-unreleased">Unreleased</h2>
+<h3 id="doc2-2026-09-23">2026-09-23 目录整理</h3>
+<ul>
+<li>新版工程迁入 <code>源代码/</code>，旧版固件、电脑端和接口契约迁入 <code>旧版/</code>。</li>
+<li>使用文档、协作规则、更新记录与离线阅读版统一放入 <code>说明/</code>。</li>
+<li>AI 工作资料放入 <code>配置/.ai/</code>；Git/GitHub 生效入口保留根目录。</li>
+<li>同步修正 CI 工作目录、凭据忽略规则与旧版 Python 包说明配置。功能代码不变。</li>
+</ul>
+<h3 id="doc2-2026-09-14">2026-09-14 当前基线导入</h3>
+<ul>
+<li>导入用户提供的 <code>源代码/imu</code>、<code>源代码/BLE</code>、<code>源代码/WIFI</code> 三套固件与上位机，作为当前开发入口。</li>
+<li>新版使用更新的传感器 GPIO、约 20 Hz CSV、互补姿态融合和记录预览/ZIP 导出。</li>
+<li>补充新版与旧版差异、运行步骤、单真实节点限制及独立 CI；保留旧版供追溯。</li>
+<li>排除本地 Wi-Fi 凭据、个人录制和缓存。</li>
+</ul>
+<h3 id="doc2-2026-08-06">2026-08-06 旧版软件基线</h3>
+<ul>
+<li>建立 14 个佩戴节点和独立网关的模块化工程。</li>
+<li>加入公共二进制协议、Schema 和跨语言 Golden Vectors。</li>
+<li>加入 PlatformIO 固件、Python 后端和 React/Three.js 前端。</li>
+<li>加入模拟、记录、回放、标定、姿态融合、时间同步和骨架运动学基础实现。</li>
+</ul></article><article id="doc3"><h1 id="doc3-_1">协作说明</h1>
+<h2 id="doc3-_2">目录责任</h2>
+<ul>
+<li>ZBC：<code>旧版/IMU-tracker/**</code></li>
+<li>HAN：<code>旧版/pose/backend/**</code></li>
+<li>项目负责人：<code>旧版/contracts/**</code>、<code>.github/**</code>、<code>旧版/pose/frontend/**</code></li>
+</ul>
+<p>跨目录修改必须提前在 PR 中说明原因。</p>
+<h2 id="doc3-_3">合并顺序</h2>
+<ol>
+<li>公共接口先通过独立 Contract PR 合入 <code>main</code>。</li>
+<li>HAN 先实现接收端兼容。</li>
+<li>ZBC 再切换发送端。</li>
+<li>项目负责人完成端到端验收。</li>
+<li>PR 合并后，ZBC 和 HAN 将最新 <code>main</code> merge 回长期个人分支。</li>
+</ol>
+<p>已推送的 <code>ZBC</code>、<code>HAN</code> 分支禁止 rebase 和 force push。仓库使用 merge commit 保留里程碑历史。</p>
+<h2 id="doc3-pr">PR 要求</h2>
+<ul>
+<li>一个 PR 只完成一个可验收目标。</li>
+<li>普通 PR 至少一名非作者批准。</li>
+<li><code>旧版/contracts/**</code> 变更需要 ZBC、HAN 两人审核。</li>
+<li>CI 必须通过，评论必须解决。</li>
+<li>不提交构建产物、依赖目录、个人录制、个人标定、日志、密钥或 <code>.env</code>。</li>
+<li>Golden Vectors 只能在 Contract PR 中修改。</li>
+</ul>
+<h2 id="doc3-_4">提交信息</h2>
+<p>使用简洁的 Conventional Commits 风格，例如：</p>
+<pre><code class="language-text">feat(firmware): add ICM FIFO acquisition
+feat(backend): decode wire protocol v1
+test(contracts): add truncated frame vector
+docs(hardware): record PCB revision B
+</code></pre></article><article id="doc4"><blockquote>
+<p><strong>旧版参考资料</strong>：适用于旧版 <code>旧版/IMU-tracker/</code>、<code>旧版/pose/</code> 和 <code>旧版/contracts/</code>，不代表当前 <code>源代码/</code> 的配置或验收状态。</p>
+</blockquote>
+<h1 id="doc4-_1">旧版功能完成情况</h1>
+<blockquote>
+<p>2026-09-14：当前开发基线已切换至 <code>源代码/</code>，见 <a href="#doc1">新版说明</a>。
+以下内容是 2026-08-06 旧版 <code>旧版/IMU-tracker/</code> / <code>旧版/pose/</code> 的历史状态，不用于判断新版完成度。</p>
+</blockquote>
+<p>更新日期：2026-08-06。</p>
+<p>本仓库已经形成可构建、可测试的三端软件基线，但不能把“代码存在或编译成功”当作实板里程碑通过。下表区分软件完成度和硬件验收状态。</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>当前软件状态</th>
+<th>仍需关闭的门禁</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M0</td>
+<td>硬件、坐标、节点、线协议、BLE、JSON Schema、Golden Vectors、CI 和 PR 规则已建立</td>
+<td>原理图/PCB USB 必须改为 GPIO19/20；确认 BOOT/EN、供电轨和两颗传感器的 PCB 轴矩阵；补齐非 RAW 消息 payload 契约</td>
+</tr>
+<tr>
+<td>M1</td>
+<td>PlatformIO、FastAPI Mock、React/Three.js 闭环可运行</td>
+<td>在全新开发机按 README 复现一次</td>
+</tr>
+<tr>
+<td>M2</td>
+<td>GPIO、SPI、两套独立 I2C、单调时钟、ISR 路由和 AXP 只读状态代码可编译</td>
+<td>实测电源轨；验证 AXP IRQ；未确认前禁止写电压</td>
+</tr>
+<tr>
+<td>M3</td>
+<td>ICM/LIS 轮询与统一定点样本已实现；FIFO/INT 有独立实验环境</td>
+<td>依次完成 WHO_AM_I、静止噪声、三轴方向、FIFO 字节和 30 分钟 100 Hz 实测</td>
+</tr>
+<tr>
+<td>M4</td>
+<td>C++/Python RAW_SAMPLE、RAW_BATCH、COBS、CRC、USB、记录和回放代码已实现</td>
+<td>USB 硬件修订后做 30 分钟无丢包验收；冻结 DEVICE_STATUS/CONTROL/ACK/ERROR payload</td>
+</tr>
+<tr>
+<td>M5</td>
+<td>标定求解、Mahony、磁干扰降级、NVS 容器和真实姿态立方体路径已实现</td>
+<td>用真实录制验证 5 分钟漂移和三轴 90° 误差；实际标定值尚未装载到默认运行配置</td>
+</tr>
+<tr>
+<td>M6</td>
+<td>BLE UUID、6 字节分片、重组、扫描、连接和重连代码可编译/测试</td>
+<td>实板 MTU/DLE/2M PHY、100 Hz、30 分钟和低于 1% 丢包验收</td>
+</tr>
+<tr>
+<td>M7</td>
+<td>ESP-NOW 叶节点/网关、10 ms RAW_BATCH、节点表、PC 重排和仿射时钟模型已实现</td>
+<td>TIME_SYNC payload 与无线请求/响应尚未冻结和接入；14 节点吞吐、p95 对齐及延迟未实测</td>
+</tr>
+<tr>
+<td>M8</td>
+<td>公共人体 Profile、虚拟胸廓、运动学、SLERP 和 Three.js 骨架已在 Mock 闭环运行</td>
+<td>真实设备 UID 映射、在线 T-pose 安装标定和 14 节点动作验收；在线安装标定 HTTP 当前明确返回 501</td>
+</tr>
+<tr>
+<td>M9</td>
+<td>双 OTA 分区、流式更新、故障/看门狗/电源策略和版本化存储框架已建立</td>
+<td>OTA 下载、签名/版本策略、回滚确认、任务心跳接入和 2 小时实机耐久测试</td>
+</tr>
+</tbody>
+</table>
+<h2 id="doc4-_2">已执行的软件验证</h2>
+<ul>
+<li><code>python 旧版/contracts/validate_contracts.py</code>：通过。</li>
+<li>Python：<code>ruff check .</code> 通过，<code>pytest</code> 23 项通过。</li>
+<li>前端：Vitest 17 项通过，TypeScript + Vite 生产构建通过。</li>
+<li>固件：<code>node_usb</code>、<code>node_fifo_lab</code>、<code>node_ble</code>、<code>node_espnow</code>、<code>gateway_usb</code>、<code>gateway_ble</code> 六个环境均完成编译和链接。</li>
+<li>浏览器：Mock 后端驱动 WebSocket、Three.js、节点状态和录制开始/停止闭环；页面运行错误为 0。</li>
+<li>Windows 本机没有系统 GCC，因此 <code>native</code> Unity 测试未在本机执行；GitHub Actions 已配置为在 Ubuntu 上执行它们，待 Contract PR 推送后产生远端结果。</li>
+</ul>
+<h2 id="doc4-_3">明确保留的实现差异</h2>
+<ul>
+<li>LIS2MDL 当前使用项目自有的最小寄存器封装，尚未冻结并 vendoring ST <code>lis2mdl_reg.c/.h</code> 快照。</li>
+<li>AXP2101 当前使用只读最小寄存器封装，尚未迁移到参考工程使用的 <code>XPowersLib@0.3.3</code>；这样可保证未实测电源轨前不发生配置写入。</li>
+<li><code>TIME_SYNC</code>、<code>DEVICE_STATUS</code>、<code>CONTROL_ACK</code> 和 <code>ERROR</code> 的完整 payload 必须先经独立 Contract PR 冻结，接收端先兼容后再切换发送端。</li>
+<li>传感器到 PCB 的变换矩阵故意保持 identity 并带硬件 TODO，不能视为真实方向标定。</li>
+</ul>
+<p>下一步应从 M0 硬件门禁开始，而不是直接打开 FIFO、无线时间同步或 OTA。</p></article><article id="doc5"><blockquote>
+<p><strong>旧版参考资料</strong>：适用于旧版 <code>旧版/IMU-tracker/</code>、<code>旧版/pose/</code> 和 <code>旧版/contracts/</code>，不代表当前 <code>源代码/</code> 的配置或验收状态。</p>
+</blockquote>
+<h1 id="doc5-_1">发布检查表</h1>
+<h2 id="doc5-_2">构建与静态验证</h2>
+<ul>
+<li>[ ] <code>旧版/contracts/validate_contracts.py</code> 通过。</li>
+<li>[ ] PlatformIO 固件构建通过。</li>
+<li>[ ] Python 全部测试通过。</li>
+<li>[ ] 前端测试和生产构建通过。</li>
+<li>[ ] 固件、协议、后端和前端版本写入诊断信息。</li>
+</ul>
+<h2 id="doc5-_3">硬件</h2>
+<ul>
+<li>[ ] USB D-/D+ 已连接 GPIO19/20，并完成连续性检查。</li>
+<li>[ ] AXP2101 输出轨经过万用表验证。</li>
+<li>[ ] ICM 和 LIS 封装到 PCB 的坐标矩阵已经记录。</li>
+<li>[ ] 14 个佩戴节点及独立网关均有唯一 ID。</li>
+</ul>
+<h2 id="doc5-_4">数据链路</h2>
+<ul>
+<li>[ ] 单节点 100 Hz USB 连续运行 30 分钟。</li>
+<li>[ ] 单节点 100 Hz BLE 连续运行 30 分钟，丢包率小于 1%。</li>
+<li>[ ] 14 节点同步误差 p95 不超过 5 ms。</li>
+<li>[ ] 14 节点到电脑的语义样本丢失率小于 1%。</li>
+<li>[ ] 端到端延迟 p95 小于 150 ms。</li>
+</ul>
+<h2 id="doc5-_5">姿态与骨架</h2>
+<ul>
+<li>[ ] 四元数范数误差小于 <code>1e-3</code>。</li>
+<li>[ ] 静止 5 分钟 roll/pitch 漂移小于 2°。</li>
+<li>[ ] 干净磁环境下 yaw 漂移小于 5°。</li>
+<li>[ ] 三轴 90° 转动终点误差小于 5°。</li>
+<li>[ ] T-pose、左右侧和父子骨链正确。</li>
+<li>[ ] 虚拟胸部在 UI 和输出中明确标记。</li>
+</ul>
+<h2 id="doc5-_6">耐久与恢复</h2>
+<ul>
+<li>[ ] 完整系统连续运行 2 小时。</li>
+<li>[ ] USB 拔插、BLE 断开、单节点失联后可恢复。</li>
+<li>[ ] 无持续内存增长、无限队列积压或未报告的数据丢失。</li>
+<li>[ ] OTA 失败能回滚。</li>
+</ul></article><article id="doc6"><blockquote>
+<p><strong>旧版参考资料</strong>：适用于旧版 <code>旧版/IMU-tracker/</code>、<code>旧版/pose/</code> 和 <code>旧版/contracts/</code>，不代表当前 <code>源代码/</code> 的配置或验收状态。</p>
+</blockquote>
+<h1 id="doc6-imu-tracker-firmware">IMU-tracker firmware</h1>
+<p>ESP32-S3-MINI-1U-N4R2 motion-capture wearable-node and independent-gateway
+firmware, built with PlatformIO and the Arduino framework.</p>
+<h2 id="doc6-safety-and-verification-status">Safety and verification status</h2>
+<ul>
+<li>Pins follow the MINI software contract: ICM SPI/INT on GPIO8-12, LIS2MDLTR
+  I2C on GPIO35/36, AXP2101 I2C/IRQ on GPIO33/47/48 and native USB on GPIO19/20.</li>
+<li>The AXP2101 wrapper is deliberately read-only until every regulator and
+  charging value has been measured on the final PCB. XPowersLib 0.3.3 was
+  evaluated but its AXP2101 <code>begin()</code> calls <code>disableTSPinMeasure()</code>, a register
+  write, so the M2 read-only gate intentionally uses a local probe instead.</li>
+<li>Sensor polling is the default. <code>MOCAP_USE_ICM_INTERRUPT=1</code> compiles the
+  GPIO8 ISR -&gt; task notification -&gt; FIFO batch path, but must not be deployed
+  before its polarity, packet bytes and overflow recovery pass real-board tests.</li>
+<li>Sensor-to-PCB matrices are identity placeholders, clearly marked in
+  <code>sensor_frame.cpp</code>; replace them only after physical axis verification.</li>
+<li>No hardware acceptance result is claimed by this repository.</li>
+<li>The official ST <code>lis2mdl_reg.c/.h</code> snapshot is not vendored yet. Select and
+  record an exact upstream revision/license before replacing the small local
+  read/poll wrapper; this is an explicit M3 follow-up, not a completed artifact.</li>
+</ul>
+<h2 id="doc6-install">Install</h2>
+<p>Install Git, VS Code and the PlatformIO IDE extension. On Windows, install the
+Espressif USB/JTAG driver only if Device Manager does not recognize the board.</p>
+<h2 id="doc6-build-and-test">Build and test</h2>
+<pre><code class="language-powershell">pio run -e node_usb
+pio run -e node_fifo_lab
+pio run -e node_ble
+pio run -e node_espnow
+pio run -e gateway_usb
+pio run -e gateway_ble
+pio test -e native
+</code></pre>
+<ul>
+<li><code>node_usb</code>: conservative polling and USB raw-stream build.</li>
+<li><code>node_fifo_lab</code>: compile/bench path for GPIO8 ISR and FIFO; never enable it
+  before the polling and logic-analyzer bring-up gates pass.</li>
+<li><code>node_ble</code>: M6 single-board BLE validation build (<code>MOCAP-NODE-xx</code>).</li>
+<li><code>node_espnow</code>: wearable node sending raw frames to the gateway.</li>
+<li><code>gateway_usb</code>: ESP-NOW gateway forwarding 10 ms <code>RAW_BATCH</code> frames by USB.</li>
+<li><code>gateway_ble</code>: the same gateway using <code>MOCAP-GW-00</code> and the contracted BLE GATT
+  profile. BLE notifications use the contracted six-byte fragment header.</li>
+</ul>
+<p>The native protocol test contains an exact byte copy of
+<code>旧版/contracts/golden/raw-frame-v1.json</code> and fails if the firmware encoder drifts.</p>
+<h2 id="doc6-first-board-bring-up">First board bring-up</h2>
+<ol>
+<li>Verify 3.3 V and all enabled PMIC rails with a meter.</li>
+<li>Confirm the schematic/PCB route D- to GPIO19 and D+ to GPIO20.</li>
+<li>Prove BOOT + EN recovery and flash <code>node_usb</code>.</li>
+<li>Confirm the log reports 4 MB flash and 2 MB PSRAM.</li>
+<li>Confirm AXP2101, ICM-42688-P and LIS2MDLTR identities.</li>
+<li>Keep the board still and inspect gravity magnitude and gyro bias.</li>
+<li>Rotate one PCB axis at a time and record both sensor-to-PCB matrices.</li>
+<li>Run the USB stream and host CRC/sequence checker for 30 minutes.</li>
+<li>Only then test the gated FIFO, BLE and ESP-NOW builds.</li>
+</ol>
+<p>See <code>docs/BRINGUP_CHECKLIST.md</code> and <code>docs/TROUBLESHOOTING.md</code> for detailed gates.</p></article><article id="doc7"><h1 id="doc7-third-party-notices">Third-party notices</h1>
+<ul>
+<li>Espressif Arduino Core for ESP32 is supplied by the pinned PlatformIO platform
+  <code>espressif32@6.10.0</code> (Arduino-ESP32 2.0.17); consult its packages for licenses.</li>
+<li>NimBLE-Arduino <code>1.4.3</code> is used by the BLE build environments and
+  retains its upstream Apache-2.0 license.</li>
+<li>XPowersLib <code>0.3.3</code> was evaluated but is not linked in M2: its AXP2101
+  <code>begin()</code> performs <code>disableTSPinMeasure()</code>. That violates the required
+  read-only PMIC bring-up gate. The local AXP wrapper only reads chip/status
+  registers; adopt the pinned library after PMIC writes are approved on hardware.</li>
+<li>No vendor LIS2MDL source is copied yet. The current driver is a small
+  project-owned register wrapper. Before vendoring ST's <code>lis2mdl_reg.c/.h</code>, the
+  team must select an exact upstream revision and record its license here.</li>
+</ul></article><article id="doc8"><blockquote>
+<p><strong>旧版参考资料</strong>：适用于旧版 <code>旧版/IMU-tracker/</code>、<code>旧版/pose/</code> 和 <code>旧版/contracts/</code>，不代表当前 <code>源代码/</code> 的配置或验收状态。</p>
+</blockquote>
+<h1 id="doc8-board-bring-up-checklist">Board bring-up checklist</h1>
+<p>Record the PCB revision, board UID, operator and date for every result. A blank
+checkbox is not evidence of a pass.</p>
+<ul>
+<li>[ ] Visual inspection: shorts, reversed ICs, solder bridges and antenna keepout.</li>
+<li>[ ] USB schematic and PCB route D- to GPIO19 and D+ to GPIO20.</li>
+<li>[ ] EN and BOOT straps match the ESP32-S3-MINI-1U datasheet.</li>
+<li>[ ] 3.3 V and every enabled PMIC rail are measured before firmware writes PMIC registers.</li>
+<li>[ ] ROM download mode and recovery after a bad application are proven.</li>
+<li>[ ] Boot log reports 4 MB flash and 2 MB PSRAM.</li>
+<li>[ ] AXP2101 identity/status read succeeds; no rail write is performed.</li>
+<li>[ ] ICM-42688-P WHO_AM_I succeeds over SPI with CS idle high.</li>
+<li>[ ] LIS2MDLTR WHO_AM_I succeeds on the magnetometer-only I2C bus.</li>
+<li>[ ] Stationary acceleration magnitude is 0.95-1.05 g.</li>
+<li>[ ] Stationary gyro noise and bias are recorded.</li>
+<li>[ ] Magnetometer axes vary continuously during a slow rotation.</li>
+<li>[ ] Actual sensor-to-PCB matrices are recorded and reviewed.</li>
+<li>[ ] 100 Hz timestamps are monotonic for 30 minutes.</li>
+<li>[ ] USB raw stream passes CRC/sequence checks for 30 minutes.</li>
+</ul>
+<p>Do not enable ESP-NOW, BLE, PMIC writes, sleep or OTA until the relevant earlier
+checks have passed.</p></article><article id="doc9"><blockquote>
+<p><strong>旧版参考资料</strong>：适用于旧版 <code>旧版/IMU-tracker/</code>、<code>旧版/pose/</code> 和 <code>旧版/contracts/</code>，不代表当前 <code>源代码/</code> 的配置或验收状态。</p>
+</blockquote>
+<h1 id="doc9-troubleshooting">Troubleshooting</h1>
+<h2 id="doc9-no-usb-device">No USB device</h2>
+<p>Check D-/D+ routing first. ESP32-S3 native USB is fixed to GPIO19/GPIO20. Enter
+ROM download mode with BOOT and EN. Try a known data cable and inspect Windows
+Device Manager before changing firmware.</p>
+<h2 id="doc9-icm-42688-p-not-detected">ICM-42688-P not detected</h2>
+<p>Confirm CS is high before SPI starts, inspect 3.3 V and ground, then check SCK,
+MOSI and MISO on GPIO11/10/12. Reduce SPI to 1 MHz for diagnosis. Do not enable
+FIFO or interrupts until polling works.</p>
+<h2 id="doc9-lis2mdltr-not-detected">LIS2MDLTR not detected</h2>
+<p>It is on its own bus: SDA GPIO35 and SCL GPIO36. Check pull-ups and scan only that
+bus. The PMIC uses GPIO33/GPIO47 and must not share the same <code>TwoWire</code> object.</p>
+<h2 id="doc9-axp2101-status-unavailable">AXP2101 status unavailable</h2>
+<p>Check the PMIC bus on SDA GPIO33 and SCL GPIO47. The IRQ on GPIO48 is active low.
+The firmware intentionally does not change regulator or charge settings.</p>
+<h2 id="doc9-crc-or-sequence-errors">CRC or sequence errors</h2>
+<p>Capture raw bytes before the decoder, confirm every COBS frame ends in <code>00</code>, and
+compare against <code>旧版/contracts/golden</code>. CRC16-CCITT-FALSE covers header plus payload;
+the two CRC bytes are appended little-endian before COBS encoding.</p>
+<h2 id="doc9-wireless-overload">Wireless overload</h2>
+<p>First switch the gateway to USB to separate radio ingress from BLE egress. Check
+queue high-water marks, ESP-NOW receive drops, BLE notification failures and host
+decoder gaps independently.</p></article><article id="doc10"><blockquote>
+<p><strong>旧版参考资料</strong>：适用于旧版 <code>旧版/IMU-tracker/</code>、<code>旧版/pose/</code> 和 <code>旧版/contracts/</code>，不代表当前 <code>源代码/</code> 的配置或验收状态。</p>
+</blockquote>
+<h1 id="doc10-_1">契约变更记录</h1>
+<h2 id="doc10-100-2026-08-06">1.0.0 - 2026-08-06</h2>
+<ul>
+<li>冻结 ESP32-S3-MINI-1U-N4R2 板级接口。</li>
+<li>定义 COBS + CRC16-CCITT-FALSE 二进制协议 v1。</li>
+<li>定义 <code>RAW_SAMPLE</code> 的 24 字节定点载荷。</li>
+<li>定义 <code>pose.frame.v1</code> 和 <code>skeleton.frame.v1</code>。</li>
+<li>定义 14 个佩戴节点和独立网关节点。</li>
+<li>将胸部定义为随骨盆运动的虚拟骨段。</li>
+</ul></article><article id="doc11"><blockquote>
+<p><strong>旧版参考资料</strong>：适用于旧版 <code>旧版/IMU-tracker/</code>、<code>旧版/pose/</code> 和 <code>旧版/contracts/</code>，不代表当前 <code>源代码/</code> 的配置或验收状态。</p>
+</blockquote>
+<h1 id="doc11-_1">公共契约</h1>
+<p><code>旧版/contracts/</code> 是固件、Python 后端和 Web 前端共同遵守的唯一接口来源。</p>
+<h2 id="doc11-_2">变更规则</h2>
+<ol>
+<li>先修改契约、Schema 和 Golden Vectors，再修改消费者，最后修改生产者。</li>
+<li>固件和 Python 的二进制协议必须逐字节一致；姿态和运动学使用数值容差。</li>
+<li><code>旧版/contracts/golden/</code> 只能在独立的 Contract PR 中修改。</li>
+<li>不允许在实现 PR 中调整期望结果来迁就错误代码。</li>
+<li>不兼容变更必须增加协议或 Schema 主版本；兼容字段扩展增加次版本。</li>
+</ol>
+<p>运行契约自检：</p>
+<pre><code class="language-powershell">python 旧版/contracts/validate_contracts.py
+</code></pre>
+<h2 id="doc11-_3">当前版本</h2>
+<ul>
+<li>Wire protocol: <code>1</code></li>
+<li>Pose schema: <code>pose.frame.v1</code></li>
+<li>Skeleton schema: <code>skeleton.frame.v1</code></li>
+<li>Body profile: <code>human-14-v1</code></li>
+</ul></article><article id="doc12"><blockquote>
+<p><strong>旧版参考资料</strong>：适用于旧版 <code>旧版/IMU-tracker/</code>、<code>旧版/pose/</code> 和 <code>旧版/contracts/</code>，不代表当前 <code>源代码/</code> 的配置或验收状态。</p>
+</blockquote>
+<h1 id="doc12-ble-profile-v1">BLE Profile v1</h1>
+<h2 id="doc12-uuid">UUID</h2>
+<ul>
+<li>Service: <code>a0e50001-7c2b-4f18-a902-6f34bca10001</code></li>
+<li>Data: <code>a0e50002-7c2b-4f18-a902-6f34bca10001</code>，Notify</li>
+<li>Status: <code>a0e50003-7c2b-4f18-a902-6f34bca10001</code>，Read + Notify</li>
+<li>Control: <code>a0e50004-7c2b-4f18-a902-6f34bca10001</code>，Write + Write Response</li>
+</ul>
+<h2 id="doc12-_1">链路要求</h2>
+<ul>
+<li>请求 ATT MTU 247。</li>
+<li>在双方支持时启用 Data Length Extension 和 2M PHY。</li>
+<li>连接间隔目标 7.5–15 ms。</li>
+<li>BLE 回调只将数据放入有界队列，不访问传感器或运行姿态算法。</li>
+</ul>
+<h2 id="doc12-_2">分片</h2>
+<p>Data 特征中的每个分片头为：</p>
+<pre><code class="language-text">frame_id u16
+fragment_index u8
+fragment_count u8
+total_frame_length u16
+fragment_payload bytes
+</code></pre>
+<p><code>fragment_index</code> 从 0 开始。重组后得到完整的 COBS 帧；分片层不得改变帧 CRC 或字段语义。超时、重复、缺失分片必须丢弃整个帧并增加指标。</p></article><article id="doc13"><blockquote>
+<p><strong>旧版参考资料</strong>：适用于旧版 <code>旧版/IMU-tracker/</code>、<code>旧版/pose/</code> 和 <code>旧版/contracts/</code>，不代表当前 <code>源代码/</code> 的配置或验收状态。</p>
+</blockquote>
+<h1 id="doc13-coordinate-contract-v1">Coordinate Contract v1</h1>
+<h2 id="doc13-_1">项目世界坐标</h2>
+<p>使用右手坐标系：</p>
+<ul>
+<li><code>+X</code>：人体前方。</li>
+<li><code>+Y</code>：人体左方。</li>
+<li><code>+Z</code>：人体上方。</li>
+</ul>
+<p>所有向量进入线协议前先从传感器原生坐标转换到 PCB/board 坐标。</p>
+<h2 id="doc13-_2">四元数</h2>
+<ul>
+<li>顺序固定为 <code>[w, x, y, z]</code>。</li>
+<li><code>NodePose.quaternion_wxyz</code> 表示 <code>q_world_from_board</code>。</li>
+<li>输出前必须归一化；范数误差不得超过 <code>1e-3</code>。</li>
+<li>安装标定生成 <code>q_segment_from_board</code>，肢段世界姿态为：</li>
+</ul>
+<pre><code class="language-text">q_world_from_segment = q_world_from_board * inverse(q_segment_from_board)
+</code></pre>
+<h2 id="doc13-threejs">Three.js 映射</h2>
+<p>项目坐标 <code>(X_forward, Y_left, Z_up)</code> 映射到 Three.js：</p>
+<pre><code class="language-text">three = (-Y_left, Z_up, -X_forward)
+</code></pre>
+<p>向量和四元数必须使用同一基变换；禁止只交换位置轴而不转换旋转。</p>
+<h2 id="doc13-_3">第一版限制</h2>
+<ul>
+<li>骨盆根位置固定为 <code>[0, 0, 0]</code>。</li>
+<li>不对加速度做长期二次积分。</li>
+<li>胸部没有实体节点，其世界旋转继承骨盆并标记 <code>virtual=true</code>。</li>
+</ul></article><article id="doc14"><blockquote>
+<p><strong>旧版参考资料</strong>：适用于旧版 <code>旧版/IMU-tracker/</code>、<code>旧版/pose/</code> 和 <code>旧版/contracts/</code>，不代表当前 <code>源代码/</code> 的配置或验收状态。</p>
+</blockquote>
+<h1 id="doc14-hardware-contract-v1">Hardware Contract v1</h1>
+<h2 id="doc14-_1">权威来源</h2>
+<ul>
+<li>原理图：<code>1.硬件与数据手册/4.改后原理图和PCB/SCH_Schematic1_1-P1_2026-08-06.pdf</code></li>
+<li>EDA 工程：同目录的 <code>.eprj2</code></li>
+<li>实际主控：<code>ESP32-S3-MINI-1U-N4R2</code></li>
+<li>存储：4 MB Flash、2 MB QSPI PSRAM</li>
+<li>逻辑电源：3.3 V</li>
+</ul>
+<h2 id="doc14-gpio">GPIO</h2>
+<table>
+<thead>
+<tr>
+<th>外设</th>
+<th>信号</th>
+<th style="text-align: right;">GPIO</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ICM-42688-P</td>
+<td>INT1</td>
+<td style="text-align: right;">8</td>
+<td>高电平有效、上升沿；ISR 只通知任务</td>
+</tr>
+<tr>
+<td>ICM-42688-P</td>
+<td>CS</td>
+<td style="text-align: right;">9</td>
+<td>低有效；启动最先拉高</td>
+</tr>
+<tr>
+<td>ICM-42688-P</td>
+<td>MOSI</td>
+<td style="text-align: right;">10</td>
+<td>SPI 输出</td>
+</tr>
+<tr>
+<td>ICM-42688-P</td>
+<td>SCK</td>
+<td style="text-align: right;">11</td>
+<td>SPI 时钟</td>
+</tr>
+<tr>
+<td>ICM-42688-P</td>
+<td>MISO</td>
+<td style="text-align: right;">12</td>
+<td>SPI 输入</td>
+</tr>
+<tr>
+<td>LIS2MDLTR</td>
+<td>SDA</td>
+<td style="text-align: right;">35</td>
+<td>MAG I2C</td>
+</tr>
+<tr>
+<td>LIS2MDLTR</td>
+<td>SCL</td>
+<td style="text-align: right;">36</td>
+<td>MAG I2C</td>
+</tr>
+<tr>
+<td>AXP2101</td>
+<td>SDA</td>
+<td style="text-align: right;">33</td>
+<td>PMIC I2C</td>
+</tr>
+<tr>
+<td>AXP2101</td>
+<td>SCL</td>
+<td style="text-align: right;">47</td>
+<td>原理图网络名 <code>SCK</code></td>
+</tr>
+<tr>
+<td>AXP2101</td>
+<td>IRQ</td>
+<td style="text-align: right;">48</td>
+<td>低电平有效、下降沿；ISR 只通知任务</td>
+</tr>
+<tr>
+<td>Native USB</td>
+<td>D-</td>
+<td style="text-align: right;">19</td>
+<td>ESP32-S3 固定功能</td>
+</tr>
+<tr>
+<td>Native USB</td>
+<td>D+</td>
+<td style="text-align: right;">20</td>
+<td>ESP32-S3 固定功能</td>
+</tr>
+</tbody>
+</table>
+<p>ICM <code>CLKIN</code> 和 LIS 中断均未连接。固件不得为它们声明虚构的 GPIO。</p>
+<h2 id="doc14-_2">阻断项</h2>
+<p>当前导出的原理图仍把 USB 画在 GPIO18/19。进入 USB CDC 实机验收前必须完成：</p>
+<ol>
+<li>原理图改为 D-→GPIO19、D+→GPIO20。</li>
+<li>PCB 网络同步修订，或对已生产首板完成割线/飞线。</li>
+<li>用万用表检查 Type-C 到 MINI 模组对应焊盘的连续性。</li>
+<li>导出带新日期或新 PCB revision 的 PDF。</li>
+</ol>
+<p>在阻断项关闭前，USB 相关代码只能做编译和主机测试，不能宣告实机通过。</p>
+<h2 id="doc14-_3">上板前必须记录</h2>
+<ul>
+<li>ICM 封装 X/Y/Z 到 PCB 坐标的有符号置换矩阵。</li>
+<li>LIS 封装 X/Y/Z 到 PCB 坐标的有符号置换矩阵。</li>
+<li>AXP2101 上电后的 3.3 V 实测值和输出轨配置。</li>
+<li>BOOT/EN、首次烧录及崩溃恢复路径。</li>
+</ul>
+<p>这些值未确认前，驱动允许只读识别芯片，但不得写 PMIC 电压，也不得将坐标标记为“已校准”。</p></article><article id="doc15"><blockquote>
+<p><strong>旧版参考资料</strong>：适用于旧版 <code>旧版/IMU-tracker/</code>、<code>旧版/pose/</code> 和 <code>旧版/contracts/</code>，不代表当前 <code>源代码/</code> 的配置或验收状态。</p>
+</blockquote>
+<h1 id="doc15-node-layout-v1">Node Layout v1</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">node_id</th>
+<th>role</th>
+<th>segment</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td>gateway</td>
+<td>none</td>
+<td>独立 ESP-NOW→BLE/USB 网关</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td>wearable</td>
+<td>pelvis</td>
+<td>根姿态</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>wearable</td>
+<td>head</td>
+<td>头部</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>wearable</td>
+<td>left_upper_arm</td>
+<td>左上臂</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>wearable</td>
+<td>right_upper_arm</td>
+<td>右上臂</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td>wearable</td>
+<td>left_forearm</td>
+<td>左前臂</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>wearable</td>
+<td>right_forearm</td>
+<td>右前臂</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td>wearable</td>
+<td>left_hand</td>
+<td>左手</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td>wearable</td>
+<td>right_hand</td>
+<td>右手</td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td>wearable</td>
+<td>left_thigh</td>
+<td>左大腿</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td>wearable</td>
+<td>right_thigh</td>
+<td>右大腿</td>
+</tr>
+<tr>
+<td style="text-align: right;">11</td>
+<td>wearable</td>
+<td>left_shank</td>
+<td>左小腿</td>
+</tr>
+<tr>
+<td style="text-align: right;">12</td>
+<td>wearable</td>
+<td>right_shank</td>
+<td>右小腿</td>
+</tr>
+<tr>
+<td style="text-align: right;">13</td>
+<td>wearable</td>
+<td>left_foot</td>
+<td>左脚</td>
+</tr>
+<tr>
+<td style="text-align: right;">14</td>
+<td>wearable</td>
+<td>right_foot</td>
+<td>右脚</td>
+</tr>
+</tbody>
+</table>
+<p>MAC 地址只用于发现和配对；业务逻辑只使用写入 NVS 的 <code>node_id</code>。重复 ID 必须拒绝进入实时骨架。</p>
+<p>胸部、左右肩和左右髋关节由人体配置生成，不占用 node_id。胸部旋转继承骨盆，因此首版不能测量胸椎相对骨盆的独立扭转。</p></article><article id="doc16"><blockquote>
+<p><strong>旧版参考资料</strong>：适用于旧版 <code>旧版/IMU-tracker/</code>、<code>旧版/pose/</code> 和 <code>旧版/contracts/</code>，不代表当前 <code>源代码/</code> 的配置或验收状态。</p>
+</blockquote>
+<h1 id="doc16-motion-capture-wire-protocol-v1">Motion Capture Wire Protocol v1</h1>
+<h2 id="doc16-_1">帧</h2>
+<p>所有多字节整数均为小端。未编码帧为：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">偏移</th>
+<th>字段</th>
+<th>类型</th>
+<th>值/说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td>magic</td>
+<td>2 bytes</td>
+<td>ASCII <code>MC</code>，即 <code>4D 43</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>version</td>
+<td><code>u8</code></td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>message_type</td>
+<td><code>u8</code></td>
+<td>见消息表</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>payload_length</td>
+<td><code>u16</code></td>
+<td>仅 payload 长度</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>node_id</td>
+<td><code>u8</code></td>
+<td>网关为 0，佩戴节点为 1..14</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td>sequence</td>
+<td><code>u32</code></td>
+<td>每个发送节点独立递增，允许回绕</td>
+</tr>
+<tr>
+<td style="text-align: right;">11</td>
+<td>device_timestamp_us</td>
+<td><code>u64</code></td>
+<td>节点启动后的单调微秒时钟</td>
+</tr>
+<tr>
+<td style="text-align: right;">19</td>
+<td>payload</td>
+<td>bytes</td>
+<td>由消息类型决定</td>
+</tr>
+<tr>
+<td style="text-align: right;">19+N</td>
+<td>crc</td>
+<td><code>u16</code></td>
+<td>CRC16-CCITT-FALSE，小端</td>
+</tr>
+</tbody>
+</table>
+<p>CRC 参数：poly <code>0x1021</code>、init <code>0xFFFF</code>、refin/refout <code>false</code>、xorout <code>0x0000</code>，覆盖 header 和 payload。</p>
+<p>完整帧进行 COBS 编码，再追加 <code>00</code> 分隔符。解码器必须能忽略坏帧并从下一个 <code>00</code> 继续同步。</p>
+<h2 id="doc16-_2">消息类型</h2>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th style="text-align: right;">值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAW_SAMPLE</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>RAW_BATCH</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>DEVICE_STATUS</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>CONTROL</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>CONTROL_ACK</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr>
+<td>TIME_SYNC</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td>ERROR</td>
+<td style="text-align: right;">7</td>
+</tr>
+</tbody>
+</table>
+<h2 id="doc16-raw_sample">RAW_SAMPLE</h2>
+<p>固定 24 字节：</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>比例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accel_mg</td>
+<td><code>i16[3]</code></td>
+<td>1 mg/LSB</td>
+</tr>
+<tr>
+<td>gyro_dps_x10</td>
+<td><code>i16[3]</code></td>
+<td>0.1 deg/s/LSB</td>
+</tr>
+<tr>
+<td>mag_uT_x10</td>
+<td><code>i16[3]</code></td>
+<td>0.1 uT/LSB</td>
+</tr>
+<tr>
+<td>temperature_c_x100</td>
+<td><code>i16</code></td>
+<td>0.01 degC/LSB</td>
+</tr>
+<tr>
+<td>mag_age_us</td>
+<td><code>u16</code></td>
+<td>磁场样本相对当前 IMU 样本的年龄</td>
+</tr>
+<tr>
+<td>status_flags</td>
+<td><code>u16</code></td>
+<td>有效性和故障位</td>
+</tr>
+</tbody>
+</table>
+<p>标志位：</p>
+<ul>
+<li>bit 0: accel valid</li>
+<li>bit 1: gyro valid</li>
+<li>bit 2: mag valid</li>
+<li>bit 3: temperature valid</li>
+<li>bit 4: mag stale</li>
+<li>bit 5: FIFO overflow since previous sample</li>
+<li>bit 6: sample queue drop since previous sample</li>
+<li>bit 7: sensor bus error since previous sample</li>
+<li>其余位保留并发送为 0</li>
+</ul>
+<h2 id="doc16-raw_batch">RAW_BATCH</h2>
+<p>Payload 首字节为 <code>record_count</code>，其后重复：</p>
+<pre><code class="language-text">node_id u8
+sequence u32
+device_timestamp_us u64
+raw_sample_payload 24 bytes
+</code></pre>
+<p>单条记录 37 字节。网关只聚合，不修改原节点的 sequence 和 timestamp。</p>
+<h2 id="doc16-device_status">DEVICE_STATUS</h2>
+<p>以 1 Hz 发送，包含电池毫伏、电量百分比、充电/供电标志、实际采样率、FIFO 溢出、队列丢弃、总线错误、固件版本、配置版本和标定版本。</p>
+<h2 id="doc16-_3">控制和兼容规则</h2>
+<ul>
+<li>CONTROL 使用 TLV：<code>tag u8 + length u8 + value</code>。</li>
+<li>改变采样率、节点角色、标定或流状态必须返回 CONTROL_ACK。</li>
+<li>未识别消息类型可以跳过；不支持的协议版本必须拒绝。</li>
+<li>接收端先兼容新版本，发送端后切换；旧版本读取能力至少保留一个里程碑。</li>
+</ul></article><article id="doc17"><blockquote>
+<p><strong>旧版参考资料</strong>：适用于旧版 <code>旧版/IMU-tracker/</code>、<code>旧版/pose/</code> 和 <code>旧版/contracts/</code>，不代表当前 <code>源代码/</code> 的配置或验收状态。</p>
+</blockquote>
+<h1 id="doc17-pose">pose</h1>
+<p>电脑端姿态解算、同步、骨架运动学和 3D 可视化。</p>
+<ul>
+<li><code>backend/</code>：Python、FastAPI、串口/BLE/回放输入、标定、Mahony 融合和骨架输出。</li>
+<li><code>frontend/</code>：React、TypeScript、Three.js、连接状态、诊断、标定向导和回放界面。</li>
+</ul>
+<p>浏览器不直接读取 BLE 或原始 IMU 数据；所有设备通信和算法均由本地 Python 服务完成。</p>
+<p>具体运行命令见两个子项目各自的 README。</p></article><article id="doc18"><blockquote>
+<p><strong>旧版参考资料</strong>：适用于旧版 <code>旧版/IMU-tracker/</code>、<code>旧版/pose/</code> 和 <code>旧版/contracts/</code>，不代表当前 <code>源代码/</code> 的配置或验收状态。</p>
+</blockquote>
+<h1 id="doc18-motion-capture-backend">Motion-capture backend</h1>
+<p>This Python service owns transport decoding, raw recording/replay, sensor calibration,
+orientation fusion, multi-node synchronization, skeleton kinematics and the WebSocket API.
+The browser intentionally receives only versioned pose and skeleton messages.</p>
+<h2 id="doc18-quick-start">Quick start</h2>
+<pre><code class="language-powershell">cd 旧版/pose/backend
+uv sync --extra dev
+uv run mocap-server --source mock
+</code></pre>
+<p>Open the frontend separately and connect it to <code>ws://127.0.0.1:8000/ws/pose</code>.
+Use <code>--source serial --port COM5</code>, <code>--source ble</code>, or <code>--source replay --path &lt;session&gt;</code>
+when the corresponding hardware or recording is available.</p>
+<p>The wire contract is owned by <code>../../contracts/</code>. Runtime recordings and personal
+calibrations are generated outside this package and are not committed.</p>
+<p><code>/ws/pose</code> samples only the latest pose for node 1 at at most 60 Hz, so 14 x 100 Hz
+sensor traffic never becomes browser message traffic. Select another diagnostic node
+with <code>/ws/pose?node_id=2</code>. <code>/ws/skeleton</code> publishes the synchronized full skeleton at
+the configured render rate.</p>
+<h2 id="doc18-implementation-status">Implementation status</h2>
+<p>The protocol, Golden Vector, BLE fragment reassembly, raw batch expansion, replay,
+fusion, clock fitting, bounded reordering, 14-node kinematics and Mock WebSocket path
+are covered by automated tests. USB serial and BLE hardware paths require their M4/M6
+bench acceptance tests before being treated as production-ready.</p>
+<p>The recording CLI writes real raw sessions. The HTTP control endpoints currently
+provide the frontend's deterministic control/status flow; mounting calibration and
+record/playback orchestration remain operator-driven through the corresponding CLI
+commands until hardware sessions are available. OTA and firmware power policy belong
+to <code>IMU-tracker</code>, not this backend.</p></article><article id="doc19"><blockquote>
+<p><strong>旧版参考资料</strong>：适用于旧版 <code>旧版/IMU-tracker/</code>、<code>旧版/pose/</code> 和 <code>旧版/contracts/</code>，不代表当前 <code>源代码/</code> 的配置或验收状态。</p>
+</blockquote>
+<h1 id="doc19-pose-web-frontend">Pose Web Frontend</h1>
+<p>React、TypeScript 与 Three.js 编写的动作捕捉可视化端。浏览器不直接连接 BLE，也不运行姿态融合；它只消费 Python Bridge 发出的版本化 WebSocket JSON。</p>
+<h2 id="doc19-_1">启动</h2>
+<pre><code class="language-powershell">pnpm install --frozen-lockfile
+pnpm dev
+</code></pre>
+<p>默认开发地址为 <code>http://127.0.0.1:5173</code>，Vite 将 <code>/api</code> 和 <code>/ws</code> 代理到 <code>http://127.0.0.1:8000</code>。可用环境变量覆盖：</p>
+<pre><code class="language-text">VITE_MOCAP_POSE_WS_URL=ws://127.0.0.1:8000/ws/pose
+VITE_MOCAP_SKELETON_WS_URL=ws://127.0.0.1:8000/ws/skeleton
+VITE_MOCAP_API_URL=http://127.0.0.1:8000
+</code></pre>
+<h2 id="doc19-_2">数据契约</h2>
+<ul>
+<li>单节点姿态：<code>type: "pose.frame.v1"</code>、<code>schema_version: 1</code>。</li>
+<li>骨架：<code>type: "skeleton.frame.v1"</code>、<code>schema_version: 1</code>。</li>
+<li>四元数顺序始终为 <code>[w,x,y,z]</code>。</li>
+<li>项目坐标 <code>+X</code> 向前、<code>+Y</code> 向左、<code>+Z</code> 向上；渲染坐标映射为 <code>(-Y,Z,-X)</code>。</li>
+<li>胸部无实体节点，必须由后端标记为 <code>virtual: true</code>。</li>
+</ul>
+<p>收到的消息会先通过 <code>src/types/messages.ts</code> 做运行时校验，非法、未知版本或非有限数值不会进入状态和渲染流水线。</p>
+<h2 id="doc19-_3">验证</h2>
+<pre><code class="language-powershell">pnpm test
+pnpm build
+</code></pre>
+<p>测试覆盖公共消息契约、坐标/四元数基变换和骨架帧插值。</p></article><article id="doc20"><blockquote>
+<p><strong>运行位置</strong>：本文命令在代码仓库的 <code>源代码/BLE/</code> 中执行，说明文件所在文件夹不是程序目录。</p>
+</blockquote>
+<h1 id="doc20-esp32-s3-imu-ble">ESP32-S3 IMU BLE 通信实验版</h1>
+<p>本目录是独立的 BLE 通信版本，原 USB 串口工程保持不变。传感器仍以约 20 Hz 生成原来的 11 列 CSV；同一帧保留 USB 串口调试输出，并通过 BLE GATT Notify 发送。</p>
+<h2 id="doc20-_1">安装与运行</h2>
+<pre><code class="language-powershell">python -m pip install -r requirements.txt
+pio run
+pio run -t upload --upload-port COM21
+python run_dashboard.py
+</code></pre>
+<p>浏览器打开 <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>，通信方式选择 <code>BLE</code>，点击“扫描设备”，选择 <code>IMU-MOTION-01</code> 后连接。</p>
+<h2 id="doc20-ble">BLE 参数</h2>
+<ul>
+<li>设备名：<code>IMU-MOTION-01</code></li>
+<li>Service UUID：<code>7d2a0001-6c8a-4f6b-9c65-4f4d55494d55</code></li>
+<li>Notify UUID：<code>7d2a0002-6c8a-4f6b-9c65-4f4d55494d55</code></li>
+<li>数据格式：原 11 列 CSV，以换行符结束</li>
+<li>接收端：Windows Python 后端，依赖 Bleak</li>
+</ul>
+<p>网页可在 <code>USB串口</code> 与 <code>BLE</code> 之间切换，同一时间只连接一种通信方式。两种方式共用 CSV 解析、姿态融合、记录与质量统计，便于比较帧率、估算丢包率、无效帧和稳定性。</p>
+<h2 id="doc20-_2">当前限制</h2>
+<p>第一版未加入帧序号和设备时间戳，因此丢包率仍为到达间隔估算值，不能表示严格的真实丢包率或端到端延迟。需要精确比较时，应在下一版协议加入设备侧帧序号和单调时钟时间戳。</p></article><article id="doc21"><blockquote>
+<p><strong>运行位置</strong>：本文命令在代码仓库的 <code>源代码/BLE/</code> 中执行，说明文件所在文件夹不是程序目录。</p>
+</blockquote>
+<h1 id="doc21-_1">上位机使用：查看、记录与导出</h1>
+<h2 id="doc21-_2">启动</h2>
+<pre><code class="language-powershell">python -m pip install -r requirements.txt
+python run_dashboard.py
+</code></pre>
+<p>浏览器打开 <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>，按<a href="#doc20">连接步骤</a>选择通信方式并连接设备。使用 USB 时，请先关闭占用串口的监视器。</p>
+<h2 id="doc21-_3">当前数据映射</h2>
+<ul>
+<li>当前 11 列 CSV 数据映射到“右腕”。</li>
+<li>其余 13 个节点显示为静止模拟状态。</li>
+<li>每次记录在 <code>recordings/imu-日期-时间/</code> 生成三个 UTF-8 BOM CSV：</li>
+<li><code>imu-data.csv</code>：14 节点姿态与传感器数据；</li>
+<li><code>body-trajectory.csv</code>：骨盆中心短时趋势估算；</li>
+<li><code>node-trajectory.csv</code>：所选节点的骨骼约束相对轨迹。</li>
+<li>CSV 中文表头可由 Excel 直接打开。人体整体轨迹不是绝对定位结果。</li>
+<li>接收质量采用最近 2 秒窗口计算速率；当前无包序号，因此丢包率为基于 20 Hz 到达间隔的估算值。</li>
+<li>网页顶部“预览记录”可查看会话元数据和 CSV 前 100 行；“导出记录”会将三个 CSV 打包为 ZIP 下载。正在写入的会话需停止记录后才能导出。</li>
+</ul>
+<h2 id="doc21-_4">测试</h2>
+<pre><code class="language-powershell">python -m unittest discover -s tests -v
+node --check web/app.js
+</code></pre>
+<p>协议变化时，优先新增或替换 <code>dashboard/protocol.py</code> 中的适配器，不改变页面使用的标准节点消息。</p></article><article id="doc22"><blockquote>
+<p><strong>运行位置</strong>：本文命令在代码仓库的 <code>源代码/BLE/</code> 中执行，说明文件所在文件夹不是程序目录。</p>
+</blockquote>
+<h1 id="doc22-ble">BLE 版：硬件连接与烧录</h1>
+<p>先按<a href="#doc20">无线连接步骤</a>配置和运行。本页主要介绍三种版本共用的传感器接线与烧录方法。</p>
+<p>本工程基于 <strong>ESP32-S3-MINI-1</strong> 模块，通过 <strong>SPI</strong> 读取 <strong>ICM-42688-P</strong> 六轴惯性传感器（加速度计 + 陀螺仪），通过 <strong>I²C</strong> 读取 <strong>LIS2MDLTR</strong> 三轴磁力计，并将数据通过 USB 串口输出到电脑显示。</p>
+<hr />
+<h2 id="doc22-1">1. 硬件组成</h2>
+<table>
+<thead>
+<tr>
+<th>器件</th>
+<th>型号</th>
+<th>封装</th>
+<th>接口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主控</td>
+<td>ESP32-S3-MINI-1 (N4R2)</td>
+<td>SMD 模块</td>
+<td>—</td>
+</tr>
+<tr>
+<td>IMU</td>
+<td>ICM-42688-P</td>
+<td>LGA-14 (3.0×2.5 mm)</td>
+<td>SPI</td>
+</tr>
+<tr>
+<td>磁力计</td>
+<td>LIS2MDLTR</td>
+<td>LGA-12 (2.0×2.0 mm)</td>
+<td>I²C</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：实测该模块 Flash 为 <strong>4 MB</strong>（N4R2 变体），故 <code>platformio.ini</code> 中已配置 <code>board_build.flash_size = 4MB</code>。</p>
+</blockquote>
+<hr />
+<h2 id="doc22-2">2. 引脚连接</h2>
+<p>连接关系依据原理图网表文件 <code>Netlist_Schematic1_2026-08-26.tel</code> 与 ESP32-S3-MINI-1 数据手册（v1.7）核对推导得出。</p>
+<h3 id="doc22-21-icm-42688-pspi">2.1 ICM-42688-P（SPI）</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>ESP32-S3 GPIO</th>
+<th>模块引脚号</th>
+<th>ICM-42688 引脚</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IMU_SCK</td>
+<td>GPIO12</td>
+<td>16</td>
+<td>U10.13 SCLK</td>
+</tr>
+<tr>
+<td>IMU_MOSI</td>
+<td>GPIO11</td>
+<td>15</td>
+<td>U10.14 SDI</td>
+</tr>
+<tr>
+<td>IMU_MISO</td>
+<td>GPIO13</td>
+<td>17</td>
+<td>U10.1 SDO</td>
+</tr>
+<tr>
+<td>IMU_/SS</td>
+<td>GPIO10</td>
+<td>14</td>
+<td>U10.12 CS</td>
+</tr>
+<tr>
+<td>IMU_INT (可选)</td>
+<td>GPIO9</td>
+<td>13</td>
+<td>U10.4 INT1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="doc22-22-lis2mdltri2c-0x1e">2.2 LIS2MDLTR（I²C，器件地址 0x1E）</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>ESP32-S3 GPIO</th>
+<th>模块引脚号</th>
+<th>LIS2MDL 引脚</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I²C SCL</td>
+<td>GPIO33</td>
+<td>28</td>
+<td>U2.1 SCL/SPC</td>
+</tr>
+<tr>
+<td>I²C SDA</td>
+<td>GPIO34</td>
+<td>29</td>
+<td>U2.4 SDA/SDI/SDO</td>
+</tr>
+<tr>
+<td>INT/DRDY (可选)</td>
+<td>GPIO47</td>
+<td>27</td>
+<td>U2.7 INT/DRDY</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注意：LIS2MDL 使用 I²C 通信时，其 <strong>CS 引脚（U2.3）必须接高电平</strong>（VDD_IO）。“CS 悬空”是旧资料的描述；2026-09-14 导出的原理图已将 CS 接到 VDD_3V3。实际板卡是否连通仍需测量。</p>
+</blockquote>
+<hr />
+<h2 id="doc22-3">3. 输出数据格式</h2>
+<p>串口波特率 <strong>115200</strong>，每行一组数据（CSV 格式），约 20 Hz：</p>
+<pre><code>AccX(g),AccY(g),AccZ(g),GyrX(dps),GyrY(dps),GyrZ(dps),ICM温度(C),MagX(mG),MagY(mG),MagZ(mG),LIS温度(raw)
+-0.0247,-0.5354,0.8613,0.669,0.637,0.349,29.14,-108.0,648.0,-16.5,-72
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>含义</th>
+<th>单位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AccX/Y/Z</td>
+<td>三轴加速度</td>
+<td>g（重力加速度）</td>
+</tr>
+<tr>
+<td>GyrX/Y/Z</td>
+<td>三轴角速度</td>
+<td>°/s（度每秒）</td>
+</tr>
+<tr>
+<td>ICM温度</td>
+<td>ICM-42688 内部温度</td>
+<td>°C</td>
+</tr>
+<tr>
+<td>MagX/Y/Z</td>
+<td>三轴磁场强度</td>
+<td>mG（毫高斯）</td>
+</tr>
+<tr>
+<td>LIS温度</td>
+<td>LIS2MDL 温度传感器原始值</td>
+<td>LSB</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>量程：加速度 ±8 g，陀螺仪 ±2000 °/s，磁场 ±49 gauss（1.5 mgauss/LSB）。</p>
+</blockquote>
+<hr />
+<h2 id="doc22-4">4. 环境要求</h2>
+<ul>
+<li><a href="https://platformio.org/install">PlatformIO Core</a>（或 VS Code + PlatformIO 扩展）</li>
+<li>ESP32-S3 开发板/模块，USB 连接电脑</li>
+</ul>
+<hr />
+<h2 id="doc22-5">5. 编译与烧录</h2>
+<p>在工程根目录（<code>platformio.ini</code> 所在目录）执行：</p>
+<pre><code class="language-bash"># 编译
+pio run
+
+# 烧录（COM7 为示例端口，请按实际修改）
+pio run -t upload --upload-port COM7
+</code></pre>
+<blockquote>
+<p>提示：
+- 本工程使用 ESP32-S3 <strong>内置 USB-Serial/JTAG</strong> 烧录/调试，无需外部 USB-TTL 转换器。
+- 若遇到 <code>Could not open COM7, the port is busy</code>（设备重启循环导致端口短暂不可用），可<strong>多次重试</strong>，或按住 <strong>BOOT 键</strong>再复位后烧录。
+- 查看可用串口：<code>pio device list</code></p>
+</blockquote>
+<hr />
+<h2 id="doc22-6">6. 电脑上查看数据</h2>
+<ol>
+<li>用 USB 线连接板子到电脑，确认设备管理器中枚举出串口（VID <code>303A</code>，PID <code>1001</code>，例如 <code>COM7</code>）。</li>
+<li>打开任意串口监视器，波特率选择 <strong>115200</strong>：
+   - PlatformIO 命令：<code>pio device monitor -p COM7 -b 115200</code>
+   - 或使用 VS Code 的 <em>Serial Monitor</em> 插件
+   - 或 Arduino IDE 的串口监视器</li>
+<li>观察数据流即可。</li>
+</ol>
+<hr />
+<h2 id="doc22-7">7. 工程文件结构</h2>
+<pre><code>源代码/
+├── platformio.ini          # PlatformIO 工程配置
+├── Netlist_Schematic1_2026-08-26.tel   # 原理图网表（硬件连接依据）
+├── src/
+│   └── main.cpp            # 主程序（传感器驱动 + 串口输出）
+├── include/                # 头文件目录
+├── lib/                    # 本地库目录
+├── test/                   # 单元测试目录
+└── .pio/                   # 构建产物（自动生成）
+</code></pre>
+<hr />
+<h2 id="doc22-8">8. 常见问题排查</h2>
+<table>
+<thead>
+<tr>
+<th>现象</th>
+<th>可能原因</th>
+<th>解决办法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>串口无任何输出</td>
+<td><code>Serial</code> 未走 USB 串口</td>
+<td>确认 <code>platformio.ini</code> 中有 <code>-DARDUINO_USB_CDC_ON_BOOT=1</code></td>
+</tr>
+<tr>
+<td>启动崩溃循环（<code>Detected size ... smaller than the size in the binary image header(8192k)</code>）</td>
+<td>上传时的 Flash 容量参数与实际不符</td>
+<td>在 <code>platformio.ini</code> 中同时设置 <code>board_build.flash_size = 4MB</code> <strong>和</strong> <code>board_upload.flash_size = 4MB</code>，再重新编译上传</td>
+</tr>
+<tr>
+<td>打开 COM 口提示"拒绝访问/端口被占用"</td>
+<td>有多个串口监视器进程同时打开了端口</td>
+<td>Windows 上一个 COM 口只能被一个程序占用：关闭多余的 <code>pio device monitor</code> / 串口工具，只保留一个监视器；也可在任务管理器结束多余的 <code>pio.exe</code> / <code>platformio.exe</code> 进程</td>
+</tr>
+<tr>
+<td><code>[ICM-42688] 初始化失败</code></td>
+<td>SPI 接线错误 / 引脚映射不对</td>
+<td>核对第 2 节引脚表</td>
+</tr>
+<tr>
+<td><code>[LIS2MDL] 初始化失败</code></td>
+<td>I²C 接线错误 / CS 未拉高</td>
+<td>核对引脚表；确认 LIS2MDL 的 CS 引脚接高电平</td>
+</tr>
+<tr>
+<td>上传时报端口繁忙</td>
+<td>设备正在重启，端口被占用</td>
+<td>重试多次；或按住 BOOT 再复位后烧录</td>
+</tr>
+<tr>
+<td>磁力计数据明显偏大</td>
+<td>附近有强磁场干扰</td>
+<td>远离电机、扬声器等磁性物体</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="doc22-9">9. 扩展说明</h2>
+<ul>
+<li>若更换为 <strong>8 MB Flash</strong> 的 <code>-N8</code> 模块：删除 <code>platformio.ini</code> 中的 <code>board_build.flash_size = 4MB</code>、<code>board_upload.flash_size = 4MB</code> 和 <code>board_build.partitions = default.csv</code> 三行（恢复为板级默认 8 MB 配置）。</li>
+<li>ICM-42688 初始化时会自动执行<strong>陀螺仪零偏校准</strong>（约 1~2 秒，期间请保持板子静止）。</li>
+<li>LIS2MDL 配置为连续测量模式 100 Hz，启用了偏移消除与数据块更新（BDU）。</li>
+</ul></article><article id="doc23"><blockquote>
+<p><strong>运行位置</strong>：本文命令在代码仓库的 <code>源代码/WIFI/</code> 中执行，说明文件所在文件夹不是程序目录。</p>
+</blockquote>
+<h1 id="doc23-_1">上位机使用：查看、记录与导出</h1>
+<h2 id="doc23-_2">启动</h2>
+<pre><code class="language-powershell">python -m pip install -r requirements.txt
+python run_dashboard.py
+</code></pre>
+<p>浏览器打开 <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>，按<a href="#doc25">连接步骤</a>选择通信方式并连接设备。使用 USB 时，请先关闭占用串口的监视器。</p>
+<h2 id="doc23-_3">当前数据映射</h2>
+<ul>
+<li>当前 11 列 CSV 数据映射到“右腕”。</li>
+<li>其余 13 个节点显示为静止模拟状态。</li>
+<li>每次记录在 <code>recordings/imu-日期-时间/</code> 生成三个 UTF-8 BOM CSV：</li>
+<li><code>imu-data.csv</code>：14 节点姿态与传感器数据；</li>
+<li><code>body-trajectory.csv</code>：骨盆中心短时趋势估算；</li>
+<li><code>node-trajectory.csv</code>：所选节点的骨骼约束相对轨迹。</li>
+<li>CSV 中文表头可由 Excel 直接打开。人体整体轨迹不是绝对定位结果。</li>
+<li>接收质量采用最近 2 秒窗口计算速率；当前无包序号，因此丢包率为基于 20 Hz 到达间隔的估算值。</li>
+<li>网页顶部“预览记录”可查看会话元数据和 CSV 前 100 行；“导出记录”会将三个 CSV 打包为 ZIP 下载。正在写入的会话需停止记录后才能导出。</li>
+</ul>
+<h2 id="doc23-_4">测试</h2>
+<pre><code class="language-powershell">python -m unittest discover -s tests -v
+node --check web/app.js
+</code></pre>
+<p>协议变化时，优先新增或替换 <code>dashboard/protocol.py</code> 中的适配器，不改变页面使用的标准节点消息。</p></article><article id="doc24"><blockquote>
+<p><strong>运行位置</strong>：本文命令在代码仓库的 <code>源代码/WIFI/</code> 中执行，说明文件所在文件夹不是程序目录。</p>
+</blockquote>
+<h1 id="doc24-wi-fi">Wi-Fi 版：硬件连接与烧录</h1>
+<p>先按<a href="#doc25">无线连接步骤</a>配置和运行。本页主要介绍三种版本共用的传感器接线与烧录方法。</p>
+<p>本工程基于 <strong>ESP32-S3-MINI-1</strong> 模块，通过 <strong>SPI</strong> 读取 <strong>ICM-42688-P</strong> 六轴惯性传感器（加速度计 + 陀螺仪），通过 <strong>I²C</strong> 读取 <strong>LIS2MDLTR</strong> 三轴磁力计，并将数据通过 USB 串口输出到电脑显示。</p>
+<hr />
+<h2 id="doc24-1">1. 硬件组成</h2>
+<table>
+<thead>
+<tr>
+<th>器件</th>
+<th>型号</th>
+<th>封装</th>
+<th>接口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主控</td>
+<td>ESP32-S3-MINI-1 (N4R2)</td>
+<td>SMD 模块</td>
+<td>—</td>
+</tr>
+<tr>
+<td>IMU</td>
+<td>ICM-42688-P</td>
+<td>LGA-14 (3.0×2.5 mm)</td>
+<td>SPI</td>
+</tr>
+<tr>
+<td>磁力计</td>
+<td>LIS2MDLTR</td>
+<td>LGA-12 (2.0×2.0 mm)</td>
+<td>I²C</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：实测该模块 Flash 为 <strong>4 MB</strong>（N4R2 变体），故 <code>platformio.ini</code> 中已配置 <code>board_build.flash_size = 4MB</code>。</p>
+</blockquote>
+<hr />
+<h2 id="doc24-2">2. 引脚连接</h2>
+<p>连接关系依据原理图网表文件 <code>Netlist_Schematic1_2026-08-26.tel</code> 与 ESP32-S3-MINI-1 数据手册（v1.7）核对推导得出。</p>
+<h3 id="doc24-21-icm-42688-pspi">2.1 ICM-42688-P（SPI）</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>ESP32-S3 GPIO</th>
+<th>模块引脚号</th>
+<th>ICM-42688 引脚</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IMU_SCK</td>
+<td>GPIO12</td>
+<td>16</td>
+<td>U10.13 SCLK</td>
+</tr>
+<tr>
+<td>IMU_MOSI</td>
+<td>GPIO11</td>
+<td>15</td>
+<td>U10.14 SDI</td>
+</tr>
+<tr>
+<td>IMU_MISO</td>
+<td>GPIO13</td>
+<td>17</td>
+<td>U10.1 SDO</td>
+</tr>
+<tr>
+<td>IMU_/SS</td>
+<td>GPIO10</td>
+<td>14</td>
+<td>U10.12 CS</td>
+</tr>
+<tr>
+<td>IMU_INT (可选)</td>
+<td>GPIO9</td>
+<td>13</td>
+<td>U10.4 INT1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="doc24-22-lis2mdltri2c-0x1e">2.2 LIS2MDLTR（I²C，器件地址 0x1E）</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>ESP32-S3 GPIO</th>
+<th>模块引脚号</th>
+<th>LIS2MDL 引脚</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I²C SCL</td>
+<td>GPIO33</td>
+<td>28</td>
+<td>U2.1 SCL/SPC</td>
+</tr>
+<tr>
+<td>I²C SDA</td>
+<td>GPIO34</td>
+<td>29</td>
+<td>U2.4 SDA/SDI/SDO</td>
+</tr>
+<tr>
+<td>INT/DRDY (可选)</td>
+<td>GPIO47</td>
+<td>27</td>
+<td>U2.7 INT/DRDY</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注意：LIS2MDL 使用 I²C 通信时，其 <strong>CS 引脚（U2.3）必须接高电平</strong>（VDD_IO）。“CS 悬空”是旧资料的描述；2026-09-14 导出的原理图已将 CS 接到 VDD_3V3。实际板卡是否连通仍需测量。</p>
+</blockquote>
+<hr />
+<h2 id="doc24-3">3. 输出数据格式</h2>
+<p>串口波特率 <strong>115200</strong>，每行一组数据（CSV 格式），约 20 Hz：</p>
+<pre><code>AccX(g),AccY(g),AccZ(g),GyrX(dps),GyrY(dps),GyrZ(dps),ICM温度(C),MagX(mG),MagY(mG),MagZ(mG),LIS温度(raw)
+-0.0247,-0.5354,0.8613,0.669,0.637,0.349,29.14,-108.0,648.0,-16.5,-72
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>含义</th>
+<th>单位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AccX/Y/Z</td>
+<td>三轴加速度</td>
+<td>g（重力加速度）</td>
+</tr>
+<tr>
+<td>GyrX/Y/Z</td>
+<td>三轴角速度</td>
+<td>°/s（度每秒）</td>
+</tr>
+<tr>
+<td>ICM温度</td>
+<td>ICM-42688 内部温度</td>
+<td>°C</td>
+</tr>
+<tr>
+<td>MagX/Y/Z</td>
+<td>三轴磁场强度</td>
+<td>mG（毫高斯）</td>
+</tr>
+<tr>
+<td>LIS温度</td>
+<td>LIS2MDL 温度传感器原始值</td>
+<td>LSB</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>量程：加速度 ±8 g，陀螺仪 ±2000 °/s，磁场 ±49 gauss（1.5 mgauss/LSB）。</p>
+</blockquote>
+<hr />
+<h2 id="doc24-4">4. 环境要求</h2>
+<ul>
+<li><a href="https://platformio.org/install">PlatformIO Core</a>（或 VS Code + PlatformIO 扩展）</li>
+<li>ESP32-S3 开发板/模块，USB 连接电脑</li>
+</ul>
+<hr />
+<h2 id="doc24-5">5. 编译与烧录</h2>
+<p>在工程根目录（<code>platformio.ini</code> 所在目录）执行：</p>
+<pre><code class="language-bash"># 编译
+pio run
+
+# 烧录（COM7 为示例端口，请按实际修改）
+pio run -t upload --upload-port COM7
+</code></pre>
+<blockquote>
+<p>提示：
+- 本工程使用 ESP32-S3 <strong>内置 USB-Serial/JTAG</strong> 烧录/调试，无需外部 USB-TTL 转换器。
+- 若遇到 <code>Could not open COM7, the port is busy</code>（设备重启循环导致端口短暂不可用），可<strong>多次重试</strong>，或按住 <strong>BOOT 键</strong>再复位后烧录。
+- 查看可用串口：<code>pio device list</code></p>
+</blockquote>
+<hr />
+<h2 id="doc24-6">6. 电脑上查看数据</h2>
+<ol>
+<li>用 USB 线连接板子到电脑，确认设备管理器中枚举出串口（VID <code>303A</code>，PID <code>1001</code>，例如 <code>COM7</code>）。</li>
+<li>打开任意串口监视器，波特率选择 <strong>115200</strong>：
+   - PlatformIO 命令：<code>pio device monitor -p COM7 -b 115200</code>
+   - 或使用 VS Code 的 <em>Serial Monitor</em> 插件
+   - 或 Arduino IDE 的串口监视器</li>
+<li>观察数据流即可。</li>
+</ol>
+<hr />
+<h2 id="doc24-7">7. 工程文件结构</h2>
+<pre><code>源代码/
+├── platformio.ini          # PlatformIO 工程配置
+├── Netlist_Schematic1_2026-08-26.tel   # 原理图网表（硬件连接依据）
+├── src/
+│   └── main.cpp            # 主程序（传感器驱动 + 串口输出）
+├── include/                # 头文件目录
+├── lib/                    # 本地库目录
+├── test/                   # 单元测试目录
+└── .pio/                   # 构建产物（自动生成）
+</code></pre>
+<hr />
+<h2 id="doc24-8">8. 常见问题排查</h2>
+<table>
+<thead>
+<tr>
+<th>现象</th>
+<th>可能原因</th>
+<th>解决办法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>串口无任何输出</td>
+<td><code>Serial</code> 未走 USB 串口</td>
+<td>确认 <code>platformio.ini</code> 中有 <code>-DARDUINO_USB_CDC_ON_BOOT=1</code></td>
+</tr>
+<tr>
+<td>启动崩溃循环（<code>Detected size ... smaller than the size in the binary image header(8192k)</code>）</td>
+<td>上传时的 Flash 容量参数与实际不符</td>
+<td>在 <code>platformio.ini</code> 中同时设置 <code>board_build.flash_size = 4MB</code> <strong>和</strong> <code>board_upload.flash_size = 4MB</code>，再重新编译上传</td>
+</tr>
+<tr>
+<td>打开 COM 口提示"拒绝访问/端口被占用"</td>
+<td>有多个串口监视器进程同时打开了端口</td>
+<td>Windows 上一个 COM 口只能被一个程序占用：关闭多余的 <code>pio device monitor</code> / 串口工具，只保留一个监视器；也可在任务管理器结束多余的 <code>pio.exe</code> / <code>platformio.exe</code> 进程</td>
+</tr>
+<tr>
+<td><code>[ICM-42688] 初始化失败</code></td>
+<td>SPI 接线错误 / 引脚映射不对</td>
+<td>核对第 2 节引脚表</td>
+</tr>
+<tr>
+<td><code>[LIS2MDL] 初始化失败</code></td>
+<td>I²C 接线错误 / CS 未拉高</td>
+<td>核对引脚表；确认 LIS2MDL 的 CS 引脚接高电平</td>
+</tr>
+<tr>
+<td>上传时报端口繁忙</td>
+<td>设备正在重启，端口被占用</td>
+<td>重试多次；或按住 BOOT 再复位后烧录</td>
+</tr>
+<tr>
+<td>磁力计数据明显偏大</td>
+<td>附近有强磁场干扰</td>
+<td>远离电机、扬声器等磁性物体</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="doc24-9">9. 扩展说明</h2>
+<ul>
+<li>若更换为 <strong>8 MB Flash</strong> 的 <code>-N8</code> 模块：删除 <code>platformio.ini</code> 中的 <code>board_build.flash_size = 4MB</code>、<code>board_upload.flash_size = 4MB</code> 和 <code>board_build.partitions = default.csv</code> 三行（恢复为板级默认 8 MB 配置）。</li>
+<li>ICM-42688 初始化时会自动执行<strong>陀螺仪零偏校准</strong>（约 1~2 秒，期间请保持板子静止）。</li>
+<li>LIS2MDL 配置为连续测量模式 100 Hz，启用了偏移消除与数据块更新（BDU）。</li>
+</ul></article><article id="doc25"><blockquote>
+<p><strong>运行位置</strong>：本文命令在代码仓库的 <code>源代码/WIFI/</code> 中执行，说明文件所在文件夹不是程序目录。</p>
+</blockquote>
+<h1 id="doc25-esp32-s3-imu-wi-fi-tcp">ESP32-S3 IMU Wi-Fi TCP 通信版</h1>
+<p>本项目让 ESP32-S3 和电脑连接同一个路由器。ESP32-S3 使用 DHCP 获取局域网地址，并在 TCP 端口 9000 发送约 20 Hz、11列、换行结尾的 CSV。USB串口输出同时保留。</p>
+<h2 id="doc25-1">1. 配置路由器</h2>
+<p>先在本版本目录安装电脑端依赖并复制配置模板（已有配置时不要覆盖）：</p>
+<pre><code class="language-powershell">python -m pip install -r requirements.txt
+Copy-Item include/wifi_config.example.h include/wifi_config.h
+</code></pre>
+<p>然后编辑 <code>include/wifi_config.h</code>：</p>
+<pre><code class="language-cpp">#define WIFI_SSID &quot;路由器名称&quot;
+#define WIFI_PASSWORD &quot;路由器密码&quot;
+#define WIFI_TCP_PORT 9000
+</code></pre>
+<p>ESP32-S3仅支持 2.4 GHz Wi-Fi，请确保该名称对应2.4 GHz网络。配置文件已加入 <code>.gitignore</code>，不要把真实密码提交到仓库。</p>
+<h2 id="doc25-2">2. 编译与烧录</h2>
+<pre><code class="language-powershell">cd &quot;E:\AAA动作捕捉系统\2.代码\源代码\WIFI&quot;
+python -m platformio run
+python -m platformio run -t upload --upload-port COM21
+</code></pre>
+<h2 id="doc25-3-esp32">3. 获取 ESP32 地址</h2>
+<pre><code class="language-powershell">python -m platformio device monitor -p COM21 -b 115200
+</code></pre>
+<p>找到以下输出并记下 IP：</p>
+<pre><code class="language-text">[WiFi] Connected
+[WiFi] IP: 192.168.1.120
+[TCP] Listening on port 9000
+</code></pre>
+<p>关闭串口监视器后启动上位机：</p>
+<pre><code class="language-powershell">python run_dashboard.py
+</code></pre>
+<p>打开 <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>，选择 <code>Wi-Fi</code>，输入串口日志中的 IP 和端口 <code>9000</code>，然后连接。</p>
+<h2 id="doc25-4">4. 当前限制</h2>
+<p>当前 CSV 没有帧序号和设备时间戳，而且 TCP 会自动重传网络数据。因此页面显示的是应用层帧率、到达间隔估算丢包和连接稳定性，不能表示真实无线丢包率或精确端到端延迟。精确测试需要后续 UDP 协议加入序号和设备时间戳。</p></article><article id="doc26"><blockquote>
+<p><strong>运行位置</strong>：本文命令在代码仓库的 <code>源代码/imu/</code> 中执行，说明文件所在文件夹不是程序目录。</p>
+</blockquote>
+<h1 id="doc26-_1">上位机使用：查看、记录与导出</h1>
+<h2 id="doc26-_2">启动</h2>
+<pre><code class="language-powershell">python -m pip install -r requirements.txt
+python run_dashboard.py
+</code></pre>
+<p>浏览器打开 <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>，点击“连接串口”。默认连接 <code>COM21</code>、<code>115200 baud</code>。</p>
+<p>如果串口号变化，可在页面连接前修改后端默认值，或在后续版本增加端口选择器。Windows 同一串口只能由一个程序打开；使用网页前请关闭 PlatformIO Serial Monitor。</p>
+<h2 id="doc26-_3">当前数据映射</h2>
+<ul>
+<li>当前 11 列 CSV 数据映射到“右腕”。</li>
+<li>其余 13 个节点显示为静止模拟状态。</li>
+<li>每次记录在 <code>recordings/imu-日期-时间/</code> 生成三个 UTF-8 BOM CSV：</li>
+<li><code>imu-data.csv</code>：14 节点姿态与传感器数据；</li>
+<li><code>body-trajectory.csv</code>：骨盆中心短时趋势估算；</li>
+<li><code>node-trajectory.csv</code>：所选节点的骨骼约束相对轨迹。</li>
+<li>CSV 中文表头可由 Excel 直接打开。人体整体轨迹不是绝对定位结果。</li>
+<li>接收质量采用最近 2 秒窗口计算速率；当前无包序号，因此丢包率为基于 20 Hz 到达间隔的估算值。</li>
+<li>网页顶部“预览记录”可查看会话元数据和 CSV 前 100 行；“导出记录”会将三个 CSV 打包为 ZIP 下载。正在写入的会话需停止记录后才能导出。</li>
+</ul>
+<h2 id="doc26-_4">测试</h2>
+<pre><code class="language-powershell">python -m unittest discover -s tests -v
+node --check web/app.js
+</code></pre>
+<p>协议变化时，优先新增或替换 <code>dashboard/protocol.py</code> 中的适配器，不改变页面使用的标准节点消息。</p></article><article id="doc27"><blockquote>
+<p><strong>运行位置</strong>：本文命令在代码仓库的 <code>源代码/imu/</code> 中执行，说明文件所在文件夹不是程序目录。</p>
+</blockquote>
+<h1 id="doc27-usb">USB 版：硬件连接与烧录</h1>
+<p>本工程基于 <strong>ESP32-S3-MINI-1</strong> 模块，通过 <strong>SPI</strong> 读取 <strong>ICM-42688-P</strong> 六轴惯性传感器（加速度计 + 陀螺仪），通过 <strong>I²C</strong> 读取 <strong>LIS2MDLTR</strong> 三轴磁力计，并将数据通过 USB 串口输出到电脑显示。</p>
+<hr />
+<h2 id="doc27-1">1. 硬件组成</h2>
+<table>
+<thead>
+<tr>
+<th>器件</th>
+<th>型号</th>
+<th>封装</th>
+<th>接口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主控</td>
+<td>ESP32-S3-MINI-1 (N4R2)</td>
+<td>SMD 模块</td>
+<td>—</td>
+</tr>
+<tr>
+<td>IMU</td>
+<td>ICM-42688-P</td>
+<td>LGA-14 (3.0×2.5 mm)</td>
+<td>SPI</td>
+</tr>
+<tr>
+<td>磁力计</td>
+<td>LIS2MDLTR</td>
+<td>LGA-12 (2.0×2.0 mm)</td>
+<td>I²C</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：实测该模块 Flash 为 <strong>4 MB</strong>（N4R2 变体），故 <code>platformio.ini</code> 中已配置 <code>board_build.flash_size = 4MB</code>。</p>
+</blockquote>
+<hr />
+<h2 id="doc27-2">2. 引脚连接</h2>
+<p>连接关系依据原理图网表文件 <code>Netlist_Schematic1_2026-08-26.tel</code> 与 ESP32-S3-MINI-1 数据手册（v1.7）核对推导得出。</p>
+<h3 id="doc27-21-icm-42688-pspi">2.1 ICM-42688-P（SPI）</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>ESP32-S3 GPIO</th>
+<th>模块引脚号</th>
+<th>ICM-42688 引脚</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IMU_SCK</td>
+<td>GPIO12</td>
+<td>16</td>
+<td>U10.13 SCLK</td>
+</tr>
+<tr>
+<td>IMU_MOSI</td>
+<td>GPIO11</td>
+<td>15</td>
+<td>U10.14 SDI</td>
+</tr>
+<tr>
+<td>IMU_MISO</td>
+<td>GPIO13</td>
+<td>17</td>
+<td>U10.1 SDO</td>
+</tr>
+<tr>
+<td>IMU_/SS</td>
+<td>GPIO10</td>
+<td>14</td>
+<td>U10.12 CS</td>
+</tr>
+<tr>
+<td>IMU_INT (可选)</td>
+<td>GPIO9</td>
+<td>13</td>
+<td>U10.4 INT1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="doc27-22-lis2mdltri2c-0x1e">2.2 LIS2MDLTR（I²C，器件地址 0x1E）</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>ESP32-S3 GPIO</th>
+<th>模块引脚号</th>
+<th>LIS2MDL 引脚</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I²C SCL</td>
+<td>GPIO33</td>
+<td>28</td>
+<td>U2.1 SCL/SPC</td>
+</tr>
+<tr>
+<td>I²C SDA</td>
+<td>GPIO34</td>
+<td>29</td>
+<td>U2.4 SDA/SDI/SDO</td>
+</tr>
+<tr>
+<td>INT/DRDY (可选)</td>
+<td>GPIO47</td>
+<td>27</td>
+<td>U2.7 INT/DRDY</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注意：LIS2MDL 使用 I²C 通信时，其 <strong>CS 引脚（U2.3）必须接高电平</strong>（VDD_IO）。“CS 悬空”是旧资料的描述；2026-09-14 导出的原理图已将 CS 接到 VDD_3V3。实际板卡是否连通仍需测量。</p>
+</blockquote>
+<hr />
+<h2 id="doc27-3">3. 输出数据格式</h2>
+<p>串口波特率 <strong>115200</strong>，每行一组数据（CSV 格式），约 20 Hz：</p>
+<pre><code>AccX(g),AccY(g),AccZ(g),GyrX(dps),GyrY(dps),GyrZ(dps),ICM温度(C),MagX(mG),MagY(mG),MagZ(mG),LIS温度(raw)
+-0.0247,-0.5354,0.8613,0.669,0.637,0.349,29.14,-108.0,648.0,-16.5,-72
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>含义</th>
+<th>单位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AccX/Y/Z</td>
+<td>三轴加速度</td>
+<td>g（重力加速度）</td>
+</tr>
+<tr>
+<td>GyrX/Y/Z</td>
+<td>三轴角速度</td>
+<td>°/s（度每秒）</td>
+</tr>
+<tr>
+<td>ICM温度</td>
+<td>ICM-42688 内部温度</td>
+<td>°C</td>
+</tr>
+<tr>
+<td>MagX/Y/Z</td>
+<td>三轴磁场强度</td>
+<td>mG（毫高斯）</td>
+</tr>
+<tr>
+<td>LIS温度</td>
+<td>LIS2MDL 温度传感器原始值</td>
+<td>LSB</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>量程：加速度 ±8 g，陀螺仪 ±2000 °/s，磁场 ±49 gauss（1.5 mgauss/LSB）。</p>
+</blockquote>
+<hr />
+<h2 id="doc27-4">4. 环境要求</h2>
+<ul>
+<li><a href="https://platformio.org/install">PlatformIO Core</a>（或 VS Code + PlatformIO 扩展）</li>
+<li>ESP32-S3 开发板/模块，USB 连接电脑</li>
+</ul>
+<hr />
+<h2 id="doc27-5">5. 编译与烧录</h2>
+<p>在工程根目录（<code>platformio.ini</code> 所在目录）执行：</p>
+<pre><code class="language-bash"># 编译
+pio run
+
+# 烧录（COM7 为示例端口，请按实际修改）
+pio run -t upload --upload-port COM7
+</code></pre>
+<blockquote>
+<p>提示：
+- 本工程使用 ESP32-S3 <strong>内置 USB-Serial/JTAG</strong> 烧录/调试，无需外部 USB-TTL 转换器。
+- 若遇到 <code>Could not open COM7, the port is busy</code>（设备重启循环导致端口短暂不可用），可<strong>多次重试</strong>，或按住 <strong>BOOT 键</strong>再复位后烧录。
+- 查看可用串口：<code>pio device list</code></p>
+</blockquote>
+<hr />
+<h2 id="doc27-6">6. 电脑上查看数据</h2>
+<ol>
+<li>用 USB 线连接板子到电脑，确认设备管理器中枚举出串口（VID <code>303A</code>，PID <code>1001</code>，例如 <code>COM7</code>）。</li>
+<li>打开任意串口监视器，波特率选择 <strong>115200</strong>：
+   - PlatformIO 命令：<code>pio device monitor -p COM7 -b 115200</code>
+   - 或使用 VS Code 的 <em>Serial Monitor</em> 插件
+   - 或 Arduino IDE 的串口监视器</li>
+<li>观察数据流即可。</li>
+</ol>
+<hr />
+<h2 id="doc27-7">7. 工程文件结构</h2>
+<pre><code>源代码/
+├── platformio.ini          # PlatformIO 工程配置
+├── Netlist_Schematic1_2026-08-26.tel   # 原理图网表（硬件连接依据）
+├── src/
+│   └── main.cpp            # 主程序（传感器驱动 + 串口输出）
+├── include/                # 头文件目录
+├── lib/                    # 本地库目录
+├── test/                   # 单元测试目录
+└── .pio/                   # 构建产物（自动生成）
+</code></pre>
+<hr />
+<h2 id="doc27-8">8. 常见问题排查</h2>
+<table>
+<thead>
+<tr>
+<th>现象</th>
+<th>可能原因</th>
+<th>解决办法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>串口无任何输出</td>
+<td><code>Serial</code> 未走 USB 串口</td>
+<td>确认 <code>platformio.ini</code> 中有 <code>-DARDUINO_USB_CDC_ON_BOOT=1</code></td>
+</tr>
+<tr>
+<td>启动崩溃循环（<code>Detected size ... smaller than the size in the binary image header(8192k)</code>）</td>
+<td>上传时的 Flash 容量参数与实际不符</td>
+<td>在 <code>platformio.ini</code> 中同时设置 <code>board_build.flash_size = 4MB</code> <strong>和</strong> <code>board_upload.flash_size = 4MB</code>，再重新编译上传</td>
+</tr>
+<tr>
+<td>打开 COM 口提示"拒绝访问/端口被占用"</td>
+<td>有多个串口监视器进程同时打开了端口</td>
+<td>Windows 上一个 COM 口只能被一个程序占用：关闭多余的 <code>pio device monitor</code> / 串口工具，只保留一个监视器；也可在任务管理器结束多余的 <code>pio.exe</code> / <code>platformio.exe</code> 进程</td>
+</tr>
+<tr>
+<td><code>[ICM-42688] 初始化失败</code></td>
+<td>SPI 接线错误 / 引脚映射不对</td>
+<td>核对第 2 节引脚表</td>
+</tr>
+<tr>
+<td><code>[LIS2MDL] 初始化失败</code></td>
+<td>I²C 接线错误 / CS 未拉高</td>
+<td>核对引脚表；确认 LIS2MDL 的 CS 引脚接高电平</td>
+</tr>
+<tr>
+<td>上传时报端口繁忙</td>
+<td>设备正在重启，端口被占用</td>
+<td>重试多次；或按住 BOOT 再复位后烧录</td>
+</tr>
+<tr>
+<td>磁力计数据明显偏大</td>
+<td>附近有强磁场干扰</td>
+<td>远离电机、扬声器等磁性物体</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="doc27-9">9. 扩展说明</h2>
+<ul>
+<li>若更换为 <strong>8 MB Flash</strong> 的 <code>-N8</code> 模块：删除 <code>platformio.ini</code> 中的 <code>board_build.flash_size = 4MB</code>、<code>board_upload.flash_size = 4MB</code> 和 <code>board_build.partitions = default.csv</code> 三行（恢复为板级默认 8 MB 配置）。</li>
+<li>ICM-42688 初始化时会自动执行<strong>陀螺仪零偏校准</strong>（约 1~2 秒，期间请保持板子静止）。</li>
+<li>LIS2MDL 配置为连续测量模式 100 Hz，启用了偏移消除与数据块更新（BDU）。</li>
+</ul></article></main></html>

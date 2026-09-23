@@ -3,9 +3,9 @@ name: imu-current
 on:
   push:
     branches: [main, ZBC, HAN, 'update/imu-*']
-    paths: ['imu/**', '.github/workflows/imu.yml']
+    paths: ['源代码/**', '.github/workflows/imu.yml']
   pull_request:
-    paths: ['imu/**', '.github/workflows/imu.yml']
+    paths: ['源代码/**', '.github/workflows/imu.yml']
 
 permissions:
   contents: read
@@ -18,7 +18,7 @@ jobs:
         variant: [imu, BLE, WIFI]
     defaults:
       run:
-        working-directory: imu/${{ matrix.variant }}
+        working-directory: 源代码/${{ matrix.variant }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -38,7 +38,7 @@ jobs:
         variant: [imu, BLE, WIFI]
     defaults:
       run:
-        working-directory: imu/${{ matrix.variant }}
+        working-directory: 源代码/${{ matrix.variant }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
