@@ -1,6 +1,7 @@
 from pathlib import Path
 import asyncio
 import json
+import os
 from contextlib import asynccontextmanager
 from serial.tools import list_ports
 
@@ -10,25 +11,84 @@ from fastapi.staticfiles import StaticFiles
 from starlette.websockets import WebSocketState
 
 from .service import Runtime
+from .body_runtime import BodyRuntime
+from .body_config import load_config
+from .body_engine import BodyEngine
+from . import body_recording
 from .recordings import RecordingNotFound, catalog, preview_csv, safe_item, session_zip, replay_data
 
 
 ROOT = Path(__file__).resolve().parent.parent
 STATIC = ROOT / "web"
 runtime = Runtime()
+body_runtime = BodyRuntime(engine=BodyEngine(load_config(os.environ.get("IMU_BODY_CONFIG"))))
 
 
 @asynccontextmanager
 async def lifespan(app):
     await runtime.start()
+    await body_runtime.start()
     try:
         yield
     finally:
-        await runtime.close()
+        try:
+            await runtime.close()
+        finally:
+            await body_runtime.close()
 
 
-app = FastAPI(title="IMU 单节点开发台", lifespan=lifespan)
+app = FastAPI(title="IMU 动作捕捉开发台", lifespan=lifespan)
 app.mount("/static", StaticFiles(directory=STATIC), name="static")
+
+
+@app.get("/api/body")
+async def body_status():
+    return body_runtime.payload()
+
+
+@app.get("/api/body/recordings")
+async def body_sessions():
+    return {"items": await asyncio.to_thread(body_recording.catalog, body_runtime.recorder.root)}
+
+
+@app.get("/api/body/recordings/{session}/download")
+async def body_session_download(session: str):
+    if body_runtime.recorder.active and session == body_runtime.recorder.session:
+        raise HTTPException(status_code=409, detail="请先停止记录")
+    try:
+        folder = body_recording.session_path(body_runtime.recorder.root, session)
+        import io
+        import zipfile
+        def archive_session():
+            output = io.BytesIO()
+            with zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED) as archive:
+                for name in body_recording.FILES:
+                    path = (folder / name).resolve()
+                    if path.parent == folder and path.is_file():
+                        archive.write(path, arcname=f"{session}/{name}")
+            return output.getvalue()
+        content = await asyncio.to_thread(archive_session)
+        return Response(content, media_type="application/zip",
+                        headers={"Content-Disposition": f'attachment; filename="{session}.zip"'})
+    except ValueError as exc:
+        raise HTTPException(status_code=404, detail=str(exc))
+
+
+@app.websocket("/ws/body")
+async def body_websocket(websocket: WebSocket):
+    await websocket.accept()
+    await websocket.send_json(body_runtime.payload())
+    body_runtime.clients.add(websocket)
+    try:
+        while websocket.application_state == WebSocketState.CONNECTED:
+            try:
+                await body_runtime.command(await websocket.receive_json())
+            except (json.JSONDecodeError, ValueError):
+                body_runtime.message = "无法解析命令 JSON"
+    except WebSocketDisconnect:
+        pass
+    finally:
+        body_runtime.clients.discard(websocket)
 
 
 @app.get("/")

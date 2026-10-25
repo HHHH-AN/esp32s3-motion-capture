@@ -31,7 +31,7 @@ class WifiNode:
         self.coordinates = coordinates
         self.lock = threading.Lock()
         self.stop = threading.Event()
-        self.fusion, self.protocol = ComplementaryFusion(), CurrentCsvProtocol()
+        self.fusion, self.protocol = ComplementaryFusion(gravity_vector_correction=True), CurrentCsvProtocol()
         self.stability = AttitudeStabilizer()
         self.calibration_node_id = None
         self.previous_connection = None
@@ -134,7 +134,7 @@ class WifiNode:
         with self.lock:
             if not self.connected or self.latest is None or monotonic()-self.latest > 1.5:
                 return False
-            self.stability.start_calibration()
+            self.stability.start_calibration(now=monotonic())
             return True
 
     def set_stability(self, enabled):
@@ -151,6 +151,7 @@ class WifiNode:
 
     def snapshot(self):
         with self.lock:
+            self.stability.expire(monotonic())
             age = monotonic()-self.latest if self.latest is not None else None
             recent = [t for t in self.arrivals if monotonic()-t <= 2]
             hz = (len(recent)-1)/(recent[-1]-recent[0]) if len(recent) >= 2 and recent[-1] > recent[0] else 0
@@ -158,6 +159,7 @@ class WifiNode:
                          "calibrating": self.stability.calibrating and self.connected and age is not None and age <= 1.5,
                          "message": self.stability.message, "progress": self.stability.progress,
                          "quality": self.stability.calibration_quality,
+                         "phase": self.stability.phase, "retries": self.stability.retries,
                          "gyro_bias_dps": self.stability.bias,
                          "corrected_gyro_dps": tuple(v-b for v, b in zip(self.gyro, self.stability.bias)),
                          "enabled": self.stability_enabled,

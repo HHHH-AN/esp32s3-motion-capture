@@ -5,6 +5,7 @@
 secrets/
 credentials/
 firmware/include/wifi_config.h
+firmware/include/node_config.h
 .wifi-staging/
 *.pem
 *.key

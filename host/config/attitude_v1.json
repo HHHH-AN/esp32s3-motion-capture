@@ -1,0 +1,36 @@
+{
+  "schema_version": "attitude-processing/1",
+  "default_profile": "magnetic_guarded",
+  "profiles": {
+    "magnetic_guarded": {
+      "name": "磁场质量门控 + 重力向量后备校正",
+      "mode": "magnetic_guarded",
+      "gravity_vector_correction": true,
+      "stability_enabled": true
+    },
+    "six_axis_relative": {
+      "name": "六轴相对姿态 / 重力向量校正",
+      "mode": "six_axis_relative",
+      "gravity_vector_correction": true,
+      "stability_enabled": true
+    },
+    "legacy_euler": {
+      "name": "旧欧拉互补（仅对照）",
+      "mode": "magnetic_guarded",
+      "gravity_vector_correction": false,
+      "stability_enabled": true
+    }
+  },
+  "device_profiles": {
+    "imu_305A6077C398": "six_axis_relative",
+    "imu_149B6077C398": "magnetic_guarded"
+  },
+  "device_profiles_source": "伙伴2026-10-25迁移包明确的A/B物理ID；按身份匹配，不推定身体位置或网络地址",
+  "partner_axes_reference": ["-X", "+Y", "-Z"],
+  "partner_axes_policy": "仅供核对，不自动覆盖当前身体配置或设备的轴映射",
+  "limitations": [
+    "六轴无法观测绝对航向，仍有长期航向漂移",
+    "停稳保持是可关闭的阈值约束，可能掩盖低于阈值的慢运动",
+    "静置零偏校准不等于安装参考或完整磁标定"
+  ]
+}

@@ -31,8 +31,12 @@ jobs:
         run: |
           node --check web/app.js
           node --check web/pose_math.js
+          node --check web/body_view.js
+          node --check web/body_app.js
       - name: Test pose transformations
         run: node tests/test_pose_math.js
+      - name: Test body scene geometry
+        run: node tests/test_body_view.js
       - name: Generate offline experiment reports
         run: |
           for preset in rigid_check upper_limb lower_limb bilateral; do

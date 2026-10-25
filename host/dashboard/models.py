@@ -27,6 +27,13 @@ class SensorSample:
     sequence: int | None = None
     device_us: int | None = None
     sensor_flags: int = 3
+    # Physical identity is node_id. A missing body_slot is deliberately unbound;
+    # the legacy node_id spelling must never imply an installation role.
+    body_slot: str | None = None
+    boot_id: str | None = None
+    firmware_version: str | None = None
+    config_version: str | None = None
+    protocol_version: str = "legacy"
 
 
 @dataclass(slots=True)

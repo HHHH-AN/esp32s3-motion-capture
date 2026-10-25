@@ -1,0 +1,33 @@
+{
+  "kind": "near_vertical_euler_coupling_regression",
+  "results": [
+    {
+      "peak_pitch_deg": 88.5,
+      "input_samples": 2401,
+      "legacy_final_euler_yaw_deg": -22.525462864797433,
+      "merged_final_euler_yaw_deg": 0.8661018619780887,
+      "bias_calibrated": false,
+      "holding": false,
+      "source": "synthetic_sensor_regression_not_hardware"
+    },
+    {
+      "peak_pitch_deg": 90.0,
+      "input_samples": 2401,
+      "legacy_final_euler_yaw_deg": 13.357960269326918,
+      "merged_final_euler_yaw_deg": 0.8780820156180391,
+      "bias_calibrated": false,
+      "holding": false,
+      "source": "synthetic_sensor_regression_not_hardware"
+    },
+    {
+      "peak_pitch_deg": 100.0,
+      "input_samples": 2401,
+      "legacy_final_euler_yaw_deg": 1.7793970359638418,
+      "merged_final_euler_yaw_deg": 0.9383659628183296,
+      "bias_calibrated": false,
+      "holding": false,
+      "source": "synthetic_sensor_regression_not_hardware"
+    }
+  ],
+  "limits": "This chosen synthetic input diagnoses correction-induced coupling; it is not a general accuracy or long-term heading guarantee."
+}

@@ -38,7 +38,7 @@ def reparse(path: Path) -> bool:
 
 def excluded(relative: Path) -> bool:
     return (any(part in SKIP_DIRS or part.startswith("before_") for part in relative.parts)
-            or relative.name == "wifi_config.h" or relative.name.startswith(".env")
+            or relative.name in ("wifi_config.h", "node_config.h") or relative.name.startswith(".env")
             or relative.name.endswith(".local.json") or relative.suffix.lower() in SKIP_SUFFIXES)
 
 

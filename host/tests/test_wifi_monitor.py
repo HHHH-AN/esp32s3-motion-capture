@@ -4,6 +4,7 @@ import socket
 import threading
 import time
 import unittest
+from unittest.mock import patch
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 from http.server import ThreadingHTTPServer
@@ -36,15 +37,16 @@ class WifiMonitorTests(unittest.TestCase):
         start = time.monotonic()
         node.connected = True
         node.consume(vector_frame(0, bias, node_id), start)
-        self.assertTrue(node.calibrate())
-        for sequence in range(1, 402):
+        with patch("run_wifi_monitor.monotonic",return_value=start):
+            self.assertTrue(node.calibrate())
+        for sequence in range(1, 482):
             node.consume(vector_frame(sequence, bias, node_id), start+sequence*.01)
         state = node.snapshot()["stability"]
         self.assertTrue(state["calibrated"])
         self.assertFalse(state["calibrating"])
         for actual, expected in zip(state["gyro_bias_dps"], bias):
             self.assertAlmostEqual(actual, expected, places=9)
-        return node, node_id, start, 402
+        return node, node_id, start, 482
 
     def test_stream_identity_and_sequence_quality(self):
         node = self.node()

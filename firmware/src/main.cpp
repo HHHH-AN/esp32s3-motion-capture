@@ -3,6 +3,12 @@
 #include <SPI.h>
 #include <ICM42688.h>
 #include <WiFi.h>
+#include <esp_system.h>
+#if __has_include("node_config.h")
+#include "node_config.h"
+#else
+#include "node_config.example.h"
+#endif
 #if __has_include("wifi_config.h")
 #include "wifi_config.h"
 #else
@@ -15,7 +21,10 @@
 #define IMU_USE_MAC_NODE_ID 1
 #endif
 static char nodeId[33];
-static constexpr char FIRMWARE_VERSION[] = "imu-wifi-node-20261025-r2";
+static constexpr char FIRMWARE_VERSION[] = "imu-body-node-20261025-r3";
+static char bootId[17];
+static_assert(sizeof(IMU_BODY_SLOT) <= 33, "Body slot token is too long");
+static_assert(sizeof(IMU_NODE_CONFIG_VERSION) <= 65, "Config version token is too long");
 
 #ifndef IMU_JOIN_NODE_AP
 #define IMU_JOIN_NODE_AP 0
@@ -173,6 +182,9 @@ bool lis2mdlSetup() {
 void setup() {
   Serial.begin(115200);
   delay(1000);
+  // Each reset has a new sampling session, independent from the physical MAC.
+  snprintf(bootId, sizeof(bootId), "%08lX%08lX",
+           static_cast<unsigned long>(esp_random()), static_cast<unsigned long>(esp_random()));
 
 #if IMU_USE_MAC_NODE_ID
   snprintf(nodeId, sizeof(nodeId), "imu_%012llX",
@@ -180,8 +192,9 @@ void setup() {
 #else
   snprintf(nodeId, sizeof(nodeId), "%s", IMU_NODE_ID);
 #endif
-  Serial.printf("[Node] Firmware=%s ID=%s Rate=%uHz\n", FIRMWARE_VERSION,
-                nodeId, static_cast<unsigned>(IMU_SAMPLE_RATE_HZ));
+  Serial.printf("[Node] Firmware=%s ID=%s BodySlot=%s Boot=%s Config=%s Rate=%uHz\n", FIRMWARE_VERSION,
+                nodeId, IMU_BODY_SLOT, bootId, IMU_NODE_CONFIG_VERSION,
+                static_cast<unsigned>(IMU_SAMPLE_RATE_HZ));
   // Set before WiFi.mode/begin/softAP, as required by Arduino-ESP32.
   WiFi.setHostname(nodeId);
 
@@ -244,7 +257,7 @@ void setup() {
 
   Serial.println();
   Serial.println("数据格式 (CSV):");
-  Serial.println("[Protocol] IMU2,node_id,sequence,device_us,sensor_flags,ax,ay,az,gx,gy,gz,temp,mx,my,mz,mag_temp");
+  Serial.println("[Protocol] IMU3,device_id,body_slot,boot_id,firmware,config,sequence,device_us,sensor_flags,ax,ay,az,gx,gy,gz,temp,mx,my,mz,mag_temp");
   enableLoopWDT();
 }
 
@@ -296,12 +309,17 @@ void loop() {
   }
 
   // ---- 串口输出 ----
-  char line[256];
+  char line[512];
   // 磁力计灵敏度 1.5 mgauss/LSB；加速度保持 g，与串口协议一致。
-  snprintf(line, sizeof(line),
-           "IMU2,%s,%lu,%lu,%u,%.4f,%.4f,%.4f,%.3f,%.3f,%.3f,%.2f,%.1f,%.1f,%.1f,%d\n",
-           nodeId, static_cast<unsigned long>(sequence), static_cast<unsigned long>(sampledAtUs),
+  const int written = snprintf(line, sizeof(line),
+           "IMU3,%s,%s,%s,%s,%s,%lu,%lu,%u,%.4f,%.4f,%.4f,%.3f,%.3f,%.3f,%.2f,%.1f,%.1f,%.1f,%d\n",
+           nodeId, IMU_BODY_SLOT, bootId, FIRMWARE_VERSION, IMU_NODE_CONFIG_VERSION,
+           static_cast<unsigned long>(sequence), static_cast<unsigned long>(sampledAtUs),
            magOk ? 3U : 1U, ax, ay, az, gx, gy, gz, t, mx * 1.5f, my * 1.5f, mz * 1.5f, mt);
+  if (written < 0 || static_cast<size_t>(written) >= sizeof(line)) {
+    Serial.println("[Protocol] Output frame exceeded buffer; sample rejected");
+    return;
+  }
   // USB logging must not require an attached/reading host for Wi-Fi sampling.
   if (Serial) Serial.print(line);
   if (tcpClient && tcpClient.connected()) {

@@ -55,7 +55,10 @@ def euler_degrees(q: Quaternion) -> tuple[float, float, float]:
 class ComplementaryFusion:
     """Small, dependency-free gyro integration with accel/mag drift correction."""
 
-    def __init__(self) -> None:
+    def __init__(self, gravity_vector_correction: bool = False) -> None:
+        self.gravity_vector_correction = gravity_vector_correction
+        self.version = ("complementary-gravity-vector/2" if gravity_vector_correction
+                        else "complementary-euler/1")
         self.q: Quaternion = (1.0, 0.0, 0.0, 0.0)
         self.last_time: float | None = None
         self.last_device_us: int | None = None
@@ -96,7 +99,8 @@ class ComplementaryFusion:
 
         mx, my, mz = sample.mag
         mag_norm = math.sqrt(mx * mx + my * my + mz * mz)
-        if sample.sensor_flags & 2 and mag_norm > 1e-6:
+        magnetic_observation = bool(sample.sensor_flags & 2 and mag_norm > 1e-6)
+        if magnetic_observation:
             # Invert roll and pitch using the same Rz(yaw)Ry(pitch)Rx(roll)
             # convention as euler_quaternion. The old formula mixed conventions.
             mx2 = (mx * math.cos(pitch) + my * math.sin(pitch) * math.sin(roll)
@@ -109,6 +113,24 @@ class ComplementaryFusion:
                              1 - 2 * (predicted[2] ** 2 + predicted[3] ** 2))
             correction = 1 - math.exp(-dt / 6.2)
         observed = euler_quaternion(roll, pitch, yaw)
+        if self.gravity_vector_correction and not magnetic_observation and not first_update:
+            # Correct only the direction of gravity. Reconstructing an Euler
+            # observation with the predicted Euler yaw couples tilt correction
+            # into heading near vertical pitch and its +/-180 degree branches.
+            # Rotate measured body gravity into the predicted world frame.
+            axn, ayn, azn = ax/accel_norm, ay/accel_norm, az/accel_norm
+            w, x, y, z = predicted
+            ux = ((1-2*(y*y+z*z))*axn + 2*(x*y-w*z)*ayn + 2*(x*z+w*y)*azn)
+            uy = (2*(x*y+w*z)*axn + (1-2*(x*x+z*z))*ayn + 2*(y*z-w*x)*azn)
+            uz = (2*(x*z-w*y)*axn + 2*(y*z+w*x)*ayn + (1-2*(x*x+y*y))*azn)
+            # The shortest world rotation taking u to +Z has a horizontal
+            # rotation axis. At the exact antipode any horizontal axis works;
+            # select +X deterministically rather than normalizing a zero q.
+            if 1+uz < 1e-9 and math.hypot(ux, uy) < 1e-6:
+                delta = (0., 1., 0., 0.)
+            else:
+                delta = normalize((1+uz, uy, -ux, 0.))
+            observed = multiply(delta, predicted)
         self.q = observed if first_update else nlerp(predicted, observed, correction*correction_scale)
         return self.q
 

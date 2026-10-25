@@ -1,0 +1,23 @@
+{
+  "kind": "offline_simulated_load_not_hardware",
+  "nodes": 14,
+  "requested_hz_per_node": 100,
+  "elapsed_s": 8.0,
+  "cpu_s": 3.265625,
+  "accepted_samples": 11200,
+  "expected_samples": 11200,
+  "body_ticks": 241,
+  "batch_processing_ms_median": 1.813400000173715,
+  "batch_processing_ms_p95": 4.91630000033183,
+  "invalid_frames": 0,
+  "hardware_online": 0,
+  "recorded": true,
+  "session": "20261025-211009-body-514b0568",
+  "counts": {
+    "samples": 11200,
+    "body_frames": 241,
+    "events": 29
+  },
+  "recording_error": null,
+  "replay_final_frame_present": true
+}

@@ -79,7 +79,7 @@ function renderMotion(motion) {
 }
 function appendPoseTrail(position){const previous=poseTrail[poseTrail.length-1];if(previous&&previous.reduce((s,v,i)=>s+(v-position[i])**2,0)<1e-8)return;poseTrail.push([...position]);if(poseTrail.length>2000)poseTrail.shift();}
 function coordinateInputs(settings){"XYZ".split("").forEach((axis,i)=>{$("map"+axis).value=settings.sensor_axes[i];$("sign"+axis).value=settings.displacement_signs[i];});}
-function send(action,extra={}){if(socket?.readyState===WebSocket.OPEN)socket.send(JSON.stringify({action,...extra}));}
+function send(action,extra={}){if(window.BodyApp){window.BodyApp.command(action,extra);return;}if(socket?.readyState===WebSocket.OPEN)socket.send(JSON.stringify({action,...extra}));}
 function update(data) {
   latest=data;const stats=data.stats,node=data.nodes[0];if(!node)return;
   online=!!node.valid;$("message").textContent=stats.message;
@@ -138,4 +138,35 @@ $("play").onclick=()=>{if(!replay)return;if(playing){playing=false;$("play").tex
 $("seek").oninput=()=>{playing=false;$("play").textContent="播放";showReplay(Number($("seek").value));};$("exitReplay").onclick=()=>{replay=null;playing=false;$("playback").hidden=true;clearHistory();poseTrail=[];lastTrailFrame=null;if(latest)update(latest);};
 function animate(now){if(replay&&playing){const target=playOffset+(now-playStart)/1000;let index=replayIndex;while(index+1<replay.frames.length&&replay.frames[index+1].timestamp<=target)index++;if(index!==replayIndex)showReplay(index);if(index===replay.frames.length-1){playing=false;$("play").textContent="播放";}}drawPose();drawChart($("accChart"),histories.accel);drawChart($("gyroChart"),histories.gyro);drawChart($("magChart"),histories.mag);if(latest){const timestamp=latest.latest_packet_at;$("age").textContent=timestamp?Math.max(0,Date.now()-timestamp*1000).toFixed(0)+" ms":"—";}requestAnimationFrame(animate);}
 try{const saved=JSON.parse(localStorage.getItem("imu-connection"));if(saved){$("transport").value=saved.transport;$("host").value=saved.host;$("tcpPort").value=saved.tcp_port;savedSerialDevice=saved.device||null;}}catch{}
-transportInputs();refreshPorts();connectSocket();requestAnimationFrame(animate);
+// The unified body controller owns all connections and model sources. The
+// legacy websocket is retained only for a page without the body workspace.
+window.renderBodyDiagnostic=function(device,state) {
+  const replaying=state.mode==="REPLAY",recording=!!state.recording?.active,quality=device?.quality||{},stability=device?.stability||{};
+  online=!!device?.valid;replay=null;
+  const identity=device?.device_id||device?.node_id||device?.id||null;
+  if(window._diagnosticDevice!==identity){clearHistory();poseTrail=[];lastTrailFrame=null;window._diagnosticDevice=identity;}
+  $("nodeId").textContent=identity||"未选择设备";
+  $("nodeState").textContent=!device?"等待选择设备":`${device.source==="real"?"真实":"模拟"} · ${online?"有效":"失鲜 / 未连接"}${replaying?" · 回放":""}`;
+  $("nodeState").classList.toggle("online",online);
+  for(const id of ["zero","calibrate","startMotion","stopMotion","resetMotion","applyCoordinates","defaultCoordinates"]){$(id).disabled=!device||recording||replaying;}
+  $("record").disabled=replaying||(!device&&!recording);$("record").textContent=recording?"停止完整动作记录":"开始完整动作记录";
+  $("recordStatus").textContent=recording?`动作记录中：${state.recording.session||""}`:"完整动作会话入口位于上方；包括全部骨架帧，不采用抽样预览替代回放。";
+  $("connect").textContent="连接 / 添加端点";$("connect").disabled=!window.BodyApp?.connected;
+  for(const id of ["transport","host","tcpPort","serialPort"]){$(id).disabled=false;}
+  $("rate").textContent=format(quality.rate_hz??quality.frame_rate??device?.rate_hz??0,1)+" Hz";
+  const validFrames=quality.valid_frames??device?.frames??0,missing=quality.missing_frames??0;
+  $("lossLabel").firstChild.textContent="序号缺帧率";
+  $("loss").textContent=device?.sequence==null&&quality.sequence==null?"—":format(100*missing/Math.max(1,validFrames+missing))+"%";
+  $("invalid").textContent=quality.invalid_frames??device?.invalid_frames??0;
+  $("sequence").textContent=quality.sequence??device?.sequence??"旧协议 / 无数据";
+  const deviceUs=quality.device_us??device?.device_us;$("deviceTime").textContent=deviceUs==null?"—":format(deviceUs/1e6,3)+" s";
+  const age=quality.age_ms??(Number.isFinite(device?.age_s)?device.age_s*1000:null);$("age").textContent=Number.isFinite(age)?format(age,0)+" ms":"—";
+  $("sensorStatus").textContent=device?`设备会话 ${device.boot_id??"旧协议未知"} · 重复 ${quality.duplicates??quality.duplicate_frames??0} · 缺帧 ${missing} · 重启 ${quality.restarts??quality.device_restarts??0} · ${stability.magnetic_message||"磁场质量待检查"}`:"传感器状态 —";
+  $("calibration").textContent=(stability.message||"陀螺零偏未校准；与站姿安装参考分开")+"；零偏 °/s："+(stability.gyro_bias_dps||stability.bias||[0,0,0]).map(value=>format(value,3)).join(", ");
+  if(device){const node={...device,node_id:identity,quaternion:device.quaternion||device.q||[1,0,0,0],accel:device.accel||[0,0,0],gyro:device.gyro||[0,0,0],mag:device.mag||[0,0,0],euler:device.euler_deg};renderNode(node);$("temperature").textContent=`ICM 温度 ${format(device.temperature)} °C · LIS 温度原始值 ${format(device.aux_temperature,0)}`;const frameKey=`${identity}:${validFrames}:${quality.sequence??device.sequence??""}:${state.mode}`;if(lastFrame!==frameKey){addHistory(node);lastFrame=frameKey;}}
+  else{orientation=[1,0,0,0];["roll","pitch","yaw","ax","ay","az","gx","gy","gz","mx","my","mz"].forEach(id=>$(id).textContent="—");$("temperature").textContent="温度 —";}
+  renderMotion(device?.motion||null);
+  $("poseQuality").textContent="选中设备的独立诊断视图。位置估算是实验路径，不驱动固定根部骨架；观察视角拖动不代表测量平移。";
+  const settings=device?.coordinates||state.coordinates;if(settings?.sensor_axes){coordinateInputs(settings);$("coordinateSummary").textContent=settings.sensor_axes.join(" / ");sceneSigns=settings.displacement_signs||[1,1,1];}
+};
+transportInputs();refreshPorts();if(!$("bodyFixed"))connectSocket();requestAnimationFrame(animate);

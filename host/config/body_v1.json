@@ -1,0 +1,29 @@
+{
+  "schema_version": "body-layout/1",
+  "skeleton_version": "neutral-fourteen/1",
+  "aliases_version": "historical-slots/1",
+  "coordinates": {"world": "X-forward,Y-left,Z-up", "handedness": "right", "quaternion": "wxyz", "rotation": "active sensor-to-world", "sensor_axes": ["+X", "+Y", "+Z"]},
+  "neutral_instruction": "直立面向约定前方，双臂自然下垂，肘伸直，手掌贴近大腿，双足平行朝前。传感器牢固固定并统一约定佩戴朝向；系统不自动识别站姿是否准确。",
+  "heading_assumption": "各板融合参考朝向需通过统一佩戴方向和共同站立朝向约定。中立初始化只建立参考，不能证明独立融合航向已一致，不能消除漂移。",
+  "limitations": ["单躯干近似：胸廓随骨盆", "不独立恢复胸骨盆扭转、肩胛、脊柱或手指", "手部/足部独立测量需固定到手背/脚背等对应刚体", "骨长为默认示意值，不能由现有IMU可靠自动测量", "软件时间对齐不是硬件同步"],
+  "timing": {"display_delay_s": 0.08, "delayed_s": 0.25, "stale_s": 1.5, "max_interpolation_gap_s": 0.2, "buffer_size": 300},
+  "initialization": {"duration_s": 1.0, "minimum_samples": 20, "maximum_gyro_dps": 3.0, "accel_norm_min_g": 0.85, "accel_norm_max_g": 1.15, "max_orientation_spread_deg": 3.0},
+  "root_position": [0, 0, 1.0],
+  "aliases": {"waist": "pelvis", "left_shoulder": "left_upper_arm", "left_elbow": "left_forearm", "left_wrist": "left_hand", "right_shoulder": "right_upper_arm", "right_elbow": "right_forearm", "right_wrist": "right_hand", "left_hip": "left_thigh", "left_knee": "left_shank", "left_ankle": "left_foot", "right_hip": "right_thigh", "right_knee": "right_shank", "right_ankle": "right_foot"},
+  "segments": [
+    {"id": "pelvis", "name": "腰部 / 骨盆", "parent": null, "anchor": [0,0,0], "direction": [0,0,1], "length": 0.48, "mount_hint": "后腰靠骶骨，牢固固定"},
+    {"id": "head", "name": "头部", "parent": "pelvis", "anchor": [0,0,0.55], "direction": [0,0,1], "length": 0.22, "mount_hint": "牢固头带"},
+    {"id": "left_upper_arm", "name": "左上臂（历史左肩槽）", "parent": "pelvis", "anchor": [0,0.22,0.45], "direction": [0,0,-1], "length": 0.30, "mount_hint": "左上臂，避免跨肩关节"},
+    {"id": "left_forearm", "name": "左前臂（历史左肘槽）", "parent": "left_upper_arm", "anchor": [0,0,-0.30], "anchor_at_parent_tip": true, "direction": [0,0,-1], "length": 0.26, "mount_hint": "左前臂，避免跨肘"},
+    {"id": "left_hand", "name": "左手（历史左腕槽）", "parent": "left_forearm", "anchor": [0,0,-0.26], "anchor_at_parent_tip": true, "direction": [0,0,-1], "length": 0.17, "mount_hint": "左手背，腕关节远端；前臂传感器不能代替手"},
+    {"id": "right_upper_arm", "name": "右上臂（历史右肩槽）", "parent": "pelvis", "anchor": [0,-0.22,0.45], "direction": [0,0,-1], "length": 0.30, "mount_hint": "右上臂，避免跨肩关节"},
+    {"id": "right_forearm", "name": "右前臂（历史右肘槽）", "parent": "right_upper_arm", "anchor": [0,0,-0.30], "anchor_at_parent_tip": true, "direction": [0,0,-1], "length": 0.26, "mount_hint": "右前臂，避免跨肘"},
+    {"id": "right_hand", "name": "右手（历史右腕槽）", "parent": "right_forearm", "anchor": [0,0,-0.26], "anchor_at_parent_tip": true, "direction": [0,0,-1], "length": 0.17, "mount_hint": "右手背，腕关节远端；前臂传感器不能代替手"},
+    {"id": "left_thigh", "name": "左大腿（历史左髋槽）", "parent": "pelvis", "anchor": [0,0.10,0], "direction": [0,0,-1], "length": 0.43, "mount_hint": "左大腿"},
+    {"id": "left_shank", "name": "左小腿（历史左膝槽）", "parent": "left_thigh", "anchor": [0,0,-0.43], "anchor_at_parent_tip": true, "direction": [0,0,-1], "length": 0.43, "mount_hint": "左小腿"},
+    {"id": "left_foot", "name": "左足（历史左踝槽）", "parent": "left_shank", "anchor": [0,0,-0.43], "anchor_at_parent_tip": true, "direction": [1,0,0], "length": 0.23, "mount_hint": "左脚背；小腿传感器不能代替足部"},
+    {"id": "right_thigh", "name": "右大腿（历史右髋槽）", "parent": "pelvis", "anchor": [0,-0.10,0], "direction": [0,0,-1], "length": 0.43, "mount_hint": "右大腿"},
+    {"id": "right_shank", "name": "右小腿（历史右膝槽）", "parent": "right_thigh", "anchor": [0,0,-0.43], "anchor_at_parent_tip": true, "direction": [0,0,-1], "length": 0.43, "mount_hint": "右小腿"},
+    {"id": "right_foot", "name": "右足（历史右踝槽）", "parent": "right_shank", "anchor": [0,0,-0.43], "anchor_at_parent_tip": true, "direction": [1,0,0], "length": 0.23, "mount_hint": "右脚背；小腿传感器不能代替足部"}
+  ]
+}
