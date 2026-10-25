@@ -1,0 +1,14 @@
+{
+  "port": "COM6",
+  "frames": 697,
+  "node_ids": {
+    "imu_149B6077C398": 697
+  },
+  "sensor_flags": {
+    "3": 697
+  },
+  "logs": [
+    "[WiFi] Status=3 IP=192.168.4.201 TCP=9000",
+    "[WiFi] Status=3 IP=192.168.4.201 TCP=9000"
+  ]
+}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IMU 单节点开发台</title><link rel="stylesheet" href="/static/style.css"></head>
+<body>
+  <header><div><span class="eyebrow">山东大学 · 竞技体育动作捕捉</span><h1>IMU 单节点开发台</h1></div><span id="socketState" class="badge">正在连接服务</span></header>
+  <section class="connection panel">
+    <label>通信方式<select id="transport"><option value="wifi">Wi-Fi TCP</option><option value="serial">USB 串口</option></select></label>
+    <label id="hostField">ESP32 地址<input id="host" value="192.168.4.1" placeholder="ESP32 热点 IP 或串口日志中的 IP"></label>
+    <label id="portField">TCP 端口<input id="tcpPort" type="number" min="1" max="65535" value="9000"></label>
+    <label id="serialField" hidden>串口<select id="serialPort"><option>COM9</option></select></label>
+    <button id="refreshPorts" hidden>刷新串口</button><button id="connect" class="primary">连接设备</button>
+    <p id="message" role="status">等待连接。热点：ESP32-IMU，密码：[已移除私有密码]</p>
+  </section>
+  <main>
+    <section class="panel pose"><div class="heading"><h2>单节点三维位姿</h2><span id="nodeState" class="badge">等待数据</span></div>
+      <canvas id="poseCanvas" aria-label="三维位置姿态与运动轨迹"></canvas>
+      <div class="view-tools"><label>视野半径 / m<input id="sceneRange" type="number" min="0.1" max="20" step="0.1" value="1"></label><label class="checkbox"><input id="showTrail" type="checkbox" checked>轨迹</label><label class="checkbox"><input id="followPose" type="checkbox">跟随模型</label><button id="clearTrail">清除轨迹</button></div>
+      <p class="hint">红 X · 绿 Y · 蓝 Z ｜ 网格与位置单位：米 ｜ 模型为放大示意 ｜ 拖动旋转 · 滚轮缩放</p>
+      <div class="angles"><div>位置 X / m<span id="poseX">—</span></div><div>位置 Y / m<span id="poseY">—</span></div><div>位置 Z / m<span id="poseZ">—</span></div></div>
+      <div class="angles"><div>Roll<span id="roll">—</span></div><div>Pitch<span id="pitch">—</span></div><div>Yaw<span id="yaw">—</span></div></div>
+      <div class="buttons"><button id="zero">当前位置与姿态归零</button><button id="calibrate">静置零偏校准</button><button id="viewReset">重置视角</button></div>
+      <p id="calibration" class="hint">校准前保持板子静止；姿态归零设置当前参考方向。</p>
+      <p id="poseQuality" class="hint">位置为惯性估算；模型平移与姿态旋转使用同一参考坐标。尚未做磁力计和肢段安装标定。</p>
+    </section>
+    <section class="panel"><div class="heading"><h2>数据与接收质量</h2><span id="nodeId" class="badge">right_wrist</span></div>
+      <div class="metrics"><div>接收频率<span id="rate">0 Hz</span></div><div id="lossLabel">序号缺帧率<span id="loss">—</span></div><div>最新包龄<span id="age">—</span></div><div>无效帧<span id="invalid">0</span></div><div>帧序号<span id="sequence">—</span></div><div>设备采样时间<span id="deviceTime">—</span></div></div>
+      <table class="values"><thead><tr><th>传感器</th><th>X</th><th>Y</th><th>Z</th></tr></thead><tbody><tr><th>加速度 / g</th><td id="ax">—</td><td id="ay">—</td><td id="az">—</td></tr><tr><th>角速度 / °/s</th><td id="gx">—</td><td id="gy">—</td><td id="gz">—</td></tr><tr><th>磁场 / mG</th><td id="mx">—</td><td id="my">—</td><td id="mz">—</td></tr></tbody></table>
+      <p class="hint" id="temperature">温度 —</p><p id="sensorStatus" class="hint">传感器状态 —</p>
+      <div class="buttons"><button id="record" class="primary">开始记录</button><button id="records">记录与回放</button></div><p id="recordStatus" class="hint">记录会保存每个接收样本，界面曲线约 20 Hz 刷新。</p>
+    </section>
+    <section class="panel motion-panel"><div class="heading"><h2>位姿跟踪与漂移抑制</h2><span id="motionPhase" class="badge">未开始</span></div>
+      <div class="buttons"><label>跟踪方式<select id="motionDuration"><option value="0">连续跟踪</option><option value="10">10 秒片段</option><option value="30">30 秒片段</option></select></label><label>漂移抑制<select id="driftMode"><option value="faithful">运动优先</option><option value="balanced" selected>均衡</option><option value="stable">稳定优先</option></select></label><button id="startMotion" class="primary">继续位置跟踪</button><button id="stopMotion">暂停位置跟踪</button><button id="resetMotion">位置归零</button></div>
+      <label class="checkbox"><input id="motionZupt" type="checkbox" checked>停稳自动锁定位置并归零速度（匀速/恒定加速平移可能误判）</label>
+      <p id="motionMessage" class="hint" role="status">开始后先静置约 1 秒，提示估算中后再移动。</p>
+      <p id="restDiagnostics" class="hint">静止检测使用原始传感器窗口，不依赖扣除重力后的误差。</p>
+      <div class="metrics"><div>位置 X / m<span id="dx">—</span></div><div>位置 Y / m<span id="dy">—</span></div><div>位置 Z / m<span id="dz">—</span></div><div>距原点距离 / m<span id="distance">—</span></div><div>速度模长 / m/s<span id="speed">—</span></div><div>跟踪时长 / s<span id="motionElapsed">0</span></div></div>
+      <p id="linearAccel" class="hint">扣除重力后的线性加速度：—</p>
+      <p class="hint">连接后先静置约 1 秒，随后位置和姿态一起连续显示。静止时锁定位置并校正速度；均衡/稳定优先模式还会衰减速度，抑漂更强但可能缩小真实位移。轨迹保留最近 2000 个显示点；完整数据可记录导出。纯 IMU 无法消除长期位置漂移。</p>
+      <p class="hint">需要调整跟踪方式、模式或静止修正开关时，先暂停位置跟踪，再调整并继续。暂停期间姿态仍实时更新。</p>
+    </section>
+    <section class="panel coordinates-panel"><div class="heading"><h2>坐标轴与方向设置</h2><span id="coordinateSummary" class="badge">默认右手系</span></div>
+      <p class="hint">输出轴对应哪个原始传感器轴？加速度、角速度、磁场和姿态会统一使用此映射。</p>
+      <div class="axis-controls"><label>输出 X ← 原始轴<select id="mapX"><option>+X</option><option>-X</option><option>+Y</option><option>-Y</option><option>+Z</option><option>-Z</option></select></label><label>输出 Y ← 原始轴<select id="mapY"><option>+X</option><option>-X</option><option selected>+Y</option><option>-Y</option><option>+Z</option><option>-Z</option></select></label><label>输出 Z ← 原始轴<select id="mapZ"><option>+X</option><option>-X</option><option>+Y</option><option>-Y</option><option selected>+Z</option><option>-Z</option></select></label></div>
+      <p class="hint">姿态解算需右手系：每个原始轴使用一次；例如同时翻转 X、Y 可以。仅反转一个传感器轴会被拒绝。</p>
+      <p class="hint">场景方向会同时作用于模型姿态、位置和轨迹。单独翻转一个场景轴是显示镜像；欧拉角仍描述镜像前的参考右手系。</p>
+      <div class="axis-controls"><label>场景 X 方向<select id="signX"><option value="1">正向 +</option><option value="-1">反向 −</option></select></label><label>场景 Y 方向<select id="signY"><option value="1">正向 +</option><option value="-1">反向 −</option></select></label><label>场景 Z 方向<select id="signZ"><option value="1">正向 +</option><option value="-1">反向 −</option></select></label></div>
+      <div class="buttons"><button id="applyCoordinates" class="primary">应用并保存坐标设置</button><button id="defaultCoordinates">恢复默认坐标</button></div>
+      <p class="hint">应用后重置姿态参考和位移估算；记录或校准期间不可更改。配置保存在本机，原始数据也会单独保留在 CSV 中。</p>
+    </section>
+    <section class="panel signals"><div class="heading"><h2>三轴实时曲线</h2><span class="legend"><i class="x">X</i><i class="y">Y</i><i class="z">Z</i></span></div>
+      <div class="chart"><label>加速度 / g</label><canvas id="accChart"></canvas></div>
+      <div class="chart"><label>角速度 / °/s</label><canvas id="gyroChart"></canvas></div>
+      <div class="chart"><label>磁场 / mG</label><canvas id="magChart"></canvas></div>
+    </section>
+  </main>
+  <section id="playback" class="panel playback" hidden><strong id="playTitle">记录回放</strong><div class="buttons"><button id="play">播放</button><input id="seek" type="range" min="0" value="0"><span id="playTime">0 / 0 s</span><button id="exitReplay">返回实时</button></div><p id="playSummary" class="hint"></p></section>
+  <footer>单节点三维位姿 · 位置为惯性估算，可能漂移 · 页面离线可用 · 不提供绝对定位或全身关节角度</footer>
+  <dialog id="recordDialog"><div class="heading"><h2>记录与回放</h2><button id="closeDialog">关闭</button></div><div class="buttons"><select id="sessions" aria-label="记录会话"></select><button id="preview">预览</button><button id="loadReplay">加载回放</button><button id="download">导出 ZIP</button></div><p id="sessionInfo" class="hint"></p><div class="tableScroll"><table id="previewTable"></table></div></dialog>
+  <script src="/static/pose_math.js" defer></script><script src="/static/app.js" defer></script>
+</body></html>

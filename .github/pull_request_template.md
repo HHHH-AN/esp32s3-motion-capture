@@ -4,11 +4,11 @@
 
 ## 修改范围
 
-- [ ] contracts / public API
-- [ ] firmware
-- [ ] backend / algorithm
-- [ ] frontend
-- [ ] documentation / CI
+- [ ] firmware：板端采样与通信
+- [ ] host：接收、数据处理或可视化
+- [ ] tools：启动与诊断工具
+- [ ] docs / README：工程文档
+- [ ] .github：持续集成或协作配置
 
 ## 验证
 
@@ -24,10 +24,11 @@
 - [ ] 仅完成编译，等待实板
 - [ ] 已在实板验证，并附板卡 revision、节点数和时长
 
-## 契约检查
+## 接口与配置
 
-- [ ] 未修改公共契约
-- [ ] 这是独立 Contract PR，Golden Vectors 和兼容策略已更新
+- [ ] 已说明数据格式、节点标识或配置项是否变化
+- [ ] 涉及发送端与接收端时，已说明兼容方式并同步验证
+- [ ] 未包含 Wi-Fi 密码、个人录制或本机生成文件
 
 ## 风险与回滚
 

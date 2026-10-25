@@ -2,72 +2,60 @@ name: ci
 
 on:
   push:
-    branches: [main, ZBC, HAN]
+    branches: [main]
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  contracts:
+  host:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: host
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python 旧版/contracts/validate_contracts.py
-
-  backend:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: 旧版/pose/backend
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - run: python -m pip install --upgrade pip
-      - run: python -m pip install uv==0.8.13 -e ".[dev]"
-      - run: uv lock --check
-      - run: python -m ruff check .
-      - run: python -m pytest
-
-  frontend:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: 旧版/pose/frontend
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-          cache: pnpm
-          cache-dependency-path: 旧版/pose/frontend/pnpm-lock.yaml
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm test
-      - run: pnpm build
+      - name: Install host dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Run Python tests
+        run: python -B -X utf8 -m unittest discover -s tests -v
+      - name: Check browser JavaScript
+        run: |
+          node --check web/app.js
+          node --check web/pose_math.js
+      - name: Test pose transformations
+        run: node tests/test_pose_math.js
+      - name: Generate offline experiment reports
+        run: |
+          for preset in rigid_check upper_limb lower_limb bilateral; do
+            python -B -X utf8 run_motion_presets.py --preset "$preset" --demo --output "preset_runs/demo_$preset"
+          done
+      - name: Test experiment report JavaScript
+        run: node tests/test_preset_report.js
 
   firmware:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        environment: [esp32-s3-devkitm-1, esp32-s3-client-b]
     defaults:
       run:
-        working-directory: 旧版/IMU-tracker
+        working-directory: firmware
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: python -m pip install platformio==6.1.19
-      - run: pio test -e native
-      - run: pio run -e node_usb
-      - run: pio run -e node_fifo_lab
-      - run: pio run -e node_ble
-      - run: pio run -e node_espnow
-      - run: pio run -e gateway_usb
-      - run: pio run -e gateway_ble
+      - name: Create build-only Wi-Fi configuration
+        run: cp include/wifi_config.example.h include/wifi_config.h
+      - name: Build node firmware
+        run: pio run --environment "${{ matrix.environment }}"

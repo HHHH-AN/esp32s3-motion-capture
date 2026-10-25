@@ -1,0 +1,22 @@
+{
+  "output": "C:\\Users\\一两二三\\Desktop\\WIFI\\IMU_NODE_CLEAN\\hardware_tests\\calibration-20261025-154538",
+  "user_confirmed_boards_stationary": true,
+  "before": {
+    "state": "connected",
+    "ssid": "sdu_net",
+    "profile": "sdu_net"
+  },
+  "associated": {
+    "state": "connected",
+    "ssid": "ESP32-IMU",
+    "profile": "ESP32-IMU"
+  },
+  "calibration_passed": false,
+  "error": "Calibration rejected: {'A': '校准取消：样本不稳定或磁场变化，请静置并远离磁性物体后重试', 'B': '零偏校准完成；已自动设置当前显示参考'}",
+  "after": {
+    "state": "connected",
+    "ssid": "sdu_net",
+    "profile": "sdu_net"
+  },
+  "original_wifi_restored": true
+}

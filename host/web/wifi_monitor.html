@@ -1,0 +1,47 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wi-Fi 节点旋转实时显示</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f2f6fa;color:#17334d;font:15px/1.6 system-ui,"Microsoft YaHei",sans-serif}main{max-width:1250px;margin:auto;padding:28px 24px}h1{font-size:27px;margin:6px 0}h2{margin:0;font-size:19px}.intro{max-width:920px;color:#5e7287}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}.card{padding:20px;background:white;border:1px solid #dbe5ef;border-radius:12px;min-width:0}.badge{font-size:12px;background:#edf1f5;color:#607287;padding:4px 9px;border-radius:20px}.on{background:#e1f3eb;color:#18754e}.head{display:flex;justify-content:space-between;align-items:center}.meta{font-size:12px;color:#657b90;overflow-wrap:anywhere}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:12px 0;font-size:12px}.metrics b{display:block;font-size:18px;font-variant-numeric:tabular-nums}.angles{font-size:14px;min-height:44px}canvas{display:block;width:100%;height:240px;background:#f7fafe;border-radius:8px;margin:12px 0}button{border:0;background:#286bab;color:white;padding:8px 12px;border-radius:6px;cursor:pointer}button:disabled{background:#cad4de;cursor:default}.status{font-size:12px;min-height:40px;overflow-wrap:anywhere}.hint{font-size:13px;color:#657b90;margin:20px 0}#server{font-size:13px;color:#657b90}@media(max-width:850px){.grid{grid-template-columns:1fr}main{padding:20px 12px}.card{max-width:650px}canvas{height:260px}}
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.calibration{font-size:13px;min-height:48px}.check{display:block;font-size:13px;margin:10px 0}.check input{margin-right:7px}.bias{font-size:12px;color:#657b90;font-variant-numeric:tabular-nums}
+</style></head><body><main><div class="meta">ESP32-S3 · REAL WI-FI TCP</div><h1>Wi-Fi 节点旋转实时显示</h1><p class="intro">先将两块板子放稳，分别点击“静置校准（4秒）”，校准成功后再转动。每个节点独立补偿陀螺零偏；启用停稳保持后，检测到停稳时保持当前朝向，检测到运动后继续跟随。连接 ESP32 热点后，本页无需 Internet。</p><div id="server">正在连接本机服务…</div><div class="grid" id="nodes"></div><p class="hint">红 X · 绿 Y · 蓝 Z。静置校准需要真实保持不动，成功后自动设置当前显示参考；仅点击“参考姿态归零”不能消除零偏。停稳检测是阈值判断，极慢转动实验请关闭“停稳保持”，零偏补偿仍然有效。完整磁标定和关节角精度尚未验证；此页面不做位移积分。</p></main><script>
+'use strict';
+const cards={},state={};
+async function command(slot,action,extra={}){
+ try{const response=await fetch('/api/'+action,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({slot,...extra})});if(!response.ok)throw Error('节点未在线或请求无效');}
+ catch(error){cards[slot].querySelector('[data-field=calibration]').textContent='操作未完成：'+error.message;}
+}
+for(const slot of ['A','B','C']){
+ const card=document.createElement('section');card.className='card';
+ card.innerHTML=`<div class="head"><h2>节点 ${slot}</h2><span class="badge" data-field="badge">未配置</span></div><p class="meta" data-field="id">等待真实设备</p><canvas aria-label="节点 ${slot} 三维旋转"></canvas><div class="angles" data-field="angles">Roll — · Pitch — · Yaw —</div><div class="metrics"><div>接收频率<b data-field="rate">—</b></div><div>有效帧<b data-field="frames">0</b></div><div>序号缺帧<b data-field="missing">0</b></div></div><p class="meta" data-field="sensors">六轴 — · 磁力计 —</p><p class="status" data-field="status">此槽位尚未配置 TCP 端点</p><p class="calibration" data-field="calibration">未配置真实节点</p><div class="bias" data-field="bias">陀螺零偏 —</div><div class="meta" data-field="magnetic">等待磁场观测</div><div class="controls"><button data-action="calibrate" disabled>静置校准（4秒）</button><button data-action="zero" disabled>参考姿态归零</button></div><label class="check"><input type="checkbox" data-action="stability" disabled>停稳保持</label>`;
+ document.getElementById('nodes').append(card);cards[slot]=card;
+ card.querySelector('[data-action=calibrate]').onclick=()=>command(slot,'calibrate');
+ card.querySelector('[data-action=zero]').onclick=()=>command(slot,'zero');
+ card.querySelector('[data-action=stability]').onchange=event=>command(slot,'stability',{enabled:event.target.checked});
+}
+function rotate(v,q){const [w,x,y,z]=q,[a,b,c]=v,tx=2*(y*c-z*b),ty=2*(z*a-x*c),tz=2*(x*b-y*a);return [a+w*tx+y*tz-z*ty,b+w*ty+z*tx-x*tz,c+w*tz+x*ty-y*tx];}
+function draw(slot){const card=cards[slot],canvas=card.querySelector('canvas'),r=canvas.getBoundingClientRect(),d=devicePixelRatio||1;canvas.width=Math.round(r.width*d);canvas.height=Math.round(r.height*d);const c=canvas.getContext('2d');c.scale(d,d);const data=state[slot],online=!!data?.valid,q=online?data.quaternion:[1,0,0,0];const project=v=>[r.width/2+(v[0]*.82-v[1]*.58)*80,r.height/2+(v[0]*.25+v[1]*.36-v[2]*.9)*80];
+ const points=[[-1,-.65,-.18],[1,-.65,-.18],[1,.65,-.18],[-1,.65,-.18],[-1,-.65,.18],[1,-.65,.18],[1,.65,.18],[-1,.65,.18]].map(v=>project(rotate(v,q)));
+ const faces=[[0,1,2,3],[4,5,6,7],[0,1,5,4],[1,2,6,5],[2,3,7,6],[3,0,4,7]];
+ for(const face of faces){c.beginPath();face.forEach((i,k)=>k?c.lineTo(...points[i]):c.moveTo(...points[i]));c.closePath();c.fillStyle=online?'rgba(48,126,189,.13)':'rgba(140,155,170,.12)';c.fill();c.strokeStyle=online?'#2c76ad':'#aebdca';c.lineWidth=1.5;c.stroke();}
+ for(const [axis,color,label] of [[[1.45,0,0],'#d25145','X'],[[0,1.45,0],'#29986a','Y'],[[0,0,1.45],'#337bc7','Z']]){const a=project([0,0,0]),b=project(rotate(axis,q));c.strokeStyle=color;c.lineWidth=2;c.beginPath();c.moveTo(...a);c.lineTo(...b);c.stroke();c.fillStyle=color;c.font='13px system-ui';c.fillText(label,b[0]+3,b[1]);}
+ if(!online){c.fillStyle='#607287';c.font='13px system-ui';c.fillText(data?'未收到实时数据':'未配置真实节点',12,24);}}
+function render(){for(const slot of ['A','B','C']){
+ const card=cards[slot],data=state[slot],stability=data?.stability;
+ const set=(name,text)=>card.querySelector(`[data-field=${name}]`).textContent=text;
+ const holding=data?.valid&&stability?.holding;
+ set('badge',data?.valid?(holding?'停稳保持':'在线'):data?'离线':'未配置');
+ card.querySelector('[data-field=badge]').className='badge'+(data?.valid?' on':'');
+ for(const action of ['zero','calibrate'])card.querySelector(`[data-action=${action}]`).disabled=!data?.valid||!!stability?.calibrating;
+ const toggle=card.querySelector('[data-action=stability]');toggle.disabled=!data||!!stability?.calibrating;toggle.checked=!!stability?.enabled;
+ if(data){
+  set('id',`${data.node_id||'等待节点 ID'} · ${data.endpoint}`);
+  set('rate',data.valid?data.rate_hz.toFixed(1)+' Hz':'—');set('frames',String(data.frames));set('missing',String(data.missing_frames));
+  set('status',data.status+(data.age_s===null?'':` · 包龄 ${data.age_s.toFixed(2)} s`));
+  set('sensors',`六轴 ${data.sensor_flags&1?'有效':'无效'} · 磁力计 ${data.sensor_flags&2?'有效':'无效'} · 无效帧 ${data.invalid_frames}`);
+  set('angles',data.valid?data.euler_deg.map((x,i)=>`${['Roll','Pitch','Yaw'][i]} ${x.toFixed(1)}°`).join(' · '):'Roll — · Pitch — · Yaw —');
+  set('calibration',stability?.message||'等待新版校准服务');
+  set('bias',stability?.calibrated?'陀螺零偏 '+stability.gyro_bias_dps.map(v=>v.toFixed(3)).join(' / ')+' °/s':'陀螺零偏：未校准');
+  set('magnetic',stability?.magnetic_message||'等待磁场观测');
+ }
+ draw(slot);
+}}
+async function poll(){try{const response=await fetch('/api/status',{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);const payload=await response.json();for(const slot of ['A','B','C'])state[slot]=payload.nodes[slot];document.getElementById('server').textContent='本机服务在线 · 数据来源：真实 Wi-Fi TCP · 页面约 10 Hz 更新';}catch(error){for(const slot of ['A','B','C'])if(state[slot])state[slot]={...state[slot],valid:false,status:'本机服务无法访问'};document.getElementById('server').textContent='本机服务无法访问：'+error.message;}render();setTimeout(poll,100);}addEventListener('resize',render);render();poll();
+</script></body></html>

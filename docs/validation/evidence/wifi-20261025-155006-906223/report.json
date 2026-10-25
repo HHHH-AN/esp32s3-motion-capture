@@ -1,0 +1,24 @@
+{
+  "before": {
+    "state": "connected",
+    "ssid": "sdu_net",
+    "profile": "sdu_net"
+  },
+  "test_profile": "ESP32-IMU",
+  "output": "C:\\Users\\一两二三\\Desktop\\WIFI\\IMU_NODE_CLEAN\\hardware_tests\\wifi-20261025-155006-906223",
+  "connect_request": "Connection request was completed successfully.\r\n",
+  "associated": {
+    "state": "connected",
+    "ssid": "ESP32-IMU",
+    "profile": "ESP32-IMU"
+  },
+  "wifi_transport_passed": false,
+  "error": "Calibration rejected: {'A': {'calibrated': False, 'calibrating': False, 'message': '校准取消：样本不稳定或磁场变化，请静置并远离磁性物体后重试', 'progress': 0.0, 'quality': {'samples': 394, 'duration_s': 4.008999999999971, 'gyro_std_dps': 0.585594808604215, 'accel_std_g': 0.0027440021474677365, 'mag_relative_std': 0.02855397985098089, 'mag_direction_change_deg': 0.22070000258444966}, 'gyro_bias_dps': [0.0, 0.0, 0.0], 'corrected_gyro_dps': [-0.319, -0.1, -0.164], 'enabled': True, 'magnetic_used': True, 'magnetic_message': '使用磁场观测；尚未做完整磁标定', 'holding': False}, 'B': {'calibrated': True, 'calibrating': False, 'message': '零偏校准完成；已自动设置当前显示参考', 'progress': 1.0, 'quality': {'samples': 398, 'duration_s': 4.0, 'gyro_std_dps': 0.06417455719415507, 'accel_std_g': 0.0024543031237269273, 'mag_relative_std': 0.0075611372654023415, 'mag_direction_change_deg': 0.301040640517699}, 'gyro_bias_dps': [0.03385678391959827, -0.05464824120602971, 0.024902010050251278], 'corrected_gyro_dps': [0.023143216080401735, 0.01164824120602971, 0.002097989949748722], 'enabled': True, 'magnetic_used': True, 'magnetic_message': '使用磁场观测；尚未做完整磁标定', 'holding': False}}",
+  "tested_wifi_ipv4_config": "\r\nConfiguration for interface \"WLAN\"\r\n    DHCP enabled:                         Yes\r\n    IP Address:                           192.168.4.2\r\n    Subnet Prefix:                        192.168.4.0/24 (mask 255.255.255.0)\r\n    Default Gateway:                      192.168.4.1\r\n    Gateway Metric:                       0\r\n    InterfaceMetric:                      50\r\n    DNS servers configured through DHCP:  192.168.4.1\r\n    Register with which suffix:           Primary only\r\n    WINS servers configured through DHCP: None\r\n\r\n",
+  "after": {
+    "state": "connected",
+    "ssid": "sdu_net",
+    "profile": "sdu_net"
+  },
+  "original_wifi_restored": true
+}

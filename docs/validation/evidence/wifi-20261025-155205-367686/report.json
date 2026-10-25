@@ -1,0 +1,426 @@
+{
+  "before": {
+    "state": "connected",
+    "ssid": "sdu_net",
+    "profile": "sdu_net"
+  },
+  "test_profile": "ESP32-IMU",
+  "output": "C:\\Users\\一两二三\\Desktop\\WIFI\\IMU_NODE_CLEAN\\hardware_tests\\wifi-20261025-155205-367686",
+  "connect_request": "Connection request was completed successfully.\r\n",
+  "associated": {
+    "state": "connected",
+    "ssid": "ESP32-IMU",
+    "profile": "ESP32-IMU"
+  },
+  "stationary_calibration": {
+    "A": {
+      "calibrated": true,
+      "calibrating": false,
+      "message": "零偏校准完成；已自动设置当前显示参考",
+      "progress": 1.0,
+      "quality": {
+        "samples": 391,
+        "duration_s": 4.0,
+        "gyro_std_dps": 0.2766900890066201,
+        "accel_std_g": 0.0022968831751531025,
+        "mag_relative_std": 0.03368008497768458,
+        "mag_direction_change_deg": 0.162562083724687
+      },
+      "gyro_bias_dps": [
+        0.0137621483375959,
+        -0.027685421994885002,
+        0.03790281329923291
+      ],
+      "corrected_gyro_dps": [
+        -0.1237621483375959,
+        0.082685421994885,
+        -0.04490281329923291
+      ],
+      "enabled": true,
+      "magnetic_used": true,
+      "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+      "holding": false
+    },
+    "B": {
+      "calibrated": true,
+      "calibrating": false,
+      "message": "零偏校准完成；已自动设置当前显示参考",
+      "progress": 1.0,
+      "quality": {
+        "samples": 399,
+        "duration_s": 4.0,
+        "gyro_std_dps": 0.06814911311754851,
+        "accel_std_g": 0.001902592221602211,
+        "mag_relative_std": 0.007545158692171489,
+        "mag_direction_change_deg": 0.1729771901638361
+      },
+      "gyro_bias_dps": [
+        0.033666666666666636,
+        -0.07832581453634051,
+        0.02859649122807031
+      ],
+      "corrected_gyro_dps": [
+        0.021333333333333364,
+        0.009325814536340502,
+        0.021403508771929692
+      ],
+      "enabled": true,
+      "magnetic_used": true,
+      "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+      "holding": false
+    }
+  },
+  "wifi_transport_passed": true,
+  "validation_path": "ESP32 Wi-Fi TCP -> independent fusion -> simultaneous local HTTP API",
+  "monitor_url": "http://127.0.0.1:8010/",
+  "simultaneous_nodes_validated": [
+    "A",
+    "B"
+  ],
+  "nodes": {
+    "A": {
+      "wifi_transport_passed": true,
+      "endpoint": "192.168.4.1:9000",
+      "node_id": "imu_305A6077C398",
+      "frames_received_during_monitor_check": 1137,
+      "counter_deltas": {
+        "frames": 1137,
+        "invalid_frames": 0,
+        "missing_frames": 0,
+        "attitude_reinitializations": 0,
+        "duplicate_frames": 0
+      },
+      "received_hz_last": 98.0,
+      "sampling_gaps_during_check": 0,
+      "sensor_flags": 3,
+      "first_monitor_state": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 99.74811083193626,
+        "quaternion": [
+          0.999997536898453,
+          -6.7462241969303e-05,
+          -0.00017016703075491135,
+          0.0022119423714040912
+        ],
+        "euler_deg": [
+          -0.007773717139155726,
+          -0.01948255804534512,
+          0.25347145742104277
+        ],
+        "accel": [
+          0.0229,
+          0.0847,
+          -1.0
+        ],
+        "gyro": [
+          -0.11,
+          -0.006,
+          0.115
+        ],
+        "mag": [
+          9.0,
+          76.5,
+          510.0
+        ],
+        "sensor_flags": 3,
+        "frames": 503,
+        "sequence": 10983,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 112776420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": true,
+          "calibrating": false,
+          "message": "零偏校准完成；已自动设置当前显示参考",
+          "progress": 1.0,
+          "quality": {
+            "samples": 391,
+            "duration_s": 4.0,
+            "gyro_std_dps": 0.2766900890066201,
+            "accel_std_g": 0.0022968831751531025,
+            "mag_relative_std": 0.03368008497768458,
+            "mag_direction_change_deg": 0.162562083724687
+          },
+          "gyro_bias_dps": [
+            0.0137621483375959,
+            -0.027685421994885002,
+            0.03790281329923291
+          ],
+          "corrected_gyro_dps": [
+            -0.1237621483375959,
+            0.021685421994885004,
+            0.0770971867007671
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "last_monitor_state": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 98.0,
+        "quaternion": [
+          0.9988784523316296,
+          -0.0005117653900016984,
+          -0.004026810516955619,
+          0.04717372532262418
+        ],
+        "euler_deg": [
+          -0.08034858983533415,
+          -0.4581593967211904,
+          5.408083519143076
+        ],
+        "accel": [
+          0.0229,
+          0.0852,
+          -1.0015
+        ],
+        "gyro": [
+          0.012,
+          -0.006,
+          -0.007
+        ],
+        "mag": [
+          12.0,
+          78.0,
+          534.0
+        ],
+        "sensor_flags": 3,
+        "frames": 1640,
+        "sequence": 12120,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 124714420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": true,
+          "calibrating": false,
+          "message": "零偏校准完成；已自动设置当前显示参考",
+          "progress": 1.0,
+          "quality": {
+            "samples": 391,
+            "duration_s": 4.0,
+            "gyro_std_dps": 0.2766900890066201,
+            "accel_std_g": 0.0022968831751531025,
+            "mag_relative_std": 0.03368008497768458,
+            "mag_direction_change_deg": 0.162562083724687
+          },
+          "gyro_bias_dps": [
+            0.0137621483375959,
+            -0.027685421994885002,
+            0.03790281329923291
+          ],
+          "corrected_gyro_dps": [
+            -0.001762148337595899,
+            0.021685421994885004,
+            -0.04490281329923291
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": true
+        }
+      }
+    },
+    "B": {
+      "wifi_transport_passed": true,
+      "endpoint": "192.168.4.201:9000",
+      "node_id": "imu_149B6077C398",
+      "frames_received_during_monitor_check": 1149,
+      "counter_deltas": {
+        "frames": 1149,
+        "invalid_frames": 0,
+        "missing_frames": 0,
+        "attitude_reinitializations": 0,
+        "duplicate_frames": 0
+      },
+      "received_hz_last": 99.0,
+      "sampling_gaps_during_check": 0,
+      "sensor_flags": 3,
+      "first_monitor_state": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 101.25944584454135,
+        "quaternion": [
+          0.9999999930138952,
+          1.780119469220725e-05,
+          2.679766598073438e-05,
+          -0.00011374186654108889
+        ],
+        "euler_deg": [
+          0.0020395173644498364,
+          0.0030710183212529127,
+          -0.013033803189903714
+        ],
+        "accel": [
+          0.0154,
+          0.0068,
+          -0.9954
+        ],
+        "gyro": [
+          0.055,
+          0.053,
+          0.05
+        ],
+        "mag": [
+          102.0,
+          580.5,
+          642.0
+        ],
+        "sensor_flags": 3,
+        "frames": 511,
+        "sequence": 11026,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 112965287,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": true,
+          "calibrating": false,
+          "message": "零偏校准完成；已自动设置当前显示参考",
+          "progress": 1.0,
+          "quality": {
+            "samples": 399,
+            "duration_s": 4.0,
+            "gyro_std_dps": 0.06814911311754851,
+            "accel_std_g": 0.001902592221602211,
+            "mag_relative_std": 0.007545158692171489,
+            "mag_direction_change_deg": 0.1729771901638361
+          },
+          "gyro_bias_dps": [
+            0.033666666666666636,
+            -0.07832581453634051,
+            0.02859649122807031
+          ],
+          "corrected_gyro_dps": [
+            0.021333333333333364,
+            0.1313258145363405,
+            0.021403508771929692
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "last_monitor_state": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 99.0,
+        "quaternion": [
+          0.9999995250519751,
+          0.0001589053736188225,
+          3.1850010987119134e-05,
+          -0.0009610569615789943
+        ],
+        "euler_deg": [
+          0.018205698585477607,
+          0.0036672407754411336,
+          -0.11012845130791571
+        ],
+        "accel": [
+          0.0149,
+          0.0078,
+          -0.9978
+        ],
+        "gyro": [
+          -0.007,
+          -0.069,
+          -0.072
+        ],
+        "mag": [
+          102.0,
+          582.0,
+          643.5
+        ],
+        "sensor_flags": 3,
+        "frames": 1660,
+        "sequence": 12175,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 124902287,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": true,
+          "calibrating": false,
+          "message": "零偏校准完成；已自动设置当前显示参考",
+          "progress": 1.0,
+          "quality": {
+            "samples": 399,
+            "duration_s": 4.0,
+            "gyro_std_dps": 0.06814911311754851,
+            "accel_std_g": 0.001902592221602211,
+            "mag_relative_std": 0.007545158692171489,
+            "mag_direction_change_deg": 0.1729771901638361
+          },
+          "gyro_bias_dps": [
+            0.033666666666666636,
+            -0.07832581453634051,
+            0.02859649122807031
+          ],
+          "corrected_gyro_dps": [
+            -0.040666666666666636,
+            0.009325814536340502,
+            -0.10059649122807031
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": true
+        }
+      }
+    }
+  },
+  "frames_received_during_monitor_check": 2286,
+  "monitor_payload_poll_count": 110,
+  "monitor_polls_file": "C:\\Users\\一两二三\\Desktop\\WIFI\\IMU_NODE_CLEAN\\hardware_tests\\wifi-20261025-155205-367686\\monitor_polls.json",
+  "usb_serial_opened_by_test": false,
+  "limitations": "Physical rotation accuracy, battery unplugging and hardware sampling synchronization were not verified.",
+  "tested_wifi_ipv4_config": "\r\nConfiguration for interface \"WLAN\"\r\n    DHCP enabled:                         Yes\r\n    IP Address:                           192.168.4.2\r\n    Subnet Prefix:                        192.168.4.0/24 (mask 255.255.255.0)\r\n    Default Gateway:                      192.168.4.1\r\n    Gateway Metric:                       0\r\n    InterfaceMetric:                      55\r\n    DNS servers configured through DHCP:  192.168.4.1\r\n    Register with which suffix:           Primary only\r\n    WINS servers configured through DHCP: None\r\n\r\n",
+  "after": {
+    "state": "connected",
+    "ssid": "sdu_net",
+    "profile": "sdu_net"
+  },
+  "original_wifi_restored": true
+}

@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-25",
+  "source_project": "IMU_NODE_CLEAN",
+  "real_evidence_files": 32,
+  "private_config_included": false,
+  "firmware_binaries_included": false,
+  "secrets_removed_from_text": true,
+  "source_tree_modified_by_packaging": false
+}

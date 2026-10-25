@@ -1,0 +1,9 @@
+{
+  "root_layout_verified": true,
+  "host_source_files_unchanged": 45,
+  "firmware_change": "One explicit integer conversion in Wi-Fi diagnostic printf; strict compiler warnings retained",
+  "original_evidence_sha256_verified": 32,
+  "broken_document_links": [],
+  "legacy_source_removed_from_worktree": true,
+  "hardware_operations": false
+}

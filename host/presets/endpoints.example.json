@@ -1,0 +1,7 @@
+{
+  "nodes": {
+    "A": {"host": null, "port": 9000, "sensor_axes": ["-X", "+Y", "-Z"]},
+    "B": {"host": null, "port": 9000, "sensor_axes": ["-X", "+Y", "-Z"]},
+    "C": {"host": null, "port": 9000, "sensor_axes": ["-X", "+Y", "-Z"]}
+  }
+}

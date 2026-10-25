@@ -1,0 +1,23 @@
+{
+  "project": "E:\\AAA动作捕捉系统\\2.代码",
+  "method": "Windows Recycle Bin; stop on error; no permanent fallback",
+  "snapshot": "E:\\AAA动作捕捉系统\\2.代码\\.codex\\scratch\\pre-reorganization-20261025.zip",
+  "targets": [
+    "E:\\AAA动作捕捉系统\\2.代码\\旧版",
+    "E:\\AAA动作捕捉系统\\2.代码\\源代码",
+    "E:\\AAA动作捕捉系统\\2.代码\\配置",
+    "E:\\AAA动作捕捉系统\\2.代码\\说明",
+    "E:\\AAA动作捕捉系统\\2.代码\\IMU_伙伴交接_20261025",
+    "E:\\AAA动作捕捉系统\\2.代码\\.github\\workflows\\imu.yml"
+  ],
+  "protected": [
+    ".git",
+    ".codex",
+    "firmware",
+    "host",
+    "tools",
+    "docs",
+    "README.md",
+    "AGENTS.md"
+  ]
+}

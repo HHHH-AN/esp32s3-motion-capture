@@ -1,0 +1,82 @@
+{
+  "before": {
+    "state": "connected",
+    "ssid": "sdu_net",
+    "profile": "sdu_net"
+  },
+  "test_profile": "ESP32-IMU",
+  "output": "C:\\Users\\一两二三\\Desktop\\WIFI\\IMU_NODE_CLEAN\\hardware_tests\\wifi-20261025-154814-583647",
+  "connect_request": "Connection request was completed successfully.\r\n",
+  "associated": {
+    "state": "connected",
+    "ssid": "ESP32-IMU",
+    "profile": "ESP32-IMU"
+  },
+  "stationary_calibration": {
+    "A": {
+      "calibrated": true,
+      "calibrating": false,
+      "message": "零偏校准完成；已自动设置当前显示参考",
+      "progress": 1.0,
+      "quality": {
+        "samples": 392,
+        "duration_s": 4.0,
+        "gyro_std_dps": 0.08108532863493542,
+        "accel_std_g": 0.0018010743907039578,
+        "mag_relative_std": 0.03385389414621636,
+        "mag_direction_change_deg": 0.4728930962854918
+      },
+      "gyro_bias_dps": [
+        -0.0015739795918367336,
+        -0.025864795918367364,
+        0.036232142857143074
+      ],
+      "corrected_gyro_dps": [
+        -0.07142602040816326,
+        0.05586479591836736,
+        0.03376785714285693
+      ],
+      "enabled": true,
+      "magnetic_used": true,
+      "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+      "holding": false
+    },
+    "B": {
+      "calibrated": true,
+      "calibrating": false,
+      "message": "零偏校准完成；已自动设置当前显示参考",
+      "progress": 1.0,
+      "quality": {
+        "samples": 398,
+        "duration_s": 4.0,
+        "gyro_std_dps": 0.06507529078785948,
+        "accel_std_g": 0.0011729875480516066,
+        "mag_relative_std": 0.007659392942974251,
+        "mag_direction_change_deg": 0.1458269274381336
+      },
+      "gyro_bias_dps": [
+        0.045120603015075374,
+        -0.09649748743718684,
+        0.0230477386934672
+      ],
+      "corrected_gyro_dps": [
+        -0.029120603015075373,
+        -0.009502512562813162,
+        -0.013047738693467198
+      ],
+      "enabled": true,
+      "magnetic_used": true,
+      "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+      "holding": false
+    }
+  },
+  "wifi_transport_passed": false,
+  "error": "Monitor node A added attitude_reinitializations during validation",
+  "tested_wifi_ipv4_config": "\r\nConfiguration for interface \"WLAN\"\r\n    DHCP enabled:                         Yes\r\n    IP Address:                           192.168.4.2\r\n    Subnet Prefix:                        192.168.4.0/24 (mask 255.255.255.0)\r\n    Default Gateway:                      192.168.4.1\r\n    Gateway Metric:                       0\r\n    InterfaceMetric:                      50\r\n    DNS servers configured through DHCP:  192.168.4.1\r\n    Register with which suffix:           Primary only\r\n    WINS servers configured through DHCP: None\r\n\r\n",
+  "after": {
+    "state": "connected",
+    "ssid": "sdu_net",
+    "profile": "sdu_net"
+  },
+  "original_wifi_restored": true
+}

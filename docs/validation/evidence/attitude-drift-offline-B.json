@@ -1,0 +1,863 @@
+{
+  "kind": "offline_historical_http_snapshot_counterfactual",
+  "input": "C:\\Users\\一两二三\\Desktop\\WIFI\\IMU_NODE_CLEAN\\hardware_tests\\wifi-20261025-151516-938679\\monitor_polls.json",
+  "slot": "B",
+  "source": {
+    "http_payloads": 181,
+    "unique_snapshots": 178,
+    "duplicate_sequences_removed": 3,
+    "snapshots_with_actual_device_us": 0,
+    "node_id": "imu_149B6077C398"
+  },
+  "hardware_connected_by_tool": false,
+  "wifi_or_serial_access": false,
+  "formal_live_calibration_passed": false,
+  "time_assumption": {
+    "nominal_sensor_hz": 100.0,
+    "received_monotonic": "elapsed sequence / nominal_hz",
+    "missing_device_us": "sequence * 1e6 / nominal_hz modulo 2^32",
+    "exact_hardware_timing_known": false
+  },
+  "assumed_rest_window": {
+    "selection": "minimum gyro vector standard deviation among plausible four-second windows",
+    "plausible_window_candidates": 122,
+    "nominal_start_s": 10.61,
+    "nominal_end_s": 14.68,
+    "snapshot_count": 38,
+    "bias_dps": [
+      0.08397368421052634,
+      -0.013684210526315787,
+      0.020763157894736844
+    ],
+    "gyro_vector_std_dps": 0.09761795195012181,
+    "accel_vector_std_g": 0.0011866116009093897,
+    "gravity_norm_g": 0.9910910396098909,
+    "magnetic_norm_mG": 464.86706811551517,
+    "magnetic_vector_coefficient_of_variation": 0.012542147638535476
+  },
+  "evaluation": {
+    "nominal_start_s": 14.8,
+    "nominal_end_s": 19.0,
+    "duration_s": 4.199999999999999,
+    "snapshot_count": 39,
+    "both_filters_reset_before_evaluation": true
+  },
+  "original_fusion": {
+    "end_relative_rotation_deg": 17.76164350044064,
+    "peak_relative_rotation_deg": 26.806863133791502,
+    "end_euler_deg": [
+      -13.544066073053571,
+      5.474032532086071,
+      9.507643241820508
+    ],
+    "holding_snapshots": 0,
+    "holding_ratio": 0.0,
+    "magnetic_rejected_snapshots": 0,
+    "trajectory": [
+      {
+        "nominal_s": 14.8,
+        "relative_rotation_deg": 0.0,
+        "euler_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 14.9,
+        "relative_rotation_deg": 0.016600062742736232,
+        "euler_deg": [
+          0.009804862775857622,
+          0.011433757090390248,
+          -0.006977270237154384
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 15.01,
+        "relative_rotation_deg": 0.027897421792429215,
+        "euler_deg": [
+          0.01090722464717904,
+          -0.023427803317402806,
+          0.010506653618556227
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 15.12,
+        "relative_rotation_deg": 0.06472134802672351,
+        "euler_deg": [
+          0.06222062376505123,
+          -0.0008585739288419277,
+          0.017795874724928804
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 15.22,
+        "relative_rotation_deg": 0.06945332936027065,
+        "euler_deg": [
+          0.06807377455577647,
+          -0.0010538398214826766,
+          0.013733114303158496
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 15.34,
+        "relative_rotation_deg": 0.06575244474204656,
+        "euler_deg": [
+          0.062194269604596175,
+          0.016911359433720383,
+          0.013019285052423422
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 15.45,
+        "relative_rotation_deg": 0.06605450753804315,
+        "euler_deg": [
+          0.06187898875972543,
+          -0.01105625445050445,
+          0.020290532830453036
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 15.55,
+        "relative_rotation_deg": 0.07369883065147652,
+        "euler_deg": [
+          0.06655746776001958,
+          -0.010161233182374836,
+          0.02996692943806874
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 15.66,
+        "relative_rotation_deg": 0.08448222293689414,
+        "euler_deg": [
+          0.06404152656050731,
+          -0.042899677946980574,
+          0.03455271415470665
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 15.77,
+        "relative_rotation_deg": 0.12094205311862163,
+        "euler_deg": [
+          0.06851635948048289,
+          -0.08889039195917973,
+          0.0450133719960356
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 15.88,
+        "relative_rotation_deg": 0.12721678644335044,
+        "euler_deg": [
+          0.0751003316201275,
+          -0.08637220020410641,
+          0.05547626052418832
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 15.98,
+        "relative_rotation_deg": 0.1253715191784853,
+        "euler_deg": [
+          0.09133015710743042,
+          -0.0709297718996498,
+          0.04837685311546841
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 16.09,
+        "relative_rotation_deg": 0.13542580028461032,
+        "euler_deg": [
+          0.08821743981586937,
+          -0.09087138364195935,
+          0.04789075424570979
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 16.21,
+        "relative_rotation_deg": 0.15071777571398426,
+        "euler_deg": [
+          0.10246451593313065,
+          -0.0983412800967068,
+          0.050368731878620905
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 16.33,
+        "relative_rotation_deg": 0.16052764591237825,
+        "euler_deg": [
+          0.12393011328370875,
+          -0.09081891472969225,
+          0.046403296057838814
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 16.43,
+        "relative_rotation_deg": 0.1700465088900438,
+        "euler_deg": [
+          0.12255991561272667,
+          -0.10872074244629322,
+          0.045432614478104726
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 16.56,
+        "relative_rotation_deg": 0.18304759179465033,
+        "euler_deg": [
+          0.12637816415646408,
+          -0.12295111489795839,
+          0.049037873404370755
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 16.68,
+        "relative_rotation_deg": 0.19736129200760477,
+        "euler_deg": [
+          0.12923524568587028,
+          -0.13970488469347975,
+          0.05211396069530221
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 16.79,
+        "relative_rotation_deg": 0.18640632347141523,
+        "euler_deg": [
+          0.12229872250190257,
+          -0.12689960647397058,
+          0.0605840609038557
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 16.9,
+        "relative_rotation_deg": 0.19415317476217187,
+        "euler_deg": [
+          0.13416878520650893,
+          -0.12378108549585143,
+          0.06597970335714695
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 17.02,
+        "relative_rotation_deg": 0.2277190565720287,
+        "euler_deg": [
+          0.14845187610325186,
+          -0.1586715166648645,
+          0.0679224173720358
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 17.12,
+        "relative_rotation_deg": 0.20360740699239877,
+        "euler_deg": [
+          0.15057162882452907,
+          -0.11813875294540398,
+          0.06932449413239013
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 17.25,
+        "relative_rotation_deg": 0.24691106584714106,
+        "euler_deg": [
+          0.1739261340912658,
+          -0.15986374065543008,
+          0.07157967211227545
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 17.36,
+        "relative_rotation_deg": 0.5065782880353269,
+        "euler_deg": [
+          0.23487475383308848,
+          -0.33846332648931177,
+          0.29409263045014616
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 17.46,
+        "relative_rotation_deg": 5.301944348765738,
+        "euler_deg": [
+          3.625599657918641,
+          -1.1652356308974166,
+          -3.726690061368042
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 17.56,
+        "relative_rotation_deg": 26.806863133791502,
+        "euler_deg": [
+          -19.92978316446336,
+          10.478259338046634,
+          12.949102659674528
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 17.67,
+        "relative_rotation_deg": 25.578541015565722,
+        "euler_deg": [
+          -19.01062209860566,
+          9.517312651362701,
+          12.825427756453308
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 17.79,
+        "relative_rotation_deg": 24.41747426319632,
+        "euler_deg": [
+          -18.00527196078633,
+          9.097632042596722,
+          12.484079555137223
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 17.89,
+        "relative_rotation_deg": 23.70062632281639,
+        "euler_deg": [
+          -17.529351740075665,
+          8.697628459422072,
+          12.182179440571444
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 18.0,
+        "relative_rotation_deg": 23.0430196985646,
+        "euler_deg": [
+          -17.11567484731859,
+          8.319794097786627,
+          11.878655426212697
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 18.12,
+        "relative_rotation_deg": 22.364421682930008,
+        "euler_deg": [
+          -16.662517582867142,
+          7.952636483952949,
+          11.580371693641725
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 18.23,
+        "relative_rotation_deg": 21.75366350083239,
+        "euler_deg": [
+          -16.267098490366003,
+          7.602624953340259,
+          11.306271566464066
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 18.33,
+        "relative_rotation_deg": 21.110182970143946,
+        "euler_deg": [
+          -15.825748522877708,
+          7.256703646005312,
+          11.031091760580752
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 18.44,
+        "relative_rotation_deg": 20.50215354171566,
+        "euler_deg": [
+          -15.409850471071694,
+          6.9543606290592175,
+          10.748767568573003
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 18.55,
+        "relative_rotation_deg": 19.95848635818042,
+        "euler_deg": [
+          -15.052082868643389,
+          6.666372899975906,
+          10.487158776351569
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 18.67,
+        "relative_rotation_deg": 19.380732590484456,
+        "euler_deg": [
+          -14.659374866511342,
+          6.369219933893789,
+          10.217432595654085
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 18.78,
+        "relative_rotation_deg": 18.815397226390417,
+        "euler_deg": [
+          -14.266797558368955,
+          6.050983828440633,
+          9.98101851081378
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 18.89,
+        "relative_rotation_deg": 18.281143049526523,
+        "euler_deg": [
+          -13.903893419160841,
+          5.756032614627498,
+          9.739279434146095
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 19.0,
+        "relative_rotation_deg": 17.76164350044064,
+        "euler_deg": [
+          -13.544066073053571,
+          5.474032532086071,
+          9.507643241820508
+        ],
+        "holding": false
+      }
+    ]
+  },
+  "bias_guard_and_hold_fusion": {
+    "end_relative_rotation_deg": 17.892030789342456,
+    "peak_relative_rotation_deg": 26.91100971015222,
+    "end_euler_deg": [
+      -13.731346849131796,
+      5.518380257455574,
+      9.448208455872546
+    ],
+    "holding_snapshots": 0,
+    "holding_ratio": 0.0,
+    "magnetic_rejected_snapshots": 0,
+    "trajectory": [
+      {
+        "nominal_s": 14.8,
+        "relative_rotation_deg": 0.0,
+        "euler_deg": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 14.9,
+        "relative_rotation_deg": 0.015698878728616583,
+        "euler_deg": [
+          0.0016578367037711683,
+          0.012760866099265383,
+          -0.00899240511776962
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 15.01,
+        "relative_rotation_deg": 0.022411430622496013,
+        "euler_deg": [
+          -0.005142111040413546,
+          -0.020809722657518084,
+          0.006542062359536857
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 15.12,
+        "relative_rotation_deg": 0.04042185271099119,
+        "euler_deg": [
+          0.038503657044912654,
+          0.003012301843669038,
+          0.011930832723175567
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 15.22,
+        "relative_rotation_deg": 0.03762280099124596,
+        "euler_deg": [
+          0.03691737816368308,
+          0.004028591265952167,
+          0.006030626467493833
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 15.34,
+        "relative_rotation_deg": 0.033416711582982345,
+        "euler_deg": [
+          0.023819240052472112,
+          0.02317122700988898,
+          0.0035282651796284857
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 15.45,
+        "relative_rotation_deg": 0.01918913554895683,
+        "euler_deg": [
+          0.0165048131559684,
+          -0.003651186775400642,
+          0.009081483871589512
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 15.55,
+        "relative_rotation_deg": 0.022395157127414186,
+        "euler_deg": [
+          0.014391789662567213,
+          -0.001641376504801402,
+          0.01707976279406332
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 15.66,
+        "relative_rotation_deg": 0.039234204418700555,
+        "euler_deg": [
+          0.005290426467505807,
+          -0.03330284191000689,
+          0.020054756247862245
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 15.77,
+        "relative_rotation_deg": 0.08350140585293565,
+        "euler_deg": [
+          0.0033809787263663765,
+          -0.07824503641962988,
+          0.028959186176532
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 15.88,
+        "relative_rotation_deg": 0.08384814471967766,
+        "euler_deg": [
+          0.003766886980146498,
+          -0.07470530506272782,
+          0.03788473922030512
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 15.98,
+        "relative_rotation_deg": 0.06671701585366073,
+        "euler_deg": [
+          0.013978386048551304,
+          -0.05829018850946163,
+          0.02928485078688841
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 16.09,
+        "relative_rotation_deg": 0.08214213108449815,
+        "euler_deg": [
+          0.005033215943551039,
+          -0.07728399174727468,
+          0.02736777978392351
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 16.21,
+        "relative_rotation_deg": 0.08956938385456258,
+        "euler_deg": [
+          0.013620518116316123,
+          -0.08382707947725378,
+          0.028453645235661983
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 16.33,
+        "relative_rotation_deg": 0.08425292529142456,
+        "euler_deg": [
+          0.029592085925392943,
+          -0.07541450299231897,
+          0.023121769718288974
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 16.43,
+        "relative_rotation_deg": 0.09750300082343787,
+        "euler_deg": [
+          0.02289724467371395,
+          -0.09245105321515881,
+          0.020846681343087883
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 16.56,
+        "relative_rotation_deg": 0.11046951658485595,
+        "euler_deg": [
+          0.02155128295466606,
+          -0.10583313117797376,
+          0.023183658739083873
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 16.68,
+        "relative_rotation_deg": 0.12582038416768798,
+        "euler_deg": [
+          0.019398162797992172,
+          -0.1217644018188182,
+          0.025037552186822888
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 16.79,
+        "relative_rotation_deg": 0.11312388280962575,
+        "euler_deg": [
+          0.00759770816785704,
+          -0.10814953532262377,
+          0.03228781478450952
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 16.9,
+        "relative_rotation_deg": 0.11144666183520845,
+        "euler_deg": [
+          0.014749553805505725,
+          -0.1042539173232605,
+          0.036509593493097105
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 17.02,
+        "relative_rotation_deg": 0.14543277722249098,
+        "euler_deg": [
+          0.02446340344397216,
+          -0.13840053818616116,
+          0.037353972530425085
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 17.12,
+        "relative_rotation_deg": 0.10649223686873172,
+        "euler_deg": [
+          0.022133119898176304,
+          -0.09713389595151753,
+          0.03760740784249658
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 17.25,
+        "relative_rotation_deg": 0.1493221780299227,
+        "euler_deg": [
+          0.04118992534586654,
+          -0.13815927089546387,
+          0.03884150547195081
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 17.36,
+        "relative_rotation_deg": 0.4210409495123046,
+        "euler_deg": [
+          0.09806432136549315,
+          -0.31556298103231023,
+          0.2606497854119495
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 17.46,
+        "relative_rotation_deg": 5.226572450933574,
+        "euler_deg": [
+          3.4833054063125775,
+          -1.1511190933017206,
+          -3.758568377470785
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 17.56,
+        "relative_rotation_deg": 26.91100971015222,
+        "euler_deg": [
+          -20.072262038368024,
+          10.53457197651792,
+          12.886619047701407
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 17.67,
+        "relative_rotation_deg": 25.68402673714741,
+        "euler_deg": [
+          -19.156884645959508,
+          9.572875312696024,
+          12.764528787790132
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 17.79,
+        "relative_rotation_deg": 24.52421443051319,
+        "euler_deg": [
+          -18.155635685231125,
+          9.151941241332489,
+          12.423375048077498
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 17.89,
+        "relative_rotation_deg": 23.809781672430713,
+        "euler_deg": [
+          -17.68365292793635,
+          8.750835218492446,
+          12.121672323631232
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 18.0,
+        "relative_rotation_deg": 23.154702210654005,
+        "euler_deg": [
+          -17.273793624319488,
+          8.371921411264298,
+          11.81830950503075
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 18.12,
+        "relative_rotation_deg": 22.47843051422,
+        "euler_deg": [
+          -16.82433221970819,
+          8.00372206916016,
+          11.52019148272376
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 18.23,
+        "relative_rotation_deg": 21.8699991919905,
+        "euler_deg": [
+          -16.432475325318844,
+          7.652745648293093,
+          11.246219776645637
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 18.33,
+        "relative_rotation_deg": 21.228620797998506,
+        "euler_deg": [
+          -15.99457020224934,
+          7.305885877067122,
+          10.971166242301134
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 18.44,
+        "relative_rotation_deg": 20.622748317567346,
+        "euler_deg": [
+          -15.582032140821578,
+          7.002616587247996,
+          10.6889105571035
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 18.55,
+        "relative_rotation_deg": 20.081297606392695,
+        "euler_deg": [
+          -15.227505295806784,
+          6.713781111227346,
+          10.427359447149515
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 18.67,
+        "relative_rotation_deg": 19.50560875649705,
+        "euler_deg": [
+          -14.83793427871302,
+          6.415767703735124,
+          10.157717006630438
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 18.78,
+        "relative_rotation_deg": 18.942094938388884,
+        "euler_deg": [
+          -14.448353401075897,
+          6.096778309470538,
+          9.921429443665948
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 18.89,
+        "relative_rotation_deg": 18.409742247116423,
+        "euler_deg": [
+          -14.088360883744294,
+          5.801078586011395,
+          9.67977639849975
+        ],
+        "holding": false
+      },
+      {
+        "nominal_s": 19.0,
+        "relative_rotation_deg": 17.892030789342456,
+        "euler_deg": [
+          -13.731346849131796,
+          5.518380257455574,
+          9.448208455872546
+        ],
+        "holding": false
+      }
+    ]
+  },
+  "peak_relative_rotation_reduction_percent": -0.3885071365527848,
+  "limitations": [
+    "Historical user motion was not prescribed or independently measured; selecting a quiet window assumes rest.",
+    "Sparse HTTP snapshots omit most 100 Hz samples; there is no interpolation, duplication or invented frame.",
+    "The bias is injected as an offline hypothesis; the >=200 frame real calibration is not executed or claimed passed.",
+    "At roughly 10 Hz, the >=20 samples in a 0.6 s rest detector cannot normally be satisfied; zero hold is expected.",
+    "Sequence-based time assumes nominal frequency; fusion's normal 0.1 s dt clamp still applies.",
+    "This compares reconstructed relative attitude change, not absolute accuracy, and is not a new board test.",
+    "Sensor vectors are already coordinate-mapped by the saved API and are not mapped a second time."
+  ]
+}

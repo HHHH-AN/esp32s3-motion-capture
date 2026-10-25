@@ -1,0 +1,23 @@
+{
+  "repository": "LaiZheHao/esp32s3-motion-capture",
+  "before_refs": [
+    "refs/heads/main e9f16b90f97714b534bd16197ec71be0157fd242",
+    "refs/heads/update/imu-baseline-20260914 9357b8f091ad956e1d07bb959289add025be7611",
+    "refs/remotes/origin/HAN 4e91dede0f4b91bf03a30c7b1e933978c2119feb",
+    "refs/remotes/origin/HEAD e9f16b90f97714b534bd16197ec71be0157fd242",
+    "refs/remotes/origin/main e9f16b90f97714b534bd16197ec71be0157fd242",
+    "refs/remotes/origin/update/imu-baseline-20260914 9357b8f091ad956e1d07bb959289add025be7611"
+  ],
+  "remote_heads": [
+    "4e91dede0f4b91bf03a30c7b1e933978c2119feb\trefs/heads/HAN",
+    "e9f16b90f97714b534bd16197ec71be0157fd242\trefs/heads/main",
+    "9357b8f091ad956e1d07bb959289add025be7611\trefs/heads/update/imu-baseline-20260914"
+  ],
+  "retained_branch": "main",
+  "delete_remote_branches": [
+    "HAN",
+    "update/imu-baseline-20260914"
+  ],
+  "history_backup": ".codex/scratch/git-before-main-20261025.bundle",
+  "planned_atomic_push": true
+}

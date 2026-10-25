@@ -1,0 +1,5554 @@
+[
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.01600000000325963,
+        "rate_hz": 98.87005649396708,
+        "quaternion": [
+          0.9999989594933899,
+          0.0006006458941754875,
+          1.7608862920476948e-05,
+          -0.00131145971170024
+        ],
+        "euler_deg": [
+          0.06882624811953746,
+          0.002108091349832994,
+          -0.15028101700835836
+        ],
+        "accel": [
+          0.0222,
+          0.0852,
+          -1.0059
+        ],
+        "gyro": [
+          0.108,
+          -0.1,
+          0.08
+        ],
+        "mag": [
+          10.5,
+          67.5,
+          541.5
+        ],
+        "sensor_flags": 3,
+        "frames": 106,
+        "sequence": 9277,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 95539420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": false,
+          "message": "未校准：请将板子放稳，点击静置校准",
+          "progress": 0.0,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.108,
+            -0.1,
+            0.08
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.01600000000325963,
+        "rate_hz": 100.87293889259168,
+        "quaternion": [
+          0.9999996193779968,
+          0.0002592999526834557,
+          -0.0004722342958754927,
+          0.0006862959756117298
+        ],
+        "euler_deg": [
+          0.029676450832166683,
+          -0.05413444396160965,
+          0.07862972386805368
+        ],
+        "accel": [
+          0.0151,
+          0.0093,
+          -1.0007
+        ],
+        "gyro": [
+          0.057,
+          -0.043,
+          -0.034
+        ],
+        "mag": [
+          102.0,
+          583.5,
+          648.0
+        ],
+        "sensor_flags": 3,
+        "frames": 105,
+        "sequence": 9315,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 95733223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": false,
+          "message": "未校准：请将板子放稳，点击静置校准",
+          "progress": 0.0,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            -0.043,
+            -0.034
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.014999999955762178,
+        "rate_hz": 98.33024118394353,
+        "quaternion": [
+          0.9999988338488227,
+          0.000635135848656116,
+          4.542800742609459e-05,
+          -0.001388106532112792
+        ],
+        "euler_deg": [
+          0.07277391607720055,
+          0.005306688200379622,
+          -0.15906200480819452
+        ],
+        "accel": [
+          0.0212,
+          0.0828,
+          -1.002
+        ],
+        "gyro": [
+          0.353,
+          0.206,
+          0.263
+        ],
+        "mag": [
+          4.5,
+          66.0,
+          540.0
+        ],
+        "sensor_flags": 3,
+        "frames": 107,
+        "sequence": 9278,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 95549420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 0.0/4 秒 · 1 帧",
+          "progress": 0.0,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.353,
+            0.206,
+            0.263
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.030999999959021807,
+        "rate_hz": 100.87293889259168,
+        "quaternion": [
+          0.9999996193779968,
+          0.0002592999526834557,
+          -0.0004722342958754927,
+          0.0006862959756117298
+        ],
+        "euler_deg": [
+          0.029676450832166683,
+          -0.05413444396160965,
+          0.07862972386805368
+        ],
+        "accel": [
+          0.0151,
+          0.0093,
+          -1.0007
+        ],
+        "gyro": [
+          0.057,
+          -0.043,
+          -0.034
+        ],
+        "mag": [
+          102.0,
+          583.5,
+          648.0
+        ],
+        "sensor_flags": 3,
+        "frames": 105,
+        "sequence": 9315,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 95733223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "请保持板子静止至少 4 秒；校准后自动设置显示参考",
+          "progress": 0.0,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            -0.043,
+            -0.034
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 97.72535804265584,
+        "quaternion": [
+          0.9999986007422917,
+          0.0006802981177883374,
+          5.069400980206584e-05,
+          -0.0015274613078476965
+        ],
+        "euler_deg": [
+          0.07794746411611672,
+          0.005928172916828616,
+          -0.1750302489479051
+        ],
+        "accel": [
+          0.0208,
+          0.0857,
+          -1.0095
+        ],
+        "gyro": [
+          0.047,
+          0.145,
+          0.324
+        ],
+        "mag": [
+          7.5,
+          76.5,
+          534.0
+        ],
+        "sensor_flags": 3,
+        "frames": 117,
+        "sequence": 9288,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 95650446,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 0.1/4 秒 · 11 帧",
+          "progress": 0.0252565,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.047,
+            0.145,
+            0.324
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 99.48096885664879,
+        "quaternion": [
+          0.9999995103901926,
+          0.00027209153724679953,
+          -0.0005183428748333922,
+          0.0007978134083305936
+        ],
+        "euler_deg": [
+          0.03113200816418282,
+          -0.05942257504637104,
+          0.09140656382745645
+        ],
+        "accel": [
+          0.0142,
+          0.0115,
+          -1.0039
+        ],
+        "gyro": [
+          -0.004,
+          -0.043,
+          0.027
+        ],
+        "mag": [
+          112.5,
+          583.5,
+          649.5
+        ],
+        "sensor_flags": 3,
+        "frames": 116,
+        "sequence": 9326,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 95844223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 0.1/4 秒 · 11 帧",
+          "progress": 0.02350000001024455,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.004,
+            -0.043,
+            0.027
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 97.91827293600134,
+        "quaternion": [
+          0.9999973295571893,
+          0.0006729145754663727,
+          0.00015700562315969574,
+          -0.002205314875173357
+        ],
+        "euler_deg": [
+          0.07707047452414137,
+          0.01816152395097903,
+          -0.25269852002034465
+        ],
+        "accel": [
+          0.021,
+          0.0864,
+          -1.0071
+        ],
+        "gyro": [
+          0.719,
+          -0.283,
+          -0.042
+        ],
+        "mag": [
+          19.5,
+          73.5,
+          522.0
+        ],
+        "sensor_flags": 3,
+        "frames": 128,
+        "sequence": 9299,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 95761508,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 0.2/4 秒 · 22 帧",
+          "progress": 0.053022000000000014,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.719,
+            -0.283,
+            -0.042
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 99.52606635045464,
+        "quaternion": [
+          0.9999994058521702,
+          0.0003019892779226735,
+          -0.0005533733033439387,
+          0.0008893119643608945
+        ],
+        "euler_deg": [
+          0.034549031909314624,
+          -0.06344265985781274,
+          0.1018885503539347
+        ],
+        "accel": [
+          0.0144,
+          0.0115,
+          -1.0061
+        ],
+        "gyro": [
+          0.057,
+          -0.043,
+          0.027
+        ],
+        "mag": [
+          112.5,
+          582.0,
+          646.5
+        ],
+        "sensor_flags": 3,
+        "frames": 127,
+        "sequence": 9337,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 95955223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 0.2/4 秒 · 22 帧",
+          "progress": 0.05100000000675209,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            -0.043,
+            0.027
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 97.4395448067718,
+        "quaternion": [
+          0.9999983593624251,
+          0.0006174409649381228,
+          0.00013087809950911022,
+          -0.001697913435928039
+        ],
+        "euler_deg": [
+          0.0707279626228903,
+          0.015117634392002408,
+          -0.19455734907901392
+        ],
+        "accel": [
+          0.0232,
+          0.0833,
+          -1.0029
+        ],
+        "gyro": [
+          -0.075,
+          -0.1,
+          0.08
+        ],
+        "mag": [
+          19.5,
+          75.0,
+          537.0
+        ],
+        "sensor_flags": 3,
+        "frames": 138,
+        "sequence": 9309,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 95868420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 0.3/4 秒 · 32 帧",
+          "progress": 0.07975,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.075,
+            -0.1,
+            0.08
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 98.9090909090909,
+        "quaternion": [
+          0.9999992665817761,
+          0.00030931714884179385,
+          -0.0005821898997760777,
+          0.0010159791986378407
+        ],
+        "euler_deg": [
+          0.035377354493650606,
+          -0.06675002595382316,
+          0.11640207819017803
+        ],
+        "accel": [
+          0.0142,
+          0.0085,
+          -1.0002
+        ],
+        "gyro": [
+          0.057,
+          -0.043,
+          0.027
+        ],
+        "mag": [
+          106.5,
+          579.0,
+          645.0
+        ],
+        "sensor_flags": 3,
+        "frames": 137,
+        "sequence": 9347,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 96056223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 0.3/4 秒 · 32 帧",
+          "progress": 0.07825000000000003,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            -0.043,
+            0.027
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.015000000013969839,
+        "rate_hz": 98.0,
+        "quaternion": [
+          0.9999981491038189,
+          0.0006721209543754762,
+          0.00014977341545800715,
+          -0.0017965551155605458
+        ],
+        "euler_deg": [
+          0.0769884382778529,
+          0.01730110724996108,
+          -0.20585858735733664
+        ],
+        "accel": [
+          0.022,
+          0.0835,
+          -1.0032
+        ],
+        "gyro": [
+          0.17,
+          0.022,
+          0.141
+        ],
+        "mag": [
+          10.5,
+          75.0,
+          538.5
+        ],
+        "sensor_flags": 3,
+        "frames": 148,
+        "sequence": 9319,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 95970457,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 0.4/4 秒 · 42 帧",
+          "progress": 0.10525925000000001,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.17,
+            0.022,
+            0.141
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.015000000013969839,
+        "rate_hz": 99.38733832655711,
+        "quaternion": [
+          0.9999991796553171,
+          0.00033009249671389716,
+          -0.000620354940206908,
+          0.00107092828170566
+        ],
+        "euler_deg": [
+          0.03774968506079752,
+          -0.07112790843485904,
+          0.1226959636239335
+        ],
+        "accel": [
+          0.0134,
+          0.0095,
+          -1.001
+        ],
+        "gyro": [
+          0.057,
+          -0.104,
+          0.027
+        ],
+        "mag": [
+          108.0,
+          583.5,
+          643.5
+        ],
+        "sensor_flags": 3,
+        "frames": 147,
+        "sequence": 9357,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 96156223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 0.4/4 秒 · 42 帧",
+          "progress": 0.10175000000162981,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            -0.104,
+            0.027
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.01600000000325963,
+        "rate_hz": 97.92843691188853,
+        "quaternion": [
+          0.9999975604221569,
+          0.0006434299787095449,
+          0.00018947227229492922,
+          -0.0021045778329865906
+        ],
+        "euler_deg": [
+          0.07368579575696495,
+          0.021867044621793088,
+          -0.24115302609128472
+        ],
+        "accel": [
+          0.0198,
+          0.0864,
+          -1.0044
+        ],
+        "gyro": [
+          0.17,
+          0.022,
+          0.019
+        ],
+        "mag": [
+          15.0,
+          79.5,
+          534.0
+        ],
+        "sensor_flags": 3,
+        "frames": 157,
+        "sequence": 9328,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 96062420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 0.5/4 秒 · 51 帧",
+          "progress": 0.12825000000000003,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.17,
+            0.022,
+            0.019
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.01600000000325963,
+        "rate_hz": 99.87195902840706,
+        "quaternion": [
+          0.9999990018279323,
+          0.0003729446456571233,
+          -0.0006498386414214756,
+          0.001197900317511594
+        ],
+        "euler_deg": [
+          0.042647102851843234,
+          -0.07451716355080505,
+          0.13724160352772513
+        ],
+        "accel": [
+          0.0146,
+          0.0112,
+          -0.9995
+        ],
+        "gyro": [
+          0.118,
+          -0.043,
+          0.027
+        ],
+        "mag": [
+          108.0,
+          585.0,
+          639.0
+        ],
+        "sensor_flags": 3,
+        "frames": 157,
+        "sequence": 9367,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 96257223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 0.5/4 秒 · 52 帧",
+          "progress": 0.125,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.118,
+            -0.043,
+            0.027
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.014999999955762178,
+        "rate_hz": 98.06224309823912,
+        "quaternion": [
+          0.999998335179337,
+          0.0007366606826405345,
+          0.0001784086346755774,
+          -0.0016598614255478096
+        ],
+        "euler_deg": [
+          0.08438105709713684,
+          0.020584207359948183,
+          -0.1901910930337507
+        ],
+        "accel": [
+          0.0212,
+          0.0837,
+          -1.001
+        ],
+        "gyro": [
+          -0.014,
+          0.083,
+          -0.103
+        ],
+        "mag": [
+          16.5,
+          76.5,
+          531.0
+        ],
+        "sensor_flags": 3,
+        "frames": 168,
+        "sequence": 9339,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 96175420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 0.6/4 秒 · 62 帧",
+          "progress": 0.15625,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.014,
+            0.083,
+            -0.103
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.014999999955762178,
+        "rate_hz": 99.88038277389566,
+        "quaternion": [
+          0.9999988815076293,
+          0.0004005884687834231,
+          -0.0006753532004673504,
+          0.001272953425610486
+        ],
+        "euler_deg": [
+          0.045805538968154494,
+          -0.0774481468868437,
+          0.145838843716789
+        ],
+        "accel": [
+          0.0144,
+          0.009,
+          -1.0
+        ],
+        "gyro": [
+          0.057,
+          -0.043,
+          0.089
+        ],
+        "mag": [
+          103.5,
+          585.0,
+          645.0
+        ],
+        "sensor_flags": 3,
+        "frames": 168,
+        "sequence": 9378,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 96368223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 0.6/4 秒 · 63 帧",
+          "progress": 0.15250000001105946,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            -0.043,
+            0.089
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 97.6668475315446,
+        "quaternion": [
+          0.9999992248051313,
+          0.0007335208836484891,
+          0.00012297137641321954,
+          -0.0009986061737994145
+        ],
+        "euler_deg": [
+          0.08404119734335047,
+          0.014175409102907613,
+          -0.11442149276234288
+        ],
+        "accel": [
+          0.022,
+          0.0845,
+          -1.0029
+        ],
+        "gyro": [
+          -0.258,
+          -0.405,
+          -0.347
+        ],
+        "mag": [
+          12.0,
+          73.5,
+          538.5
+        ],
+        "sensor_flags": 3,
+        "frames": 181,
+        "sequence": 9352,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 96310420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 0.8/4 秒 · 75 帧",
+          "progress": 0.19025000000000006,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.258,
+            -0.405,
+            -0.347
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 99.33774834567282,
+        "quaternion": [
+          0.9999988070490698,
+          0.00043566197622278013,
+          -0.0007117759267302894,
+          0.001299797718823901
+        ],
+        "euler_deg": [
+          0.049817166273904666,
+          -0.08162833347591404,
+          0.1489104539759936
+        ],
+        "accel": [
+          0.0139,
+          0.0103,
+          -1.0005
+        ],
+        "gyro": [
+          0.057,
+          -0.043,
+          0.027
+        ],
+        "mag": [
+          103.5,
+          582.0,
+          639.0
+        ],
+        "sensor_flags": 3,
+        "frames": 181,
+        "sequence": 9391,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 96498223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 0.8/4 秒 · 76 帧",
+          "progress": 0.1875,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            -0.043,
+            0.027
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 97.28622631660548,
+        "quaternion": [
+          0.9999982836492612,
+          0.0007755424584077777,
+          0.00021044948974360478,
+          -0.0016694141005722688
+        ],
+        "euler_deg": [
+          0.08883025127056698,
+          0.02426405632533351,
+          -0.19128210580694965
+        ],
+        "accel": [
+          0.0229,
+          0.084,
+          -1.0022
+        ],
+        "gyro": [
+          0.047,
+          0.022,
+          0.08
+        ],
+        "mag": [
+          15.0,
+          66.0,
+          538.5
+        ],
+        "sensor_flags": 3,
+        "frames": 191,
+        "sequence": 9362,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 96412477,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 0.9/4 秒 · 85 帧",
+          "progress": 0.21576425000000007,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.047,
+            0.022,
+            0.08
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.01600000000325963,
+        "rate_hz": 99.68520461609783,
+        "quaternion": [
+          0.9999987989112971,
+          0.0004253551066120071,
+          -0.0007421688050248676,
+          0.001292452885511398
+        ],
+        "euler_deg": [
+          0.048632187445691304,
+          -0.08510920645344874,
+          0.1480681665319719
+        ],
+        "accel": [
+          0.0142,
+          0.009,
+          -0.9985
+        ],
+        "gyro": [
+          -0.004,
+          -0.043,
+          0.027
+        ],
+        "mag": [
+          108.0,
+          580.5,
+          639.0
+        ],
+        "sensor_flags": 3,
+        "frames": 191,
+        "sequence": 9401,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 96599223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 0.8/4 秒 · 86 帧",
+          "progress": 0.21100000001024455,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.004,
+            -0.043,
+            0.027
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 98.0,
+        "quaternion": [
+          0.9999987828103005,
+          0.0007846434765530971,
+          0.00016814875050627856,
+          -0.0013380726923105193
+        ],
+        "euler_deg": [
+          0.08988766927872993,
+          0.019388715210314805,
+          -0.15331672216731718
+        ],
+        "accel": [
+          0.0205,
+          0.0854,
+          -1.0046
+        ],
+        "gyro": [
+          0.17,
+          -0.1,
+          0.08
+        ],
+        "mag": [
+          10.5,
+          72.0,
+          538.5
+        ],
+        "sensor_flags": 3,
+        "frames": 202,
+        "sequence": 9373,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 96524420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 1.0/4 秒 · 96 帧",
+          "progress": 0.24375000000000008,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.17,
+            -0.1,
+            0.08
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.015000000013969839,
+        "rate_hz": 99.74811083193626,
+        "quaternion": [
+          0.9999986904298659,
+          0.00044315616531346604,
+          -0.0007736629420445668,
+          0.0013506283050644216
+        ],
+        "euler_deg": [
+          0.05066221643625452,
+          -0.0887237495951132,
+          0.1547314859369903
+        ],
+        "accel": [
+          0.0146,
+          0.011,
+          -0.998
+        ],
+        "gyro": [
+          -0.004,
+          -0.043,
+          0.027
+        ],
+        "mag": [
+          105.0,
+          585.0,
+          643.5
+        ],
+        "sensor_flags": 3,
+        "frames": 202,
+        "sequence": 9412,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 96711223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 1.0/4 秒 · 97 帧",
+          "progress": 0.2385000000067521,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.004,
+            -0.043,
+            0.027
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 98.0,
+        "quaternion": [
+          0.999998977369721,
+          0.0008141718375533971,
+          0.00014920161540517285,
+          -0.0011662429460928413
+        ],
+        "euler_deg": [
+          0.09327723063873404,
+          0.017206035717875705,
+          -0.13362766780087404
+        ],
+        "accel": [
+          0.0208,
+          0.0847,
+          -1.0039
+        ],
+        "gyro": [
+          0.108,
+          -0.039,
+          0.019
+        ],
+        "mag": [
+          25.5,
+          76.5,
+          537.0
+        ],
+        "sensor_flags": 3,
+        "frames": 212,
+        "sequence": 9383,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 96625420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 1.1/4 秒 · 106 帧",
+          "progress": 0.2690000000000001,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.108,
+            -0.039,
+            0.019
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 99.0,
+        "quaternion": [
+          0.9999985957748094,
+          0.00046671608357227556,
+          -0.0008053317322706773,
+          0.0013935800326780616
+        ],
+        "euler_deg": [
+          0.05335312012168024,
+          -0.09235866020630891,
+          0.15964962780623876
+        ],
+        "accel": [
+          0.0137,
+          0.01,
+          -0.998
+        ],
+        "gyro": [
+          0.118,
+          -0.043,
+          0.027
+        ],
+        "mag": [
+          102.0,
+          589.5,
+          651.0
+        ],
+        "sensor_flags": 3,
+        "frames": 212,
+        "sequence": 9422,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 96813223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 1.1/4 秒 · 107 帧",
+          "progress": 0.2657500000059372,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.118,
+            -0.043,
+            0.027
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 97.5,
+        "quaternion": [
+          0.999999292580291,
+          0.0008368731109478153,
+          0.00012766234394498074,
+          -0.0008355744370044802
+        ],
+        "euler_deg": [
+          0.09588635092711163,
+          0.0147091472484007,
+          -0.0957375147492133
+        ],
+        "accel": [
+          0.0212,
+          0.0852,
+          -1.0
+        ],
+        "gyro": [
+          0.231,
+          -0.039,
+          0.08
+        ],
+        "mag": [
+          18.0,
+          76.5,
+          528.0
+        ],
+        "sensor_flags": 3,
+        "frames": 223,
+        "sequence": 9394,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 96738420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 1.2/4 秒 · 117 帧",
+          "progress": 0.2972500000000001,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.231,
+            -0.039,
+            0.08
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 99.0,
+        "quaternion": [
+          0.9999985428379715,
+          0.00048656354948171075,
+          -0.000844346709734595,
+          0.0014016620420041683
+        ],
+        "euler_deg": [
+          0.055620464805643234,
+          -0.0968330621114861,
+          0.16057176662332553
+        ],
+        "accel": [
+          0.0139,
+          0.0093,
+          -0.9976
+        ],
+        "gyro": [
+          0.057,
+          -0.043,
+          -0.034
+        ],
+        "mag": [
+          108.0,
+          583.5,
+          648.0
+        ],
+        "sensor_flags": 3,
+        "frames": 224,
+        "sequence": 9434,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 96933223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 1.2/4 秒 · 119 帧",
+          "progress": 0.2970000000059372,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            -0.043,
+            -0.034
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 98.5,
+        "quaternion": [
+          0.9999993694212717,
+          0.0008785941900945546,
+          0.00010891107575852418,
+          -0.0006909180023430132
+        ],
+        "euler_deg": [
+          0.1006708458640361,
+          0.01254984346074361,
+          -0.07916238309745674
+        ],
+        "accel": [
+          0.0208,
+          0.0837,
+          -1.0022
+        ],
+        "gyro": [
+          0.231,
+          0.022,
+          0.202
+        ],
+        "mag": [
+          16.5,
+          78.0,
+          534.0
+        ],
+        "sensor_flags": 3,
+        "frames": 233,
+        "sequence": 9404,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 96840420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 1.3/4 秒 · 127 帧",
+          "progress": 0.32275000000000015,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.231,
+            0.022,
+            0.202
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 99.5,
+        "quaternion": [
+          0.999998535353011,
+          0.0005005198899787673,
+          -0.0008707352137111918,
+          0.0013858541987272642
+        ],
+        "euler_deg": [
+          0.057217087905372215,
+          -0.09985829621018905,
+          0.15875746355287024
+        ],
+        "accel": [
+          0.0142,
+          0.0095,
+          -0.998
+        ],
+        "gyro": [
+          0.057,
+          -0.043,
+          0.027
+        ],
+        "mag": [
+          111.0,
+          586.5,
+          651.0
+        ],
+        "sensor_flags": 3,
+        "frames": 234,
+        "sequence": 9444,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 97033223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 1.3/4 秒 · 129 帧",
+          "progress": 0.3205000000016298,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            -0.043,
+            0.027
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.01600000000325963,
+        "rate_hz": 98.28629032274212,
+        "quaternion": [
+          0.9999995943795297,
+          0.0008928203643426696,
+          5.172827602870425e-05,
+          0.00010694278204768687
+        ],
+        "euler_deg": [
+          0.10231032481383139,
+          0.00591668012047499,
+          0.01226002761282984
+        ],
+        "accel": [
+          0.0217,
+          0.0828,
+          -1.0022
+        ],
+        "gyro": [
+          0.353,
+          -0.039,
+          0.263
+        ],
+        "mag": [
+          18.0,
+          79.5,
+          537.0
+        ],
+        "sensor_flags": 3,
+        "frames": 244,
+        "sequence": 9415,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 96951420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 1.4/4 秒 · 138 帧",
+          "progress": 0.3505000000000002,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.353,
+            -0.039,
+            0.263
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.01600000000325963,
+        "rate_hz": 99.79838709693816,
+        "quaternion": [
+          0.9999984642232124,
+          0.0005104528366925866,
+          -0.000886823009380095,
+          0.0014228612259779224
+        ],
+        "euler_deg": [
+          0.05834900392931215,
+          -0.10170555682360809,
+          0.16299623895171073
+        ],
+        "accel": [
+          0.0137,
+          0.0095,
+          -0.998
+        ],
+        "gyro": [
+          -0.004,
+          -0.043,
+          0.027
+        ],
+        "mag": [
+          106.5,
+          582.0,
+          651.0
+        ],
+        "sensor_flags": 3,
+        "frames": 245,
+        "sequence": 9455,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 97144223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 1.4/4 秒 · 140 帧",
+          "progress": 0.3477500000008149,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.004,
+            -0.043,
+            0.027
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 98.0,
+        "quaternion": [
+          0.9999993870636071,
+          0.0008906812459092696,
+          0.00011154222891408135,
+          -0.0006481648398240314
+        ],
+        "euler_deg": [
+          0.10205626182515658,
+          0.012847944836125665,
+          -0.07426281212842585
+        ],
+        "accel": [
+          0.021,
+          0.085,
+          -1.0017
+        ],
+        "gyro": [
+          -1.112,
+          0.206,
+          -0.164
+        ],
+        "mag": [
+          6.0,
+          73.5,
+          537.0
+        ],
+        "sensor_flags": 3,
+        "frames": 256,
+        "sequence": 9427,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 97073420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 1.5/4 秒 · 150 帧",
+          "progress": 0.3810000000000002,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -1.112,
+            0.206,
+            -0.164
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 99.0,
+        "quaternion": [
+          0.9999983472908428,
+          0.0005207522108737129,
+          -0.0009212908356522506,
+          0.0014783287571005278
+        ],
+        "euler_deg": [
+          0.05951775064405786,
+          -0.10566025608763294,
+          0.16934927465807106
+        ],
+        "accel": [
+          0.0149,
+          0.011,
+          -0.9963
+        ],
+        "gyro": [
+          -0.004,
+          -0.104,
+          0.027
+        ],
+        "mag": [
+          108.0,
+          583.5,
+          645.0
+        ],
+        "sensor_flags": 3,
+        "frames": 257,
+        "sequence": 9467,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 97266223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 1.5/4 秒 · 152 帧",
+          "progress": 0.3790000000008149,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.004,
+            -0.104,
+            0.027
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.01600000000325963,
+        "rate_hz": 98.28629032274212,
+        "quaternion": [
+          0.999998859088727,
+          0.0009445310518483331,
+          0.00017224009649018449,
+          -0.0011661971041869946
+        ],
+        "euler_deg": [
+          0.10821221559195653,
+          0.01986346273990578,
+          -0.13361767852120615
+        ],
+        "accel": [
+          0.0215,
+          0.0837,
+          -1.002
+        ],
+        "gyro": [
+          -0.929,
+          -0.222,
+          -0.47
+        ],
+        "mag": [
+          18.0,
+          70.5,
+          538.5
+        ],
+        "sensor_flags": 3,
+        "frames": 267,
+        "sequence": 9438,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 97183420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 1.6/4 秒 · 161 帧",
+          "progress": 0.40850000000000025,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.929,
+            -0.222,
+            -0.47
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.01600000000325963,
+        "rate_hz": 99.29435483887282,
+        "quaternion": [
+          0.9999983644092358,
+          0.0005293722051607393,
+          -0.0009431673535921,
+          0.0014496134880919226
+        ],
+        "euler_deg": [
+          0.06050493334193855,
+          -0.10816684080324007,
+          0.1660565122523852
+        ],
+        "accel": [
+          0.0129,
+          0.011,
+          -0.9968
+        ],
+        "gyro": [
+          0.057,
+          -0.043,
+          0.027
+        ],
+        "mag": [
+          100.5,
+          586.5,
+          636.0
+        ],
+        "sensor_flags": 3,
+        "frames": 268,
+        "sequence": 9478,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 97377223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 1.6/4 秒 · 163 帧",
+          "progress": 0.40625,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            -0.043,
+            0.027
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 97.5,
+        "quaternion": [
+          0.9999961926545636,
+          0.0010629233285178732,
+          0.00029962819181756506,
+          -0.0025288521746664214
+        ],
+        "euler_deg": [
+          0.12171486360121134,
+          0.03464275237177729,
+          -0.28974880256951824
+        ],
+        "accel": [
+          0.0212,
+          0.0835,
+          -1.0007
+        ],
+        "gyro": [
+          -0.136,
+          0.083,
+          -0.103
+        ],
+        "mag": [
+          -21.0,
+          73.5,
+          478.5
+        ],
+        "sensor_flags": 3,
+        "frames": 278,
+        "sequence": 9449,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 97296422,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 1.7/4 秒 · 172 帧",
+          "progress": 0.4367505000000002,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.136,
+            0.083,
+            -0.103
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 98.5,
+        "quaternion": [
+          0.9999983597168108,
+          0.0005471720900488175,
+          -0.0009482383850767269,
+          0.00144291730760451
+        ],
+        "euler_deg": [
+          0.06254453752912009,
+          -0.1087504747336835,
+          0.16528694381421222
+        ],
+        "accel": [
+          0.0149,
+          0.0085,
+          -0.9988
+        ],
+        "gyro": [
+          0.057,
+          -0.043,
+          -0.034
+        ],
+        "mag": [
+          106.5,
+          588.0,
+          651.0
+        ],
+        "sensor_flags": 3,
+        "frames": 279,
+        "sequence": 9489,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 97489223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 1.7/4 秒 · 174 帧",
+          "progress": 0.43650000000000033,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            -0.043,
+            -0.034
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.014999999955762178,
+        "rate_hz": 98.23677581645049,
+        "quaternion": [
+          0.9999857527166617,
+          0.001173673881190579,
+          0.0005296122771509364,
+          -0.005180382625656463
+        ],
+        "euler_deg": [
+          0.13417701057907638,
+          0.06138496942791207,
+          -0.593559392079547
+        ],
+        "accel": [
+          0.0222,
+          0.0837,
+          -1.0017
+        ],
+        "gyro": [
+          0.353,
+          0.022,
+          0.141
+        ],
+        "mag": [
+          10.5,
+          76.5,
+          532.5
+        ],
+        "sensor_flags": 3,
+        "frames": 290,
+        "sequence": 9461,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 97423420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 1.9/4 秒 · 184 帧",
+          "progress": 0.4685000000000003,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.353,
+            0.022,
+            0.141
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.014999999955762178,
+        "rate_hz": 99.24433249149101,
+        "quaternion": [
+          0.9999984007126722,
+          0.0005549477197500027,
+          -0.0009502272028835586,
+          0.001409848711460981
+        ],
+        "euler_deg": [
+          0.06343883476409355,
+          -0.10897756372832701,
+          0.16149658226747002
+        ],
+        "accel": [
+          0.0161,
+          0.0098,
+          -0.9988
+        ],
+        "gyro": [
+          0.057,
+          -0.043,
+          -0.034
+        ],
+        "mag": [
+          97.5,
+          586.5,
+          651.0
+        ],
+        "sensor_flags": 3,
+        "frames": 291,
+        "sequence": 9501,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 97611223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 1.9/4 秒 · 186 帧",
+          "progress": 0.46500000001105946,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            -0.043,
+            -0.034
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.01600000000325963,
+        "rate_hz": 97.78225806467678,
+        "quaternion": [
+          0.9999787953108704,
+          0.0012398602938989286,
+          0.0006223600257852202,
+          -0.006362730787201172
+        ],
+        "euler_deg": [
+          0.1416209958726663,
+          0.07221971353122339,
+          -0.7290316072295273
+        ],
+        "accel": [
+          0.0227,
+          0.085,
+          -1.002
+        ],
+        "gyro": [
+          0.292,
+          -0.222,
+          0.019
+        ],
+        "mag": [
+          19.5,
+          72.0,
+          531.0
+        ],
+        "sensor_flags": 3,
+        "frames": 301,
+        "sequence": 9472,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 97537420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 2.0/4 秒 · 195 帧",
+          "progress": 0.4959999999991851,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.292,
+            -0.222,
+            0.019
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.01600000000325963,
+        "rate_hz": 100.05078719954297,
+        "quaternion": [
+          0.9999982177508809,
+          0.0005628914195052755,
+          -0.0009728770676731038,
+          0.001516956994390425
+        ],
+        "euler_deg": [
+          0.06433351020250719,
+          -0.1115812194428563,
+          0.17376799995049155
+        ],
+        "accel": [
+          0.0164,
+          0.01,
+          -0.9998
+        ],
+        "gyro": [
+          0.057,
+          -0.043,
+          0.027
+        ],
+        "mag": [
+          112.5,
+          583.5,
+          651.0
+        ],
+        "sensor_flags": 3,
+        "frames": 303,
+        "sequence": 9513,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 97733223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 2.0/4 秒 · 198 帧",
+          "progress": 0.49225000001024455,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            -0.043,
+            0.027
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 98.5,
+        "quaternion": [
+          0.9999840658129978,
+          0.0011993257871634674,
+          0.0005670888118043116,
+          -0.005487089213940369
+        ],
+        "euler_deg": [
+          0.13707407206956837,
+          0.06573667501377288,
+          -0.6286991820537855
+        ],
+        "accel": [
+          0.0198,
+          0.0845,
+          -0.9998
+        ],
+        "gyro": [
+          0.047,
+          0.145,
+          0.202
+        ],
+        "mag": [
+          22.5,
+          73.5,
+          544.5
+        ],
+        "sensor_flags": 3,
+        "frames": 313,
+        "sequence": 9484,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 97658420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 2.1/4 秒 · 207 帧",
+          "progress": 0.5272499999991851,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.047,
+            0.145,
+            0.202
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 99.0,
+        "quaternion": [
+          0.9999980091920242,
+          0.000570095943024109,
+          -0.0009817157444205965,
+          0.0016409865329129166
+        ],
+        "euler_deg": [
+          0.06514358771517532,
+          -0.11260338887005858,
+          0.18797939734525462
+        ],
+        "accel": [
+          0.0144,
+          0.0107,
+          -1.0005
+        ],
+        "gyro": [
+          -0.004,
+          -0.043,
+          0.089
+        ],
+        "mag": [
+          100.5,
+          586.5,
+          646.5
+        ],
+        "sensor_flags": 3,
+        "frames": 314,
+        "sequence": 9524,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 97843223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 2.1/4 秒 · 209 帧",
+          "progress": 0.5235000000102445,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.004,
+            -0.043,
+            0.089
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.015000000013969839,
+        "rate_hz": 98.23677581933116,
+        "quaternion": [
+          0.9999866643916381,
+          0.0012084308842981244,
+          0.0005367160411389392,
+          -0.004992260968201062
+        ],
+        "euler_deg": [
+          0.13816730799213742,
+          0.062193628165394005,
+          -0.5719988545806541
+        ],
+        "accel": [
+          0.0212,
+          0.085,
+          -1.0015
+        ],
+        "gyro": [
+          -0.014,
+          -0.1,
+          0.08
+        ],
+        "mag": [
+          19.5,
+          81.0,
+          538.5
+        ],
+        "sensor_flags": 3,
+        "frames": 324,
+        "sequence": 9495,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 97768420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 2.2/4 秒 · 218 帧",
+          "progress": 0.5547499999956926,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.014,
+            -0.1,
+            0.08
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 99.0,
+        "quaternion": [
+          0.9999978520889278,
+          0.0005846842944755806,
+          -0.0009985499078481801,
+          0.0017195522348463503
+        ],
+        "euler_deg": [
+          0.06680312911834944,
+          -0.11454043102405406,
+          0.19697962709001582
+        ],
+        "accel": [
+          0.0137,
+          0.0112,
+          -0.9998
+        ],
+        "gyro": [
+          -0.004,
+          -0.104,
+          0.027
+        ],
+        "mag": [
+          109.5,
+          582.0,
+          645.0
+        ],
+        "sensor_flags": 3,
+        "frames": 326,
+        "sequence": 9536,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 97964223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 2.2/4 秒 · 221 帧",
+          "progress": 0.5547500000102445,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.004,
+            -0.104,
+            0.027
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.01600000000325963,
+        "rate_hz": 98.79032258080747,
+        "quaternion": [
+          0.9999875434333272,
+          0.0013430254586390342,
+          0.0005664705007833448,
+          -0.004773716787674831
+        ],
+        "euler_deg": [
+          0.1535878737827029,
+          0.06564661565934658,
+          -0.5469423211482647
+        ],
+        "accel": [
+          0.022,
+          0.0806,
+          -1.001
+        ],
+        "gyro": [
+          1.024,
+          0.633,
+          0.202
+        ],
+        "mag": [
+          16.5,
+          73.5,
+          541.5
+        ],
+        "sensor_flags": 3,
+        "frames": 335,
+        "sequence": 9506,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 97879420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 2.3/4 秒 · 229 帧",
+          "progress": 0.5819999999948777,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            1.024,
+            0.633,
+            0.202
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 99.0,
+        "quaternion": [
+          0.9999978310239076,
+          0.0005864190158721442,
+          -0.0010212692435639346,
+          0.0017178676754910393
+        ],
+        "euler_deg": [
+          0.06699763876585872,
+          -0.117144101008496,
+          0.19678487841090186
+        ],
+        "accel": [
+          0.0127,
+          0.0088,
+          -1.0042
+        ],
+        "gyro": [
+          -0.004,
+          -0.043,
+          0.089
+        ],
+        "mag": [
+          102.0,
+          588.0,
+          642.0
+        ],
+        "sensor_flags": 3,
+        "frames": 337,
+        "sequence": 9547,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 98074223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 2.3/4 秒 · 232 帧",
+          "progress": 0.5822500000067521,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.004,
+            -0.043,
+            0.089
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 98.0,
+        "quaternion": [
+          0.9999906690613314,
+          0.0012617490821153177,
+          0.0004754149791052869,
+          -0.004104115023040878
+        ],
+        "euler_deg": [
+          0.14436107851404062,
+          0.055071440514856566,
+          -0.4702293083100497
+        ],
+        "accel": [
+          0.0205,
+          0.0845,
+          -1.0044
+        ],
+        "gyro": [
+          0.292,
+          0.145,
+          0.202
+        ],
+        "mag": [
+          13.5,
+          76.5,
+          532.5
+        ],
+        "sensor_flags": 3,
+        "frames": 346,
+        "sequence": 9517,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 97991420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 2.4/4 秒 · 240 帧",
+          "progress": 0.6104999999999986,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.292,
+            0.145,
+            0.202
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 99.0,
+        "quaternion": [
+          0.9999978605150505,
+          0.0005949341482976529,
+          -0.0010538401336748172,
+          0.001677629176422217
+        ],
+        "euler_deg": [
+          0.06797186043331006,
+          -0.12087538659466807,
+          0.1921706744912006
+        ],
+        "accel": [
+          0.0125,
+          0.0095,
+          -1.0022
+        ],
+        "gyro": [
+          -0.004,
+          -0.043,
+          0.027
+        ],
+        "mag": [
+          102.0,
+          580.5,
+          636.0
+        ],
+        "sensor_flags": 3,
+        "frames": 348,
+        "sequence": 9558,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 98184223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 2.4/4 秒 · 243 帧",
+          "progress": 0.6095000000059372,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.004,
+            -0.043,
+            0.027
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 98.0,
+        "quaternion": [
+          0.9999904461335796,
+          0.0013215164696940389,
+          0.00048257340498499,
+          -0.0041386421316253865
+        ],
+        "euler_deg": [
+          0.1512045711871367,
+          0.05592505313469543,
+          -0.47418148368546875
+        ],
+        "accel": [
+          0.0203,
+          0.0835,
+          -1.0059
+        ],
+        "gyro": [
+          0.047,
+          0.022,
+          0.08
+        ],
+        "mag": [
+          9.0,
+          72.0,
+          529.5
+        ],
+        "sensor_flags": 3,
+        "frames": 357,
+        "sequence": 9528,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 98102420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 2.6/4 秒 · 251 帧",
+          "progress": 0.6382499999999981,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.047,
+            0.022,
+            0.08
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 99.0,
+        "quaternion": [
+          0.999997843094277,
+          0.0006091832560056847,
+          -0.0010794326913625314,
+          0.0016665916174595009
+        ],
+        "euler_deg": [
+          0.06960114091318685,
+          -0.12381004471804873,
+          0.1909023664647448
+        ],
+        "accel": [
+          0.0146,
+          0.0103,
+          -1.0012
+        ],
+        "gyro": [
+          0.057,
+          -0.104,
+          -0.034
+        ],
+        "mag": [
+          109.5,
+          586.5,
+          646.5
+        ],
+        "sensor_flags": 3,
+        "frames": 359,
+        "sequence": 9569,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 98296223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 2.5/4 秒 · 254 帧",
+          "progress": 0.6367500000051223,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            -0.104,
+            -0.034
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 98.0,
+        "quaternion": [
+          0.9999910668632759,
+          0.0012790927723712387,
+          0.000504062705596761,
+          -0.003997003391998763
+        ],
+        "euler_deg": [
+          0.14634128832100435,
+          0.05834667909302412,
+          -0.45794998980542606
+        ],
+        "accel": [
+          0.0229,
+          0.085,
+          -1.0049
+        ],
+        "gyro": [
+          -0.441,
+          0.022,
+          -0.164
+        ],
+        "mag": [
+          13.5,
+          78.0,
+          531.0
+        ],
+        "sensor_flags": 3,
+        "frames": 369,
+        "sequence": 9540,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 98223420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 2.7/4 秒 · 263 帧",
+          "progress": 0.6684999999999975,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.441,
+            0.022,
+            -0.164
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.015000000013969839,
+        "rate_hz": 99.74811083193626,
+        "quaternion": [
+          0.9999977741608553,
+          0.0006206983976570482,
+          -0.0010842983649221854,
+          0.0017002070138436476
+        ],
+        "euler_deg": [
+          0.07091557076752746,
+          -0.12437219147420145,
+          0.19475264990601107
+        ],
+        "accel": [
+          0.0146,
+          0.0103,
+          -0.9988
+        ],
+        "gyro": [
+          0.057,
+          -0.043,
+          -0.034
+        ],
+        "mag": [
+          108.0,
+          582.0,
+          651.0
+        ],
+        "sensor_flags": 3,
+        "frames": 371,
+        "sequence": 9581,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 98416346,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 2.7/4 秒 · 266 帧",
+          "progress": 0.6642500000016298,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            -0.043,
+            -0.034
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 98.0,
+        "quaternion": [
+          0.9999919091634709,
+          0.001410228913491452,
+          0.00045844721455779586,
+          -0.0037393432791738806
+        ],
+        "euler_deg": [
+          0.16140286184606262,
+          0.05313804272662178,
+          -0.42842380052078277
+        ],
+        "accel": [
+          0.021,
+          0.0835,
+          -1.0059
+        ],
+        "gyro": [
+          0.231,
+          0.022,
+          0.202
+        ],
+        "mag": [
+          19.5,
+          76.5,
+          489.0
+        ],
+        "sensor_flags": 3,
+        "frames": 380,
+        "sequence": 9551,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 98333420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 2.8/4 秒 · 274 帧",
+          "progress": 0.695999999999997,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.231,
+            0.022,
+            0.202
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 99.0,
+        "quaternion": [
+          0.999997653254353,
+          0.0006409550393343391,
+          -0.0010952641015115885,
+          0.0017558641668178636
+        ],
+        "euler_deg": [
+          0.07322768580707498,
+          -0.1256367918613633,
+          0.201127191730766
+        ],
+        "accel": [
+          0.0146,
+          0.0103,
+          -1.001
+        ],
+        "gyro": [
+          0.057,
+          -0.165,
+          0.027
+        ],
+        "mag": [
+          109.5,
+          583.5,
+          648.0
+        ],
+        "sensor_flags": 3,
+        "frames": 382,
+        "sequence": 9592,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 98528223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 2.8/4 秒 · 277 帧",
+          "progress": 0.6955000000016298,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            -0.165,
+            0.027
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 98.5,
+        "quaternion": [
+          0.9999935929552786,
+          0.001294481249703671,
+          0.0004175816782973074,
+          -0.003311191964972867
+        ],
+        "euler_deg": [
+          0.1481774470959098,
+          0.04834220572612398,
+          -0.3793731828817906
+        ],
+        "accel": [
+          0.0217,
+          0.085,
+          -1.0044
+        ],
+        "gyro": [
+          -1.601,
+          0.206,
+          -0.531
+        ],
+        "mag": [
+          18.0,
+          82.5,
+          537.0
+        ],
+        "sensor_flags": 3,
+        "frames": 391,
+        "sequence": 9562,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 98444420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 2.9/4 秒 · 285 帧",
+          "progress": 0.7237499999999965,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -1.601,
+            0.206,
+            -0.531
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.01600000000325963,
+        "rate_hz": 99.29435483887282,
+        "quaternion": [
+          0.999997470995188,
+          0.0006529632790329818,
+          -0.0010951540443167298,
+          0.001852641304612493
+        ],
+        "euler_deg": [
+          0.07459159331181137,
+          -0.12563381479032082,
+          0.21221557000217312
+        ],
+        "accel": [
+          0.0144,
+          0.009,
+          -0.9995
+        ],
+        "gyro": [
+          0.057,
+          -0.043,
+          -0.034
+        ],
+        "mag": [
+          108.0,
+          586.5,
+          649.5
+        ],
+        "sensor_flags": 3,
+        "frames": 392,
+        "sequence": 9602,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 98629223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 2.9/4 秒 · 287 帧",
+          "progress": 0.71875,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            -0.043,
+            -0.034
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 98.5,
+        "quaternion": [
+          0.9999956466385634,
+          0.0013201132387833277,
+          0.0003493363674863699,
+          -0.002615715783592073
+        ],
+        "euler_deg": [
+          0.15116867886991064,
+          0.04042651741525814,
+          -0.2996862403646809
+        ],
+        "accel": [
+          0.0222,
+          0.0847,
+          -0.998
+        ],
+        "gyro": [
+          -0.99,
+          -0.222,
+          -0.531
+        ],
+        "mag": [
+          21.0,
+          79.5,
+          535.5
+        ],
+        "sensor_flags": 3,
+        "frames": 401,
+        "sequence": 9572,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 98544427,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 3.0/4 秒 · 295 帧",
+          "progress": 0.7487517499999959,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.99,
+            -0.222,
+            -0.531
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 99.74811082901127,
+        "quaternion": [
+          0.9999972527967584,
+          0.0006768191163399094,
+          -0.0011152560785578887,
+          0.001947439010380688
+        ],
+        "euler_deg": [
+          0.07730888025101111,
+          -0.12794972701473012,
+          0.22307408228052542
+        ],
+        "accel": [
+          0.0149,
+          0.0103,
+          -0.9968
+        ],
+        "gyro": [
+          0.057,
+          0.018,
+          -0.034
+        ],
+        "mag": [
+          103.5,
+          582.0,
+          649.5
+        ],
+        "sensor_flags": 3,
+        "frames": 403,
+        "sequence": 9613,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 98741223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 3.0/4 秒 · 298 帧",
+          "progress": 0.7462500000110595,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            0.018,
+            -0.034
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 98.5,
+        "quaternion": [
+          0.9999967063366937,
+          0.0015354323688404996,
+          0.0003103832798058946,
+          -0.002033082739257076
+        ],
+        "euler_deg": [
+          0.17587500890736413,
+          0.035924905141857325,
+          -0.23291942951221864
+        ],
+        "accel": [
+          0.0203,
+          0.0835,
+          -1.0051
+        ],
+        "gyro": [
+          -0.075,
+          -0.222,
+          0.019
+        ],
+        "mag": [
+          15.0,
+          69.0,
+          537.0
+        ],
+        "sensor_flags": 3,
+        "frames": 413,
+        "sequence": 9584,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 98666420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 3.1/4 秒 · 307 帧",
+          "progress": 0.7792499999999956,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.075,
+            -0.222,
+            0.019
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 99.5,
+        "quaternion": [
+          0.9999971613383646,
+          0.000695844386926151,
+          -0.0011389255994738653,
+          0.001973819718519687
+        ],
+        "euler_deg": [
+          0.07948029327330183,
+          -0.13066839107702713,
+          0.22609279592527315
+        ],
+        "accel": [
+          0.0142,
+          0.0115,
+          -1.0017
+        ],
+        "gyro": [
+          0.057,
+          -0.043,
+          0.027
+        ],
+        "mag": [
+          106.5,
+          580.5,
+          648.0
+        ],
+        "sensor_flags": 3,
+        "frames": 415,
+        "sequence": 9625,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 98861223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 3.1/4 秒 · 310 帧",
+          "progress": 0.7775000000110595,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            -0.043,
+            0.027
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.015000000013969839,
+        "rate_hz": 98.7405541568662,
+        "quaternion": [
+          0.9999970908614345,
+          0.0015562168521862096,
+          0.00032076245360880204,
+          -0.0018148193367827287
+        ],
+        "euler_deg": [
+          0.17826241470202558,
+          0.037080200783911166,
+          -0.20790567059879986
+        ],
+        "accel": [
+          0.0215,
+          0.0828,
+          -1.0027
+        ],
+        "gyro": [
+          -0.075,
+          0.083,
+          0.019
+        ],
+        "mag": [
+          12.0,
+          75.0,
+          538.5
+        ],
+        "sensor_flags": 3,
+        "frames": 423,
+        "sequence": 9594,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 98767420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 3.2/4 秒 · 317 帧",
+          "progress": 0.8044999999999951,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.075,
+            0.083,
+            0.019
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.015000000013969839,
+        "rate_hz": 99.24433249440122,
+        "quaternion": [
+          0.9999971265743942,
+          0.0007229596409633678,
+          -0.0011284448494405812,
+          0.0019876580526578965
+        ],
+        "euler_deg": [
+          0.0825880492205634,
+          -0.12947466087820875,
+          0.22767587498158753
+        ],
+        "accel": [
+          0.0151,
+          0.0081,
+          -1.001
+        ],
+        "gyro": [
+          0.057,
+          0.018,
+          -0.034
+        ],
+        "mag": [
+          111.0,
+          588.0,
+          645.0
+        ],
+        "sensor_flags": 3,
+        "frames": 425,
+        "sequence": 9635,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 98962223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 3.2/4 秒 · 320 帧",
+          "progress": 0.8010000000067521,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            0.018,
+            -0.034
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 98.5,
+        "quaternion": [
+          0.9999977005263359,
+          0.0014954290894219624,
+          0.0003196041987030933,
+          -0.001503491614698659
+        ],
+        "euler_deg": [
+          0.17130838365767243,
+          0.03688150539355246,
+          -0.17223257850051082
+        ],
+        "accel": [
+          0.0227,
+          0.0837,
+          -1.0002
+        ],
+        "gyro": [
+          -0.075,
+          0.022,
+          0.019
+        ],
+        "mag": [
+          12.0,
+          76.5,
+          526.5
+        ],
+        "sensor_flags": 3,
+        "frames": 435,
+        "sequence": 9606,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 98890420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 3.3/4 秒 · 329 帧",
+          "progress": 0.8352499999999947,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.075,
+            0.022,
+            0.019
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 99.0,
+        "quaternion": [
+          0.9999970118971716,
+          0.0007389241096845057,
+          -0.0011438447750256686,
+          0.0020302233913846775
+        ],
+        "euler_deg": [
+          0.08440835326045396,
+          -0.1312465872499761,
+          0.2325501625829813
+        ],
+        "accel": [
+          0.0146,
+          0.0071,
+          -0.9973
+        ],
+        "gyro": [
+          0.057,
+          -0.043,
+          -0.034
+        ],
+        "mag": [
+          105.0,
+          589.5,
+          645.0
+        ],
+        "sensor_flags": 3,
+        "frames": 437,
+        "sequence": 9647,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 99084223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 3.3/4 秒 · 332 帧",
+          "progress": 0.8322500000067521,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            -0.043,
+            -0.034
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 98.5,
+        "quaternion": [
+          0.9999981385519202,
+          0.0015143496328430157,
+          0.00027217585147882445,
+          -0.0011642844111340077
+        ],
+        "euler_deg": [
+          0.17349534056098595,
+          0.03139103889993966,
+          -0.13336982679659376
+        ],
+        "accel": [
+          0.0222,
+          0.085,
+          -1.0022
+        ],
+        "gyro": [
+          0.353,
+          -0.039,
+          0.141
+        ],
+        "mag": [
+          15.0,
+          76.5,
+          531.0
+        ],
+        "sensor_flags": 3,
+        "frames": 445,
+        "sequence": 9616,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 98993508,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 3.4/4 秒 · 339 帧",
+          "progress": 0.8610219999999945,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.353,
+            -0.039,
+            0.141
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 99.0,
+        "quaternion": [
+          0.9999969279552557,
+          0.0007256265697253062,
+          -0.0011756539306631843,
+          0.002058004851262402
+        ],
+        "euler_deg": [
+          0.0828734285719014,
+          -0.1348908520360395,
+          0.2357328218429471
+        ],
+        "accel": [
+          0.0154,
+          0.011,
+          -0.9988
+        ],
+        "gyro": [
+          -0.004,
+          -0.043,
+          0.027
+        ],
+        "mag": [
+          112.5,
+          585.0,
+          642.0
+        ],
+        "sensor_flags": 3,
+        "frames": 447,
+        "sequence": 9657,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 99184228,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 3.4/4 秒 · 342 帧",
+          "progress": 0.8595000000059372,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.004,
+            -0.043,
+            0.027
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.031000000017229468,
+        "rate_hz": 98.52717115373163,
+        "quaternion": [
+          0.9999984155427414,
+          0.0014860262401254348,
+          0.0002684923171154263,
+          -0.0009426292463714803
+        ],
+        "euler_deg": [
+          0.17025706733661145,
+          0.030927422581567828,
+          -0.10797154291090597
+        ],
+        "accel": [
+          0.021,
+          0.0857,
+          -1.0044
+        ],
+        "gyro": [
+          -0.014,
+          -0.039,
+          0.019
+        ],
+        "mag": [
+          19.5,
+          72.0,
+          534.0
+        ],
+        "sensor_flags": 3,
+        "frames": 453,
+        "sequence": 9624,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 99077420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 3.5/4 秒 · 347 帧",
+          "progress": 0.8819999999999943,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.014,
+            -0.039,
+            0.019
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.031000000017229468,
+        "rate_hz": 99.03504316998797,
+        "quaternion": [
+          0.9999968696851154,
+          0.0007424301810279674,
+          -0.0011888769018722125,
+          0.0020726767980188622
+        ],
+        "euler_deg": [
+          0.08479386521134902,
+          -0.1364112956191776,
+          0.2374107292161523
+        ],
+        "accel": [
+          0.0146,
+          0.0085,
+          -0.9973
+        ],
+        "gyro": [
+          0.057,
+          -0.043,
+          0.027
+        ],
+        "mag": [
+          106.5,
+          589.5,
+          651.0
+        ],
+        "sensor_flags": 3,
+        "frames": 455,
+        "sequence": 9665,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 99265223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 3.5/4 秒 · 350 帧",
+          "progress": 0.8790000000008149,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            -0.043,
+            0.027
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.01600000000325963,
+        "rate_hz": 98.79032258080747,
+        "quaternion": [
+          0.9999984127510282,
+          0.0015177954459584427,
+          0.0002564655531558345,
+          -0.0008972278577492117
+        ],
+        "euler_deg": [
+          0.17390019204665846,
+          0.02954479397729742,
+          -0.1027700384303939
+        ],
+        "accel": [
+          0.022,
+          0.084,
+          -1.0046
+        ],
+        "gyro": [
+          0.292,
+          -0.1,
+          0.08
+        ],
+        "mag": [
+          12.0,
+          76.5,
+          540.0
+        ],
+        "sensor_flags": 3,
+        "frames": 464,
+        "sequence": 9635,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 99188447,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 3.6/4 秒 · 358 帧",
+          "progress": 0.909756749999994,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.292,
+            -0.1,
+            0.08
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.01600000000325963,
+        "rate_hz": 99.29435483887282,
+        "quaternion": [
+          0.9999967539471274,
+          0.0007476641030105379,
+          -0.0012055317165019274,
+          0.002116550702905192
+        ],
+        "euler_deg": [
+          0.08538360924385516,
+          -0.13832478238566245,
+          0.24243620232257818
+        ],
+        "accel": [
+          0.0139,
+          0.009,
+          -0.998
+        ],
+        "gyro": [
+          0.057,
+          -0.104,
+          -0.034
+        ],
+        "mag": [
+          115.5,
+          585.0,
+          645.0
+        ],
+        "sensor_flags": 3,
+        "frames": 466,
+        "sequence": 9676,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 99377223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 3.6/4 秒 · 361 帧",
+          "progress": 0.90625,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            -0.104,
+            -0.034
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 98.5,
+        "quaternion": [
+          0.9999987515613664,
+          0.0015058885193333232,
+          0.00023844513206559143,
+          -0.00041511371315552644
+        ],
+        "euler_deg": [
+          0.1725508357851938,
+          0.027395399256894572,
+          -0.04752733246464859
+        ],
+        "accel": [
+          0.021,
+          0.0833,
+          -1.0005
+        ],
+        "gyro": [
+          -0.319,
+          0.267,
+          0.141
+        ],
+        "mag": [
+          21.0,
+          76.5,
+          535.5
+        ],
+        "sensor_flags": 3,
+        "frames": 475,
+        "sequence": 9646,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 99303420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 3.8/4 秒 · 369 帧",
+          "progress": 0.9384999999999937,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.319,
+            0.267,
+            0.141
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.014999999955762178,
+        "rate_hz": 99.74811082901127,
+        "quaternion": [
+          0.9999966105208627,
+          0.0007609570187781225,
+          -0.0012166606185377577,
+          0.002172470515500208
+        ],
+        "euler_deg": [
+          0.08689636309593274,
+          -0.1396081404732548,
+          0.24884136860878664
+        ],
+        "accel": [
+          0.0144,
+          0.01,
+          -0.9995
+        ],
+        "gyro": [
+          0.057,
+          -0.043,
+          0.089
+        ],
+        "mag": [
+          108.0,
+          588.0,
+          649.5
+        ],
+        "sensor_flags": 3,
+        "frames": 477,
+        "sequence": 9687,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 99488223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 3.7/4 秒 · 372 帧",
+          "progress": 0.9337500000110595,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            -0.043,
+            0.089
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 98.0,
+        "quaternion": [
+          0.9999985294377154,
+          0.0015255127702291753,
+          0.00025920301770461507,
+          -0.0007394234174852612
+        ],
+        "euler_deg": [
+          0.17478896167828864,
+          0.029831694834775272,
+          -0.0846862883911612
+        ],
+        "accel": [
+          0.0212,
+          0.0862,
+          -1.001
+        ],
+        "gyro": [
+          0.047,
+          0.083,
+          -0.103
+        ],
+        "mag": [
+          16.5,
+          66.0,
+          522.0
+        ],
+        "sensor_flags": 3,
+        "frames": 484,
+        "sequence": 9655,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 99396420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 3.8/4 秒 · 378 帧",
+          "progress": 0.9617499999999934,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.047,
+            0.083,
+            -0.103
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 99.0,
+        "quaternion": [
+          0.9999967576026805,
+          0.0007676749274886973,
+          -0.0012364403865302012,
+          0.0020896589440606572
+        ],
+        "euler_deg": [
+          0.0876730098631086,
+          -0.1418691424478089,
+          0.23934916117510718
+        ],
+        "accel": [
+          0.0132,
+          0.011,
+          -0.9995
+        ],
+        "gyro": [
+          0.057,
+          -0.104,
+          0.027
+        ],
+        "mag": [
+          99.0,
+          582.0,
+          642.0
+        ],
+        "sensor_flags": 3,
+        "frames": 487,
+        "sequence": 9697,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 99591223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 3.8/4 秒 · 382 帧",
+          "progress": 0.9610000000102445,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            -0.104,
+            0.027
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.01600000000325963,
+        "rate_hz": 98.28629032274212,
+        "quaternion": [
+          0.9999984073439112,
+          0.0015476585852605973,
+          0.0002821989260151925,
+          -0.0008428679082631908
+        ],
+        "euler_deg": [
+          0.17732138290134622,
+          0.03248704657768165,
+          -0.09653540743738377
+        ],
+        "accel": [
+          0.0208,
+          0.0835,
+          -1.001
+        ],
+        "gyro": [
+          -0.319,
+          0.083,
+          -0.042
+        ],
+        "mag": [
+          9.0,
+          72.0,
+          522.0
+        ],
+        "sensor_flags": 3,
+        "frames": 494,
+        "sequence": 9665,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 99497422,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 3.9/4 秒 · 388 帧",
+          "progress": 0.9870004999999931,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.319,
+            0.083,
+            -0.042
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.01600000000325963,
+        "rate_hz": 99.29435483887282,
+        "quaternion": [
+          0.9999967518839553,
+          0.0007716339361723745,
+          -0.0012356263705459705,
+          0.0020914181983038623
+        ],
+        "euler_deg": [
+          0.08812662426225876,
+          -0.14177696586895053,
+          0.239550267299007
+        ],
+        "accel": [
+          0.0154,
+          0.01,
+          -1.0012
+        ],
+        "gyro": [
+          0.057,
+          -0.043,
+          0.15
+        ],
+        "mag": [
+          106.5,
+          591.0,
+          642.0
+        ],
+        "sensor_flags": 3,
+        "frames": 497,
+        "sequence": 9707,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 99692223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": true,
+          "message": "静置校准中 3.9/4 秒 · 392 帧",
+          "progress": 0.9845000000059372,
+          "quality": {},
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            0.057,
+            -0.043,
+            0.15
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  },
+  {
+    "source": "real_wifi_tcp",
+    "nodes": {
+      "A": {
+        "slot": "A",
+        "endpoint": "192.168.4.1:9000",
+        "configured": true,
+        "node_id": "imu_305A6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 99.0,
+        "quaternion": [
+          0.9999983501196202,
+          0.0015353845160114914,
+          0.00028486311281357776,
+          -0.0009280115475149509
+        ],
+        "euler_deg": [
+          0.17591182731922309,
+          0.03280613244749925,
+          -0.10629207354822298
+        ],
+        "accel": [
+          0.0215,
+          0.0845,
+          -1.0029
+        ],
+        "gyro": [
+          -0.319,
+          -0.1,
+          -0.164
+        ],
+        "mag": [
+          16.5,
+          73.5,
+          529.5
+        ],
+        "sensor_flags": 3,
+        "frames": 505,
+        "sequence": 9676,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 99608420,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": false,
+          "calibrating": false,
+          "message": "校准取消：样本不稳定或磁场变化，请静置并远离磁性物体后重试",
+          "progress": 0.0,
+          "quality": {
+            "samples": 394,
+            "duration_s": 4.008999999999971,
+            "gyro_std_dps": 0.585594808604215,
+            "accel_std_g": 0.0027440021474677365,
+            "mag_relative_std": 0.02855397985098089,
+            "mag_direction_change_deg": 0.22070000258444966
+          },
+          "gyro_bias_dps": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "corrected_gyro_dps": [
+            -0.319,
+            -0.1,
+            -0.164
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      },
+      "B": {
+        "slot": "B",
+        "endpoint": "192.168.4.201:9000",
+        "configured": true,
+        "node_id": "imu_149B6077C398",
+        "connected": true,
+        "valid": true,
+        "status": "Wi-Fi 实时接收",
+        "age_s": 0.0,
+        "rate_hz": 99.5,
+        "quaternion": [
+          0.9999999995062927,
+          1.395825668422477e-05,
+          -1.4783296417953534e-05,
+          -2.395904739134835e-05
+        ],
+        "euler_deg": [
+          0.0015995389824581222,
+          -0.0016940026610318087,
+          -0.0027455282401104833
+        ],
+        "accel": [
+          0.0146,
+          0.0081,
+          -0.9995
+        ],
+        "gyro": [
+          0.057,
+          -0.043,
+          0.027
+        ],
+        "mag": [
+          102.0,
+          585.0,
+          651.0
+        ],
+        "sensor_flags": 3,
+        "frames": 508,
+        "sequence": 9718,
+        "missing_frames": 0,
+        "invalid_frames": 0,
+        "duplicate_frames": 0,
+        "device_us": 99802223,
+        "sampling_gaps": 0,
+        "last_gap_s": 0.0,
+        "attitude_reinitializations": 0,
+        "stability": {
+          "calibrated": true,
+          "calibrating": false,
+          "message": "零偏校准完成；已自动设置当前显示参考",
+          "progress": 1.0,
+          "quality": {
+            "samples": 398,
+            "duration_s": 4.0,
+            "gyro_std_dps": 0.06417455719415507,
+            "accel_std_g": 0.0024543031237269273,
+            "mag_relative_std": 0.0075611372654023415,
+            "mag_direction_change_deg": 0.301040640517699
+          },
+          "gyro_bias_dps": [
+            0.03385678391959827,
+            -0.05464824120602971,
+            0.024902010050251278
+          ],
+          "corrected_gyro_dps": [
+            0.023143216080401735,
+            0.01164824120602971,
+            0.002097989949748722
+          ],
+          "enabled": true,
+          "magnetic_used": true,
+          "magnetic_message": "使用磁场观测；尚未做完整磁标定",
+          "holding": false
+        }
+      }
+    },
+    "position_integration": false
+  }
+]

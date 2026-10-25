@@ -1,0 +1,12 @@
+{
+  "sensor_axes": [
+    "-X",
+    "+Y",
+    "-Z"
+  ],
+  "displacement_signs": [
+    1,
+    1,
+    1
+  ]
+}

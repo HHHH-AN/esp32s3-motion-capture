@@ -1,0 +1,121 @@
+{
+  "before": {
+    "state": "connected",
+    "ssid": "sdu_net",
+    "profile": "sdu_net"
+  },
+  "test_profile": "ESP32-IMU",
+  "output": "C:\\Users\\一两二三\\Desktop\\WIFI\\IMU_NODE_CLEAN\\hardware_tests\\wifi-20261025-145222-525887",
+  "connect_request": "Connection request was completed successfully.\r\n",
+  "associated": {
+    "state": "connected",
+    "ssid": "ESP32-IMU",
+    "profile": "ESP32-IMU"
+  },
+  "wifi_transport_passed": true,
+  "validation_path": "ESP32 Wi-Fi TCP -> independent fusion -> local HTTP API",
+  "monitor_url": "http://127.0.0.1:8010",
+  "frames_received_during_monitor_check": 1926,
+  "node_id": "imu_305A6077C398",
+  "received_hz_last": 98.23677581933116,
+  "missing_frames": 0,
+  "invalid_frames": 0,
+  "sensor_flags": 3,
+  "first_monitor_state": {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 97.29064039693415,
+    "quaternion": [
+      0.9997218486280137,
+      -0.02336628947152636,
+      -0.0020625482972465585,
+      0.0024469954313836033
+    ],
+    "euler_deg": [
+      -2.6784100481760733,
+      -0.22973347436597796,
+      0.28585314715467575
+    ],
+    "accel": [
+      0.1055,
+      -0.8308,
+      0.5452
+    ],
+    "gyro": [
+      -3.826,
+      -0.287,
+      0.408
+    ],
+    "mag": [
+      -447.0,
+      267.0,
+      46.5
+    ],
+    "sensor_flags": 3,
+    "frames": 3518,
+    "sequence": 21226,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  "last_monitor_state": {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.015000000013969839,
+    "rate_hz": 98.23677581933116,
+    "quaternion": [
+      0.5325806648044904,
+      -0.8396674962461017,
+      -0.07313619335029405,
+      0.07724913233453508
+    ],
+    "euler_deg": [
+      -114.91966068626002,
+      2.970703289521108,
+      11.85168347207462
+    ],
+    "accel": [
+      -0.0632,
+      -0.3384,
+      -0.9023
+    ],
+    "gyro": [
+      -51.128,
+      -4.315,
+      15.484
+    ],
+    "mag": [
+      -118.5,
+      303.0,
+      928.5
+    ],
+    "sensor_flags": 3,
+    "frames": 5444,
+    "sequence": 23152,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  "usb_serial_opened_by_test": false,
+  "limitations": "Physical board rotation and three simultaneous boards were not verified.",
+  "tested_wifi_ipv4_config": "\r\nConfiguration for interface \"WLAN\"\r\n    DHCP enabled:                         Yes\r\n    IP Address:                           192.168.4.2\r\n    Subnet Prefix:                        192.168.4.0/24 (mask 255.255.255.0)\r\n    Default Gateway:                      192.168.4.1\r\n    Gateway Metric:                       0\r\n    InterfaceMetric:                      55\r\n    DNS servers configured through DHCP:  192.168.4.1\r\n    Register with which suffix:           Primary only\r\n    WINS servers configured through DHCP: None\r\n\r\n",
+  "after": {
+    "state": "connected",
+    "ssid": "sdu_net",
+    "profile": "sdu_net"
+  },
+  "original_wifi_restored": true
+}

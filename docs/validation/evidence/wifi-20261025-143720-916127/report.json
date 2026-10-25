@@ -1,0 +1,23 @@
+{
+  "before": {
+    "state": "connected",
+    "ssid": "sdu_net",
+    "profile": "sdu_net"
+  },
+  "test_profile": "ESP32-IMU",
+  "output": "C:\\Users\\一两二三\\Desktop\\WIFI\\IMU_NODE_CLEAN\\hardware_tests\\wifi-20261025-143720-916127",
+  "connect_request": "Connection request was completed successfully.\r\n",
+  "associated": {
+    "state": "connected",
+    "ssid": "ESP32-IMU",
+    "profile": "ESP32-IMU"
+  },
+  "wifi_transport_passed": false,
+  "error": "[WinError 10051] 向一个无法连接的网络尝试了一个套接字操作。",
+  "after": {
+    "state": "connected",
+    "ssid": "sdu_net",
+    "profile": "sdu_net"
+  },
+  "original_wifi_restored": true
+}

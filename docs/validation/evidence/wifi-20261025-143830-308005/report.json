@@ -1,0 +1,41 @@
+{
+  "before": {
+    "state": "connected",
+    "ssid": "sdu_net",
+    "profile": "sdu_net"
+  },
+  "test_profile": "ESP32-IMU",
+  "output": "C:\\Users\\一两二三\\Desktop\\WIFI\\IMU_NODE_CLEAN\\hardware_tests\\wifi-20261025-143830-308005",
+  "connect_request": "Connection request was completed successfully.\r\n",
+  "associated": {
+    "state": "connected",
+    "ssid": "ESP32-IMU",
+    "profile": "ESP32-IMU"
+  },
+  "wifi_transport_passed": true,
+  "frames": 1181,
+  "node_id": "imu_305A6077C398",
+  "invalid_frames": 0,
+  "sequence_missing_frames": 0,
+  "capture_duration_s": 12.0,
+  "received_hz": 98.33333333333333,
+  "device_hz": 98.34163500635512,
+  "six_axis_valid_frames": 1181,
+  "magnetometer_valid_frames": 1181,
+  "local_wifi_ipv4": "192.168.4.2",
+  "remote_tcp": "192.168.4.1:9000",
+  "accel_norm_g_range": [
+    0.9976490866031001,
+    1.005075290712094
+  ],
+  "max_gyro_norm_dps": 0.26421960563137625,
+  "usb_serial_opened_by_test": false,
+  "limitations": "USB cable remains attached for power. Rotation accuracy, battery unplugging and three-node operation were not verified.",
+  "tested_wifi_ipv4_config": "\r\nConfiguration for interface \"WLAN\"\r\n    DHCP enabled:                         Yes\r\n    IP Address:                           192.168.4.2\r\n    Subnet Prefix:                        192.168.4.0/24 (mask 255.255.255.0)\r\n    Default Gateway:                      192.168.4.1\r\n    Gateway Metric:                       0\r\n    InterfaceMetric:                      50\r\n    DNS servers configured through DHCP:  192.168.4.1\r\n    Register with which suffix:           Primary only\r\n    WINS servers configured through DHCP: None\r\n\r\n",
+  "after": {
+    "state": "connected",
+    "ssid": "sdu_net",
+    "profile": "sdu_net"
+  },
+  "original_wifi_restored": true
+}

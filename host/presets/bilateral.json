@@ -1,0 +1,12 @@
+{
+  "id": "bilateral",
+  "title": "方案 C 双臂抬举幅度与节奏对比",
+  "description": "胸廓加左右上臂。用双臂慢速侧平举或前平举比较角度范围、角度差和动作周期。结果只描述两侧运动差异，不自动判断动作优劣或伤病。",
+  "placements": ["胸骨处固定", "左上臂外侧", "右上臂外侧"],
+  "neutral_pose": "直立、双上臂自然下垂、目视正前；三块板保持固定至少 4 秒",
+  "angle_labels": {"left_raise": "左上臂相对胸廓夹角", "right_raise": "右上臂相对胸廓夹角", "difference": "同时刻左右夹角绝对差"},
+  "lengths_m": [0.30, 0.30],
+  "cycle_keys": ["left_raise", "right_raise"],
+  "cycle_low_deg": 15,
+  "cycle_high_deg": 45
+}

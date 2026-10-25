@@ -1,0 +1,68 @@
+{
+  "project": "E:\\AAA动作捕捉系统\\2.代码",
+  "legacy": {
+    "旧版": {
+      "files": 224,
+      "bytes": 758513,
+      "skipped_generated": [
+        "旧版\\IMU-tracker\\.pio",
+        "旧版\\IMU-tracker\\.platformio",
+        "旧版\\IMU-tracker\\.venv",
+        "旧版\\pose\\backend\\.pytest_cache",
+        "旧版\\pose\\backend\\.ruff_cache",
+        "旧版\\pose\\backend\\.venv",
+        "旧版\\pose\\backend\\src\\mocap_pose\\__pycache__",
+        "旧版\\pose\\backend\\src\\mocap_pose\\api\\__pycache__",
+        "旧版\\pose\\backend\\src\\mocap_pose\\calibration\\__pycache__",
+        "旧版\\pose\\backend\\src\\mocap_pose\\config\\__pycache__",
+        "旧版\\pose\\backend\\src\\mocap_pose\\domain\\__pycache__",
+        "旧版\\pose\\backend\\src\\mocap_pose\\fusion\\__pycache__",
+        "旧版\\pose\\backend\\src\\mocap_pose\\math\\__pycache__",
+        "旧版\\pose\\backend\\src\\mocap_pose\\pipeline\\__pycache__",
+        "旧版\\pose\\backend\\src\\mocap_pose\\protocol\\__pycache__",
+        "旧版\\pose\\backend\\src\\mocap_pose\\quality\\__pycache__",
+        "旧版\\pose\\backend\\src\\mocap_pose\\skeleton\\__pycache__",
+        "旧版\\pose\\backend\\src\\mocap_pose\\sources\\__pycache__",
+        "旧版\\pose\\backend\\src\\mocap_pose\\storage\\__pycache__",
+        "旧版\\pose\\backend\\src\\mocap_pose\\synchronization\\__pycache__",
+        "旧版\\pose\\backend\\tests\\__pycache__",
+        "旧版\\pose\\frontend\\dist",
+        "旧版\\pose\\frontend\\node_modules"
+      ],
+      "links": []
+    },
+    "源代码": {
+      "files": 72,
+      "bytes": 2318531,
+      "skipped_generated": [
+        "源代码\\BLE\\dashboard\\__pycache__",
+        "源代码\\BLE\\tests\\__pycache__",
+        "源代码\\imu\\.pio",
+        "源代码\\imu\\dashboard\\__pycache__",
+        "源代码\\imu\\tests\\__pycache__",
+        "源代码\\WIFI\\dashboard\\__pycache__",
+        "源代码\\WIFI\\tests\\__pycache__"
+      ],
+      "links": []
+    },
+    "配置": {
+      "files": 1,
+      "bytes": 5614,
+      "skipped_generated": [],
+      "links": []
+    },
+    "说明": {
+      "files": 1,
+      "bytes": 3497,
+      "skipped_generated": [],
+      "links": []
+    },
+    "IMU_伙伴交接_20261025": {
+      "files": 104,
+      "bytes": 4091873,
+      "skipped_generated": [],
+      "links": []
+    }
+  },
+  "package_hash_mismatches": []
+}

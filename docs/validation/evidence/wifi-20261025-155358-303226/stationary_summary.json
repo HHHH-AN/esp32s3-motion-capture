@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-25",
+  "kind": "real_dual_node_stationary_display_validation",
+  "report": "hardware_tests\\wifi-20261025-155358-303226\\report.json",
+  "pass": true,
+  "nodes": {
+    "A": {
+      "frames_added": 1066,
+      "hold_polls": 57,
+      "total_polls": 111,
+      "max_display_pose_change_deg": 0.12464060895057073,
+      "mag_rejected_polls": 111,
+      "sampling_gaps": 1,
+      "bias_dps": [
+        0.010903061224489845,
+        -0.014005102040816316,
+        0.040420918367347125
+      ],
+      "quality": {
+        "samples": 392,
+        "duration_s": 4.005999999999982,
+        "gyro_std_dps": 0.0993365729784435,
+        "accel_std_g": 0.001795227701580117,
+        "mag_relative_std": 0.026304668236556302,
+        "mag_std_mG": 14.084794384956927,
+        "mag_direction_change_deg": 0.14164042290573153
+      }
+    },
+    "B": {
+      "frames_added": 1039,
+      "hold_polls": 105,
+      "total_polls": 111,
+      "max_display_pose_change_deg": 0.0910983632201414,
+      "mag_rejected_polls": 0,
+      "sampling_gaps": 0,
+      "bias_dps": [
+        0.036244332493702965,
+        -0.08475566750629782,
+        0.03271788413098263
+      ],
+      "quality": {
+        "samples": 397,
+        "duration_s": 4.008999999999967,
+        "gyro_std_dps": 0.06254954716201812,
+        "accel_std_g": 0.0012400930749478286,
+        "mag_relative_std": 0.008594262483795748,
+        "mag_std_mG": 7.521841629837449,
+        "mag_direction_change_deg": 0.2477175845227626
+      }
+    }
+  },
+  "limitations": "User confirmed a stationary hold. Display attitude span includes intentional rest holding; this is not a turntable accuracy measurement or a physical rotate-stop trial."
+}

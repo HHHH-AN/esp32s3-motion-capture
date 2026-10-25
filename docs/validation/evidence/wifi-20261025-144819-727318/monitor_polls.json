@@ -1,0 +1,8010 @@
+[
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.015000000013969839,
+    "rate_hz": 98.66666666666667,
+    "quaternion": [
+      0.9999982765746195,
+      0.0017919204712739112,
+      0.0004812249965305826,
+      -6.550815384981368e-05
+    ],
+    "euler_deg": [
+      0.20533552885017156,
+      0.055157687453535026,
+      -0.007407857754126437
+    ],
+    "accel": [
+      0.0771,
+      -0.5264,
+      0.8518
+    ],
+    "gyro": [
+      0.358,
+      0.017,
+      0.067
+    ],
+    "mag": [
+      -69.0,
+      475.5,
+      -30.0
+    ],
+    "sensor_flags": 3,
+    "frames": 1496,
+    "sequence": 18937,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.0,
+    "quaternion": [
+      0.9999981047899439,
+      0.001891725128002675,
+      0.0004578515847039056,
+      4.652404767818697e-05
+    ],
+    "euler_deg": [
+      0.21677836979978274,
+      0.05245574950334721,
+      0.0054305064480769764
+    ],
+    "accel": [
+      0.0769,
+      -0.5251,
+      0.8472
+    ],
+    "gyro": [
+      0.114,
+      -0.044,
+      0.067
+    ],
+    "mag": [
+      -75.0,
+      469.5,
+      -27.0
+    ],
+    "sensor_flags": 3,
+    "frames": 1509,
+    "sequence": 18950,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.5,
+    "quaternion": [
+      0.9999979806235867,
+      0.0019421753842355505,
+      0.0005153845348678243,
+      -3.289843278642124e-05
+    ],
+    "euler_deg": [
+      0.2225551907255041,
+      0.05906593032208157,
+      -0.0036551746473798964
+    ],
+    "accel": [
+      0.0737,
+      -0.5269,
+      0.8503
+    ],
+    "gyro": [
+      0.114,
+      -0.044,
+      0.067
+    ],
+    "mag": [
+      -79.5,
+      474.0,
+      -19.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1520,
+    "sequence": 18961,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.0,
+    "quaternion": [
+      0.9999978768652686,
+      0.001993188715231825,
+      0.0005228028062686241,
+      -1.1871239803007416e-05
+    ],
+    "euler_deg": [
+      0.22840213598407594,
+      0.05991138377891833,
+      -0.0012409321454648569
+    ],
+    "accel": [
+      0.0723,
+      -0.5247,
+      0.8511
+    ],
+    "gyro": [
+      0.053,
+      -0.044,
+      0.067
+    ],
+    "mag": [
+      -75.0,
+      475.5,
+      -25.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1530,
+    "sequence": 18971,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.014999999955762178,
+    "rate_hz": 98.23677581645049,
+    "quaternion": [
+      0.9999977999475236,
+      0.0020369204821191205,
+      0.0004977779844344555,
+      5.7202626526087215e-05
+    ],
+    "euler_deg": [
+      0.2334174043166277,
+      0.05702768731980257,
+      0.006671115349820746
+    ],
+    "accel": [
+      0.0747,
+      -0.5266,
+      0.8516
+    ],
+    "gyro": [
+      0.114,
+      0.017,
+      0.128
+    ],
+    "mag": [
+      -72.0,
+      472.5,
+      -30.0
+    ],
+    "sensor_flags": 3,
+    "frames": 1540,
+    "sequence": 18981,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.5,
+    "quaternion": [
+      0.9999977177121016,
+      0.0020794233922598326,
+      0.0004691507970151776,
+      0.00014306108350642388
+    ],
+    "euler_deg": [
+      0.2382923073544696,
+      0.053726517204499044,
+      0.016505353966204683
+    ],
+    "accel": [
+      0.0752,
+      -0.5264,
+      0.8481
+    ],
+    "gyro": [
+      0.053,
+      -0.044,
+      0.067
+    ],
+    "mag": [
+      -69.0,
+      472.5,
+      -51.0
+    ],
+    "sensor_flags": 3,
+    "frames": 1551,
+    "sequence": 18992,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.0,
+    "quaternion": [
+      0.9999975786163996,
+      0.002144151143249701,
+      0.0004550015670888864,
+      0.0001958335691277236
+    ],
+    "euler_deg": [
+      0.24571209268906918,
+      0.052091103233282636,
+      0.022552624184291284
+    ],
+    "accel": [
+      0.0723,
+      -0.5261,
+      0.8489
+    ],
+    "gyro": [
+      0.114,
+      -0.044,
+      0.067
+    ],
+    "mag": [
+      -75.0,
+      468.0,
+      -28.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1561,
+    "sequence": 19002,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.0,
+    "quaternion": [
+      0.9997792187699003,
+      0.02080356981508726,
+      0.0029332881541140614,
+      -0.0003478784295117832
+    ],
+    "euler_deg": [
+      2.3839992753394235,
+      0.3368871046638248,
+      -0.03286299502476622
+    ],
+    "accel": [
+      0.0554,
+      -0.4958,
+      0.0676
+    ],
+    "gyro": [
+      213.31,
+      28.093,
+      -5.793
+    ],
+    "mag": [
+      -64.5,
+      477.0,
+      -30.0
+    ],
+    "sensor_flags": 3,
+    "frames": 1571,
+    "sequence": 19012,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.031000000017229468,
+    "rate_hz": 98.52717115373163,
+    "quaternion": [
+      0.9998977129068868,
+      0.013986438534470349,
+      0.0029887392350131385,
+      0.00010343347525287873
+    ],
+    "euler_deg": [
+      1.602836932788575,
+      0.34228551699009513,
+      0.016641823462353277
+    ],
+    "accel": [
+      0.1233,
+      -0.4324,
+      0.9131
+    ],
+    "gyro": [
+      -88.326,
+      7.707,
+      -10.737
+    ],
+    "mag": [
+      -49.5,
+      478.5,
+      -25.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1580,
+    "sequence": 19021,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.5,
+    "quaternion": [
+      0.9828657229366495,
+      -0.1826122164352174,
+      0.020962409189187126,
+      0.013723209749162912
+    ],
+    "euler_deg": [
+      -21.02496131599685,
+      2.649069748091406,
+      1.1082169983712664
+    ],
+    "accel": [
+      0.0806,
+      -0.9116,
+      0.5894
+    ],
+    "gyro": [
+      -239.327,
+      -45.271,
+      49.81
+    ],
+    "mag": [
+      -258.0,
+      391.5,
+      31.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1594,
+    "sequence": 19035,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 98.79032258080747,
+    "quaternion": [
+      0.9609473918749276,
+      -0.2749846588746413,
+      0.022516059058348248,
+      0.021367604377945493
+    ],
+    "euler_deg": [
+      -31.892674469856875,
+      3.1542947054701735,
+      1.6461432572588333
+    ],
+    "accel": [
+      0.0386,
+      -0.835,
+      0.2788
+    ],
+    "gyro": [
+      -86.617,
+      3.923,
+      6.597
+    ],
+    "mag": [
+      -355.5,
+      361.5,
+      99.0
+    ],
+    "sensor_flags": 3,
+    "frames": 1605,
+    "sequence": 19046,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 98.79032258080747,
+    "quaternion": [
+      0.9714023533220593,
+      -0.2344505296592581,
+      0.034832832235794725,
+      0.014038906698586595
+    ],
+    "euler_deg": [
+      -27.114608096938614,
+      4.258489325752464,
+      0.6286615414835408
+    ],
+    "accel": [
+      0.0088,
+      -0.8494,
+      0.4565
+    ],
+    "gyro": [
+      48.149,
+      -6.941,
+      6.719
+    ],
+    "mag": [
+      -345.0,
+      343.5,
+      54.0
+    ],
+    "sensor_flags": 3,
+    "frames": 1617,
+    "sequence": 19058,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.0,
+    "quaternion": [
+      0.9941806862714757,
+      -0.10115297302070618,
+      0.03069016829107496,
+      -0.020759399416060587
+    ],
+    "euler_deg": [
+      -11.69667366904234,
+      3.257495349656409,
+      -2.726178599878091
+    ],
+    "accel": [
+      0.0525,
+      -0.7073,
+      0.7554
+    ],
+    "gyro": [
+      82.817,
+      -20.247,
+      -32.282
+    ],
+    "mag": [
+      -219.0,
+      366.0,
+      -28.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1630,
+    "sequence": 19071,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.9982331983862792,
+      -0.029885423667600053,
+      0.028885095868473515,
+      -0.04246168070597928
+    ],
+    "euler_deg": [
+      -3.5668387622239623,
+      3.16032733215823,
+      -4.969852316439106
+    ],
+    "accel": [
+      0.1365,
+      -0.5547,
+      0.719
+    ],
+    "gyro": [
+      84.159,
+      9.05,
+      -2.619
+    ],
+    "mag": [
+      -117.0,
+      406.5,
+      -34.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1640,
+    "sequence": 19081,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.0,
+    "quaternion": [
+      0.9991411503663508,
+      0.002071862729488588,
+      0.024942717093593463,
+      -0.03302317206787069
+    ],
+    "euler_deg": [
+      0.1430052928064536,
+      2.8648038790622783,
+      -3.7824754728990264
+    ],
+    "accel": [
+      0.0779,
+      -0.5354,
+      0.8289
+    ],
+    "gyro": [
+      -10.018,
+      -1.204,
+      -1.52
+    ],
+    "mag": [
+      -82.5,
+      493.5,
+      -1.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1650,
+    "sequence": 19091,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.0,
+    "quaternion": [
+      0.9991685896011645,
+      0.0036459433124020058,
+      0.02436804956674629,
+      -0.0324812994212853
+    ],
+    "euler_deg": [
+      0.3271407331699123,
+      2.804741716252571,
+      -3.7158597646718476
+    ],
+    "accel": [
+      0.0737,
+      -0.5295,
+      0.8501
+    ],
+    "gyro": [
+      9.574,
+      0.688,
+      -0.422
+    ],
+    "mag": [
+      -88.5,
+      492.0,
+      -10.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1661,
+    "sequence": 19102,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.0,
+    "quaternion": [
+      0.9992098480270407,
+      0.00432797086789108,
+      0.023701851663578608,
+      -0.03160965836042518
+    ],
+    "euler_deg": [
+      0.4101734260416336,
+      2.7305963705772807,
+      -3.614079952861117
+    ],
+    "accel": [
+      0.0752,
+      -0.5271,
+      0.8499
+    ],
+    "gyro": [
+      0.114,
+      -0.166,
+      0.128
+    ],
+    "mag": [
+      -82.5,
+      498.0,
+      -4.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1671,
+    "sequence": 19112,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.5,
+    "quaternion": [
+      0.9992557295678808,
+      0.004353226023483564,
+      0.022994284382606395,
+      -0.03066429902480805
+    ],
+    "euler_deg": [
+      0.4181233481216298,
+      2.649230328409235,
+      -3.5057155308284362
+    ],
+    "accel": [
+      0.0735,
+      -0.5271,
+      0.8435
+    ],
+    "gyro": [
+      0.236,
+      -0.044,
+      0.067
+    ],
+    "mag": [
+      -73.5,
+      499.5,
+      -1.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1681,
+    "sequence": 19122,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.29435483887282,
+    "quaternion": [
+      0.9992893379435402,
+      0.007433810424219951,
+      0.022258525466284238,
+      -0.029497721590061036
+    ],
+    "euler_deg": [
+      0.7768165461800173,
+      2.5748207472779825,
+      -3.3641538971664877
+    ],
+    "accel": [
+      0.0742,
+      -0.5222,
+      0.8484
+    ],
+    "gyro": [
+      0.236,
+      0.017,
+      0.006
+    ],
+    "mag": [
+      -78.0,
+      496.5,
+      -9.0
+    ],
+    "sensor_flags": 3,
+    "frames": 1694,
+    "sequence": 19135,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.5,
+    "quaternion": [
+      0.9993322154159083,
+      0.007437562965929597,
+      0.021574868797753863,
+      -0.028536484111052203
+    ],
+    "euler_deg": [
+      0.78192805389955,
+      2.4957571864912165,
+      -3.254303337700839
+    ],
+    "accel": [
+      0.0742,
+      -0.5249,
+      0.8511
+    ],
+    "gyro": [
+      0.114,
+      0.017,
+      0.128
+    ],
+    "mag": [
+      -76.5,
+      498.0,
+      -9.0
+    ],
+    "sensor_flags": 3,
+    "frames": 1704,
+    "sequence": 19145,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 98.28629032274212,
+    "quaternion": [
+      0.9993749177303444,
+      0.00745441145721229,
+      0.020872405797287746,
+      -0.027541754438081767
+    ],
+    "euler_deg": [
+      0.7885292200957247,
+      2.4145475778787007,
+      -3.1406097216521878
+    ],
+    "accel": [
+      0.0737,
+      -0.5225,
+      0.8489
+    ],
+    "gyro": [
+      0.114,
+      0.017,
+      0.067
+    ],
+    "mag": [
+      -76.5,
+      501.0,
+      -6.0
+    ],
+    "sensor_flags": 3,
+    "frames": 1715,
+    "sequence": 19156,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.5,
+    "quaternion": [
+      0.99941988482494,
+      0.007490060945372912,
+      0.020108769557961176,
+      -0.02644674252914897
+    ],
+    "euler_deg": [
+      0.7975417572121566,
+      2.3262967684955314,
+      -3.015431870785181
+    ],
+    "accel": [
+      0.0725,
+      -0.5217,
+      0.8508
+    ],
+    "gyro": [
+      0.236,
+      -0.044,
+      0.067
+    ],
+    "mag": [
+      -73.5,
+      495.0,
+      -7.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1726,
+    "sequence": 19167,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.0,
+    "quaternion": [
+      0.9994573817111003,
+      0.0075032144944968135,
+      0.019447840380866614,
+      -0.025503439375149154
+    ],
+    "euler_deg": [
+      0.8031479978227696,
+      2.2498552192293464,
+      -2.907660083081372
+    ],
+    "accel": [
+      0.075,
+      -0.5229,
+      0.8503
+    ],
+    "gyro": [
+      0.175,
+      -0.044,
+      0.067
+    ],
+    "mag": [
+      -72.0,
+      501.0,
+      -6.0
+    ],
+    "sensor_flags": 3,
+    "frames": 1736,
+    "sequence": 19177,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.5,
+    "quaternion": [
+      0.9994840189893408,
+      0.008976865517563937,
+      0.018755551600401654,
+      -0.024481441022931094
+    ],
+    "euler_deg": [
+      0.9762758264840988,
+      2.1738238243759076,
+      -2.787730824308042
+    ],
+    "accel": [
+      0.0742,
+      -0.5208,
+      0.8608
+    ],
+    "gyro": [
+      0.297,
+      -0.044,
+      0.006
+    ],
+    "mag": [
+      -75.0,
+      502.5,
+      -6.0
+    ],
+    "sensor_flags": 3,
+    "frames": 1747,
+    "sequence": 19188,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.0,
+    "quaternion": [
+      0.999522345221263,
+      0.008994825127061458,
+      0.018103951215319717,
+      -0.023375659877601655
+    ],
+    "euler_deg": [
+      0.9824512496014945,
+      2.098131980839076,
+      -2.6614541657637827
+    ],
+    "accel": [
+      0.072,
+      -0.5195,
+      0.8574
+    ],
+    "gyro": [
+      0.053,
+      0.2,
+      0.128
+    ],
+    "mag": [
+      -67.5,
+      501.0,
+      -7.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1757,
+    "sequence": 19198,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.5,
+    "quaternion": [
+      0.9995573648090208,
+      0.009038571972328185,
+      0.017414434384286137,
+      -0.02236327676845906
+    ],
+    "euler_deg": [
+      0.9913230044262787,
+      2.018243864339405,
+      -2.5458880045881753
+    ],
+    "accel": [
+      0.0728,
+      -0.5205,
+      0.8511
+    ],
+    "gyro": [
+      0.602,
+      -0.044,
+      0.006
+    ],
+    "mag": [
+      -88.5,
+      499.5,
+      -25.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1769,
+    "sequence": 19210,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.5,
+    "quaternion": [
+      0.9995952852517848,
+      0.009029732319343483,
+      0.01665798640245367,
+      -0.021218886060768053
+    ],
+    "euler_deg": [
+      0.9944226063473248,
+      1.9304131268607254,
+      -2.415370352210298
+    ],
+    "accel": [
+      0.0735,
+      -0.5193,
+      0.8521
+    ],
+    "gyro": [
+      0.175,
+      0.017,
+      0.128
+    ],
+    "mag": [
+      -66.0,
+      496.5,
+      -15.0
+    ],
+    "sensor_flags": 3,
+    "frames": 1780,
+    "sequence": 19221,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.5,
+    "quaternion": [
+      0.9996282729761804,
+      0.0090588063179681,
+      0.015937761876813148,
+      -0.020180228965762773
+    ],
+    "euler_deg": [
+      1.0013922216864481,
+      1.8469222628564628,
+      -2.296887959555832
+    ],
+    "accel": [
+      0.0742,
+      -0.5208,
+      0.8511
+    ],
+    "gyro": [
+      0.114,
+      0.017,
+      0.067
+    ],
+    "mag": [
+      -64.5,
+      501.0,
+      -10.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1790,
+    "sequence": 19231,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.015000000013969839,
+    "rate_hz": 98.23677581933116,
+    "quaternion": [
+      0.9996625997108857,
+      0.009100401293923366,
+      0.015158058524052165,
+      -0.01902899622535792
+    ],
+    "euler_deg": [
+      1.0099510704430763,
+      1.7565186231863115,
+      -2.165552244467143
+    ],
+    "accel": [
+      0.0745,
+      -0.5215,
+      0.8499
+    ],
+    "gyro": [
+      0.236,
+      0.017,
+      0.067
+    ],
+    "mag": [
+      -70.5,
+      492.0,
+      -4.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1802,
+    "sequence": 19243,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 98.28629032274212,
+    "quaternion": [
+      0.9996945999737546,
+      0.00913700037907664,
+      0.014400243685387145,
+      -0.017884490185325733
+    ],
+    "euler_deg": [
+      1.01767634607283,
+      1.668603748998144,
+      -2.034998888638368
+    ],
+    "accel": [
+      0.0745,
+      -0.5212,
+      0.8511
+    ],
+    "gyro": [
+      0.114,
+      0.017,
+      0.067
+    ],
+    "mag": [
+      -67.5,
+      493.5,
+      -9.0
+    ],
+    "sensor_flags": 3,
+    "frames": 1813,
+    "sequence": 19254,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.0,
+    "quaternion": [
+      0.9997235961970119,
+      0.009202349705299817,
+      0.013673369499757365,
+      -0.016765647417816276
+    ],
+    "euler_deg": [
+      1.0283991532584054,
+      1.5843010968791544,
+      -1.9073331635167108
+    ],
+    "accel": [
+      0.0723,
+      -0.5195,
+      0.8555
+    ],
+    "gyro": [
+      0.663,
+      0.078,
+      0.067
+    ],
+    "mag": [
+      -55.5,
+      496.5,
+      -7.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1825,
+    "sequence": 19266,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 98.28629032274212,
+    "quaternion": [
+      0.999747997003982,
+      0.009185100437586165,
+      0.013005558014096587,
+      -0.015825039564548175
+    ],
+    "euler_deg": [
+      1.029096403320242,
+      1.5067816854769114,
+      -1.8001886985736844
+    ],
+    "accel": [
+      0.0735,
+      -0.5181,
+      0.8545
+    ],
+    "gyro": [
+      0.175,
+      -0.044,
+      -0.056
+    ],
+    "mag": [
+      -69.0,
+      490.5,
+      -6.0
+    ],
+    "sensor_flags": 3,
+    "frames": 1836,
+    "sequence": 19277,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.0,
+    "quaternion": [
+      0.9997717496521771,
+      0.009196817277959958,
+      0.01233363366372356,
+      -0.01482392087234752
+    ],
+    "euler_deg": [
+      1.0330631283904952,
+      1.4287783914197743,
+      -1.686077816807527
+    ],
+    "accel": [
+      0.073,
+      -0.5205,
+      0.853
+    ],
+    "gyro": [
+      0.114,
+      0.017,
+      0.067
+    ],
+    "mag": [
+      -67.5,
+      502.5,
+      -7.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1848,
+    "sequence": 19289,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.0,
+    "quaternion": [
+      0.9997917501408708,
+      0.009204504067956948,
+      0.011730383551096096,
+      -0.013933110092928469
+    ],
+    "euler_deg": [
+      1.0361576964602075,
+      1.3587464271425496,
+      -1.5845590589830767
+    ],
+    "accel": [
+      0.0737,
+      -0.52,
+      0.8511
+    ],
+    "gyro": [
+      0.175,
+      0.017,
+      0.006
+    ],
+    "mag": [
+      -60.0,
+      502.5,
+      -4.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1859,
+    "sequence": 19300,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.015000000013969839,
+    "rate_hz": 98.7405541568662,
+    "quaternion": [
+      0.9998046155429078,
+      0.009229467618657228,
+      0.011310708825908289,
+      -0.013327247744002513
+    ],
+    "euler_deg": [
+      1.0404679793534521,
+      1.3100678188595216,
+      -1.5155020894160365
+    ],
+    "accel": [
+      0.074,
+      -0.5186,
+      0.8511
+    ],
+    "gyro": [
+      0.175,
+      0.078,
+      0.067
+    ],
+    "mag": [
+      -66.0,
+      495.0,
+      -9.0
+    ],
+    "sensor_flags": 3,
+    "frames": 1869,
+    "sequence": 19310,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 98.79032258080747,
+    "quaternion": [
+      0.9998233318771026,
+      0.009233436579836192,
+      0.010681085075212262,
+      -0.012408187003408736
+    ],
+    "euler_deg": [
+      1.0430004621360696,
+      1.2369708230530914,
+      -1.4107922054464357
+    ],
+    "accel": [
+      0.0737,
+      -0.519,
+      0.8538
+    ],
+    "gyro": [
+      0.114,
+      -0.044,
+      0.006
+    ],
+    "mag": [
+      -64.5,
+      499.5,
+      -7.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1880,
+    "sequence": 19321,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.0,
+    "quaternion": [
+      0.9998382850642541,
+      0.009297467645010384,
+      0.010145274400582995,
+      -0.01157731499520487
+    ],
+    "euler_deg": [
+      1.0520599112034736,
+      1.1747917235268184,
+      -1.3160314632651393
+    ],
+    "accel": [
+      0.0737,
+      -0.5195,
+      0.8594
+    ],
+    "gyro": [
+      0.175,
+      -0.044,
+      0.067
+    ],
+    "mag": [
+      -58.5,
+      502.5,
+      -13.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1890,
+    "sequence": 19331,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.0,
+    "quaternion": [
+      0.9998515864761495,
+      0.009350802300649719,
+      0.009622440357463041,
+      -0.010806301820156183
+    ],
+    "euler_deg": [
+      1.059709160013328,
+      1.114136206859404,
+      -1.2281427388887611
+    ],
+    "accel": [
+      0.0747,
+      -0.5198,
+      0.8552
+    ],
+    "gyro": [
+      0.175,
+      0.017,
+      0.006
+    ],
+    "mag": [
+      -67.5,
+      504.0,
+      -13.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1900,
+    "sequence": 19341,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.0,
+    "quaternion": [
+      0.9998647264202856,
+      0.009380080679189913,
+      0.00907602488845083,
+      -0.01000843240291638
+    ],
+    "euler_deg": [
+      1.0645637775837526,
+      1.0507118876043362,
+      -1.137236986184063
+    ],
+    "accel": [
+      0.0732,
+      -0.5193,
+      0.856
+    ],
+    "gyro": [
+      -0.252,
+      -0.044,
+      0.067
+    ],
+    "mag": [
+      -66.0,
+      496.5,
+      -27.0
+    ],
+    "sensor_flags": 3,
+    "frames": 1911,
+    "sequence": 19352,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.014999999955762178,
+    "rate_hz": 98.74055415397075,
+    "quaternion": [
+      0.9999345333115606,
+      -0.001280146154093026,
+      0.00743543447118325,
+      -0.00860259443660677
+    ],
+    "euler_deg": [
+      -0.1540312428706974,
+      0.8507515607734527,
+      -0.9869685088790253
+    ],
+    "accel": [
+      0.0083,
+      -0.5432,
+      0.8127
+    ],
+    "gyro": [
+      -23.018,
+      -5.72,
+      4.095
+    ],
+    "mag": [
+      -106.5,
+      487.5,
+      -15.0
+    ],
+    "sensor_flags": 3,
+    "frames": 1921,
+    "sequence": 19362,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.014999999955762178,
+    "rate_hz": 98.74055415397075,
+    "quaternion": [
+      0.9996715590983668,
+      -0.01568194685704388,
+      0.012612035805864532,
+      -0.015867798380520767
+    ],
+    "euler_deg": [
+      -1.8202234089739335,
+      1.4163876977929648,
+      -1.841261995088064
+    ],
+    "accel": [
+      0.0151,
+      -0.5366,
+      0.842
+    ],
+    "gyro": [
+      -20.211,
+      21.745,
+      -33.015
+    ],
+    "mag": [
+      -96.0,
+      475.5,
+      -25.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1933,
+    "sequence": 19374,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.98635350274466,
+      -0.16146049899678558,
+      0.03193564846025183,
+      0.004170041303404316
+    ],
+    "euler_deg": [
+      -18.596947064075223,
+      3.6893186703745555,
+      -0.11979150152293656
+    ],
+    "accel": [
+      0.1177,
+      -0.8821,
+      0.511
+    ],
+    "gyro": [
+      -125.13,
+      20.647,
+      68.365
+    ],
+    "mag": [
+      -261.0,
+      390.0,
+      19.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1946,
+    "sequence": 19387,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 99.29435483887282,
+    "quaternion": [
+      0.9421762816592847,
+      -0.33056617840287333,
+      0.05409884283686684,
+      0.010157321424276224
+    ],
+    "euler_deg": [
+      -38.71945688230789,
+      6.237881799763229,
+      -0.9583479417578034
+    ],
+    "accel": [
+      -0.0305,
+      -0.8667,
+      0.396
+    ],
+    "gyro": [
+      -117.44,
+      12.468,
+      3.301
+    ],
+    "mag": [
+      -405.0,
+      339.0,
+      142.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1957,
+    "sequence": 19398,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.5,
+    "quaternion": [
+      0.8843743601269319,
+      -0.4652627571883,
+      0.03612399103261827,
+      -0.010373774409352167
+    ],
+    "euler_deg": [
+      -55.57802497486515,
+      3.109317832076054,
+      -2.9829914089260052
+    ],
+    "accel": [
+      0.0676,
+      -1.0117,
+      0.0193
+    ],
+    "gyro": [
+      -152.596,
+      -12.068,
+      -50.532
+    ],
+    "mag": [
+      -472.5,
+      393.0,
+      331.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1968,
+    "sequence": 19409,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.8170639014677417,
+      -0.5748631871034083,
+      0.00862428623453737,
+      -0.04318007316539707
+    ],
+    "euler_deg": [
+      -70.17610599992184,
+      -2.0374136633887727,
+      -4.6189293583964925
+    ],
+    "accel": [
+      0.1609,
+      -0.8528,
+      -0.1733
+    ],
+    "gyro": [
+      42.472,
+      -14.876,
+      -6.281
+    ],
+    "mag": [
+      -393.0,
+      528.0,
+      558.0
+    ],
+    "sensor_flags": 3,
+    "frames": 1980,
+    "sequence": 19421,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 99.29435483887282,
+    "quaternion": [
+      0.8361722602280897,
+      -0.5469479844917193,
+      0.005135817651359786,
+      -0.040465749252251215
+    ],
+    "euler_deg": [
+      -66.30305812456513,
+      -2.044544661461436,
+      -4.205699887721173
+    ],
+    "accel": [
+      0.1562,
+      -0.9653,
+      -0.0605
+    ],
+    "gyro": [
+      36.247,
+      -7.185,
+      9.832
+    ],
+    "mag": [
+      -393.0,
+      511.5,
+      511.5
+    ],
+    "sensor_flags": 3,
+    "frames": 1991,
+    "sequence": 19432,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.8860289339857373,
+      -0.463347299091953,
+      0.0026539130626032086,
+      -0.01596763319175887
+    ],
+    "euler_deg": [
+      -55.205583262632906,
+      -0.5783667076118828,
+      -1.7624958171751972
+    ],
+    "accel": [
+      0.1545,
+      -1.0986,
+      -0.0774
+    ],
+    "gyro": [
+      142.387,
+      -27.144,
+      24.236
+    ],
+    "mag": [
+      -397.5,
+      456.0,
+      396.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2004,
+    "sequence": 19445,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 99.29435483887282,
+    "quaternion": [
+      0.9054782619913663,
+      -0.4187809545164287,
+      0.03822797307742377,
+      0.057186110811939035
+    ],
+    "euler_deg": [
+      -49.39792578704461,
+      6.72627079696402,
+      4.131115273160358
+    ],
+    "accel": [
+      -0.062,
+      -0.9832,
+      0.1677
+    ],
+    "gyro": [
+      41.923,
+      -25.496,
+      91.741
+    ],
+    "mag": [
+      -408.0,
+      384.0,
+      319.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2016,
+    "sequence": 19457,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 98.79032258080747,
+    "quaternion": [
+      0.9055847929891849,
+      -0.4001490757841367,
+      0.055719986383139686,
+      0.12919823130871044
+    ],
+    "euler_deg": [
+      -46.522734564053074,
+      11.78942910669926,
+      11.156464858412287
+    ],
+    "accel": [
+      -0.1899,
+      -0.9329,
+      0.1357
+    ],
+    "gyro": [
+      1.64,
+      -24.214,
+      70.562
+    ],
+    "mag": [
+      -412.5,
+      301.5,
+      294.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2026,
+    "sequence": 19467,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.9012992098903061,
+      -0.3916393687873527,
+      0.07097830351788614,
+      0.17099830261343774
+    ],
+    "euler_deg": [
+      -44.938407802327276,
+      15.181923743526976,
+      15.175818930203071
+    ],
+    "accel": [
+      -0.2395,
+      -0.9849,
+      0.1804
+    ],
+    "gyro": [
+      0.175,
+      -12.617,
+      16.79
+    ],
+    "mag": [
+      -405.0,
+      240.0,
+      297.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2037,
+    "sequence": 19478,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.9058741504095209,
+      -0.3780201346576465,
+      0.07483060582861178,
+      0.17576456367700122
+    ],
+    "euler_deg": [
+      -43.13102022015402,
+      15.572607431624933,
+      15.774106248939948
+    ],
+    "accel": [
+      -0.2905,
+      -0.8999,
+      0.2686
+    ],
+    "gyro": [
+      -21.37,
+      -24.946,
+      13.25
+    ],
+    "mag": [
+      -415.5,
+      243.0,
+      306.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2048,
+    "sequence": 19489,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.8896381997860009,
+      -0.40658190794729904,
+      0.09681313090107628,
+      0.1840169646977932
+    ],
+    "euler_deg": [
+      -46.590104521016926,
+      18.777459701167082,
+      15.228704221279036
+    ],
+    "accel": [
+      -0.3459,
+      -0.8403,
+      0.1038
+    ],
+    "gyro": [
+      -91.256,
+      32.06,
+      1.592
+    ],
+    "mag": [
+      -433.5,
+      217.5,
+      340.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2060,
+    "sequence": 19501,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.10899999999674037,
+    "rate_hz": 98.88947646730706,
+    "quaternion": [
+      0.8850318002116639,
+      -0.4162159565907291,
+      0.09959247758412712,
+      0.1832056999714282
+    ],
+    "euler_deg": [
+      -47.85594653864344,
+      19.195428180428202,
+      14.808668807452847
+    ],
+    "accel": [
+      -0.3691,
+      -0.8337,
+      0.136
+    ],
+    "gyro": [
+      -108.651,
+      40.544,
+      4.278
+    ],
+    "mag": [
+      -438.0,
+      210.0,
+      355.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2061,
+    "sequence": 19502,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.014999999955762178,
+    "rate_hz": 96.72544080388971,
+    "quaternion": [
+      0.6718415572683055,
+      -0.7176951522763713,
+      0.13282315109010256,
+      0.1260975846746884
+    ],
+    "euler_deg": [
+      -94.02234077331093,
+      21.067741098017482,
+      -1.3028892996724848
+    ],
+    "accel": [
+      -0.2046,
+      -0.7893,
+      -0.5132
+    ],
+    "gyro": [
+      -235.665,
+      91.753,
+      -41.559
+    ],
+    "mag": [
+      -370.5,
+      283.5,
+      850.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2077,
+    "sequence": 19518,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 94.71032745380867,
+    "quaternion": [
+      0.5545098221337643,
+      -0.8143970908544418,
+      0.1366958508329421,
+      0.10291005747768928
+    ],
+    "euler_deg": [
+      -112.57820863023403,
+      18.61562049877763,
+      -6.575432312848084
+    ],
+    "accel": [
+      -0.1072,
+      -0.4912,
+      -0.8657
+    ],
+    "gyro": [
+      -307.442,
+      102.8,
+      15.569
+    ],
+    "mag": [
+      -154.5,
+      405.0,
+      996.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2084,
+    "sequence": 19525,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.031000000017229468,
+    "rate_hz": 94.46419502368083,
+    "quaternion": [
+      0.34059984527780296,
+      -0.9338405885781491,
+      0.10576618887161437,
+      0.027331553419569214
+    ],
+    "euler_deg": [
+      -140.56659023985526,
+      7.070730169906576,
+      -10.38667475233901
+    ],
+    "accel": [
+      0.0779,
+      0.0183,
+      -1.0435
+    ],
+    "gyro": [
+      -175.118,
+      64.104,
+      -19.587
+    ],
+    "mag": [
+      258.0,
+      618.0,
+      841.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2093,
+    "sequence": 19534,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.03200000000651926,
+    "rate_hz": 94.5121951222643,
+    "quaternion": [
+      0.26450289700728336,
+      -0.9603214802935075,
+      0.08266523944744376,
+      -0.031421810080545017
+    ],
+    "euler_deg": [
+      -149.11734273269911,
+      -0.9522818049019761,
+      -10.102923381386043
+    ],
+    "accel": [
+      0.231,
+      0.1548,
+      -0.9656
+    ],
+    "gyro": [
+      -61.409,
+      38.408,
+      -8.967
+    ],
+    "mag": [
+      297.0,
+      637.5,
+      694.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2104,
+    "sequence": 19545,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 94.75806451628472,
+    "quaternion": [
+      0.26262466039862986,
+      -0.9622302668216629,
+      0.04257996085895055,
+      -0.05769010570337163
+    ],
+    "euler_deg": [
+      -149.1800992841578,
+      -5.086363576270711,
+      -6.4703416389009965
+    ],
+    "accel": [
+      0.2336,
+      0.0784,
+      -0.9905
+    ],
+    "gyro": [
+      4.631,
+      1.97,
+      -6.281
+    ],
+    "mag": [
+      310.5,
+      639.0,
+      681.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2117,
+    "sequence": 19558,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.10999999998603016,
+    "rate_hz": 94.70899470829467,
+    "quaternion": [
+      0.26262466039862986,
+      -0.9622302668216629,
+      0.04257996085895055,
+      -0.05769010570337163
+    ],
+    "euler_deg": [
+      -149.1800992841578,
+      -5.086363576270711,
+      -6.4703416389009965
+    ],
+    "accel": [
+      0.2336,
+      0.0784,
+      -0.9905
+    ],
+    "gyro": [
+      4.631,
+      1.97,
+      -6.281
+    ],
+    "mag": [
+      310.5,
+      639.0,
+      681.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2117,
+    "sequence": 19558,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 92.0,
+    "quaternion": [
+      0.2941386290266738,
+      -0.9526909302367623,
+      -0.023111522277881436,
+      -0.0729953142120798
+    ],
+    "euler_deg": [
+      -145.68924438873023,
+      -8.782264537314049,
+      0.06347113029294466
+    ],
+    "accel": [
+      0.2222,
+      0.0137,
+      -0.9534
+    ],
+    "gyro": [
+      10.185,
+      -5.354,
+      0.433
+    ],
+    "mag": [
+      286.5,
+      630.0,
+      697.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2134,
+    "sequence": 19575,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.09399999998277053,
+    "rate_hz": 91.81532004114274,
+    "quaternion": [
+      0.2977216874145128,
+      -0.9513713271466842,
+      -0.02932240132248881,
+      -0.07344788292997217
+    ],
+    "euler_deg": [
+      -145.30141297597248,
+      -9.045122068184895,
+      0.6996430507569122
+    ],
+    "accel": [
+      0.2322,
+      -0.0159,
+      -0.9548
+    ],
+    "gyro": [
+      19.95,
+      -6.819,
+      -1.337
+    ],
+    "mag": [
+      277.5,
+      633.0,
+      691.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2136,
+    "sequence": 19577,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.061999999976251274,
+    "rate_hz": 90.29927760467261,
+    "quaternion": [
+      0.32608095654018554,
+      -0.9395412504422969,
+      -0.0707300907233735,
+      -0.07701105612459971
+    ],
+    "euler_deg": [
+      -142.18550500785992,
+      -11.001669558462064,
+      4.831865997200909
+    ],
+    "accel": [
+      0.2163,
+      -0.0212,
+      -0.9839
+    ],
+    "gyro": [
+      47.905,
+      -15.486,
+      -1.765
+    ],
+    "mag": [
+      253.5,
+      631.5,
+      703.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2147,
+    "sequence": 19588,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0470000000204891,
+    "rate_hz": 88.06963645765718,
+    "quaternion": [
+      0.3823780659381462,
+      -0.9165607907754205,
+      -0.1050900388268814,
+      -0.05156951853472325
+    ],
+    "euler_deg": [
+      -135.49990297512863,
+      -10.072923099656094,
+      8.951780889156673
+    ],
+    "accel": [
+      0.1685,
+      -0.1655,
+      -0.9609
+    ],
+    "gyro": [
+      160.636,
+      -58.577,
+      6.719
+    ],
+    "mag": [
+      207.0,
+      604.5,
+      795.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2155,
+    "sequence": 19596,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.15600000001722947,
+    "rate_hz": 87.85249457782736,
+    "quaternion": [
+      0.3823780659381462,
+      -0.9165607907754205,
+      -0.1050900388268814,
+      -0.05156951853472325
+    ],
+    "euler_deg": [
+      -135.49990297512863,
+      -10.072923099656094,
+      8.951780889156673
+    ],
+    "accel": [
+      0.1685,
+      -0.1655,
+      -0.9609
+    ],
+    "gyro": [
+      160.636,
+      -58.577,
+      6.719
+    ],
+    "mag": [
+      207.0,
+      604.5,
+      795.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2155,
+    "sequence": 19596,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 1
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 76.5,
+    "quaternion": [
+      1.0,
+      0.0,
+      0.0,
+      -6.938893903907228e-18
+    ],
+    "euler_deg": [
+      0.0,
+      0.0,
+      -7.951386703658792e-16
+    ],
+    "accel": [
+      -0.0579,
+      -0.7053,
+      -0.7524
+    ],
+    "gyro": [
+      24.528,
+      -5.842,
+      2.813
+    ],
+    "mag": [
+      -234.0,
+      556.5,
+      822.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2157,
+    "sequence": 19598,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.031000000017229468,
+    "rate_hz": 75.67293042219593,
+    "quaternion": [
+      0.999956066913081,
+      0.007648848562880284,
+      -0.004978401095094481,
+      -0.0021388973608406775
+    ],
+    "euler_deg": [
+      0.8777527311544926,
+      -0.5685922829158683,
+      -0.2494654232803297
+    ],
+    "accel": [
+      -0.0627,
+      -0.7524,
+      -0.6692
+    ],
+    "gyro": [
+      20.927,
+      -4.683,
+      -1.703
+    ],
+    "mag": [
+      -247.5,
+      385.5,
+      820.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2164,
+    "sequence": 19605,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.015000000013969839,
+    "rate_hz": 74.05541561764964,
+    "quaternion": [
+      0.9999075972557252,
+      0.0072815212567146625,
+      -0.009790120876913486,
+      -0.005994158129883867
+    ],
+    "euler_deg": [
+      0.841238438322131,
+      -1.1168307425926074,
+      -0.695134445860393
+    ],
+    "accel": [
+      -0.064,
+      -0.7134,
+      -0.7002
+    ],
+    "gyro": [
+      -9.591,
+      1.177,
+      -0.117
+    ],
+    "mag": [
+      -258.0,
+      378.0,
+      810.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2173,
+    "sequence": 19614,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 73.58870967754025,
+    "quaternion": [
+      0.9998828397530224,
+      -0.0017431783484325725,
+      -0.01197703045532153,
+      -0.009371170585884693
+    ],
+    "euler_deg": [
+      -0.18692260371547756,
+      -1.3743094967310103,
+      -1.0717095377287698
+    ],
+    "accel": [
+      -0.0432,
+      -0.6985,
+      -0.7441
+    ],
+    "gyro": [
+      -13.253,
+      -0.655,
+      0.372
+    ],
+    "mag": [
+      -234.0,
+      382.5,
+      820.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2183,
+    "sequence": 19624,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.030999999959021807,
+    "rate_hz": 73.64144235499356,
+    "quaternion": [
+      0.9997947504712444,
+      -0.01378429829960176,
+      -0.009809104914367192,
+      -0.011145919042805812
+    ],
+    "euler_deg": [
+      -1.5672179632444936,
+      -1.1414911224281497,
+      -1.2618243669745737
+    ],
+    "accel": [
+      -0.0496,
+      -0.6729,
+      -0.7576
+    ],
+    "gyro": [
+      -10.811,
+      0.383,
+      -0.483
+    ],
+    "mag": [
+      -231.0,
+      388.5,
+      817.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2193,
+    "sequence": 19634,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.125,
+    "rate_hz": 72.53333333333333,
+    "quaternion": [
+      0.9997947504712444,
+      -0.01378429829960176,
+      -0.009809104914367192,
+      -0.011145919042805812
+    ],
+    "euler_deg": [
+      -1.5672179632444936,
+      -1.1414911224281497,
+      -1.2618243669745737
+    ],
+    "accel": [
+      -0.0496,
+      -0.6729,
+      -0.7576
+    ],
+    "gyro": [
+      -10.811,
+      0.383,
+      -0.483
+    ],
+    "mag": [
+      -231.0,
+      388.5,
+      817.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2193,
+    "sequence": 19634,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.015000000013969839,
+    "rate_hz": 76.36738905995169,
+    "quaternion": [
+      0.9994547782574114,
+      -0.025352881620153204,
+      -0.008055161967519155,
+      -0.01955740211940921
+    ],
+    "euler_deg": [
+      -2.8872331360784296,
+      -0.9794166747720159,
+      -2.21736655991863
+    ],
+    "accel": [
+      -0.0469,
+      -0.6458,
+      -0.7437
+    ],
+    "gyro": [
+      -8.248,
+      2.886,
+      -5.121
+    ],
+    "mag": [
+      -214.5,
+      396.0,
+      820.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2210,
+    "sequence": 19651,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 72.0,
+    "quaternion": [
+      0.9988909493376544,
+      -0.03900012005494053,
+      -0.00662291194973834,
+      -0.025534271172796174
+    ],
+    "euler_deg": [
+      -4.449736215331242,
+      -0.8722366210717125,
+      -2.8947351045728245
+    ],
+    "accel": [
+      -0.0374,
+      -0.6284,
+      -0.7712
+    ],
+    "gyro": [
+      -35.836,
+      8.684,
+      -3.107
+    ],
+    "mag": [
+      -201.0,
+      409.5,
+      837.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2218,
+    "sequence": 19659,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 76.8049155153987,
+    "quaternion": [
+      0.9978224343887656,
+      -0.05727801834381031,
+      -0.008770746771254294,
+      -0.03150701582438873
+    ],
+    "euler_deg": [
+      -6.533219895162172,
+      -1.2097535983879855,
+      -3.548066195900421
+    ],
+    "accel": [
+      -0.0229,
+      -0.5886,
+      -0.8152
+    ],
+    "gyro": [
+      -2.205,
+      -2.241,
+      -0.483
+    ],
+    "mag": [
+      -180.0,
+      409.5,
+      837.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2228,
+    "sequence": 19669,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 74.14931437342689,
+    "quaternion": [
+      0.9976435272358105,
+      -0.05915774230036259,
+      -0.00951387196232978,
+      -0.033425145185908375
+    ],
+    "euler_deg": [
+      -6.74389417620026,
+      -1.3143439636370402,
+      -3.7604070464487735
+    ],
+    "accel": [
+      -0.0183,
+      -0.6074,
+      -0.8135
+    ],
+    "gyro": [
+      -2.083,
+      1.665,
+      -2.558
+    ],
+    "mag": [
+      -174.0,
+      405.0,
+      840.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2234,
+    "sequence": 19675,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.030999999959021807,
+    "rate_hz": 72.62569832251089,
+    "quaternion": [
+      0.9975329529620276,
+      -0.0589957299798602,
+      -0.011481289115658074,
+      -0.03627246337434936
+    ],
+    "euler_deg": [
+      -6.7138418998782114,
+      -1.5578217773868583,
+      -4.0735808985120485
+    ],
+    "accel": [
+      -0.0195,
+      -0.6074,
+      -0.8
+    ],
+    "gyro": [
+      -6.417,
+      1.177,
+      1.226
+    ],
+    "mag": [
+      -178.5,
+      406.5,
+      840.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2242,
+    "sequence": 19683,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 74.0,
+    "quaternion": [
+      0.9952486963774002,
+      -0.08798292149654845,
+      -0.002823845196172459,
+      -0.0416060546354221
+    ],
+    "euler_deg": [
+      -10.073388517901908,
+      -0.741548466369104,
+      -4.722319314890506
+    ],
+    "accel": [
+      0.0051,
+      -0.5664,
+      -0.8525
+    ],
+    "gyro": [
+      -31.075,
+      9.172,
+      -4.328
+    ],
+    "mag": [
+      -135.0,
+      430.5,
+      867.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2253,
+    "sequence": 19694,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0470000000204891,
+    "rate_hz": 75.73333333333333,
+    "quaternion": [
+      0.989267983543359,
+      -0.1377204428304292,
+      0.014811243694475148,
+      -0.0465033700162661
+    ],
+    "euler_deg": [
+      -15.896451968620404,
+      0.9451739327377189,
+      -5.5147090045632465
+    ],
+    "accel": [
+      0.0137,
+      -0.4832,
+      -0.8369
+    ],
+    "gyro": [
+      -108.223,
+      32.488,
+      -5.488
+    ],
+    "mag": [
+      -52.5,
+      466.5,
+      885.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2260,
+    "sequence": 19701,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 71.0,
+    "quaternion": [
+      0.9766464708507502,
+      -0.20612907771011826,
+      0.0508737890095214,
+      -0.03292919508529898
+    ],
+    "euler_deg": [
+      -24.046846471273362,
+      4.921804347037585,
+      -4.911055077575681
+    ],
+    "accel": [
+      0.0725,
+      -0.3801,
+      -0.9185
+    ],
+    "gyro": [
+      -52.803,
+      14.116,
+      -3.84
+    ],
+    "mag": [
+      48.0,
+      504.0,
+      868.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2270,
+    "sequence": 19711,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.06300000002374873,
+    "rate_hz": 75.37960954517285,
+    "quaternion": [
+      0.9721754502415648,
+      -0.22435447430157904,
+      0.06379486952101357,
+      -0.021683598208545946
+    ],
+    "euler_deg": [
+      -26.224337447289606,
+      6.563827792598107,
+      -4.085953162635461
+    ],
+    "accel": [
+      0.0903,
+      -0.3193,
+      -0.9456
+    ],
+    "gyro": [
+      -32.174,
+      4.289,
+      -10.554
+    ],
+    "mag": [
+      75.0,
+      510.0,
+      861.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2276,
+    "sequence": 19717,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 74.5,
+    "quaternion": [
+      0.9592818227461315,
+      -0.26599874359612313,
+      0.09429732752874409,
+      0.011448448588361833
+    ],
+    "euler_deg": [
+      -31.151464925006056,
+      10.778107363573758,
+      -1.6450620676208756
+    ],
+    "accel": [
+      0.1062,
+      -0.2126,
+      -0.9541
+    ],
+    "gyro": [
+      -24.361,
+      7.829,
+      0.128
+    ],
+    "mag": [
+      139.5,
+      528.0,
+      828.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2286,
+    "sequence": 19727,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.046999999962281436,
+    "rate_hz": 74.30340557184489,
+    "quaternion": [
+      0.9554107562983559,
+      -0.27486225275125026,
+      0.10448902679364683,
+      0.026889998914609615
+    ],
+    "euler_deg": [
+      -32.13856296694308,
+      12.382791072827574,
+      -0.35537821384889706
+    ],
+    "accel": [
+      0.1208,
+      -0.1763,
+      -0.9841
+    ],
+    "gyro": [
+      -5.013,
+      0.078,
+      -2.497
+    ],
+    "mag": [
+      145.5,
+      535.5,
+      822.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2292,
+    "sequence": 19733,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 81.84855233976091,
+    "quaternion": [
+      0.94441158819863,
+      -0.29650708286542315,
+      0.12554783494946406,
+      0.06639309471835379
+    ],
+    "euler_deg": [
+      -34.43171646801417,
+      16.052003008097252,
+      3.0392689033223323
+    ],
+    "accel": [
+      0.136,
+      -0.1555,
+      -1.01
+    ],
+    "gyro": [
+      -14.351,
+      0.993,
+      -4.145
+    ],
+    "mag": [
+      168.0,
+      531.0,
+      823.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2303,
+    "sequence": 19744,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.061999999976251274,
+    "rate_hz": 81.76438945684052,
+    "quaternion": [
+      0.9370459013024868,
+      -0.3127723575163137,
+      0.13359026691551196,
+      0.07919641286914303
+    ],
+    "euler_deg": [
+      -36.31799375068014,
+      17.451676372000573,
+      3.898200048273852
+    ],
+    "accel": [
+      0.134,
+      -0.125,
+      -0.9988
+    ],
+    "gyro": [
+      -37.606,
+      10.698,
+      0.616
+    ],
+    "mag": [
+      189.0,
+      543.0,
+      816.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2308,
+    "sequence": 19749,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 82.43727598407096,
+    "quaternion": [
+      0.9283742520164519,
+      -0.3160665104752793,
+      0.1543959432985335,
+      0.11993790827686535
+    ],
+    "euler_deg": [
+      -36.15302695717963,
+      21.25326505349369,
+      7.713793767419033
+    ],
+    "accel": [
+      0.144,
+      -0.1057,
+      -1.0061
+    ],
+    "gyro": [
+      9.635,
+      -1.265,
+      -1.154
+    ],
+    "mag": [
+      190.5,
+      546.0,
+      813.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2320,
+    "sequence": 19761,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.06300000002374873,
+    "rate_hz": 84.8,
+    "quaternion": [
+      0.9266902502417236,
+      -0.3150826994751899,
+      0.15877085653507073,
+      0.1294599849894908
+    ],
+    "euler_deg": [
+      -35.86016099870554,
+      22.076487575424167,
+      8.682229708939332
+    ],
+    "accel": [
+      0.1318,
+      -0.1084,
+      -0.9756
+    ],
+    "gyro": [
+      0.358,
+      0.2,
+      0.677
+    ],
+    "mag": [
+      193.5,
+      546.0,
+      814.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2324,
+    "sequence": 19765,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 81.5,
+    "quaternion": [
+      0.9167896484802484,
+      -0.3128174502170093,
+      0.17866722106580651,
+      0.17239491696628967
+    ],
+    "euler_deg": [
+      -34.661459573411065,
+      25.814363968835934,
+      13.11866479301524
+    ],
+    "accel": [
+      0.1316,
+      -0.1379,
+      -0.9634
+    ],
+    "gyro": [
+      -1.107,
+      -0.777,
+      -3.046
+    ],
+    "mag": [
+      190.5,
+      535.5,
+      813.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2337,
+    "sequence": 19778,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.09299999999348074,
+    "rate_hz": 81.27949659122712,
+    "quaternion": [
+      0.9156820496860696,
+      -0.3124264627469011,
+      0.18046713563147398,
+      0.17705282323405325
+    ],
+    "euler_deg": [
+      -34.495784243941685,
+      26.176193861393443,
+      13.629981960669863
+    ],
+    "accel": [
+      0.1326,
+      -0.1096,
+      -0.9817
+    ],
+    "gyro": [
+      3.349,
+      -1.814,
+      -0.3
+    ],
+    "mag": [
+      189.0,
+      540.0,
+      822.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2339,
+    "sequence": 19780,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 83.42077649707159,
+    "quaternion": [
+      0.9016614527825715,
+      -0.3131041866155179,
+      0.20068504334529214,
+      0.22067602105202955
+    ],
+    "euler_deg": [
+      -33.34875616693329,
+      30.005895488009266,
+      18.32579904208142
+    ],
+    "accel": [
+      0.1367,
+      -0.1257,
+      -0.9868
+    ],
+    "gyro": [
+      -2.205,
+      2.031,
+      2.386
+    ],
+    "mag": [
+      183.0,
+      544.5,
+      816.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2353,
+    "sequence": 19794,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.09399999998277053,
+    "rate_hz": 80.27282266454195,
+    "quaternion": [
+      0.8996820029300246,
+      -0.3116235090363496,
+      0.20404809728487,
+      0.22765644338369945
+    ],
+    "euler_deg": [
+      -32.92266366342836,
+      30.60010553657796,
+      19.157389891551247
+    ],
+    "accel": [
+      0.1506,
+      -0.1394,
+      -0.9844
+    ],
+    "gyro": [
+      9.33,
+      -1.387,
+      -0.178
+    ],
+    "mag": [
+      181.5,
+      540.0,
+      819.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2356,
+    "sequence": 19797,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 84.1269841263623,
+    "quaternion": [
+      0.8916459470730256,
+      -0.2915010657247624,
+      0.22299560132908286,
+      0.26508035675518443
+    ],
+    "euler_deg": [
+      -28.79741834989782,
+      33.518668700857816,
+      24.271860186123895
+    ],
+    "accel": [
+      0.1274,
+      -0.1731,
+      -0.9695
+    ],
+    "gyro": [
+      22.453,
+      -3.157,
+      1.226
+    ],
+    "mag": [
+      172.5,
+      541.5,
+      817.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2370,
+    "sequence": 19811,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0940000000409782,
+    "rate_hz": 79.7481636953137,
+    "quaternion": [
+      0.891737970731094,
+      -0.28587126134475765,
+      0.225767950002611,
+      0.2685327656826381
+    ],
+    "euler_deg": [
+      -27.8777497166196,
+      33.79225683321109,
+      24.8950380886687
+    ],
+    "accel": [
+      0.1216,
+      -0.1963,
+      -0.9414
+    ],
+    "gyro": [
+      34.111,
+      -6.392,
+      0.921
+    ],
+    "mag": [
+      159.0,
+      547.5,
+      829.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2372,
+    "sequence": 19813,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 83.42077649452398,
+    "quaternion": [
+      0.8984806465856015,
+      -0.20497939885830355,
+      0.25193212851889746,
+      0.2953746373247808
+    ],
+    "euler_deg": [
+      -15.546832017645327,
+      35.015898577872235,
+      31.464922666679957
+    ],
+    "accel": [
+      0.0928,
+      -0.3152,
+      -0.9749
+    ],
+    "gyro": [
+      -17.159,
+      5.022,
+      7.147
+    ],
+    "mag": [
+      58.5,
+      502.5,
+      858.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2388,
+    "sequence": 19829,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 81.14919354852042,
+    "quaternion": [
+      0.8859540914872751,
+      -0.20710266807575847,
+      0.26576313166946486,
+      0.31869074429311267
+    ],
+    "euler_deg": [
+      -14.33828720522564,
+      37.07868811108132,
+      34.73794886712763
+    ],
+    "accel": [
+      0.0955,
+      -0.3162,
+      -0.9519
+    ],
+    "gyro": [
+      -4.83,
+      1.909,
+      -0.178
+    ],
+    "mag": [
+      42.0,
+      502.5,
+      862.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2399,
+    "sequence": 19840,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.015000000013969839,
+    "rate_hz": 86.8886576499882,
+    "quaternion": [
+      0.8728484020662051,
+      -0.2106869916677259,
+      0.2772297489997726,
+      0.3418922707842329
+    ],
+    "euler_deg": [
+      -13.23999709922086,
+      38.904457006843295,
+      38.085877516094875
+    ],
+    "accel": [
+      0.1047,
+      -0.3096,
+      -0.9597
+    ],
+    "gyro": [
+      -7.882,
+      1.482,
+      0.25
+    ],
+    "mag": [
+      73.5,
+      514.5,
+      847.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2410,
+    "sequence": 19851,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 82.5,
+    "quaternion": [
+      0.8606800241187244,
+      -0.21393424164116887,
+      0.28691753334339665,
+      0.36213307691586377
+    ],
+    "euler_deg": [
+      -12.173020905162709,
+      40.45372617059301,
+      41.13815531808738
+    ],
+    "accel": [
+      0.1055,
+      -0.2947,
+      -0.9568
+    ],
+    "gyro": [
+      -6.539,
+      2.092,
+      -0.971
+    ],
+    "mag": [
+      79.5,
+      517.5,
+      858.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2420,
+    "sequence": 19861,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 87.76458440995576,
+    "quaternion": [
+      0.8473872767631065,
+      -0.21672649214646098,
+      0.29644172556521603,
+      0.38351888366260867
+    ],
+    "euler_deg": [
+      -10.845990727743828,
+      41.96213182484862,
+      44.53215262738026
+    ],
+    "accel": [
+      0.1096,
+      -0.2778,
+      -0.9639
+    ],
+    "gyro": [
+      -1.778,
+      0.871,
+      -0.178
+    ],
+    "mag": [
+      87.0,
+      514.5,
+      855.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2431,
+    "sequence": 19872,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 85.18145161304318,
+    "quaternion": [
+      0.8362384126665247,
+      -0.2150137320270719,
+      0.30581290866003813,
+      0.4011893282698942
+    ],
+    "euler_deg": [
+      -9.008728475974769,
+      43.15602636256093,
+      47.690152720067374
+    ],
+    "accel": [
+      0.1003,
+      -0.2881,
+      -0.9612
+    ],
+    "gyro": [
+      -4.342,
+      1.421,
+      -0.727
+    ],
+    "mag": [
+      66.0,
+      519.0,
+      861.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2441,
+    "sequence": 19882,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 89.60573476529453,
+    "quaternion": [
+      0.8234538092577637,
+      -0.21406437390075853,
+      0.315059296711779,
+      0.42052099519623765
+    ],
+    "euler_deg": [
+      -7.0326172354262,
+      44.339673160891714,
+      51.23629687978788
+    ],
+    "accel": [
+      0.0977,
+      -0.292,
+      -0.9524
+    ],
+    "gyro": [
+      -1.29,
+      0.627,
+      -0.239
+    ],
+    "mag": [
+      90.0,
+      520.5,
+      840.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2452,
+    "sequence": 19893,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 87.5,
+    "quaternion": [
+      0.8121957916936973,
+      -0.2121371679798109,
+      0.3228027843796579,
+      0.437188952643241
+    ],
+    "euler_deg": [
+      -5.077861087355879,
+      45.22240137643961,
+      54.46938633581879
+    ],
+    "accel": [
+      0.1018,
+      -0.2932,
+      -0.9592
+    ],
+    "gyro": [
+      -3.365,
+      1.238,
+      -0.422
+    ],
+    "mag": [
+      84.0,
+      517.5,
+      864.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2462,
+    "sequence": 19903,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 91.92483494239909,
+    "quaternion": [
+      0.7976452859956566,
+      -0.2114369112900462,
+      0.33228265192082745,
+      0.45677638895360445
+    ],
+    "euler_deg": [
+      -2.800863316308634,
+      46.323143853575225,
+      58.39731691545314
+    ],
+    "accel": [
+      0.1084,
+      -0.2827,
+      -0.9575
+    ],
+    "gyro": [
+      -0.13,
+      0.505,
+      0.433
+    ],
+    "mag": [
+      85.5,
+      519.0,
+      858.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2474,
+    "sequence": 19915,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.015000000013969839,
+    "rate_hz": 89.16876574370059,
+    "quaternion": [
+      0.7856677167811156,
+      -0.20995614991121633,
+      0.3397680499794512,
+      0.4724429342635668
+    ],
+    "euler_deg": [
+      -0.7462443126743455,
+      47.07738653200298,
+      61.71414958146049
+    ],
+    "accel": [
+      0.1008,
+      -0.2805,
+      -0.9375
+    ],
+    "gyro": [
+      -3.06,
+      -1.692,
+      -1.765
+    ],
+    "mag": [
+      96.0,
+      519.0,
+      859.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2484,
+    "sequence": 19925,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 94.46419502368083,
+    "quaternion": [
+      0.7723917133667301,
+      -0.20880561198039255,
+      0.34697061135784246,
+      0.48930834080553526
+    ],
+    "euler_deg": [
+      1.4483872460558844,
+      47.7599692083966,
+      65.34958452024829
+    ],
+    "accel": [
+      0.1084,
+      -0.2727,
+      -0.9546
+    ],
+    "gyro": [
+      -3.609,
+      0.505,
+      -0.727
+    ],
+    "mag": [
+      91.5,
+      526.5,
+      864.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2495,
+    "sequence": 19936,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 91.5,
+    "quaternion": [
+      0.7604392257668754,
+      -0.20756528000888722,
+      0.3535223314402387,
+      0.5036574228808361
+    ],
+    "euler_deg": [
+      3.4847171253061355,
+      48.30946663160982,
+      68.59812860596051
+    ],
+    "accel": [
+      0.1104,
+      -0.2607,
+      -0.9507
+    ],
+    "gyro": [
+      -1.961,
+      0.871,
+      -1.215
+    ],
+    "mag": [
+      96.0,
+      526.5,
+      859.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2505,
+    "sequence": 19946,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.014999999955762178,
+    "rate_hz": 97.00355510209495,
+    "quaternion": [
+      0.747376233728165,
+      -0.20543486569823532,
+      0.36045222468612453,
+      0.5189407239104239
+    ],
+    "euler_deg": [
+      5.836720127616794,
+      48.76426028772443,
+      72.1956428214926
+    ],
+    "accel": [
+      0.1104,
+      -0.2612,
+      -0.9565
+    ],
+    "gyro": [
+      -4.647,
+      0.322,
+      0.311
+    ],
+    "mag": [
+      96.0,
+      522.0,
+      855.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2516,
+    "sequence": 19957,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.94179894106762,
+    "quaternion": [
+      0.7343555204954756,
+      -0.2025191606689229,
+      0.3669899674586153,
+      0.5338785656537437
+    ],
+    "euler_deg": [
+      8.282029740005667,
+      49.046650389900535,
+      75.8181462329218
+    ],
+    "accel": [
+      0.1086,
+      -0.2839,
+      -0.9832
+    ],
+    "gyro": [
+      0.297,
+      -0.471,
+      0.494
+    ],
+    "mag": [
+      91.5,
+      519.0,
+      861.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2527,
+    "sequence": 19968,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.7216610532275494,
+      -0.20064802049982008,
+      0.3730641540783196,
+      0.5475114912637323
+    ],
+    "euler_deg": [
+      10.507622827403525,
+      49.30277642668564,
+      79.20675938848483
+    ],
+    "accel": [
+      0.1077,
+      -0.2517,
+      -0.9705
+    ],
+    "gyro": [
+      -1.412,
+      0.505,
+      -2.192
+    ],
+    "mag": [
+      91.5,
+      522.0,
+      868.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2538,
+    "sequence": 19979,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 101.00475938639384,
+    "quaternion": [
+      0.7096197678859618,
+      -0.19847918934297437,
+      0.379078028842928,
+      0.5597728507812698
+    ],
+    "euler_deg": [
+      12.688817856994325,
+      49.48263064936262,
+      82.40139962688498
+    ],
+    "accel": [
+      0.1072,
+      -0.2659,
+      -0.9583
+    ],
+    "gyro": [
+      -0.374,
+      0.81,
+      0.433
+    ],
+    "mag": [
+      102.0,
+      525.0,
+      864.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2548,
+    "sequence": 19989,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 101.0,
+    "quaternion": [
+      0.6967747038662061,
+      -0.19635102279445021,
+      0.38462014368294867,
+      0.5727291095911243
+    ],
+    "euler_deg": [
+      14.90873834321429,
+      49.54352182291248,
+      85.74905885340408
+    ],
+    "accel": [
+      0.1047,
+      -0.2532,
+      -0.9585
+    ],
+    "gyro": [
+      -0.679,
+      -0.41,
+      -0.422
+    ],
+    "mag": [
+      100.5,
+      525.0,
+      862.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2559,
+    "sequence": 20000,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 103.64886303525232,
+    "quaternion": [
+      0.6847185097107256,
+      -0.19455676847502845,
+      0.38930235315599787,
+      0.5845955047101199
+    ],
+    "euler_deg": [
+      16.900493212660706,
+      49.51703984103629,
+      88.81877808718318
+    ],
+    "accel": [
+      0.1106,
+      -0.2673,
+      -0.9629
+    ],
+    "gyro": [
+      -1.229,
+      -1.326,
+      -0.544
+    ],
+    "mag": [
+      99.0,
+      523.5,
+      859.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2569,
+    "sequence": 20010,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 99.29435483887282,
+    "quaternion": [
+      0.672509927217954,
+      -0.19256665774918752,
+      0.3941854414472027,
+      0.5960422114814384
+    ],
+    "euler_deg": [
+      18.9258591140397,
+      49.44154288603608,
+      91.87696101558207
+    ],
+    "accel": [
+      0.114,
+      -0.2725,
+      -0.9609
+    ],
+    "gyro": [
+      0.846,
+      -0.227,
+      0.738
+    ],
+    "mag": [
+      102.0,
+      525.0,
+      862.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2580,
+    "sequence": 20021,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.5,
+    "quaternion": [
+      0.6602421637380211,
+      -0.19048613907692863,
+      0.3991653817707323,
+      0.6070109669832388
+    ],
+    "euler_deg": [
+      20.949036547240432,
+      49.318599463428654,
+      94.89218535847023
+    ],
+    "accel": [
+      0.1155,
+      -0.2617,
+      -0.9507
+    ],
+    "gyro": [
+      2.983,
+      -0.777,
+      -0.239
+    ],
+    "mag": [
+      96.0,
+      522.0,
+      859.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2591,
+    "sequence": 20032,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 98.79032258080747,
+    "quaternion": [
+      0.6489096434391838,
+      -0.18833882209405992,
+      0.4028897923323796,
+      0.6173528796225265
+    ],
+    "euler_deg": [
+      22.715137359721048,
+      49.062184406656534,
+      97.62028248478721
+    ],
+    "accel": [
+      0.1128,
+      -0.2642,
+      -0.967
+    ],
+    "gyro": [
+      -1.107,
+      -1.387,
+      -0.849
+    ],
+    "mag": [
+      99.0,
+      517.5,
+      856.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2601,
+    "sequence": 20042,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.6365216120586823,
+      -0.18569261707355253,
+      0.40705627890143425,
+      0.6282226318380366
+    ],
+    "euler_deg": [
+      24.64022779300824,
+      48.72159583409436,
+      100.54353452023261
+    ],
+    "accel": [
+      0.1001,
+      -0.269,
+      -0.9709
+    ],
+    "gyro": [
+      -1.412,
+      0.139,
+      -0.361
+    ],
+    "mag": [
+      100.5,
+      523.5,
+      867.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2612,
+    "sequence": 20053,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.6241325593187018,
+      -0.1838146893178352,
+      0.41156322568302023,
+      0.6381899557770102
+    ],
+    "euler_deg": [
+      26.4903936300125,
+      48.448290072296494,
+      103.36661652203553
+    ],
+    "accel": [
+      0.1104,
+      -0.2581,
+      -0.9478
+    ],
+    "gyro": [
+      -0.74,
+      0.566,
+      -1.154
+    ],
+    "mag": [
+      103.5,
+      528.0,
+      855.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2623,
+    "sequence": 20064,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.6137655147626783,
+      -0.18344156216184754,
+      0.41376071071190673,
+      0.6468718268953314
+    ],
+    "euler_deg": [
+      27.71554459128224,
+      48.178898210672436,
+      105.59683823778789
+    ],
+    "accel": [
+      0.1072,
+      -0.2375,
+      -0.9517
+    ],
+    "gyro": [
+      -2.694,
+      0.017,
+      -0.3
+    ],
+    "mag": [
+      106.5,
+      529.5,
+      855.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2633,
+    "sequence": 20074,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.6024465086409266,
+      -0.18029205189736652,
+      0.4172481202295403,
+      0.6560922087739729
+    ],
+    "euler_deg": [
+      29.37260204229891,
+      47.67316204884431,
+      108.09187402547666
+    ],
+    "accel": [
+      0.1074,
+      -0.2654,
+      -0.9573
+    ],
+    "gyro": [
+      -1.534,
+      -0.105,
+      0.738
+    ],
+    "mag": [
+      100.5,
+      522.0,
+      853.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2644,
+    "sequence": 20085,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 99.29435483887282,
+    "quaternion": [
+      0.5922990714400221,
+      -0.17804136191518527,
+      0.42031161731210287,
+      0.6639436932234224
+    ],
+    "euler_deg": [
+      30.764840698583612,
+      47.24972404065479,
+      110.25183771916723
+    ],
+    "accel": [
+      0.1201,
+      -0.2532,
+      -0.9741
+    ],
+    "gyro": [
+      -0.008,
+      -0.838,
+      -0.361
+    ],
+    "mag": [
+      109.5,
+      528.0,
+      864.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2654,
+    "sequence": 20095,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.014999999955762178,
+    "rate_hz": 99.24433249149101,
+    "quaternion": [
+      0.5812408502178409,
+      -0.17592846233667234,
+      0.4238229742434278,
+      0.6719987624105795
+    ],
+    "euler_deg": [
+      32.24139384258451,
+      46.813832361291745,
+      112.54704063673907
+    ],
+    "accel": [
+      0.1096,
+      -0.2458,
+      -0.9551
+    ],
+    "gyro": [
+      -0.069,
+      0.688,
+      0.921
+    ],
+    "mag": [
+      76.5,
+      514.5,
+      835.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2665,
+    "sequence": 20106,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.015000000013969839,
+    "rate_hz": 99.74811083193626,
+    "quaternion": [
+      0.570957868443821,
+      -0.17386221342591765,
+      0.4266377403601982,
+      0.6795287202944943
+    ],
+    "euler_deg": [
+      33.52568914828967,
+      46.34197423671299,
+      114.61620907257114
+    ],
+    "accel": [
+      0.1067,
+      -0.2517,
+      -0.9563
+    ],
+    "gyro": [
+      -0.557,
+      -0.532,
+      2.386
+    ],
+    "mag": [
+      88.5,
+      519.0,
+      856.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2675,
+    "sequence": 20116,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.5608212119101711,
+      -0.17055388451491824,
+      0.4296451319924572,
+      0.686874079656281
+    ],
+    "euler_deg": [
+      34.862934037331065,
+      45.74214659795624,
+      116.62717219580801
+    ],
+    "accel": [
+      0.113,
+      -0.2485,
+      -0.9829
+    ],
+    "gyro": [
+      -1.534,
+      -0.105,
+      -2.253
+    ],
+    "mag": [
+      105.0,
+      525.0,
+      867.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2686,
+    "sequence": 20127,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 99.29435483887282,
+    "quaternion": [
+      0.5515323352363855,
+      -0.16859456634580308,
+      0.43213661824114663,
+      0.6932863034580127
+    ],
+    "euler_deg": [
+      35.95589153461793,
+      45.270990310075,
+      118.404927004182
+    ],
+    "accel": [
+      0.1184,
+      -0.2578,
+      -0.9695
+    ],
+    "gyro": [
+      1.091,
+      -0.532,
+      0.86
+    ],
+    "mag": [
+      97.5,
+      522.0,
+      856.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2696,
+    "sequence": 20137,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.53999780399238,
+      -0.16623549942296337,
+      0.43530545111097985,
+      0.7009117595304503
+    ],
+    "euler_deg": [
+      37.28089315833444,
+      44.68114939892154,
+      120.56182126550493
+    ],
+    "accel": [
+      0.1155,
+      -0.2461,
+      -0.9731
+    ],
+    "gyro": [
+      -0.557,
+      0.261,
+      -0.056
+    ],
+    "mag": [
+      99.0,
+      519.0,
+      865.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2709,
+    "sequence": 20150,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.015000000013969839,
+    "rate_hz": 99.24433249440122,
+    "quaternion": [
+      0.5309972003536509,
+      -0.16410465954807008,
+      0.43746614992971755,
+      0.7069193741841191
+    ],
+    "euler_deg": [
+      38.25568255864585,
+      44.15518372220961,
+      122.19133143924574
+    ],
+    "accel": [
+      0.1194,
+      -0.2686,
+      -0.9744
+    ],
+    "gyro": [
+      0.114,
+      0.261,
+      0.25
+    ],
+    "mag": [
+      103.5,
+      517.5,
+      868.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2719,
+    "sequence": 20160,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.5,
+    "quaternion": [
+      0.5199703928367507,
+      -0.16162166349194085,
+      0.4403153694127881,
+      0.7138848674136279
+    ],
+    "euler_deg": [
+      39.43672676956769,
+      43.52416368361282,
+      124.14849958969019
+    ],
+    "accel": [
+      0.115,
+      -0.2534,
+      -0.9668
+    ],
+    "gyro": [
+      -0.313,
+      0.078,
+      0.494
+    ],
+    "mag": [
+      100.5,
+      522.0,
+      855.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2732,
+    "sequence": 20173,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.5114723372281725,
+      -0.1599050649242572,
+      0.44239428822784277,
+      0.7191061897976544
+    ],
+    "euler_deg": [
+      40.296614191436696,
+      43.041062241111966,
+      125.61925437986596
+    ],
+    "accel": [
+      0.1113,
+      -0.2429,
+      -0.9619
+    ],
+    "gyro": [
+      1.213,
+      0.688,
+      0.555
+    ],
+    "mag": [
+      103.5,
+      519.0,
+      865.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2742,
+    "sequence": 20183,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.5,
+    "quaternion": [
+      0.5023552217759871,
+      -0.15774603723056588,
+      0.443843834780681,
+      0.7250917660680137
+    ],
+    "euler_deg": [
+      41.09583955200471,
+      42.43048843246462,
+      127.12776070529372
+    ],
+    "accel": [
+      0.1218,
+      -0.249,
+      -0.9778
+    ],
+    "gyro": [
+      -0.008,
+      -1.753,
+      0.067
+    ],
+    "mag": [
+      106.5,
+      516.0,
+      871.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2753,
+    "sequence": 20194,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.4947332959533521,
+      -0.15643940115967606,
+      0.4451620797920739,
+      0.7297920267823774
+    ],
+    "euler_deg": [
+      41.74183289515414,
+      41.97524482092096,
+      128.37532725776856
+    ],
+    "accel": [
+      0.1184,
+      -0.2275,
+      -0.9768
+    ],
+    "gyro": [
+      1.518,
+      -0.044,
+      0.128
+    ],
+    "mag": [
+      93.0,
+      517.5,
+      859.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2763,
+    "sequence": 20204,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 99.29435483887282,
+    "quaternion": [
+      0.4846192053934495,
+      -0.1548045281678089,
+      0.4467410490676899,
+      0.735936287256216
+    ],
+    "euler_deg": [
+      42.547799981289145,
+      41.36481667752832,
+      129.99367491506052
+    ],
+    "accel": [
+      0.116,
+      -0.238,
+      -0.9578
+    ],
+    "gyro": [
+      -2.816,
+      0.871,
+      -1.52
+    ],
+    "mag": [
+      97.5,
+      519.0,
+      850.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2775,
+    "sequence": 20216,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 99.29435483887282,
+    "quaternion": [
+      0.47239474636442325,
+      -0.16996848121090477,
+      0.428930352709455,
+      0.7509811392616282
+    ],
+    "euler_deg": [
+      40.104777821093045,
+      41.34069820967325,
+      131.3387945957836
+    ],
+    "accel": [
+      0.1169,
+      -0.1997,
+      -0.9126
+    ],
+    "gyro": [
+      -64.949,
+      5.693,
+      -10.798
+    ],
+    "mag": [
+      142.5,
+      523.5,
+      870.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2787,
+    "sequence": 20228,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.4949922519191322,
+      -0.20431702251264972,
+      0.3419835790460639,
+      0.7721945716685894
+    ],
+    "euler_deg": [
+      25.520499503869555,
+      40.85170257546659,
+      124.32021750382894
+    ],
+    "accel": [
+      0.1318,
+      -0.1353,
+      -1.3218
+    ],
+    "gyro": [
+      -42.122,
+      17.107,
+      -72.565
+    ],
+    "mag": [
+      217.5,
+      468.0,
+      909.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2799,
+    "sequence": 20240,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.5,
+    "quaternion": [
+      0.5228096756316549,
+      -0.18225857621615862,
+      0.31442212830656363,
+      0.7710969975902859
+    ],
+    "euler_deg": [
+      21.80076473311869,
+      37.57821992902643,
+      119.22190238137395
+    ],
+    "accel": [
+      0.0132,
+      -0.0122,
+      -1.0422
+    ],
+    "gyro": [
+      81.657,
+      -26.167,
+      13.006
+    ],
+    "mag": [
+      181.5,
+      391.5,
+      922.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2812,
+    "sequence": 20253,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.5154332166404959,
+      -0.15679026741859928,
+      0.3394969679664157,
+      0.7710299734563154
+    ],
+    "euler_deg": [
+      26.67542789411724,
+      36.28171997170599,
+      121.35804382316857
+    ],
+    "accel": [
+      -0.0205,
+      0.0637,
+      -1.0342
+    ],
+    "gyro": [
+      38.383,
+      9.355,
+      19.476
+    ],
+    "mag": [
+      133.5,
+      373.5,
+      946.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2822,
+    "sequence": 20263,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.49580819754907096,
+      -0.14277255540922829,
+      0.3678530434565845,
+      0.77361125061932
+    ],
+    "euler_deg": [
+      31.837526523865414,
+      35.8503379071017,
+      125.23058400676281
+    ],
+    "accel": [
+      0.0132,
+      -0.085,
+      -1.0322
+    ],
+    "gyro": [
+      17.875,
+      18.511,
+      23.199
+    ],
+    "mag": [
+      93.0,
+      382.5,
+      954.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2833,
+    "sequence": 20274,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.015000000013969839,
+    "rate_hz": 99.24433249440122,
+    "quaternion": [
+      0.4692247632745772,
+      -0.15422840784911235,
+      0.36437172326572365,
+      0.789477654545467
+    ],
+    "euler_deg": [
+      32.08224797522705,
+      35.835792828276055,
+      129.1724994662366
+    ],
+    "accel": [
+      0.0383,
+      -0.0771,
+      -0.9724
+    ],
+    "gyro": [
+      -56.527,
+      4.167,
+      14.715
+    ],
+    "mag": [
+      127.5,
+      406.5,
+      954.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2843,
+    "sequence": 20284,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.5,
+    "quaternion": [
+      0.45573219208225674,
+      -0.1670907704659348,
+      0.33602218467747286,
+      0.8071418307395422
+    ],
+    "euler_deg": [
+      28.50685537433831,
+      35.169984107867585,
+      130.30564984656252
+    ],
+    "accel": [
+      0.0317,
+      0.0171,
+      -0.9673
+    ],
+    "gyro": [
+      -47.86,
+      -1.753,
+      -5.732
+    ],
+    "mag": [
+      166.5,
+      414.0,
+      949.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2854,
+    "sequence": 20295,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.45971805438347374,
+      -0.17316828759923034,
+      0.3129833653018935,
+      0.8128428308646914
+    ],
+    "euler_deg": [
+      25.164977320409236,
+      34.70041022040526,
+      128.99593466708254
+    ],
+    "accel": [
+      0.0249,
+      0.1011,
+      -0.9817
+    ],
+    "gyro": [
+      -13.314,
+      -19.453,
+      -17.756
+    ],
+    "mag": [
+      196.5,
+      403.5,
+      937.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2864,
+    "sequence": 20305,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.031000000017229468,
+    "rate_hz": 99.03504316998797,
+    "quaternion": [
+      0.46647298847526864,
+      -0.17406069435140192,
+      0.30617890004568843,
+      0.8113940515382597
+    ],
+    "euler_deg": [
+      23.980935163512896,
+      34.61867422596801,
+      127.78405568464348
+    ],
+    "accel": [
+      -0.0029,
+      0.0767,
+      -1.0029
+    ],
+    "gyro": [
+      -8.248,
+      -4.927,
+      -9.272
+    ],
+    "mag": [
+      184.5,
+      391.5,
+      942.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2872,
+    "sequence": 20313,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.5,
+    "quaternion": [
+      0.46400482586369546,
+      -0.1736509305620308,
+      0.30390098705767654,
+      0.8137500021232027
+    ],
+    "euler_deg": [
+      23.829450785994666,
+      34.37729179412167,
+      128.084739934393
+    ],
+    "accel": [
+      -0.0181,
+      0.094,
+      -1.0234
+    ],
+    "gyro": [
+      21.537,
+      2.825,
+      1.104
+    ],
+    "mag": [
+      187.5,
+      378.0,
+      952.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2883,
+    "sequence": 20324,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.45839218116323205,
+      -0.16668492642608665,
+      0.3181780926027963,
+      0.812930159938965
+    ],
+    "euler_deg": [
+      26.163343487334235,
+      34.24321978431876,
+      129.35350702394547
+    ],
+    "accel": [
+      0.0232,
+      0.0388,
+      -1.0027
+    ],
+    "gyro": [
+      6.218,
+      1.177,
+      2.203
+    ],
+    "mag": [
+      165.0,
+      387.0,
+      951.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2895,
+    "sequence": 20336,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.4521647949856285,
+      -0.16174110686103288,
+      0.32406304947750286,
+      0.8150889230570576
+    ],
+    "euler_deg": [
+      27.378801096570516,
+      33.829719429814425,
+      130.43471043643154
+    ],
+    "accel": [
+      0.0244,
+      0.1243,
+      -1.0037
+    ],
+    "gyro": [
+      -8.37,
+      -0.044,
+      -5.976
+    ],
+    "mag": [
+      157.5,
+      391.5,
+      952.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2907,
+    "sequence": 20348,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.5,
+    "quaternion": [
+      0.4486277795221768,
+      -0.15914522532000236,
+      0.32786000782343244,
+      0.8160353717632991
+    ],
+    "euler_deg": [
+      28.11119485195981,
+      33.63570415328643,
+      131.0540644183284
+    ],
+    "accel": [
+      0.0112,
+      0.0149,
+      -1.0056
+    ],
+    "gyro": [
+      5.668,
+      2.153,
+      -0.849
+    ],
+    "mag": [
+      162.0,
+      384.0,
+      957.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2920,
+    "sequence": 20361,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.4442764050269967,
+      -0.1580781612786069,
+      0.33074032819952315,
+      0.8174598498798179
+    ],
+    "euler_deg": [
+      28.69569220987192,
+      33.526688275049146,
+      131.76488120106032
+    ],
+    "accel": [
+      0.0244,
+      0.0183,
+      -1.0044
+    ],
+    "gyro": [
+      -1.656,
+      1.116,
+      0.921
+    ],
+    "mag": [
+      154.5,
+      384.0,
+      951.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2932,
+    "sequence": 20373,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.015000000013969839,
+    "rate_hz": 99.24433249440122,
+    "quaternion": [
+      0.43983037389017837,
+      -0.1576667941746206,
+      0.33044438950744925,
+      0.8200591013221993
+    ],
+    "euler_deg": [
+      28.85477725363973,
+      33.3170243396811,
+      132.39108471964542
+    ],
+    "accel": [
+      0.0249,
+      -0.012,
+      -1.0005
+    ],
+    "gyro": [
+      -8.004,
+      -0.96,
+      -3.535
+    ],
+    "mag": [
+      157.5,
+      387.0,
+      951.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2942,
+    "sequence": 20383,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.5,
+    "quaternion": [
+      0.43638132946651836,
+      -0.15872347694915342,
+      0.3314370312131004,
+      0.8212963457235469
+    ],
+    "euler_deg": [
+      29.077456497743565,
+      33.365907614047416,
+      132.92202634144348
+    ],
+    "accel": [
+      0.0242,
+      0.0144,
+      -0.998
+    ],
+    "gyro": [
+      -0.496,
+      -0.655,
+      1.531
+    ],
+    "mag": [
+      157.5,
+      391.5,
+      949.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2953,
+    "sequence": 20394,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.43184410430711984,
+      -0.15781807207431664,
+      0.3292478121289069,
+      0.8247423863912023
+    ],
+    "euler_deg": [
+      29.015847358567953,
+      33.0032058371039,
+      133.49307833334728
+    ],
+    "accel": [
+      0.0249,
+      0.0186,
+      -1.0034
+    ],
+    "gyro": [
+      -3.243,
+      0.078,
+      -0.727
+    ],
+    "mag": [
+      160.5,
+      393.0,
+      946.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2965,
+    "sequence": 20406,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.42761706924400206,
+      -0.15756082920115236,
+      0.3279368156648068,
+      0.8275117353392895
+    ],
+    "euler_deg": [
+      29.025518806474977,
+      32.76738440548995,
+      134.04887013016395
+    ],
+    "accel": [
+      0.0259,
+      0.033,
+      -0.9976
+    ],
+    "gyro": [
+      -2.449,
+      0.2,
+      0.616
+    ],
+    "mag": [
+      163.5,
+      391.5,
+      946.5
+    ],
+    "sensor_flags": 3,
+    "frames": 2975,
+    "sequence": 20416,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.42377674324866105,
+      -0.1562288661390917,
+      0.3273664558595579,
+      0.8299620574727524
+    ],
+    "euler_deg": [
+      29.151451113617785,
+      32.46529430036223,
+      134.5612277010572
+    ],
+    "accel": [
+      0.0256,
+      0.0291,
+      -1.0012
+    ],
+    "gyro": [
+      -1.351,
+      -1.265,
+      -0.422
+    ],
+    "mag": [
+      163.5,
+      393.0,
+      948.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2985,
+    "sequence": 20426,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.015000000013969839,
+    "rate_hz": 99.24433249440122,
+    "quaternion": [
+      0.4199069711165797,
+      -0.15455503386872982,
+      0.3274868133170385,
+      0.8321918433972945
+    ],
+    "euler_deg": [
+      29.37503503425466,
+      32.15874635397216,
+      135.09211970941567
+    ],
+    "accel": [
+      0.0273,
+      0.041,
+      -1.002
+    ],
+    "gyro": [
+      0.724,
+      -0.044,
+      1.104
+    ],
+    "mag": [
+      162.0,
+      394.5,
+      948.0
+    ],
+    "sensor_flags": 3,
+    "frames": 2996,
+    "sequence": 20437,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.5,
+    "quaternion": [
+      0.4160675818277843,
+      -0.153069935889789,
+      0.3273431996371492,
+      0.8344481959534634
+    ],
+    "euler_deg": [
+      29.55377870788964,
+      31.86041411728574,
+      135.6083829548985
+    ],
+    "accel": [
+      0.0254,
+      0.0315,
+      -0.9958
+    ],
+    "gyro": [
+      -0.74,
+      -0.532,
+      0.494
+    ],
+    "mag": [
+      165.0,
+      393.0,
+      949.5
+    ],
+    "sensor_flags": 3,
+    "frames": 3007,
+    "sequence": 20448,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.015000000013969839,
+    "rate_hz": 99.24433249440122,
+    "quaternion": [
+      0.4131203134169362,
+      -0.1517363737548922,
+      0.3272957005781833,
+      0.8361729509527585
+    ],
+    "euler_deg": [
+      29.703467452087253,
+      31.61310525433074,
+      136.00198610530137
+    ],
+    "accel": [
+      0.0198,
+      0.0342,
+      -0.9985
+    ],
+    "gyro": [
+      -1.107,
+      -0.777,
+      0.433
+    ],
+    "mag": [
+      165.0,
+      399.0,
+      954.0
+    ],
+    "sensor_flags": 3,
+    "frames": 3016,
+    "sequence": 20457,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.015000000013969839,
+    "rate_hz": 99.74811083193626,
+    "quaternion": [
+      0.40906204296249643,
+      -0.15008142020148438,
+      0.32702979798072346,
+      0.838567423377716
+    ],
+    "euler_deg": [
+      29.87459068790311,
+      31.2824749368793,
+      136.53603376718698
+    ],
+    "accel": [
+      0.0261,
+      0.0417,
+      -1.0042
+    ],
+    "gyro": [
+      0.968,
+      -0.044,
+      0.433
+    ],
+    "mag": [
+      166.5,
+      384.0,
+      946.5
+    ],
+    "sensor_flags": 3,
+    "frames": 3029,
+    "sequence": 20470,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.5,
+    "quaternion": [
+      0.405395065885924,
+      -0.14895055228106058,
+      0.3266054896772814,
+      0.8407124524135333
+    ],
+    "euler_deg": [
+      29.99052932040332,
+      31.014679976876725,
+      137.01384291929827
+    ],
+    "accel": [
+      0.0234,
+      0.0344,
+      -1.0027
+    ],
+    "gyro": [
+      -2.572,
+      -0.227,
+      0.128
+    ],
+    "mag": [
+      166.5,
+      393.0,
+      951.0
+    ],
+    "sensor_flags": 3,
+    "frames": 3041,
+    "sequence": 20482,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 98.79032258080747,
+    "quaternion": [
+      0.4023746713242048,
+      -0.14823855907183153,
+      0.3260057430527132,
+      0.842520153454915
+    ],
+    "euler_deg": [
+      30.045240888304868,
+      30.806536490115167,
+      137.40049596991395
+    ],
+    "accel": [
+      0.0266,
+      0.0312,
+      -0.9988
+    ],
+    "gyro": [
+      -0.74,
+      -0.288,
+      0.006
+    ],
+    "mag": [
+      147.0,
+      394.5,
+      937.5
+    ],
+    "sensor_flags": 3,
+    "frames": 3051,
+    "sequence": 20492,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.5,
+    "quaternion": [
+      0.3992181347400932,
+      -0.1469160263971877,
+      0.32609146916519505,
+      0.8442185237365895
+    ],
+    "euler_deg": [
+      30.209795089325937,
+      30.558758242638557,
+      137.81666382985173
+    ],
+    "accel": [
+      0.0259,
+      0.0493,
+      -1.0039
+    ],
+    "gyro": [
+      -0.374,
+      -0.41,
+      -0.483
+    ],
+    "mag": [
+      174.0,
+      400.5,
+      946.5
+    ],
+    "sensor_flags": 3,
+    "frames": 3063,
+    "sequence": 20504,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 100.0,
+    "quaternion": [
+      0.3962224503463599,
+      -0.14575248499628324,
+      0.325924747613542,
+      0.8458942261606847
+    ],
+    "euler_deg": [
+      30.329677318285178,
+      30.32204437647338,
+      138.20319283586622
+    ],
+    "accel": [
+      0.0293,
+      0.042,
+      -1.0029
+    ],
+    "gyro": [
+      -0.435,
+      -0.593,
+      0.25
+    ],
+    "mag": [
+      169.5,
+      397.5,
+      949.5
+    ],
+    "sensor_flags": 3,
+    "frames": 3073,
+    "sequence": 20514,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 100.0,
+    "quaternion": [
+      0.3932112337071456,
+      -0.14439311639089217,
+      0.3258169106875911,
+      0.8475723534515653
+    ],
+    "euler_deg": [
+      30.461914965226406,
+      30.0659806745349,
+      138.58880924919453
+    ],
+    "accel": [
+      0.0254,
+      0.0388,
+      -0.9983
+    ],
+    "gyro": [
+      -0.74,
+      -0.593,
+      0.311
+    ],
+    "mag": [
+      171.0,
+      390.0,
+      945.0
+    ],
+    "sensor_flags": 3,
+    "frames": 3084,
+    "sequence": 20525,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.3897249537246289,
+      -0.14285248917416027,
+      0.3260645345794816,
+      0.8493465406243487
+    ],
+    "euler_deg": [
+      30.65845518141312,
+      29.789406247966504,
+      139.04379517605136
+    ],
+    "accel": [
+      0.0208,
+      0.033,
+      -0.9946
+    ],
+    "gyro": [
+      -1.961,
+      -1.021,
+      -0.3
+    ],
+    "mag": [
+      172.5,
+      388.5,
+      945.0
+    ],
+    "sensor_flags": 3,
+    "frames": 3096,
+    "sequence": 20537,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.015000000013969839,
+    "rate_hz": 99.24433249440122,
+    "quaternion": [
+      0.3869718504780464,
+      -0.1415487194019521,
+      0.32633629114665014,
+      0.850718150772577
+    ],
+    "euler_deg": [
+      30.82408992239685,
+      29.564434572221863,
+      139.40184953609787
+    ],
+    "accel": [
+      0.0234,
+      0.0383,
+      -1.002
+    ],
+    "gyro": [
+      -0.618,
+      -0.41,
+      -0.361
+    ],
+    "mag": [
+      166.5,
+      396.0,
+      949.5
+    ],
+    "sensor_flags": 3,
+    "frames": 3108,
+    "sequence": 20549,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.38390091750440813,
+      -0.14052538492729852,
+      0.3259302239639216,
+      0.8524331005053336
+    ],
+    "euler_deg": [
+      30.90431678922507,
+      29.32919848815004,
+      139.78502773317052
+    ],
+    "accel": [
+      0.0225,
+      0.0447,
+      -0.9993
+    ],
+    "gyro": [
+      -0.496,
+      -0.227,
+      -0.239
+    ],
+    "mag": [
+      172.5,
+      391.5,
+      951.0
+    ],
+    "sensor_flags": 3,
+    "frames": 3121,
+    "sequence": 20562,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.5,
+    "quaternion": [
+      0.381589423186006,
+      -0.13959262776244555,
+      0.326528776038647,
+      0.8533946149382768
+    ],
+    "euler_deg": [
+      31.08249605009545,
+      29.17344608828163,
+      140.09570757933554
+    ],
+    "accel": [
+      0.0264,
+      0.0361,
+      -1.0017
+    ],
+    "gyro": [
+      -1.229,
+      -0.227,
+      -0.056
+    ],
+    "mag": [
+      174.0,
+      387.0,
+      949.5
+    ],
+    "sensor_flags": 3,
+    "frames": 3131,
+    "sequence": 20572,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.37991450302342,
+      -0.13939763411827796,
+      0.3274687365659323,
+      0.8538135022161495
+    ],
+    "euler_deg": [
+      31.260577143078354,
+      29.13436781248956,
+      140.3422395855461
+    ],
+    "accel": [
+      0.0447,
+      0.1191,
+      -0.9949
+    ],
+    "gyro": [
+      -0.618,
+      1.36,
+      0.067
+    ],
+    "mag": [
+      141.0,
+      393.0,
+      943.5
+    ],
+    "sensor_flags": 3,
+    "frames": 3141,
+    "sequence": 20582,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.5,
+    "quaternion": [
+      0.37791266694677145,
+      -0.13863190664998376,
+      0.32767251526548113,
+      0.8547478770721586
+    ],
+    "euler_deg": [
+      31.372606925814406,
+      28.989795705316894,
+      140.60120736874862
+    ],
+    "accel": [
+      0.0261,
+      0.0354,
+      -0.9954
+    ],
+    "gyro": [
+      -1.29,
+      -0.899,
+      -0.422
+    ],
+    "mag": [
+      174.0,
+      399.0,
+      928.5
+    ],
+    "sensor_flags": 3,
+    "frames": 3151,
+    "sequence": 20592,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 99.79838709693816,
+    "quaternion": [
+      0.37522395776728884,
+      -0.1373591718152559,
+      0.327536693775629,
+      0.8561887371755184
+    ],
+    "euler_deg": [
+      31.477250810938507,
+      28.751386247499596,
+      140.93185037798148
+    ],
+    "accel": [
+      0.0266,
+      0.0427,
+      -1.0029
+    ],
+    "gyro": [
+      -0.557,
+      -0.471,
+      0.067
+    ],
+    "mag": [
+      166.5,
+      396.0,
+      946.5
+    ],
+    "sensor_flags": 3,
+    "frames": 3162,
+    "sequence": 20603,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.3727901799017917,
+      -0.13632356710596535,
+      0.32786333899931924,
+      0.8572916643479702
+    ],
+    "euler_deg": [
+      31.62404505572185,
+      28.567031643476636,
+      141.24444868117078
+    ],
+    "accel": [
+      0.0247,
+      0.0356,
+      -1.0
+    ],
+    "gyro": [
+      -0.374,
+      -0.41,
+      0.555
+    ],
+    "mag": [
+      174.0,
+      396.0,
+      942.0
+    ],
+    "sensor_flags": 3,
+    "frames": 3173,
+    "sequence": 20614,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 98.5,
+    "quaternion": [
+      0.37061250632376896,
+      -0.13544029206193303,
+      0.32758617358334835,
+      0.8584809819207487
+    ],
+    "euler_deg": [
+      31.68133234766872,
+      28.38285049703369,
+      141.507644234269
+    ],
+    "accel": [
+      0.0281,
+      0.0388,
+      -1.0022
+    ],
+    "gyro": [
+      -1.534,
+      -0.227,
+      0.311
+    ],
+    "mag": [
+      177.0,
+      397.5,
+      948.0
+    ],
+    "sensor_flags": 3,
+    "frames": 3184,
+    "sequence": 20625,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.9999982994367425,
+      -0.0005882608561998873,
+      -0.00010137502641316064,
+      0.0017449343518739153
+    ],
+    "euler_deg": [
+      -0.06742990133277853,
+      -0.011499077094097098,
+      0.1999616513567271
+    ],
+    "accel": [
+      0.0215,
+      0.0425,
+      -0.9985
+    ],
+    "gyro": [
+      0.419,
+      0.078,
+      0.067
+    ],
+    "mag": [
+      174.0,
+      393.0,
+      945.0
+    ],
+    "sensor_flags": 3,
+    "frames": 3195,
+    "sequence": 20636,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.5,
+    "quaternion": [
+      0.9999910640112937,
+      -0.0008579758035490558,
+      -0.00026348092781769764,
+      0.0041311442582064985
+    ],
+    "euler_deg": [
+      -0.0984406984707608,
+      -0.029786261010867347,
+      0.4734213864184448
+    ],
+    "accel": [
+      0.0264,
+      0.0369,
+      -0.9993
+    ],
+    "gyro": [
+      -1.29,
+      -0.288,
+      -0.361
+    ],
+    "mag": [
+      180.0,
+      402.0,
+      946.5
+    ],
+    "sensor_flags": 3,
+    "frames": 3205,
+    "sequence": 20646,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.5,
+    "quaternion": [
+      0.9999758404743868,
+      -0.001338752506694839,
+      -0.0005411549518812389,
+      0.006799511790378911
+    ],
+    "euler_deg": [
+      -0.15382795237021504,
+      -0.06096719162576568,
+      0.77925531560417
+    ],
+    "accel": [
+      0.0249,
+      0.0442,
+      -0.9978
+    ],
+    "gyro": [
+      -0.679,
+      -0.777,
+      0.128
+    ],
+    "mag": [
+      177.0,
+      403.5,
+      948.0
+    ],
+    "sensor_flags": 3,
+    "frames": 3216,
+    "sequence": 20657,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.999957753378492,
+      -0.0017331522518215967,
+      -0.0008958256485213923,
+      0.008982490630025286
+    ],
+    "euler_deg": [
+      -0.1995190297052136,
+      -0.10086580886693657,
+      1.0295090274579308
+    ],
+    "accel": [
+      0.0276,
+      0.0457,
+      -1.0029
+    ],
+    "gyro": [
+      -0.191,
+      -0.593,
+      0.128
+    ],
+    "mag": [
+      174.0,
+      396.0,
+      949.5
+    ],
+    "sensor_flags": 3,
+    "frames": 3226,
+    "sequence": 20667,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.9999342054560579,
+      -0.0013976444291565592,
+      -0.001028691275276005,
+      0.01133900980121751
+    ],
+    "euler_deg": [
+      -0.1614848965899625,
+      -0.11605562452033075,
+      1.299548161196614
+    ],
+    "accel": [
+      0.0212,
+      0.0457,
+      -0.9922
+    ],
+    "gyro": [
+      0.541,
+      -0.044,
+      0.25
+    ],
+    "mag": [
+      172.5,
+      391.5,
+      945.0
+    ],
+    "sensor_flags": 3,
+    "frames": 3237,
+    "sequence": 20678,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 99.79838709693816,
+    "quaternion": [
+      0.9999018197733129,
+      -0.0018372040598211956,
+      -0.0014795771077262738,
+      0.013812543098295712
+    ],
+    "euler_deg": [
+      -0.21285067330577073,
+      -0.1666227080211228,
+      1.5831650833741706
+    ],
+    "accel": [
+      0.0222,
+      0.0413,
+      -0.9998
+    ],
+    "gyro": [
+      -1.046,
+      -0.655,
+      0.128
+    ],
+    "mag": [
+      174.0,
+      394.5,
+      940.5
+    ],
+    "sensor_flags": 3,
+    "frames": 3249,
+    "sequence": 20690,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.9998701960613738,
+      -0.0024945113432069538,
+      -0.0016622835605971144,
+      0.015830516564944178
+    ],
+    "euler_deg": [
+      -0.28883103833605905,
+      -0.18593411329927229,
+      1.8145961546494302
+    ],
+    "accel": [
+      0.0288,
+      0.0427,
+      -0.9956
+    ],
+    "gyro": [
+      -0.618,
+      -0.044,
+      0.86
+    ],
+    "mag": [
+      178.5,
+      391.5,
+      943.5
+    ],
+    "sensor_flags": 3,
+    "frames": 3259,
+    "sequence": 20700,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.5,
+    "quaternion": [
+      0.9998302778429822,
+      -0.0039880894826576675,
+      -0.00198933903171653,
+      0.01787605048439104
+    ],
+    "euler_deg": [
+      -0.46100724368973134,
+      -0.21975392980388042,
+      2.049458041017595
+    ],
+    "accel": [
+      0.0251,
+      0.0488,
+      -0.9998
+    ],
+    "gyro": [
+      0.419,
+      -0.349,
+      0.128
+    ],
+    "mag": [
+      184.5,
+      400.5,
+      948.0
+    ],
+    "sensor_flags": 3,
+    "frames": 3270,
+    "sequence": 20711,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.015000000013969839,
+    "rate_hz": 99.24433249440122,
+    "quaternion": [
+      0.9997936170542787,
+      -0.003832199616479048,
+      -0.002131647128500974,
+      0.01983667371666487
+    ],
+    "euler_deg": [
+      -0.44390076852152527,
+      -0.23550798616539198,
+      2.2741986382438237
+    ],
+    "accel": [
+      0.0234,
+      0.043,
+      -0.9993
+    ],
+    "gyro": [
+      -0.008,
+      -0.227,
+      -0.361
+    ],
+    "mag": [
+      175.5,
+      391.5,
+      943.5
+    ],
+    "sensor_flags": 3,
+    "frames": 3281,
+    "sequence": 20722,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.015000000013969839,
+    "rate_hz": 99.24433249440122,
+    "quaternion": [
+      0.9997493993462003,
+      -0.00410265072630969,
+      -0.0023934725782537567,
+      0.021876426877964268
+    ],
+    "euler_deg": [
+      -0.4760219403786032,
+      -0.2639192090191407,
+      2.5081784927328106
+    ],
+    "accel": [
+      0.0251,
+      0.0422,
+      -0.9998
+    ],
+    "gyro": [
+      -0.069,
+      -0.532,
+      0.433
+    ],
+    "mag": [
+      175.5,
+      399.0,
+      928.5
+    ],
+    "sensor_flags": 3,
+    "frames": 3293,
+    "sequence": 20734,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.999697551761781,
+      -0.004430104978613221,
+      -0.002771798362752898,
+      0.024031152806638794
+    ],
+    "euler_deg": [
+      -0.5151462402161753,
+      -0.3053305977454885,
+      2.755442621039354
+    ],
+    "accel": [
+      0.0225,
+      0.04,
+      -0.9929
+    ],
+    "gyro": [
+      -0.679,
+      -0.655,
+      0.189
+    ],
+    "mag": [
+      177.0,
+      397.5,
+      946.5
+    ],
+    "sensor_flags": 3,
+    "frames": 3304,
+    "sequence": 20745,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.9996486896795713,
+      -0.004966154037701587,
+      -0.0030828425617127325,
+      0.025852091167440604
+    ],
+    "euler_deg": [
+      -0.5780320086046102,
+      -0.33843370595830086,
+      2.9645193112880555
+    ],
+    "accel": [
+      0.0244,
+      0.0422,
+      -0.9949
+    ],
+    "gyro": [
+      -0.802,
+      -0.471,
+      -0.178
+    ],
+    "mag": [
+      181.5,
+      390.0,
+      948.0
+    ],
+    "sensor_flags": 3,
+    "frames": 3314,
+    "sequence": 20755,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 99.29435483887282,
+    "quaternion": [
+      0.9996013490047827,
+      -0.005523526314682667,
+      -0.003445316989984162,
+      0.02747295971874994
+    ],
+    "euler_deg": [
+      -0.6435710904031202,
+      -0.37726058623253766,
+      3.1507509840103745
+    ],
+    "accel": [
+      0.0251,
+      0.0503,
+      -0.9985
+    ],
+    "gyro": [
+      -0.679,
+      -0.532,
+      -0.544
+    ],
+    "mag": [
+      183.0,
+      387.0,
+      945.0
+    ],
+    "sensor_flags": 3,
+    "frames": 3324,
+    "sequence": 20765,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 98.79032258080747,
+    "quaternion": [
+      0.9995261845902181,
+      -0.006913345594874765,
+      -0.00412825248082805,
+      0.029708071338640167
+    ],
+    "euler_deg": [
+      -0.8059408311227815,
+      -0.4493082860243327,
+      3.4080657052213796
+    ],
+    "accel": [
+      0.032,
+      0.0549,
+      -1.0051
+    ],
+    "gyro": [
+      -2.205,
+      -2.73,
+      1.104
+    ],
+    "mag": [
+      181.5,
+      394.5,
+      948.0
+    ],
+    "sensor_flags": 3,
+    "frames": 3336,
+    "sequence": 20777,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.0,
+    "quaternion": [
+      0.9994864189558956,
+      -0.006471165436372104,
+      -0.003797601197229704,
+      0.03115446301513949
+    ],
+    "euler_deg": [
+      -0.7547590040473378,
+      -0.4118507821383689,
+      3.57342951130392
+    ],
+    "accel": [
+      0.0212,
+      0.0491,
+      -0.9939
+    ],
+    "gyro": [
+      -0.496,
+      -0.532,
+      -0.605
+    ],
+    "mag": [
+      178.5,
+      393.0,
+      943.5
+    ],
+    "sensor_flags": 3,
+    "frames": 3347,
+    "sequence": 20788,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.0,
+    "rate_hz": 99.5,
+    "quaternion": [
+      0.99943598279571,
+      -0.006444811764761815,
+      -0.003802767266320943,
+      0.03273712961773328
+    ],
+    "euler_deg": [
+      -0.7524112009957596,
+      -0.41134572572499484,
+      3.754875169836083
+    ],
+    "accel": [
+      0.0234,
+      0.052,
+      -0.9966
+    ],
+    "gyro": [
+      -0.008,
+      0.2,
+      0.128
+    ],
+    "mag": [
+      178.5,
+      394.5,
+      954.0
+    ],
+    "sensor_flags": 3,
+    "frames": 3359,
+    "sequence": 20800,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  },
+  {
+    "slot": "A",
+    "endpoint": "192.168.4.1:9000",
+    "configured": true,
+    "node_id": "imu_305A6077C398",
+    "connected": true,
+    "valid": true,
+    "status": "Wi-Fi 实时接收",
+    "age_s": 0.01600000000325963,
+    "rate_hz": 98.79032258080747,
+    "quaternion": [
+      0.9993688231973453,
+      -0.00706978658455857,
+      -0.00399504694585812,
+      0.03458341999719619
+    ],
+    "euler_deg": [
+      -0.8255105228998018,
+      -0.42949639027439135,
+      3.9669832813404846
+    ],
+    "accel": [
+      0.0244,
+      0.0579,
+      -0.9971
+    ],
+    "gyro": [
+      -2.022,
+      -1.021,
+      1.959
+    ],
+    "mag": [
+      184.5,
+      400.5,
+      943.5
+    ],
+    "sensor_flags": 3,
+    "frames": 3368,
+    "sequence": 20809,
+    "missing_frames": 0,
+    "invalid_frames": 0,
+    "duplicate_frames": 0,
+    "attitude_reinitializations": 2
+  }
+]
