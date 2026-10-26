@@ -14,6 +14,7 @@ from .body_math import IDENTITY, add, angle_degrees, inverse, mean, multiply, qu
 from .body_nodes import NodeProcessor, norm
 from .coordinates import CoordinateSettings
 from .attitude_config import load_attitude_config
+from .direction_session import DirectionSession
 
 
 class BodyEngine:
@@ -29,6 +30,7 @@ class BodyEngine:
         self._last_local = {}
         self._conflicts = set()
         self.initialization = {"status": "idle", "message": "请先确认身体位置，再跟随中立站姿并点击确认采集", "devices": [], "progress": 0.}
+        self.direction = DirectionSession(self)
 
     def _event(self, kind, **values):
         self._events.append({"type": kind, "monotonic": monotonic(), "unix": time(), **values})
@@ -48,6 +50,7 @@ class BodyEngine:
                         del self.endpoints[endpoint_id]
         self.initialization = {"status":"idle", "message":"模拟来源已重置，请重新初始化", "devices":[], "progress":0.}
         self._event("simulation_reset")
+        self.direction.cancel()
 
     def invalid_frame(self, endpoint_id, reason="协议解析失败"):
         self.endpoint_invalid[endpoint_id] = self.endpoint_invalid.get(endpoint_id, 0)+1
@@ -200,7 +203,21 @@ class BodyEngine:
             record["processing_config_version"] = self.attitude_config["config_version"]
             record["processing_settings"] = dict(node.processing_settings)
             record["effective_magnetic_used"] = node.stability.magnetic_used
+            record["direction_calibration_id"] = node.direction_calibration.get("calibration_id") if node.direction_calibration and node.direction_calibration.get("valid") else None
+            self.direction.observe(node)
         return record
+
+    def direction_start(self, stage, device_ids=None, now=None):
+        return self.direction.start(stage, device_ids, now)
+
+    def direction_finish(self, now=None):
+        return self.direction.finish(now)
+
+    def direction_apply(self, now=None):
+        return self.direction.apply(now)
+
+    def direction_cancel(self):
+        self.direction.cancel()
 
     def ingest_pose(self, device_id, slot, value=None, endpoint_id="pose", source="simulation_pose",
                     now=None, boot_id="pose", calibrated=True, **kwargs):
@@ -299,6 +316,8 @@ class BodyEngine:
         return slots
 
     def begin_initialization(self, device_ids=None, now=None, *, full=False):
+        if self.direction.capturing:
+            raise ValueError("请先结束或取消方向标定，再改变中立参考")
         now = monotonic() if now is None else now
         bindings = self._bindings()
         if device_ids is None:
@@ -380,6 +399,7 @@ class BodyEngine:
             calibration_id = uuid4().hex
             for device_id, reference in references.items():
                 node = self.devices[device_id]
+                node.reset_reference("重新中立归零：旧安装/方向标定失效，请重做方向动作")
                 node.reference = reference
                 node.calibration_id = calibration_id
                 node.reference_reason = "中立站姿参考；不等于零偏/磁标定或漂移消除"
@@ -403,6 +423,7 @@ class BodyEngine:
         for slot in self._conflicts-current_conflicts:
             self._event("slot_conflict_resolved", body_slot=slot)
         self._conflicts = current_conflicts
+        direction_state = self.direction.snapshot(now)
         diagnostic = {}
         for device_id, node in self.devices.items():
             was_calibrating = node.stability.calibrating
@@ -465,6 +486,7 @@ class BodyEngine:
                           "initialized": bool(node and node.initialized), "measured": measured,
                           "override": bool(node and node.override), "endpoint_id": node.primary_endpoint if node else None,
                           "invalid_frames": item["quality"]["invalid_frames"] if item else None,
+                          "direction_calibrated": bool(node and node.direction_calibration and node.direction_calibration.get("valid")),
                           "age_ms": item["quality"]["age_ms"] if item else None,
                           "conflict": status == "conflict", "mount_hint": spec.get("mount_hint", "")})
         frame = {"version": "body-frame/1", "skeleton_version": self.config["skeleton_version"],
@@ -476,4 +498,5 @@ class BodyEngine:
         return {"body_frame": frame, "devices": list(diagnostic.values()), "slots": slots,
                 "config": deepcopy(self.config), "attitude_config": deepcopy(self.attitude_config),
                 "initialization": deepcopy(self.initialization),
+                "direction_calibration": direction_state,
                 "endpoint_invalid": dict(self.endpoint_invalid)}

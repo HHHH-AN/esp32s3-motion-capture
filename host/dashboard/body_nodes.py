@@ -43,6 +43,8 @@ class NodeProcessor:
         self.reference = None
         self.fusion_to_world = IDENTITY
         self.calibration_id = None
+        self.direction_calibration = None
+        self.reference_revision = 0
         self.reference_reason = "尚未进行中立站姿初始化"
         self.body_slot = self.reported_slot = None
         self.binding_source = "unbound"
@@ -87,6 +89,10 @@ class NodeProcessor:
         self.reset_reference("融合配置改变：需重新中立站姿初始化",reset_fusion=True)
 
     def reset_reference(self, reason, *, reset_fusion=False):
+        self.reference_revision += 1
+        if self.direction_calibration is not None:
+            self.direction_calibration = {**self.direction_calibration, "valid": False, "invalid_reason": reason}
+        self.fusion_to_world = IDENTITY
         self.reference = None
         self.calibration_id = None
         self.reference_reason = reason
@@ -275,6 +281,10 @@ class NodeProcessor:
                 "aux_temperature": sample.aux_temperature if sample else None,
                 "valid": valid, "connected": self.connected, "initialized": self.initialized,
                 "reference": self.reference, "fusion_to_world": self.fusion_to_world,
+                "mount_bone_to_sensor": multiply(inverse(self.reference), inverse(self.fusion_to_world)) if self.reference else None,
+                "direction_calibration": self.direction_calibration,
+                "reference_revision": self.reference_revision,
+                "residual_gyro_dps": self.stability.corrected(sample).gyro if sample else None,
                 "calibration_id": self.calibration_id, "reference_reason": self.reference_reason,
                 "fusion_version": self.fusion_version, "coordinates": self.coordinates.payload(),
                 "processing_profile": self.processing_profile,

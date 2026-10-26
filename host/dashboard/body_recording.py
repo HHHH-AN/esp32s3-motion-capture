@@ -12,6 +12,7 @@ from pathlib import Path
 from queue import Queue, Full
 from threading import Thread
 from time import monotonic, time
+from time import sleep
 from uuid import uuid4
 
 SCHEMA = "imu-body-session/1"
@@ -55,6 +56,7 @@ class BodyRecorder:
         self.error = None
         self.counts = {}
         self._thread = None
+        self._metadata_pending = False
 
     def start(self, snapshot):
         if self.active or self._thread is not None:
@@ -85,7 +87,17 @@ class BodyRecorder:
         target = self.folder / "metadata.json"
         temporary = self.folder / "metadata.json.tmp"
         temporary.write_text(json.dumps(self.meta, ensure_ascii=False, indent=2, allow_nan=False), encoding="utf-8")
-        temporary.replace(target)
+        # Catalog/preview readers can briefly hold metadata.json on Windows.
+        # Retry the atomic replacement, keeping the complete temporary file.
+        for attempt in range(8):
+            try:
+                temporary.replace(target)
+                self._metadata_pending = False
+                return
+            except PermissionError:
+                if attempt == 7:
+                    raise
+                sleep(.025)
 
     def append(self, kind, data, elapsed=None):
         if not self.active:
@@ -157,7 +169,13 @@ class BodyRecorder:
         self._thread = None
         self.meta.update(status="incomplete" if self.error else "complete",
                          error=self.error, duration_s=monotonic()-self.started)
-        self._metadata()
+        self.meta["counts"] = dict(self.counts)
+        self._metadata_pending = True
+        try:
+            self._metadata()
+        except (OSError, ValueError) as exc:
+            self.error = f"记录元数据保存失败，不能视为完整会话：{exc}"
+            self.meta.update(status="incomplete",error=self.error)
 
     def payload(self):
         return {"active": self.active, "session": self.session, "counts": dict(self.counts), "error": self.error}

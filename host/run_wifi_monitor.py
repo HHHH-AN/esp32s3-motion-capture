@@ -229,6 +229,8 @@ def handler_for(nodes):
         def do_GET(self):
             if self.path == "/":
                 self.send(200, (ROOT/"web"/"wifi_monitor.html").read_bytes(), "text/html; charset=utf-8")
+            elif self.path == "/pose_math.js":
+                self.send(200, (ROOT/"web"/"pose_math.js").read_bytes(), "application/javascript; charset=utf-8")
             elif self.path == "/api/status":
                 states = {slot: node.snapshot() for slot, node in nodes.items()}
                 self.send(200, json.dumps({"source": "real_wifi_tcp", "nodes": states,

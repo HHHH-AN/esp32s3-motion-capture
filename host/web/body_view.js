@@ -23,25 +23,24 @@
   }
   class BodyView {
     constructor(canvas,{kind="fixed",onSelect=()=>{}}={}) {
-      this.canvas=canvas;this.kind=kind;this.onSelect=onSelect;this.yaw=-.65;this.elevation=.22;this.zoom=1;this.pan=[0,0];this.trail=[];this.hits=[];this.epoch=null;
+      this.canvas=canvas;this.kind=kind;this.onSelect=onSelect;this.yaw=-.65;this.elevation=.35;this.zoom=1;this.pan=[0,0];this.trail=[];this.hits=[];this.epoch=null;
       let drag=null;
       canvas.addEventListener("pointerdown",event=>{drag={x:event.clientX,y:event.clientY,startX:event.clientX,startY:event.clientY,pan:event.shiftKey};canvas.setPointerCapture(event.pointerId);});
       canvas.addEventListener("pointermove",event=>{if(!drag)return;const dx=event.clientX-drag.x,dy=event.clientY-drag.y;if(drag.pan){this.pan[0]+=dx;this.pan[1]+=dy;}else{this.yaw+=dx*.009;this.elevation=Math.max(-1.2,Math.min(1.2,this.elevation+dy*.009));}drag.x=event.clientX;drag.y=event.clientY;});
       canvas.addEventListener("pointerup",event=>{if(drag&&Math.hypot(event.clientX-drag.startX,event.clientY-drag.startY)<5){const box=canvas.getBoundingClientRect(),point=[event.clientX-box.left,event.clientY-box.top];const found=this.hits.map(item=>({...item,d:pointSegmentDistance(point,item.a,item.b)})).sort((a,b)=>a.d-b.d)[0];if(found&&found.d<15)this.onSelect(found.slot,found.device_id);}drag=null;});
       canvas.addEventListener("pointercancel",()=>{drag=null;});
-      canvas.addEventListener("wheel",event=>{event.preventDefault();this.zoom=Math.min(2.8,Math.max(.45,this.zoom*Math.exp(-event.deltaY*.001)));},{passive:false});
     }
-    reset(){this.yaw=-.65;this.elevation=.22;this.zoom=1;this.pan=[0,0];}
+    reset(){this.yaw=-.65;this.elevation=.35;this.zoom=1;this.pan=[0,0];}
     clearTrail(){this.trail=[];}
     draw(frame,{selectedSlot,devices=[],position=[0,0,0],positionSource="off",mode="LIVE",epoch=null}={}) {
       const canvas=this.canvas,box=canvas.getBoundingClientRect();if(!box.width||!box.height)return;
       const dpr=Math.min(root.devicePixelRatio||1,2),w=Math.round(box.width*dpr),h=Math.round(box.height*dpr);if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;}
       const ctx=canvas.getContext("2d");ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,box.width,box.height);this.hits=[];
       const scale=Math.min(box.width*.34,box.height*.43)*this.zoom,origin=[box.width/2+this.pan[0],box.height*.89+this.pan[1]],rootOffset=this.kind==="translated"?vector(position):[0,0,0];
-      const project=p=>{const [x,y,z]=vector(p),horizontal=Math.cos(this.yaw)*y-Math.sin(this.yaw)*x,depth=Math.sin(this.yaw)*y+Math.cos(this.yaw)*x;return [origin[0]-horizontal*scale,origin[1]+(Math.sin(this.elevation)*depth-Math.cos(this.elevation)*z)*scale,depth];};
+      const project=p=>root.PoseMath.project(vector(p),this.yaw,this.elevation,origin,scale);
       const line=(a,b,color,width=1,dash=[])=>{ctx.strokeStyle=color;ctx.lineWidth=width;ctx.setLineDash(dash);ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();ctx.setLineDash([]);};
       for(let i=-2;i<=2;i+=.25){line(project([i,-2,0]),project([i,2,0]),"#e3ebf0");line(project([-2,i,0]),project([2,i,0]),"#e3ebf0");}
-      const o=project([0,0,0]);[[.35,0,0],[0,.35,0],[0,0,.35]].forEach((axis,i)=>{const end=project(axis);line(o,end,["#e66354","#279975","#397fd7"][i],2);ctx.fillStyle=["#e66354","#279975","#397fd7"][i];ctx.font="11px system-ui";ctx.fillText("XYZ"[i],end[0]+4,end[1]);});
+      const o=project([0,0,0]);[[.35,0,0],[0,.35,0],[0,0,.35]].forEach((axis,i)=>{const end=project(axis);line(o,end,["#e66354","#279975","#397fd7"][i],2);ctx.fillStyle=["#e66354","#279975","#397fd7"][i];ctx.font="11px system-ui";ctx.fillText(["+X 前","+Y 左","+Z 上"][i],end[0]+4,end[1]);});
       if(this.epoch!==epoch){this.trail=[];this.epoch=epoch;}
       if(this.kind==="boards") {this.drawBoards(ctx,box,devices,selectedSlot);return;}
       if(this.kind==="translated"&&positionSource!=="off") {
@@ -70,9 +69,9 @@
     drawBoards(ctx,box,devices,selectedSlot) {
       const shown=devices.length?devices:[],columns=shown.length>4?4:shown.length>1?2:1,rows=Math.max(1,Math.ceil(shown.length/columns)),cellW=box.width/columns,cellH=box.height/rows;
       if(!shown.length){ctx.font="13px system-ui";ctx.fillStyle="#617482";ctx.fillText("暂无设备。模拟设备会显式标识，不计为硬件在线。",18,28);return;}
-      shown.forEach((device,index)=>{const cx=(index%columns+.5)*cellW,cy=(Math.floor(index/columns)+.49)*cellH,s=Math.min(cellW*.9,cellH*1.8),q=device.quaternion||device.q||[1,0,0,0],slot=device.body_slot||device.slot,points=[[-.18,-.12,0],[.18,-.12,0],[.18,.12,0],[-.18,.12,0]].map(v=>rotate(v,q)).map(([x,y,z])=>[cx+(y-x*.35)*s,cy+(x*.2-z)*s]);
-        ctx.beginPath();points.forEach((p,i)=>i?ctx.lineTo(...p):ctx.moveTo(...p));ctx.closePath();ctx.fillStyle=device.source==="real"?"#c1e0ee":"#f4dca8";ctx.fill();ctx.strokeStyle=slot===selectedSlot?"#e7732e":"#4a8ba6";ctx.lineWidth=slot===selectedSlot?3:1.5;ctx.stroke();
-        [[.25,0,0],[0,.25,0],[0,0,.25]].forEach((axis,i)=>{const [x,y,z]=rotate(axis,q),tip=[cx+(y-x*.35)*s,cy+(x*.2-z)*s];ctx.strokeStyle=["#e66354","#279975","#397fd7"][i];ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(...tip);ctx.stroke();});
+      shown.forEach((device,index)=>{const cx=(index%columns+.5)*cellW,cy=(Math.floor(index/columns)+.49)*cellH,s=Math.min(cellW*.9,cellH*1.8),q=device.quaternion||device.q||[1,0,0,0],slot=device.body_slot||device.slot,points=[[-.18,-.12,0],[.18,-.12,0],[.18,.12,0],[-.18,.12,0]].map(v=>rotate(v,q)).map(v=>root.PoseMath.project(v,this.yaw,this.elevation,[cx,cy],s));
+        ctx.beginPath();points.forEach((p,i)=>i?ctx.lineTo(...p.slice(0,2)):ctx.moveTo(...p.slice(0,2)));ctx.closePath();ctx.fillStyle=device.source==="real"?"#c1e0ee":"#f4dca8";ctx.fill();ctx.strokeStyle=slot===selectedSlot?"#e7732e":"#4a8ba6";ctx.lineWidth=slot===selectedSlot?3:1.5;ctx.stroke();
+        [[.25,0,0],[0,.25,0],[0,0,.25]].forEach((axis,i)=>{const tip=root.PoseMath.project(rotate(axis,q),this.yaw,this.elevation,[cx,cy],s);ctx.strokeStyle=["#e66354","#279975","#397fd7"][i];ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(...tip.slice(0,2));ctx.stroke();ctx.fillStyle=["#e66354","#279975","#397fd7"][i];ctx.fillText("s"+"XYZ"[i],tip[0]+3,tip[1]);});
         ctx.font="11px system-ui";ctx.fillStyle="#163044";ctx.textAlign="center";ctx.fillText(String(device.device_id||device.node_id||device.id||"未识别").slice(0,27),cx,(Math.floor(index/columns)+1)*cellH-24);ctx.fillStyle=device.source==="real"?"#617482":"#9a681a";ctx.fillText(`${slot||"未绑定"} · ${device.source==="real"?"真实输入":"模拟"}`,cx,(Math.floor(index/columns)+1)*cellH-8);ctx.textAlign="left";
         this.hits.push({slot,device_id:device.device_id||device.node_id||device.id,a:[cx-cellW*.4,cy],b:[cx+cellW*.4,cy]});
       });

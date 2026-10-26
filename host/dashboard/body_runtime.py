@@ -6,6 +6,8 @@ from dataclasses import asdict, replace
 import json
 import math
 from pathlib import Path
+from datetime import datetime
+from uuid import uuid4
 import re
 from time import monotonic, time
 
@@ -31,7 +33,8 @@ class BodyRuntime:
         self.endpoints = {}
         self.clients = set()
         self.selected_device_id = None
-        self.message = "未连接；可使用离线已知姿态或模拟传感器测试"
+        self.message = "等待手动连接设备；先确认端口与设备身份"
+        self.command_result = None
         self.position = {"source": "off", "position": [0., 0., 0.], "experimental": False}
         self.motions = {}
         self._task = self._simulation_task = None
@@ -41,6 +44,9 @@ class BodyRuntime:
         self._simulation_signature = None
         self._simulation_angle = 0.
         self._raw_by_device = {}
+        self._direction_demo = None
+        self._direction_saved_status = None
+        self._direction_save_tasks = set()
 
     async def start(self):
         if self._task is None:
@@ -58,6 +64,8 @@ class BodyRuntime:
         for endpoint_id in tuple(self.endpoints):
             await self.disconnect(endpoint_id)
         await asyncio.to_thread(self.recorder.stop)
+        if self._direction_save_tasks:
+            await asyncio.gather(*tuple(self._direction_save_tasks))
         self.replay.close()
 
     async def _heartbeat(self):
@@ -70,7 +78,7 @@ class BodyRuntime:
         state = self.payload()
         if self.mode == "LIVE":
             self.recorder.append_body_frame({k: state[k] for k in
-                ("body_frame", "devices", "slots", "selected_device_id", "selected_node", "position", "config", "attitude_config", "initialization")})
+                ("body_frame", "devices", "slots", "selected_device_id", "selected_node", "position", "config", "attitude_config", "initialization", "direction_calibration")})
         self._last_state = state
         if self.recorder.error:
             self.message = self.recorder.error
@@ -90,6 +98,8 @@ class BodyRuntime:
     def _drain_events(self):
         for event in self.engine.pop_events():
             self.recorder.append_event(event)
+            if event.get("type") in ("direction_calibration_failed", "direction_calibration_invalidated", "direction_neutral_accepted", "direction_candidate"):
+                self._save_direction_evidence()
             if event.get("type") in ("device_restart", "inferred_restart", "clock_reference_reset", "reference_invalidated", "binding_changed", "reported_slot_changed", "source_changed", "source_selected", "device_config_changed", "coordinates_changed", "processing_changed", "bias_calibration_complete", "invalid_fusion"):
                 motion = self.motions.get(event.get("device_id"))
                 if motion:
@@ -132,7 +142,37 @@ class BodyRuntime:
         return {**state, "type": "body_state", "mode": self.mode, "epoch": self.epoch,
                 "timestamp": time(), "endpoints": [{k:v for k,v in e.items() if k not in ("transport_object", "generation", "reconnect_task")} for e in self.endpoints.values()],
                 "recording": self.recorder.payload(), "replay": self.replay.payload(), "message": self.message,
+                "command_result": self.command_result,
                 "live_device_count": sum(d.get("source") == "real" and d.get("valid", False) for d in devices)}
+
+    def _save_direction_evidence(self):
+        """Durable calibration capture, even if no motion recording is active."""
+        state = self.engine.direction.state
+        token = (state.get("attempt_id"), state["status"], state.get("stage"))
+        if self._direction_saved_status == token or not state.get("attempt_id"):
+            return
+        target_dir = self.recorder.root / "calibrations"
+        name=datetime.now().strftime("%Y%m%d-%H%M%S-")+uuid4().hex[:10]+".json"
+        target=target_dir/name
+        data=self.engine.direction.evidence_snapshot()
+        data.update(schema_version="functional-calibration-capture/1",
+                    event={"status":state["status"],"stage":state.get("stage"),"reason":state.get("message")})
+        self._direction_saved_status=token
+        def write():
+            target_dir.mkdir(parents=True,exist_ok=True)
+            pending=target.with_suffix(".json.tmp")
+            pending.write_text(json.dumps(data,ensure_ascii=False,allow_nan=False,separators=(",",":")),encoding="utf-8")
+            pending.replace(target)
+        async def persist():
+            try:
+                await asyncio.to_thread(write)
+                state["saved_evidence"]=str(target)
+            except (OSError,ValueError) as exc:
+                self.message=f"方向标定证据保存失败，请勿视作已保存：{exc}"
+                state["save_error"]=str(exc)
+        task=asyncio.create_task(persist())
+        self._direction_save_tasks.add(task)
+        task.add_done_callback(self._direction_save_tasks.discard)
 
     async def connect(self, data):
         endpoint_id = str(data.get("endpoint_id") or f"endpoint-{len(self.endpoints)+1}")
@@ -253,12 +293,17 @@ class BodyRuntime:
 
     async def command(self, data):
         async with self._lock:
+            request_id = data.get("request_id") if isinstance(data, dict) else None
             try:
                 if not isinstance(data, dict):
                     raise ValueError("命令必须为 JSON 对象")
                 await self._command(data)
+                if data.get("action") not in ("select", "replay_seek"):
+                    message = "已开始定姿采样，请保持静止" if data.get("action") == "direction_start" else "操作已完成"
+                    self.command_result = {"request_id": request_id, "ok": True, "message": message}
             except (ValueError, TypeError, KeyError, OSError) as exc:
                 self.message = f"操作失败：{exc}"
+                self.command_result = {"request_id": request_id, "ok": False, "message": self.message}
 
     async def _command(self, data):
         action = data.get("action")
@@ -269,6 +314,46 @@ class BodyRuntime:
             await self.disconnect(data["endpoint_id"])
         elif action == "select":
             self.selected_device_id = data["device_id"]
+        elif action == "direction_start":
+            self._editable()
+            if self.engine.initialization["status"] == "collecting":
+                raise ValueError("先结束中立初始化，再采集方向动作")
+            self.engine.direction_start(data["stage"], data.get("device_ids"))
+            self.message = self.engine.direction.state["message"]
+        elif action == "direction_finish":
+            self._editable()
+            result = self.engine.direction_finish()
+            self.message = result["message"]
+            self._save_direction_evidence()
+        elif action == "direction_apply":
+            self._editable()
+            self.engine.direction_apply()
+            self.message = self.engine.direction.state["message"]
+            self._save_direction_evidence()
+        elif action == "direction_cancel":
+            self._editable()
+            self.engine.direction_cancel()
+            self.message = self.engine.direction.state["message"]
+        elif action == "direction_demo":
+            self._editable()
+            if any(d.source=="real" and d.connected for d in self.engine.devices.values()):
+                raise ValueError("已有真实设备连接；离线方向演示不会替换或断开真实输入，请使用独立测试服务")
+            await self.stop_simulation()
+            self.engine.clear_simulations()
+            from .direction_demo import DirectionDemo
+            self._direction_demo = DirectionDemo(self,data.get("scenario","valid"))
+            self._direction_demo.feed()
+            self.selected_device_id = self._direction_demo.cases[0][0]
+            async def feed_direction():
+                while True:
+                    self._direction_demo.feed()
+                    await asyncio.sleep(.01)
+            self._simulation_task=asyncio.create_task(feed_direction())
+            self.message = "离线方向真值场景已加载：两路不同安装和融合参考；仅AHRS输出注入已知几何，硬件在线数仍为0。请手动走标定步骤"
+        elif action == "direction_demo_pose":
+            if not self._direction_demo:
+                raise ValueError("请先加载离线方向演示")
+            self._direction_demo.set_validation(data["pose"])
         elif action == "choose_source":
             self._editable()
             self.engine.choose_source(device_id, data["endpoint_id"])
@@ -343,9 +428,11 @@ class BodyRuntime:
         elif action in ("record_start", "start_recording"):
             if self.mode != "LIVE":
                 raise ValueError("回放与录制互斥，先返回实时")
-            if self.engine.initialization["status"] == "collecting" or any(d.stability.calibrating for d in self.engine.devices.values()):
+            if self.engine.direction.capturing or self.engine.initialization["status"] == "collecting" or any(d.stability.calibrating for d in self.engine.devices.values()):
                 raise ValueError("请先等待初始化/零偏校准结束，再开始记录")
-            self.recorder.start(self.payload())
+            snapshot = self.payload()
+            snapshot["direction_calibration_evidence"] = self.engine.direction.evidence_snapshot()
+            self.recorder.start(snapshot)
             self.message = "正在记录原始采样、融合姿态、完整骨架帧和事件"
         elif action in ("record_stop", "stop_recording"):
             self._event("recording_stopped")
@@ -354,7 +441,7 @@ class BodyRuntime:
         elif action == "replay_open":
             if self.recorder.active:
                 raise ValueError("录制与回放互斥，先停止并保存")
-            if self.engine.initialization["status"] == "collecting" or any(d.stability.calibrating for d in self.engine.devices.values()):
+            if self.engine.direction.capturing or self.engine.initialization["status"] == "collecting" or any(d.stability.calibrating for d in self.engine.devices.values()):
                 raise ValueError("请先等待初始化/零偏校准结束，再回放")
             self.replay.open(data["session"])
             self.mode = "REPLAY"
@@ -392,6 +479,7 @@ class BodyRuntime:
                 pass
             self._simulation_task = None
         self._simulation_signature = None
+        self._direction_demo = None
         for endpoint in list(self.endpoints.values()):
             if endpoint.get("simulation"):
                 endpoint["status"] = "closed"

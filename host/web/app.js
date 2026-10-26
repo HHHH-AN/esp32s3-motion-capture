@@ -28,7 +28,7 @@ function drawPose() {
   const {ctx,width,height}=canvasSize($("poseCanvas"));ctx.clearRect(0,0,width,height);
   const range=Math.max(.1,Math.min(20,Number($("sceneRange").value)||1)),scale=Math.min(width,height)*.42*viewScale/range;
   const center=$("followPose").checked?scenePosition:[0,0,0];
-  const project=v=>{const [x,y,z]=v.map((n,i)=>n-center[i]),h=Math.cos(viewYaw)*x-Math.sin(viewYaw)*y,d=Math.sin(viewYaw)*x+Math.cos(viewYaw)*y;return [width/2+h*scale,height*.57+(Math.sin(viewElevation)*d-Math.cos(viewElevation)*z)*scale,Math.cos(viewElevation)*d+Math.sin(viewElevation)*z];};
+  const project=v=>PoseMath.project(v,viewYaw,viewElevation,[width/2,height*.57],scale,center);
   function line(a,b,color){ctx.strokeStyle=color;ctx.beginPath();ctx.moveTo(...a.slice(0,2));ctx.lineTo(...b.slice(0,2));ctx.stroke();}
   const spacing=range<=.5?.05:range<=2?.1:range<=5?.5:1,span=Math.ceil(range*1.5/spacing)*spacing;
   ctx.lineWidth=1;for(let i=-span;i<=span+spacing*.1;i+=spacing){line(project([i,-span,0]),project([i,span,0]),"#dee8ef");line(project([-span,i,0]),project([span,i,0]),"#dee8ef");}
@@ -121,9 +121,9 @@ $("startMotion").onclick=()=>send("start_motion",{duration_s:Number($("motionDur
 $("stopMotion").onclick=()=>send("stop_motion");$("resetMotion").onclick=()=>send("reset_motion");
 $("applyCoordinates").onclick=()=>send("set_coordinates",{coordinates:{sensor_axes:"XYZ".split("").map(axis=>$("map"+axis).value),displacement_signs:"XYZ".split("").map(axis=>Number($("sign"+axis).value))}});
 $("defaultCoordinates").onclick=()=>{const defaults={sensor_axes:["+X","+Y","+Z"],displacement_signs:[1,1,1]};coordinateInputs(defaults);send("set_coordinates",{coordinates:defaults});};
-async function refreshPorts(){try{const result=await fetch("/api/ports"),data=await result.json(),desired=serialSelectionLoaded?$("serialPort").value:savedSerialDevice;serialSelectionLoaded=true;$("serialPort").replaceChildren();$("serialPort").add(new Option(desired?`${desired} 不在列表中，请重新选择`:"请选择板子的 USB 串口",""));data.items.forEach(p=>$("serialPort").add(new Option(`${p.device} · ${p.description}`,p.device)));if(desired){$("serialPort").value=data.items.some(p=>p.device===desired)?desired:"";}else{const usb=data.items.filter(p=>/USB|CP210|CH34|Espressif/i.test(p.description));$("serialPort").value=usb.length===1?usb[0].device:"";}}catch(error){$("message").textContent=error.message;}}
+async function refreshPorts(){const button=$("refreshPorts");if(button.disabled)return;button.disabled=true;button.textContent="读取中…";try{const result=await fetch("/api/ports");if(!result.ok)throw new Error("读取串口列表失败");const data=await result.json(),desired=serialSelectionLoaded?$("serialPort").value:savedSerialDevice;serialSelectionLoaded=true;$("serialPort").replaceChildren();$("serialPort").add(new Option(desired?`${desired} 不在列表中，请重新选择`:"请选择板子的 USB 串口",""));data.items.forEach(p=>$("serialPort").add(new Option(`${p.device} · ${p.description}`,p.device)));if(desired){$("serialPort").value=data.items.some(p=>p.device===desired)?desired:"";}else{const usb=data.items.filter(p=>/USB|CP210|CH34|Espressif/i.test(p.description));$("serialPort").value=usb.length===1?usb[0].device:"";}}catch(error){$("message").textContent=error.message;window.BodyApp?.notify(error.message,"error");}finally{button.disabled=false;button.textContent="刷新串口";}}
 $("refreshPorts").onclick=refreshPorts;
-const poseCanvas=$("poseCanvas");poseCanvas.onpointerdown=e=>{dragging=[e.clientX,e.clientY];poseCanvas.setPointerCapture(e.pointerId);};poseCanvas.onpointermove=e=>{if(!dragging)return;viewYaw+=(e.clientX-dragging[0])*.01;viewElevation=Math.max(-1.3,Math.min(1.3,viewElevation+(e.clientY-dragging[1])*.01));dragging=[e.clientX,e.clientY];};poseCanvas.onpointerup=poseCanvas.onpointercancel=()=>dragging=null;poseCanvas.onwheel=e=>{e.preventDefault();viewScale=Math.max(.5,Math.min(2,viewScale*Math.exp(-e.deltaY*.001)));};$("viewReset").onclick=()=>{viewYaw=-.6;viewElevation=.45;viewScale=1;};
+const poseCanvas=$("poseCanvas");poseCanvas.onpointerdown=e=>{dragging=[e.clientX,e.clientY];poseCanvas.setPointerCapture(e.pointerId);};poseCanvas.onpointermove=e=>{if(!dragging)return;viewYaw+=(e.clientX-dragging[0])*.01;viewElevation=Math.max(-1.3,Math.min(1.3,viewElevation+(e.clientY-dragging[1])*.01));dragging=[e.clientX,e.clientY];};poseCanvas.onpointerup=poseCanvas.onpointercancel=()=>dragging=null;$("poseZoom").oninput=()=>{viewScale=Number($("poseZoom").value);};$("viewReset").onclick=()=>{viewYaw=-.6;viewElevation=.45;viewScale=1;$("poseZoom").value=1;};
 $("clearTrail").onclick=()=>poseTrail=[];
 async function fetchJson(url){const response=await fetch(url);if(!response.ok){let message="请求失败";try{message=(await response.json()).detail||message;}catch{}throw new Error(message);}return response.json();}
 function selectedItem(){return catalogItems.find(item=>item.id===$("sessions").value);}
@@ -150,7 +150,7 @@ window.renderBodyDiagnostic=function(device,state) {
   $("nodeState").classList.toggle("online",online);
   for(const id of ["zero","calibrate","startMotion","stopMotion","resetMotion","applyCoordinates","defaultCoordinates"]){$(id).disabled=!device||recording||replaying;}
   $("record").disabled=replaying||(!device&&!recording);$("record").textContent=recording?"停止完整动作记录":"开始完整动作记录";
-  $("recordStatus").textContent=recording?`动作记录中：${state.recording.session||""}`:"完整动作会话入口位于上方；包括全部骨架帧，不采用抽样预览替代回放。";
+  $("recordStatus").textContent=recording?`动作记录中：${state.recording.session||""}`:"完整动作会话入口位于下方；包括全部骨架帧，不采用抽样预览替代回放。";
   $("connect").textContent="连接 / 添加端点";$("connect").disabled=!window.BodyApp?.connected;
   for(const id of ["transport","host","tcpPort","serialPort"]){$(id).disabled=false;}
   $("rate").textContent=format(quality.rate_hz??quality.frame_rate??device?.rate_hz??0,1)+" Hz";
