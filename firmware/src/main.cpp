@@ -4,6 +4,9 @@
 #include <ICM42688.h>
 #include <WiFi.h>
 #include <esp_system.h>
+#include <lwip/sockets.h>
+#include <errno.h>
+#include "frame_tx_queue.h"
 #if __has_include("node_config.h")
 #include "node_config.h"
 #else
@@ -21,7 +24,7 @@
 #define IMU_USE_MAC_NODE_ID 1
 #endif
 static char nodeId[33];
-static constexpr char FIRMWARE_VERSION[] = "imu-body-node-20261025-r3";
+static constexpr char FIRMWARE_VERSION[] = "imu-body-node-20261027-r4";
 static char bootId[17];
 static_assert(sizeof(IMU_BODY_SLOT) <= 33, "Body slot token is too long");
 static_assert(sizeof(IMU_NODE_CONFIG_VERSION) <= 65, "Config version token is too long");
@@ -47,6 +50,23 @@ static constexpr const char *stationPassword = WIFI_PASSWORD;
 
 static WiFiServer tcpServer(WIFI_TCP_PORT);
 static WiFiClient tcpClient;
+// 4 KiB of frame storage, bounded even when a peer stops reading. Network
+// congestion must never hold up sensor sampling or the loop watchdog.
+static FrameTxQueue<8, 512> tcpFrames;
+static uint32_t tcpBackpressureDisconnects = 0, tcpSendErrors = 0, usbSkippedFrames = 0;
+
+void serviceTcpOutput() {
+  if (!tcpFrames.remaining()) return;
+  if (!tcpClient.connected()) { tcpFrames.clear(); return; }
+  const int sent = ::send(tcpClient.fd(), tcpFrames.data(), tcpFrames.remaining(), MSG_DONTWAIT);
+  if (sent > 0) {
+    tcpFrames.consume(static_cast<size_t>(sent));
+  } else if (sent == 0 || (errno != EAGAIN && errno != EWOULDBLOCK && errno != EINTR)) {
+    ++tcpSendErrors;
+    tcpClient.stop();
+    tcpFrames.clear();
+  }
+}
 static bool tcpServerStarted = false;
 static unsigned long lastWifiAttemptMs = 0;
 static uint32_t lastSampleUs = 0;
@@ -65,6 +85,7 @@ void manageWifi() {
   if (accessPointMode && !accessPointReady) return;
   if (!accessPointMode && WiFi.status() != WL_CONNECTED) {
     if (tcpClient) tcpClient.stop();
+    tcpFrames.clear();
     if (tcpServerStarted) {
       tcpServer.end();
       tcpServerStarted = false;
@@ -87,6 +108,7 @@ void manageWifi() {
   }
   if (!tcpClient || !tcpClient.connected()) {
     if (tcpClient) tcpClient.stop();
+    tcpFrames.clear();
     WiFiClient candidate = tcpServer.available();
     if (candidate) {
       tcpClient = candidate;
@@ -94,6 +116,8 @@ void manageWifi() {
       Serial.println("[TCP] Client connected");
     }
   }
+  // Exactly one nonblocking socket send per loop, preserving any partial line.
+  serviceTcpOutput();
 }
 
 // ================================================================
@@ -180,8 +204,19 @@ bool lis2mdlSetup() {
 }
 
 void setup() {
+#if ARDUINO_USB_MODE
+  // The default HWCDC buffer is only 256 bytes; IMU3 lines may be larger.
+  const bool usbBufferReady = Serial.setTxBufferSize(1024) >= 512;
+#endif
   Serial.begin(115200);
+  // USB output is optional. An attached but non-reading host must not stall
+  // Wi-Fi sampling; leave at most 1 ms for diagnostic writes.
+  Serial.setTxTimeoutMs(1);
   delay(1000);
+#if ARDUINO_USB_MODE
+  if (!usbBufferReady) Serial.println("[USB] Larger TX buffer unavailable; oversized USB frames will be skipped");
+#endif
+  Serial.printf("[Reset] Reason=%d\n", static_cast<int>(esp_reset_reason()));
   // Each reset has a new sampling session, independent from the physical MAC.
   snprintf(bootId, sizeof(bootId), "%08lX%08lX",
            static_cast<unsigned long>(esp_random()), static_cast<unsigned long>(esp_random()));
@@ -278,6 +313,10 @@ void loop() {
       Serial.printf("[WiFi] Mode=AP Channel=%d Stations=%u\n", static_cast<int>(WiFi.channel()),
                     static_cast<unsigned>(WiFi.softAPgetStationNum()));
     }
+    Serial.printf("[Transport] TCPBackpressure=%lu TCPErrors=%lu USBSkipped=%lu\n",
+                  static_cast<unsigned long>(tcpBackpressureDisconnects),
+                  static_cast<unsigned long>(tcpSendErrors),
+                  static_cast<unsigned long>(usbSkippedFrames));
   }
   // Keep serving connections between samples; unsigned subtraction handles millis wraparound.
   uint32_t sampledAtUs = micros();
@@ -321,12 +360,22 @@ void loop() {
     return;
   }
   // USB logging must not require an attached/reading host for Wi-Fi sampling.
-  if (Serial) Serial.print(line);
+  const size_t length = static_cast<size_t>(written);
+  if (Serial) {
+    if (Serial.availableForWrite() >= written) {
+      Serial.write(reinterpret_cast<const uint8_t *>(line), length);
+    } else {
+      ++usbSkippedFrames;
+    }
+  }
   if (tcpClient && tcpClient.connected()) {
-    size_t length = strlen(line);
-    if (tcpClient.write(reinterpret_cast<const uint8_t *>(line), length) != length) {
+    if (!tcpFrames.enqueue(reinterpret_cast<const uint8_t *>(line), length)) {
+      // A stalled receiver cannot consume unbounded RAM or pause acquisition.
+      // Close the whole stream so a partial line is never joined to a later one.
+      // The receiver can reconnect and observes the sequence gap explicitly.
+      ++tcpBackpressureDisconnects;
       tcpClient.stop();
-      Serial.println("[TCP] Send failed; waiting for client reconnect");
+      tcpFrames.clear();
     }
   }
 }

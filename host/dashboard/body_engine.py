@@ -295,6 +295,11 @@ class BodyEngine:
         node.stability.reset_window("已手动取消；原有成功零偏保留")
         self._event("bias_calibration_cancelled",device_id=device_id)
 
+    def set_magnetic_calibration(self, device_id, calibration):
+        self.devices[device_id].set_magnetic_calibration(calibration)
+        self._clear_local(self.devices[device_id].body_slot)
+        self._event("magnetic_calibration_changed",device_id=device_id)
+
     def set_processing(self, device_id, profile):
         node = self.devices[device_id]
         node.set_processing(profile)

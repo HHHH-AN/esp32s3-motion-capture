@@ -20,6 +20,7 @@ from .motion import DisplacementEstimator
 from .protocol import CurrentCsvProtocol, FrameError
 from .serial_transport import SerialTransport
 from .tcp_transport import TcpTransport
+from . import magnetometer
 
 
 class BodyRuntime:
@@ -100,7 +101,7 @@ class BodyRuntime:
             self.recorder.append_event(event)
             if event.get("type") in ("direction_calibration_failed", "direction_calibration_invalidated", "direction_neutral_accepted", "direction_candidate"):
                 self._save_direction_evidence()
-            if event.get("type") in ("device_restart", "inferred_restart", "clock_reference_reset", "reference_invalidated", "binding_changed", "reported_slot_changed", "source_changed", "source_selected", "device_config_changed", "coordinates_changed", "processing_changed", "bias_calibration_complete", "invalid_fusion"):
+            if event.get("type") in ("device_restart", "inferred_restart", "clock_reference_reset", "reference_invalidated", "binding_changed", "reported_slot_changed", "source_changed", "source_selected", "device_config_changed", "coordinates_changed", "processing_changed", "magnetic_calibration_changed", "bias_calibration_complete", "invalid_fusion"):
                 motion = self.motions.get(event.get("device_id"))
                 if motion:
                     motion.reset()
@@ -391,6 +392,15 @@ class BodyRuntime:
             self._editable()
             self.engine.cancel_calibration(device_id)
             self.message = "校准已取消；旧成功零偏保留，安装参考仍需重新初始化"
+        elif action == "set_magnetic_calibration":
+            self._editable()
+            node = self.engine.devices[device_id]
+            candidate = magnetometer.validate(data["calibration"])
+            if candidate.get("source_device_id",device_id)!=device_id:
+                raise ValueError("磁校准物理设备身份不匹配")
+            candidate = await asyncio.to_thread(magnetometer.save,device_id,candidate)
+            self.engine.set_magnetic_calibration(node.device_id,candidate)
+            self.message = "三维磁校准已应用并保存；需重新确认安装/中立参考"
         elif action == "set_processing":
             self._editable()
             self.engine.set_processing(device_id,data["profile"])

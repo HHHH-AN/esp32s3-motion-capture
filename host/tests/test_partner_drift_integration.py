@@ -31,16 +31,18 @@ class PartnerDriftPipelineTests(unittest.TestCase):
         engine.ingest(replace(sample(0,device="imu_305A6077C398"),body_slot=None),"arbitrary-usb")
         engine.ingest(sample(0,device="imu_149B6077C398"),"arbitrary-tcp")
         a,b = engine.devices["imu_305A6077C398"],engine.devices["imu_149B6077C398"]
-        self.assertEqual(a.processing_profile,"six_axis_relative")
+        self.assertEqual(a.processing_profile,"magnetic_guarded")
         self.assertEqual(b.processing_profile,"magnetic_guarded")
         self.assertIsNone(a.body_slot)
         self.assertEqual(a.coordinates.sensor_axes,("+X","+Y","+Z"))
-        self.assertFalse(a.stability.magnetic_used)
+        self.assertTrue(a.stability.magnetic_used)
         self.assertTrue(b.stability.magnetic_used)
 
     def test_magnetic_perturbation_cannot_rotate_six_axis_device(self):
-        engine = BodyEngine()
         a,b = "imu_305A6077C398","other"
+        config = load_attitude_config()
+        config["device_profiles"][a] = "six_axis_relative"
+        engine = BodyEngine(attitude_config=config)
         for i in range(600):
             mag = (0.,300.,100.) if i>100 else (300.,0.,100.)
             for device in (a,b):

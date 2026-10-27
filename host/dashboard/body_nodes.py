@@ -9,6 +9,7 @@ from __future__ import annotations
 
 from collections import deque
 from dataclasses import asdict, replace
+from copy import deepcopy
 import math
 from typing import Protocol
 
@@ -17,6 +18,7 @@ from .attitude_config import load_attitude_config, device_profile
 from .body_math import IDENTITY, inverse, multiply, quaternion, slerp
 from .coordinates import CoordinateSettings
 from .fusion import ComplementaryFusion, euler_degrees
+from . import magnetometer
 
 
 class FusionProvider(Protocol):
@@ -38,6 +40,7 @@ class NodeProcessor:
         self.fusion_version = getattr(self.fusion, "version", "complementary/1")
         self.coordinates = CoordinateSettings.parse({"sensor_axes": config["coordinates"]["sensor_axes"]})
         self.stability = AttitudeStabilizer()
+        self.magnetic_calibration = magnetometer.load(device_id)
         self.stability_enabled = self.processing_settings["stability_enabled"]
         self.quaternion = IDENTITY
         self.reference = None
@@ -87,6 +90,19 @@ class NodeProcessor:
         self.stability.reset_window("处理配置改变；原有成功陀螺零偏保留")
         self.stability_enabled = settings["stability_enabled"]
         self.reset_reference("融合配置改变：需重新中立站姿初始化",reset_fusion=True)
+
+    def set_magnetic_calibration(self, calibration):
+        calibration = magnetometer.validate(calibration)
+        if calibration.get("source_device_id",self.device_id)!=self.device_id:
+            raise ValueError("磁校准物理设备身份不匹配")
+        bias, calibrated = self.stability.bias, self.stability.calibrated
+        self.magnetic_calibration = calibration
+        self.stability.clear()
+        self.stability.bias, self.stability.calibrated = bias, calibrated
+        self.stability.phase = "complete" if calibrated else "idle"
+        self.stability.progress = 1. if calibrated else 0.
+        self.stability.message = "磁校准已更新；陀螺零偏保留，需重新确认安装参考" if calibrated else "磁校准已更新，请放稳完成陀螺零偏校准"
+        self.reset_reference("磁校准改变融合参考：需重新中立站姿初始化",reset_fusion=True)
 
     def reset_reference(self, reason, *, reset_fusion=False):
         self.reference_revision += 1
@@ -179,7 +195,8 @@ class NodeProcessor:
                 self.fusion.last_time = sample.received_monotonic
                 self.fusion.last_device_us = sample.device_us
             events.append({"type": "sampling_gap", "device_id": self.device_id, "duration_s": elapsed})
-        mapped = self.coordinates.sample(sample)
+        physical = replace(sample,mag=magnetometer.correct(sample.mag,self.magnetic_calibration)) if sample.sensor_flags & 2 else sample
+        mapped = self.coordinates.sample(physical)
         was_calibrating = self.stability.calibrating
         calibrated_bias = self.stability.update(mapped)
         if was_calibrating and self.stability.phase == "failed":
@@ -194,6 +211,8 @@ class NodeProcessor:
             self.stability.magnetic_message = "六轴相对姿态：磁场仅显示，未用于航向；长期航向仍会漂移"
         else:
             corrected = self.stability.guard_magnetometer(corrected)
+            if self.stability.magnetic_used and self.magnetic_calibration:
+                self.stability.magnetic_message = "使用已标定磁场观测；局部磁参考，不等于地理真北"
         holding = self.stability_enabled and self.stability.stationary
         if holding:
             corrected = replace(corrected, gyro=(0., 0., 0.))
@@ -218,7 +237,8 @@ class NodeProcessor:
                 "source": self.source, "endpoint_id": self.primary_endpoint,
                 "raw": asdict(sample), "mapped": asdict(mapped), "quaternion": q,
                 "unwrapped_device_us": self.unwrapped_device_us, "aligned_monotonic": aligned_at,
-                "fusion_version": self.fusion_version, "calibration_id": self.calibration_id}, events
+                "fusion_version": self.fusion_version, "calibration_id": self.calibration_id,
+                "magnetic_calibration": deepcopy(self.magnetic_calibration)}, events
 
     def aligned_quaternion(self, at):
         if not self.history:
@@ -287,6 +307,7 @@ class NodeProcessor:
                 "residual_gyro_dps": self.stability.corrected(sample).gyro if sample else None,
                 "calibration_id": self.calibration_id, "reference_reason": self.reference_reason,
                 "fusion_version": self.fusion_version, "coordinates": self.coordinates.payload(),
+                "magnetic_calibration": deepcopy(self.magnetic_calibration),
                 "processing_profile": self.processing_profile,
                 "processing_settings": dict(self.processing_settings),
                 "processing_config_version": self.attitude_config["config_version"],

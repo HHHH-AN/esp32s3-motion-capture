@@ -35,7 +35,10 @@ jobs:
           node --check web/body_app.js
           node --check web/direction_app.js
       - name: Test pose transformations
-        run: node tests/test_pose_math.js
+        run: |
+          node tests/test_pose_math.js
+          node tests/test_display_buffer.js
+          node tests/test_render_visibility.js
       - name: Test body scene and device selection
         run: |
           node tests/test_body_view.js
@@ -49,6 +52,10 @@ jobs:
           done
       - name: Test experiment report JavaScript
         run: node tests/test_preset_report.js
+      - name: Test bounded firmware output queue
+        run: |
+          g++ -std=c++11 -Wall -Wextra -Werror ../firmware/tests/test_frame_tx_queue.cpp -o "$RUNNER_TEMP/test_frame_tx_queue"
+          "$RUNNER_TEMP/test_frame_tx_queue"
 
   firmware:
     runs-on: ubuntu-latest
