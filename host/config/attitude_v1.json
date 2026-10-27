@@ -22,10 +22,10 @@
     }
   },
   "device_profiles": {
-    "imu_305A6077C398": "six_axis_relative",
+    "imu_305A6077C398": "magnetic_guarded",
     "imu_149B6077C398": "magnetic_guarded"
   },
-  "device_profiles_source": "伙伴2026-10-25迁移包明确的A/B物理ID；按身份匹配，不推定身体位置或网络地址",
+  "device_profiles_source": "伙伴物理ID映射；2026-10-27按用户要求将node1 imu_305A6077C398启用磁场门控航向融合，不推定身体位置或网络地址",
   "partner_axes_reference": ["-X", "+Y", "-Z"],
   "partner_axes_policy": "仅供核对，不自动覆盖当前身体配置或设备的轴映射",
   "limitations": [

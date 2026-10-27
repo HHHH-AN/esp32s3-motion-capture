@@ -36,13 +36,15 @@
       const canvas=this.canvas,box=canvas.getBoundingClientRect();if(!box.width||!box.height)return;
       const dpr=Math.min(root.devicePixelRatio||1,2),w=Math.round(box.width*dpr),h=Math.round(box.height*dpr);if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;}
       const ctx=canvas.getContext("2d");ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,box.width,box.height);this.hits=[];
+      if(this.epoch!==epoch){this.trail=[];this.epoch=epoch;}
+      // Board cells have their own axes. Avoid painting an unused floor grid
+      // beneath every cell on every animation frame.
+      if(this.kind==="boards") {this.drawBoards(ctx,box,devices,selectedSlot);return;}
       const scale=Math.min(box.width*.34,box.height*.43)*this.zoom,origin=[box.width/2+this.pan[0],box.height*.89+this.pan[1]],rootOffset=this.kind==="translated"?vector(position):[0,0,0];
       const project=p=>root.PoseMath.project(vector(p),this.yaw,this.elevation,origin,scale);
       const line=(a,b,color,width=1,dash=[])=>{ctx.strokeStyle=color;ctx.lineWidth=width;ctx.setLineDash(dash);ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();ctx.setLineDash([]);};
       for(let i=-2;i<=2;i+=.25){line(project([i,-2,0]),project([i,2,0]),"#e3ebf0");line(project([-2,i,0]),project([2,i,0]),"#e3ebf0");}
       const o=project([0,0,0]);[[.35,0,0],[0,.35,0],[0,0,.35]].forEach((axis,i)=>{const end=project(axis);line(o,end,["#e66354","#279975","#397fd7"][i],2);ctx.fillStyle=["#e66354","#279975","#397fd7"][i];ctx.font="11px system-ui";ctx.fillText(["+X 前","+Y 左","+Z 上"][i],end[0]+4,end[1]);});
-      if(this.epoch!==epoch){this.trail=[];this.epoch=epoch;}
-      if(this.kind==="boards") {this.drawBoards(ctx,box,devices,selectedSlot);return;}
       if(this.kind==="translated"&&positionSource!=="off") {
         const previous=this.trail[this.trail.length-1];if(!previous||rootOffset.some((value,i)=>Math.abs(value-previous[i])>.001)){this.trail.push([...rootOffset]);if(this.trail.length>2000)this.trail.shift();}
         for(let i=1;i<this.trail.length;i++)line(project(this.trail[i-1]),project(this.trail[i]),"#d79729",2);

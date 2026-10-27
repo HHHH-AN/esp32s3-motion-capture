@@ -5,6 +5,9 @@
   let socket,state=null,selectedSlot=null,prepared=false,selectedDevice="",pendingDevice=null,lastDeviceOptions="",lastSourceKey="",lastBindingKey="",slotConfigKey="",endpointKey="",sessionKey="",lastMode="LIVE",lastProcessingKey="";
   const views=[new BodyView.BodyView(byId("bodyFixed"),{kind:"fixed",onSelect:selectSlot}),new BodyView.BodyView(byId("bodyTranslated"),{kind:"translated",onSelect:selectSlot}),new BodyView.BodyView(byId("bodyBoards"),{kind:"boards",onSelect:selectSlot})];
   const api={enabled:true,connected:false,command,notify:feedback,latest:()=>state};window.BodyApp=api;
+  const displayBuffer=globalThis.PoseMath?.DisplayBuffer?new PoseMath.DisplayBuffer():null;
+  const clock=()=>globalThis.performance?.now?.()??Date.now();
+  let displayFrames=0,displayWindow=clock(),displayFps=0;
   let pendingCommand=null,clickedButton=null,feedbackTimer=null,unconfirmedRequest=null;
   document.addEventListener?.("click",event=>{clickedButton=event.target.closest?.("button")||null;setTimeout(()=>clickedButton=null,0);},true);
   function feedback(text,kind="waiting") {
@@ -66,7 +69,8 @@
     if(device?.body_slot&&!selectedSlot)selectedSlot=device.body_slot;
     const bindingKey=JSON.stringify([device?.device_id,device?.body_slot]);if(bindingKey!==lastBindingKey){lastBindingKey=bindingKey;if(device?.body_slot)byId("bodyBinding").value=device.body_slot;}
     byId("bodySelectedDetails").textContent=device?`${device.device_id} · ${device.body_slot||"未绑定，不驱动骨架"} · 来源 ${device.source||"未知"} · 会话 ${device.boot_id||"旧协议未知"} · 绑定 ${device.binding_source||"未指定"}${device.override?"（网页临时覆盖，已记录）":""} · 固件 ${device.firmware_version||"未知"} / 配置 ${device.config_version||"未知"}`:"尚未选择设备。IP/COM 只表示连接地址；未指定身体位置时只作诊断。";
-    byId("bodyDiagnosticLayers").textContent=device?JSON.stringify({device_id:device.device_id,body_slot:device.body_slot,unknown_slot:device.unknown_slot,boot_id:device.boot_id,source:device.source,endpoint:device.endpoint_id,endpoints:device.endpoint_ids,quality:device.quality,stability:device.stability,raw_sample:device.raw_sample,sensor_flags:device.sensor_flags,last_error:device.last_error,initialized:device.initialized,reference:device.reference||device.calibration,reference_reason:device.reference_reason,quaternion:device.quaternion,coordinates:device.coordinates,firmware_version:device.firmware_version,config_version:device.config_version},null,2):"等待选择设备";
+    const layers=byId("bodyDiagnosticLayers");
+    if(!layers.closest||layers.closest("details")?.open)layers.textContent=device?JSON.stringify({device_id:device.device_id,body_slot:device.body_slot,unknown_slot:device.unknown_slot,boot_id:device.boot_id,source:device.source,endpoint:device.endpoint_id,endpoints:device.endpoint_ids,quality:device.quality,stability:device.stability,raw_sample:device.raw_sample,sensor_flags:device.sensor_flags,last_error:device.last_error,initialized:device.initialized,reference:device.reference||device.calibration,reference_reason:device.reference_reason,quaternion:device.quaternion,coordinates:device.coordinates,firmware_version:device.firmware_version,config_version:device.config_version},null,2):"等待选择设备";
     window.renderBodyDiagnostic?.(device,{...state,selected_device_id:selectedDevice,selected_node:device});
     const processingKey=JSON.stringify([device?.device_id,device?.processing_profile,state.attitude_config?.config_version]);
     if(processingKey!==lastProcessingKey){lastProcessingKey=processingKey;const profiles=state.attitude_config?.profiles||{};optionList(byId("bodyProcessing"),Object.entries(profiles).map(([id,value])=>({id,label:value.name||id})),device?.processing_profile);}
@@ -99,6 +103,7 @@
   }
   function update(next) {
     state=next;api.state=next;
+    displayBuffer?.push(next,clock());
     const receipt=next.command_result;
     if(pendingCommand&&receipt?.request_id===pendingCommand.id){releasePending(receipt.message,receipt.ok?"success":"error");}
     else if(unconfirmedRequest&&receipt?.request_id===unconfirmedRequest){unconfirmedRequest=null;feedback(receipt.message,receipt.ok?"success":"error");}
@@ -111,10 +116,12 @@
     window.DirectionApp?.update({...next,selected_device_id:selectedDevice,selected_node:displayedDevice()});
     if(pendingCommand?.button){pendingCommand.button.disabled=true;pendingCommand.button.textContent="处理中…";}
   }
-  function draw() {
+  function draw(now=clock()) {
     if(!state)return;
-    const position=state.position||{},offset=position.position||position.value||[0,0,0],frame=state.body_frame||{};
-    for(const view of views)view.draw(frame,{selectedSlot,devices:state.devices||[],position:offset,positionSource:position.source||"off",mode:state.mode,epoch:`${state.mode}:${state.replay?.session||""}:${state.epoch||""}`});
+    const shown=displayBuffer?.sample(now)||state;
+    const position=shown.position||{},offset=position.position||position.value||[0,0,0],frame=shown.body_frame||{};
+    for(const view of views)view.draw(frame,{selectedSlot,devices:shown.devices||[],position:offset,positionSource:position.source||"off",mode:shown.mode,epoch:`${shown.mode}:${shown.replay?.session||""}:${shown.epoch||""}`});
+    const selected=(shown.devices||[]).find(d=>d.device_id===selectedDevice);if(selected)window.setBodyDisplayPose?.(selected);
   }
   function connect() {
     socket=new WebSocket(`${location.protocol==="https:"?"wss":"ws"}://${location.host}/ws/body`);
@@ -142,5 +149,10 @@
   async function refreshSessions() {const button=byId("bodyRefreshSessions");if(button.disabled)return;button.disabled=true;button.textContent="读取中…";try{const response=await fetch("/api/body/recordings");if(!response.ok)throw new Error("读取会话列表失败");const result=await response.json(),items=result.items||[],options=[{id:"",label:"请选择已保存会话"},...items.map(item=>({id:item.id||item.session,label:`${item.id||item.session}${item.incomplete||item.status==="incomplete"?" · 未完整结束":""}`}))],old=byId("bodySessions").value;optionList(byId("bodySessions"),options,old||options[1]?.id||"");sessionKey=JSON.stringify(items);if(state)renderWorkflow();}catch(error){byId("bodyRecordDetails").textContent=error.message;feedback(error.message,"error");}finally{button.disabled=false;button.textContent="刷新列表";}}
   byId("bodyRefreshSessions").onclick=refreshSessions;byId("bodySessions").onchange=()=>state&&renderWorkflow();
   byId("bodyReplayOpen").onclick=()=>command("replay_open",{session:byId("bodySessions").value});byId("bodyReplayPlay").onclick=()=>command("replay_play");byId("bodyReplayPause").onclick=()=>command("replay_pause");byId("bodyReplayClose").onclick=()=>command("replay_close");byId("bodyReplaySeek").oninput=()=>command("replay_seek",{time_s:Number(byId("bodyReplaySeek").value)});
-  function animate(){draw();requestAnimationFrame(animate);}connect();requestAnimationFrame(animate);
+  function animate(now=clock()){
+    draw(now);displayFrames++;
+    if(now-displayWindow>=1000){displayFps=displayFrames*1000/(now-displayWindow);displayFrames=0;displayWindow=now;
+      byId("bodyRenderStatus").textContent=`模型显示 ${Math.round(displayFps)} 帧/秒 · 显示插值约50毫秒 · 数据频率以接收质量为准`;}
+    requestAnimationFrame(animate);
+  }connect();requestAnimationFrame(animate);
 })();

@@ -25,6 +25,7 @@ function euler(q) {
   return [Math.atan2(2*(w*x+y*z),1-2*(x*x+y*y)),Math.asin(Math.max(-1,Math.min(1,2*(w*y-z*x)))),Math.atan2(2*(w*z+x*y),1-2*(y*y+z*z))].map(v=>v*180/Math.PI);
 }
 function drawPose() {
+  if($("poseCanvas").getClientRects?.().length===0)return;
   const {ctx,width,height}=canvasSize($("poseCanvas"));ctx.clearRect(0,0,width,height);
   const range=Math.max(.1,Math.min(20,Number($("sceneRange").value)||1)),scale=Math.min(width,height)*.42*viewScale/range;
   const center=$("followPose").checked?scenePosition:[0,0,0];
@@ -44,6 +45,7 @@ function drawPose() {
   ctx.font="12px system-ui";ctx.fillStyle="#617482";ctx.fillText(replay?"位姿与轨迹回放":(online?"实时位姿 · 位置为惯性估算":"等待真实数据"),14,24);ctx.fillText(`网格 ${spacing.toFixed(2)} m · 轨迹 ${poseTrail.length} 点`,14,43);
 }
 function drawChart(canvas, samples) {
+  if(canvas.getClientRects?.().length===0)return;
   const {ctx,width,height}=canvasSize(canvas);ctx.clearRect(0,0,width,height);
   let min=Infinity,max=-Infinity;for(const sample of samples)for(const v of sample){min=Math.min(min,v);max=Math.max(max,v);}
   if(!samples.length){min=-1;max=1;}if(max-min<.01){min-=.5;max+=.5;}const pad=(max-min)*.1;min-=pad;max+=pad;
@@ -136,7 +138,9 @@ function showReplay(index){replayIndex=Math.max(0,Math.min(replay.frames.length-
 $("loadReplay").onclick=async()=>{try{if(latest?.stats.recording)throw new Error("请先停止记录");const data=await fetchJson(`/api/recordings/${encodeURIComponent($("sessions").value)}/replay`);if(!data.frames.length)throw new Error("该记录没有可回放样本");replay=data;playing=false;$("play").textContent="播放";$("playback").hidden=false;$("seek").max=replay.frames.length-1;$("playTitle").textContent=$("sessions").value;$("playSummary").textContent=`${data.total_rows} 样本 · ${format(data.duration_s,1)} 秒 · 原始峰值角速度模长 ${format(data.peak_gyro_dps)} °/s · 回放抽取间隔 ${data.stride} 样本`;$ ("recordDialog").close();showReplay(0);if(latest)update(latest);}catch(error){alert(error.message);}};
 $("play").onclick=()=>{if(!replay)return;if(playing){playing=false;$("play").textContent="播放";}else{if(replayIndex===replay.frames.length-1)showReplay(0);playing=true;playStart=performance.now();playOffset=replay.frames[replayIndex].timestamp;$("play").textContent="暂停";}};
 $("seek").oninput=()=>{playing=false;$("play").textContent="播放";showReplay(Number($("seek").value));};$("exitReplay").onclick=()=>{replay=null;playing=false;$("playback").hidden=true;clearHistory();poseTrail=[];lastTrailFrame=null;if(latest)update(latest);};
-function animate(now){if(replay&&playing){const target=playOffset+(now-playStart)/1000;let index=replayIndex;while(index+1<replay.frames.length&&replay.frames[index+1].timestamp<=target)index++;if(index!==replayIndex)showReplay(index);if(index===replay.frames.length-1){playing=false;$("play").textContent="播放";}}drawPose();drawChart($("accChart"),histories.accel);drawChart($("gyroChart"),histories.gyro);drawChart($("magChart"),histories.mag);if(latest){const timestamp=latest.latest_packet_at;$("age").textContent=timestamp?Math.max(0,Date.now()-timestamp*1000).toFixed(0)+" ms":"—";}requestAnimationFrame(animate);}
+let chartLastDraw=-Infinity;
+function animate(now){if(replay&&playing){const target=playOffset+(now-playStart)/1000;let index=replayIndex;while(index+1<replay.frames.length&&replay.frames[index+1].timestamp<=target)index++;if(index!==replayIndex)showReplay(index);if(index===replay.frames.length-1){playing=false;$("play").textContent="播放";}}drawPose();if(now-chartLastDraw>=100){drawChart($("accChart"),histories.accel);drawChart($("gyroChart"),histories.gyro);drawChart($("magChart"),histories.mag);chartLastDraw=now;}if(latest){const timestamp=latest.latest_packet_at;$("age").textContent=timestamp?Math.max(0,Date.now()-timestamp*1000).toFixed(0)+" ms":"—";}requestAnimationFrame(animate);}
+window.setBodyDisplayPose=device=>{orientation=device.quaternion||orientation;};
 try{const saved=JSON.parse(localStorage.getItem("imu-connection"));if(saved){$("transport").value=saved.transport;$("host").value=saved.host;$("tcpPort").value=saved.tcp_port;savedSerialDevice=saved.device||null;}}catch{}
 // The unified body controller owns all connections and model sources. The
 // legacy websocket is retained only for a page without the body workspace.
