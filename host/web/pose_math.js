@@ -58,6 +58,18 @@
         body_frame:{...b.state.body_frame,segments}};
     }
   }
-  const api=Object.freeze({rotate,worldVertex,cameraBasis,project,slerp,DisplayBuffer});root.PoseMath=api;
+  // The dashboard and service share one host clock. Reject stale LIVE states
+  // queued during a browser stall; saved replay frames are never time-filtered.
+  class LiveStateGate {
+    constructor(maxAgeMs=500){this.maxAgeMs=maxAgeMs;this.lastTimestamp=null;this.dropped=0;this.ageMs=0;}
+    accept(state,now=Date.now()){
+      if(state.mode!=="LIVE"){this.lastTimestamp=null;this.ageMs=0;return true;}
+      if(!Number.isFinite(state.timestamp))return true;
+      const timestamp=state.timestamp*1000;this.ageMs=Math.max(0,now-timestamp);
+      if(this.ageMs>this.maxAgeMs||(this.lastTimestamp!==null&&timestamp<this.lastTimestamp)){this.dropped++;return false;}
+      this.lastTimestamp=timestamp;return true;
+    }
+  }
+  const api=Object.freeze({rotate,worldVertex,cameraBasis,project,slerp,DisplayBuffer,LiveStateGate});root.PoseMath=api;
   if(typeof module!=="undefined")module.exports=api;
 })(globalThis);

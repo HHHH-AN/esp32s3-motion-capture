@@ -1,6 +1,6 @@
 "use strict";
 const assert=require("node:assert/strict");
-const {DisplayBuffer,slerp,rotate}=require("../web/pose_math.js");
+const {DisplayBuffer,slerp,rotate,LiveStateGate}=require("../web/pose_math.js");
 const q=degrees=>[Math.cos(degrees*Math.PI/360),0,0,Math.sin(degrees*Math.PI/360)];
 function frame(degrees,extra={}){return {mode:"LIVE",epoch:0,selected_device_id:"A",
   devices:[{device_id:"A",boot_id:"boot1",reference_revision:0,valid:true,connected:true,quaternion:q(degrees),...extra}],
@@ -31,3 +31,12 @@ const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-8,`${a} != ${b}`);
   near(angle(slerp(q(10),q(10).map(v=>-v),.5)),10); // Quaternion sign is not a full revolution.
 }
 console.log("Display interpolation: smooth known rotation, no fabricated motion, restart/reference/stale/replay isolation passed");
+{
+  const gate=new LiveStateGate();assert.ok(gate.accept({...frame(0),timestamp:100},100000));
+  // Five seconds of queued LIVE states are discarded rather than animated.
+  for(let i=1;i<135;i++)assert.equal(gate.accept({...frame(i),timestamp:100+i/30},105000),false);
+  assert.ok(gate.accept({...frame(30),timestamp:105},105000));
+  assert.equal(gate.accept({...frame(20),timestamp:104.9},105000),false,"old state cannot replace a newer pose");
+  assert.ok(gate.accept({...frame(0),mode:"REPLAY",timestamp:1},105000),"saved replay must remain exact");
+  assert.ok(gate.accept(frame(0),105000),"legacy state without timestamp remains supported");
+}

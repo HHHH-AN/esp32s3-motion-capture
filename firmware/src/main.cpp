@@ -24,7 +24,7 @@
 #define IMU_USE_MAC_NODE_ID 1
 #endif
 static char nodeId[33];
-static constexpr char FIRMWARE_VERSION[] = "imu-body-node-20261027-r4";
+static constexpr char FIRMWARE_VERSION[] = "imu-body-node-20261027-r5";
 static char bootId[17];
 static_assert(sizeof(IMU_BODY_SLOT) <= 33, "Body slot token is too long");
 static_assert(sizeof(IMU_NODE_CONFIG_VERSION) <= 65, "Config version token is too long");
@@ -269,6 +269,12 @@ void setup() {
   // ---- 初始化 ICM-42688-P ----
   int st = icm.begin();
   if (st > 0) {
+    // begin() estimates a bias without checking that the board is still. A
+    // moving power-up can therefore turn real motion into a persistent offset.
+    // Send uncorrected sensor rates; the host owns explicit, gated calibration.
+    icm.setGyroBiasX(0.f);
+    icm.setGyroBiasY(0.f);
+    icm.setGyroBiasZ(0.f);
     imuReady = icm.setAccelFS(ICM42688::gpm8) > 0 &&
                icm.setGyroFS(ICM42688::dps2000) > 0;
     ICM42688::ODR rate = IMU_SAMPLE_RATE_HZ == 100 ? ICM42688::odr100 :

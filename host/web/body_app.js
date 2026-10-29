@@ -3,10 +3,13 @@
   const byId=id=>document.getElementById(id);
   const labels={unmeasured:"未测量 · 局部零姿态",uninitialized:"在线 · 未初始化",online:"已初始化",delayed:"延迟",stale:"失鲜 · 保持",disconnected:"持续断线",conflict:"位置冲突 · 隔离",invalid:"异常 · 拒绝"};
   let socket,state=null,selectedSlot=null,prepared=false,selectedDevice="",pendingDevice=null,lastDeviceOptions="",lastSourceKey="",lastBindingKey="",slotConfigKey="",endpointKey="",sessionKey="",lastMode="LIVE",lastProcessingKey="";
-  const views=[new BodyView.BodyView(byId("bodyFixed"),{kind:"fixed",onSelect:selectSlot}),new BodyView.BodyView(byId("bodyTranslated"),{kind:"translated",onSelect:selectSlot}),new BodyView.BodyView(byId("bodyBoards"),{kind:"boards",onSelect:selectSlot})];
+  const views=[new BodyView.BodyView(byId("bodyFixed"),{kind:"fixed",onSelect:selectSlot}),new BodyView.BodyView(byId("bodyTranslated"),{kind:"translated",onSelect:selectSlot}),new BodyView.BodyView(byId("bodyBoards"),{kind:"boards",onSelect:selectSlot,anglePanel:byId("bodyBoardAngles")})];
   const api={enabled:true,connected:false,command,notify:feedback,latest:()=>state};window.BodyApp=api;
   const displayBuffer=globalThis.PoseMath?.DisplayBuffer?new PoseMath.DisplayBuffer():null;
   const clock=()=>globalThis.performance?.now?.()??Date.now();
+  const liveGate=globalThis.PoseMath?.LiveStateGate?new PoseMath.LiveStateGate():null;
+  const diagnostics=api.diagnostics={receivedStates:0,staleStates:0,uiUpdates:0,maxAnimationGapMs:0,lastStateAgeMs:0};
+  let uiDirty=false,lastUiDraw=-Infinity,lastAnimationAt=null,lastAcceptedAt=null;
   let displayFrames=0,displayWindow=clock(),displayFps=0;
   let pendingCommand=null,clickedButton=null,feedbackTimer=null,unconfirmedRequest=null;
   document.addEventListener?.("click",event=>{clickedButton=event.target.closest?.("button")||null;setTimeout(()=>clickedButton=null,0);},true);
@@ -102,11 +105,18 @@
     const position=state.position||{},source=position.source||"off";byId("bodyPositionStatus").textContent=`位置来源：${source}。${source==="experimental"?"实验惯性积分会漂移；不是可靠绝对定位。":source==="simulated"?"模拟位置，不是真实测量。":"固定根部与位置估算分离。"}`;
   }
   function update(next) {
-    state=next;api.state=next;
-    displayBuffer?.push(next,clock());
+    diagnostics.receivedStates++;
     const receipt=next.command_result;
     if(pendingCommand&&receipt?.request_id===pendingCommand.id){releasePending(receipt.message,receipt.ok?"success":"error");}
     else if(unconfirmedRequest&&receipt?.request_id===unconfirmedRequest){unconfirmedRequest=null;feedback(receipt.message,receipt.ok?"success":"error");}
+    // A command receipt is still handled when its old display state is skipped.
+    if(liveGate&&!liveGate.accept(next)){diagnostics.staleStates=liveGate.dropped;diagnostics.lastStateAgeMs=liveGate.ageMs;return;}
+    diagnostics.lastStateAgeMs=liveGate?.ageMs||0;
+    state=next;api.state=next;lastAcceptedAt=clock();
+    displayBuffer?.push(next,lastAcceptedAt);uiDirty=true;
+  }
+  function renderUi() {
+    const next=state;uiDirty=false;diagnostics.uiUpdates++;
     byId("message").textContent=next.message||"等待输入";byId("bodyMode").textContent=`${next.mode||"LIVE"}${next.mode==="REPLAY"?" · 保存姿态回放":" · 实时来源"}`;
     byId("bodyMode").className="badge"+(next.mode==="REPLAY"?" simulation":"");
     const devices=next.devices||[],real=devices.filter(device=>device.source==="real"&&device.valid).length,sim=devices.filter(device=>device.source?.startsWith("simulation")&&device.valid).length;
@@ -150,9 +160,15 @@
   byId("bodyRefreshSessions").onclick=refreshSessions;byId("bodySessions").onchange=()=>state&&renderWorkflow();
   byId("bodyReplayOpen").onclick=()=>command("replay_open",{session:byId("bodySessions").value});byId("bodyReplayPlay").onclick=()=>command("replay_play");byId("bodyReplayPause").onclick=()=>command("replay_pause");byId("bodyReplayClose").onclick=()=>command("replay_close");byId("bodyReplaySeek").oninput=()=>command("replay_seek",{time_s:Number(byId("bodyReplaySeek").value)});
   function animate(now=clock()){
+    if(lastAnimationAt!==null)diagnostics.maxAnimationGapMs=Math.max(diagnostics.maxAnimationGapMs,now-lastAnimationAt);
+    lastAnimationAt=now;
+    // Coalesce state bursts into at most ten expensive DOM refreshes/second.
+    // Pose drawing stays at requestAnimationFrame cadence and uses latest data.
+    if(uiDirty&&now-lastUiDraw>=100){renderUi();lastUiDraw=now;}
     draw(now);displayFrames++;
     if(now-displayWindow>=1000){displayFps=displayFrames*1000/(now-displayWindow);displayFrames=0;displayWindow=now;
-      byId("bodyRenderStatus").textContent=`模型显示 ${Math.round(displayFps)} 帧/秒 · 显示插值约50毫秒 · 数据频率以接收质量为准`;}
+      const stale=lastAcceptedAt!==null&&clock()-lastAcceptedAt>500;
+      byId("bodyRenderStatus").textContent=`模型显示 ${Math.round(displayFps)} 帧/秒 · 显示插值约50毫秒 · 页面最大刷新间隔 ${Math.round(diagnostics.maxAnimationGapMs)}毫秒 · 已跳过 ${diagnostics.staleStates} 条过时显示状态${stale?" · 页面状态滞后，保持最后姿态":""}；数据频率以接收质量为准`;}
     requestAnimationFrame(animate);
   }connect();requestAnimationFrame(animate);
 })();

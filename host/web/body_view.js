@@ -16,14 +16,21 @@
     return [a+w*tx+y*tz-z*ty,b+w*ty+z*tx-x*tz,c+w*tz+x*ty-y*tx];
   }
   function translatePoint(point,offset) {return vector(point).map((value,i)=>value+vector(offset)[i]);}
+  function eulerDegrees(q) {
+    if(!Array.isArray(q)||q.length!==4||!q.every(Number.isFinite))return null;
+    const norm=Math.hypot(...q);if(norm<1e-9)return null;
+    const [w,x,y,z]=q.map(value=>value/norm);
+    return [Math.atan2(2*(w*x+y*z),1-2*(x*x+y*y)),Math.asin(Math.max(-1,Math.min(1,2*(w*y-z*x)))),Math.atan2(2*(w*z+x*y),1-2*(y*y+z*z))].map(value=>value*180/Math.PI);
+  }
   function pointSegmentDistance(p,a,b) {
     const dx=b[0]-a[0],dy=b[1]-a[1],d=dx*dx+dy*dy;
     const t=d?Math.max(0,Math.min(1,((p[0]-a[0])*dx+(p[1]-a[1])*dy)/d)):0;
     return Math.hypot(p[0]-a[0]-t*dx,p[1]-a[1]-t*dy);
   }
   class BodyView {
-    constructor(canvas,{kind="fixed",onSelect=()=>{}}={}) {
+    constructor(canvas,{kind="fixed",onSelect=()=>{},anglePanel=null}={}) {
       this.canvas=canvas;this.kind=kind;this.onSelect=onSelect;this.yaw=-.65;this.elevation=.35;this.zoom=1;this.pan=[0,0];this.trail=[];this.hits=[];this.epoch=null;
+      this.anglePanel=anglePanel;this.angleKey=null;this.angleRows=[];
       let drag=null;
       canvas.addEventListener("pointerdown",event=>{drag={x:event.clientX,y:event.clientY,startX:event.clientX,startY:event.clientY,pan:event.shiftKey};canvas.setPointerCapture(event.pointerId);});
       canvas.addEventListener("pointermove",event=>{if(!drag)return;const dx=event.clientX-drag.x,dy=event.clientY-drag.y;if(drag.pan){this.pan[0]+=dx;this.pan[1]+=dy;}else{this.yaw+=dx*.009;this.elevation=Math.max(-1.2,Math.min(1.2,this.elevation+dy*.009));}drag.x=event.clientX;drag.y=event.clientY;});
@@ -39,7 +46,7 @@
       if(this.epoch!==epoch){this.trail=[];this.epoch=epoch;}
       // Board cells have their own axes. Avoid painting an unused floor grid
       // beneath every cell on every animation frame.
-      if(this.kind==="boards") {this.drawBoards(ctx,box,devices,selectedSlot);return;}
+      if(this.kind==="boards") {this.drawBoards(ctx,box,devices,selectedSlot);this.drawAngles(devices,mode);return;}
       const scale=Math.min(box.width*.34,box.height*.43)*this.zoom,origin=[box.width/2+this.pan[0],box.height*.89+this.pan[1]],rootOffset=this.kind==="translated"?vector(position):[0,0,0];
       const project=p=>root.PoseMath.project(vector(p),this.yaw,this.elevation,origin,scale);
       const line=(a,b,color,width=1,dash=[])=>{ctx.strokeStyle=color;ctx.lineWidth=width;ctx.setLineDash(dash);ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();ctx.setLineDash([]);};
@@ -68,6 +75,31 @@
       if(!segments.length){ctx.fillText("等待骨架帧；未接入节点不推测动作",12,44);}
       if(this.kind==="translated"){ctx.fillStyle="#9a681a";ctx.fillText("相机拖动只改变观察视角，不是测量平移",12,box.height-12);}
     }
+    drawAngles(devices,mode) {
+      const panel=this.anglePanel;if(!panel)return;
+      const key=JSON.stringify(devices.map(device=>device.device_id||device.node_id||device.id||"未识别"));
+      if(key!==this.angleKey){
+        this.angleKey=key;this.angleRows=[];
+        const doc=panel.ownerDocument,cards=devices.map(device=>{
+          const card=doc.createElement("div"),heading=doc.createElement("div"),name=doc.createElement("strong"),status=doc.createElement("span"),values=doc.createElement("div");
+          card.className="board-angle-card";heading.className="board-angle-heading";values.className="board-angle-values";
+          name.textContent=device.device_id||device.node_id||device.id||"未识别";heading.append(name,status);
+          const outputs=["X 横滚","Y 俯仰","Z 航向"].map((label,index)=>{
+            const cell=doc.createElement("div"),title=doc.createElement("span"),output=doc.createElement("strong");
+            cell.className="board-angle-axis axis-"+"xyz"[index];title.textContent=label;output.textContent="—";cell.append(title,output);values.append(cell);return output;
+          });
+          card.append(heading,values);this.angleRows.push({status,outputs});return card;
+        });
+        if(!cards.length){const empty=doc.createElement("p");empty.className="hint";empty.textContent="等待设备姿态";cards.push(empty);}
+        panel.replaceChildren(...cards);
+      }
+      devices.forEach((device,index)=>{
+        const row=this.angleRows[index],angles=eulerDegrees(device.quaternion||device.q);
+        const status=!angles?"无有效姿态":mode==="REPLAY"?"回放姿态":device.valid===false||device.connected===false?"离线 / 失鲜 · 最后姿态":device.stability?.calibrating?"零偏校准中":device.stability?.calibrated===false?"零偏未校准 · 姿态可能持续漂移":device.source==="real"?"实时姿态":"模拟姿态";
+        if(row.status.textContent!==status)row.status.textContent=status;
+        row.outputs.forEach((output,axis)=>{const value=angles?(Math.abs(angles[axis])<.05?0:angles[axis]).toFixed(1)+"°":"—";if(output.textContent!==value)output.textContent=value;});
+      });
+    }
     drawBoards(ctx,box,devices,selectedSlot) {
       const shown=devices.length?devices:[],columns=shown.length>4?4:shown.length>1?2:1,rows=Math.max(1,Math.ceil(shown.length/columns)),cellW=box.width/columns,cellH=box.height/rows;
       if(!shown.length){ctx.font="13px system-ui";ctx.fillStyle="#617482";ctx.fillText("暂无设备。模拟设备会显式标识，不计为硬件在线。",18,28);return;}
@@ -79,6 +111,6 @@
       });
     }
   }
-  const api={BodyView,listSegments,segmentEnds,rotate,translatePoint,pointSegmentDistance};root.BodyView=api;
+  const api={BodyView,listSegments,segmentEnds,rotate,translatePoint,pointSegmentDistance,eulerDegrees};root.BodyView=api;
   if(typeof module!=="undefined")module.exports=api;
 })(globalThis);
