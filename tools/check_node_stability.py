@@ -28,14 +28,16 @@ async def command(action, **fields):
     request_id = str(uuid4())
     async with websockets.connect("ws://127.0.0.1:8000/ws/body", max_size=8_000_000) as socket:
         await socket.send(json.dumps(dict(action=action, request_id=request_id, **fields)))
-        async with asyncio.timeout(40):
+        async def receive_result():
             async for message in socket:
                 result = json.loads(message).get("command_result") or {}
                 if result.get("request_id") == request_id:
                     if not result.get("ok"):
                         raise RuntimeError(result.get("message"))
                     return result
-    raise RuntimeError("Control connection closed before acknowledgement")
+            raise RuntimeError("Control connection closed before acknowledgement")
+        # Keep the project's Python 3.10 minimum; asyncio.timeout needs 3.11.
+        return await asyncio.wait_for(receive_result(), timeout=40)
 
 
 def main():
