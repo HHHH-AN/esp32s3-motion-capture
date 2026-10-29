@@ -5,7 +5,7 @@ const fs=require("node:fs");
 const path=require("node:path");
 const vm=require("node:vm");
 function harness(){
-  const elements=new Map(),diagnostics=[],sent=[],timers=new Map();let timerId=0;
+  const elements=new Map(),diagnostics=[],sent=[],timers=new Map();let timerId=0,animation=null,now=0;
   function element(){return {value:"",children:[],disabled:false,textContent:"",className:"",dataset:{},
     classList:{toggle(){}},append(...items){this.children.push(...items);},
     replaceChildren(...items){this.children=items;},setAttribute(){},scrollIntoView(){},
@@ -13,8 +13,8 @@ function harness(){
   const document={activeElement:null,getElementById(id){if(!elements.has(id))elements.set(id,element());return elements.get(id);},createElement:element};
   class Socket{constructor(){this.readyState=1;Socket.last=this;}send(value){sent.push(JSON.parse(value));}}
   class View{draw(){}reset(){}clearTrail(){}}
-  const context={document,WebSocket:Socket,BodyView:{BodyView:View},location:{protocol:"http:",host:"offline"},
-    requestAnimationFrame(){},setTimeout(fn,ms){timers.set(++timerId,{fn,ms});return timerId;},clearTimeout(id){timers.delete(id);},localStorage:{setItem(){}},console,
+  const context={document,WebSocket:Socket,BodyView:{BodyView:View},PoseMath:require("../web/pose_math.js"),location:{protocol:"http:",host:"offline"},
+    requestAnimationFrame(fn){animation=fn;},performance:{now:()=>now},setTimeout(fn,ms){timers.set(++timerId,{fn,ms});return timerId;},clearTimeout(id){timers.delete(id);},localStorage:{setItem(){}},console,
     fetch:async()=>({ok:true,json:async()=>({items:[]})})};
   context.window=context;
   context.renderBodyDiagnostic=(device,state)=>diagnostics.push({id:device?.device_id,state});
@@ -26,9 +26,32 @@ function harness(){
     slots:[{id:a.body_slot,name:"右上臂",device_id:"A"},{id:b.body_slot,name:"右前臂",device_id:"B"}],
     command_result:null,body_frame:{segments:[]},endpoints:[],recording:{active:false},replay:{},initialization:{status:"idle"},
     attitude_config:{profiles:{magnetic_guarded:{name:"磁门控"}}}};}
-  const receive=(selected,extra={})=>Socket.last.onmessage({data:JSON.stringify({...frame(selected),...extra})});
+  const flush=(ms=100)=>{now+=ms;animation(now);};
+  const receive=(selected,extra={},paint=true)=>{Socket.last.onmessage({data:JSON.stringify({...frame(selected),...extra})});if(paint)flush();};
   return {context,document,sent,diagnostics,receive,runTimer(ms){for(const [id,timer] of [...timers])if(timer.ms===ms){timers.delete(id);timer.fn();}},get:id=>document.getElementById(id),select:document.getElementById("bodyDevice"),
-    setQuaternion(id,q){(id==="A"?a:b).quaternion=q;}};
+    flush,setQuaternion(id,q){(id==="A"?a:b).quaternion=q;}};
+}
+{
+  const h=harness();h.receive("A");const before=h.diagnostics.length;
+  for(let i=0;i<1000;i++){h.setQuaternion("A",[1,0,0,i/1000]);h.receive("A",{},false);}
+  assert.equal(h.diagnostics.length,before,"burst messages must not redraw the DOM individually");
+  h.flush();assert.equal(h.diagnostics.length,before+1,"only latest UI state is rendered after a burst");
+  assert.equal(h.context.BodyApp.latest().devices[0].quaternion[3],.999);
+  h.flush(10);assert.equal(h.diagnostics.length,before+1,"unchanged UI must not repaint every animation frame");
+}
+{
+  const h=harness();h.receive("A");h.context.BodyApp.command("calibrate");
+  const id=h.sent.at(-1).request_id,old=h.context.BodyApp.latest();
+  h.receive("B",{timestamp:Date.now()/1000-5,command_result:{request_id:id,ok:true,message:"校准已确认"}});
+  assert.equal(h.context.BodyApp.latest(),old,"queued stale display state must not replace current state");
+  assert.equal(h.context.BodyApp.diagnostics.staleStates,1);
+  assert.match(h.get("commandFeedbackText").textContent,/校准已确认/,"stale pose filtering must preserve command acknowledgements");
+}
+{
+  const h=harness();
+  for(let i=0;i<9000;i++){h.receive("A",{},false);h.flush(1000/30);}
+  assert.equal(h.context.BodyApp.diagnostics.receivedStates,9000);
+  assert.ok(h.context.BodyApp.diagnostics.uiUpdates<=3001,"five-minute 30 Hz stream must retain bounded UI work");
 }
 {
   const h=harness();h.receive("A");
